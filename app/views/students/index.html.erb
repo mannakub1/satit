@@ -11,3 +11,33 @@
   <%= file_field_tag :file %>
   <%= submit_tag "Import" %>
 <% end %></p>
+
+<h3>ชั้น <%= @room.level%> ห้อง <%= @room.name %></h3>
+
+<h5>วิชา <%= @subject.name%></h5>
+
+<table>
+  <thead>
+    <tr>
+      <th>ชื่อ</th>
+      <th>นามสกุล</th>
+      <th>คะแนนเทอม 1</th>
+      <th>คะแนนเทอม 2</th>
+      <th>เกรด</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @students.each do |student| %>
+      <tr>
+        <td><%= student.first_name %></td>
+        <td><%= student.last_name %></td>
+        <td><%= student.student_subjects.find_by(subject_id: @subject.id).score_primary_term %></td>
+       <td><%= student.student_subjects.find_by(subject_id: @subject.id).score_secondary_term %></td>
+       <td><%= student.student_subjects.find_by(subject_id: @subject.id).grade %></td>
+        
+      </tr>
+    <% end %>
+  </tbody>
+</table>

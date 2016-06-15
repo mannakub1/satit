@@ -1,7 +1,12 @@
 class StudentsController < ApplicationController
-
-  def index
-
+ 
+  attr_reader :room, :subject, :student
+ 
+  def index 
+    @subject = Subject.find(2)
+    @students = @subject.students
+    @room = Room.find(1)
+    
   end
 
   def add_student_csv
