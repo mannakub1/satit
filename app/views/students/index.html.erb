@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+
+<p>เพิ่มนักเรียน
+<%= form_tag add_student_csv_path, multipart: true do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Import" %>
+<% end %></p>
+
+<p>เพิ่มคะแนน
+<%= form_tag add_score_csv_path, multipart: true do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Import" %>
+<% end %></p>

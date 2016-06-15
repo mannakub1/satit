@@ -1,0 +1,24 @@
+# == Schema Information
+#
+# Table name: rooms
+#
+#  id         :integer          not null, primary key
+#  name       :string
+#  level      :string
+#  year       :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  teacher_id :integer
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  level: MyString
+  year: MyString
+
+two:
+  name: MyString
+  level: MyString
+  year: MyString
