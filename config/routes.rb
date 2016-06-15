@@ -1,7 +1,8 @@
 Satit::Application.routes.draw do
 
   mount Satit::API => '/'
-
+  
+  root 'students#index'
   get 'index', to: 'students#index' 
   post 'add_student_csv', to: 'students#add_student_csv'
   post 'add_score_csv', to: 'students#add_score_csv'
