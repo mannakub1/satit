@@ -20,11 +20,11 @@ class Student < ActiveRecord::Base
 
   require 'csv' 
 
-  def self.add_studetn(file)
+  def self.add_student(file)
     CSV.foreach(file.path, headers: true) do |row|
-      student = Teacher::StudentAction.new().add_student(row['รหัสประจําตัวประชาชน'], row['ชื่อ'], row['นามสกุล'])
-      Teacher::StudentAction.new().add_room(student, Room.find(1))
-      Teacher::StudentAction.new().add_subject(student, Subject.find(2))
+      student = Teacher::StudentAction.new(nil).add_student(row['รหัสประจําตัวประชาชน'], row['ชื่อ'], row['นามสกุล'])
+      Teacher::StudentAction.new(student).add_room(Room.find(1))
+      Teacher::StudentAction.new(student).add_subject(Subject.find(2))
       # add_room(student, Room.find(1))
       # add_subject(student, Room.find(2))
     end
