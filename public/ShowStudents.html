@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <style>
+
+  </style>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Satit School: Show Students</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body >
+    <div class="container">
+	<div class="row">
+	<div class="col-sm-2">
+	</div>
+    <div class="col-sm-8">
+	<div ng-app="myApp" ng-controller="StudentCtrl" >
+	<br><br>
+	รายชื่อนักเรียน
+	<div class="table-responsive" id="printableArea">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+				
+                  <th><center>ชื่อ</center></th>
+                  <th><center>นามสกุล</center></th>
+                  <th><center>เกรด</center></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="x in studentData" >
+                  <td><center><a ng-click="getIndex(x.first_name)">{{x.first_name}}</a></center></td>
+                  <td><center>{{x.last_name}}</center></td>
+                  <td><center>{{$index}}</center></td>
+                </tr>
+                
+              </tbody>
+            </table>
+          </div>
+	
+
+</div>
+<input type="button" onclick="printDiv('printableArea')" value="print a div!" />
+    </div>
+	<div class="col-sm-2">
+	</div>
+  </div>
+
+</div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/lib/bootstrap.min.js"></script>
+	    <!--AngularJS Javascript -->
+    <script src="js/lib/angular.min.js"></script>
+    <script src="js/get.js"></script>
+	<script>
+	function printDiv(divName) {
+     var printContents = document.getElementById(divName).innerHTML;
+     var originalContents = document.body.innerHTML;
+
+     document.body.innerHTML = printContents;
+
+     window.print();
+
+     document.body.innerHTML = originalContents;
+}
+</script>
+	
+  </body>
+</html>

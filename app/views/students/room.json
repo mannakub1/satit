@@ -1,0 +1,3 @@
+json.array!(@status) do |text|
+  json.extract! text
+end

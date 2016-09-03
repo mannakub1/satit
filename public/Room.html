@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <style type="text/css" media="all">
+@media print {
+  * { margin: 0 !important; padding: 0 !important; }
+  #controls, .footer, .footerarea{ display: none; }
+  
+  </style>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Satit School: Show Students</title>
+	
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body ng-app="myApp">
+    <div class="container">
+	<div class="row">
+	<div class="col-sm-2">
+	</div>
+    <div class="col-sm-8" ng-controller="mainCtrl">
+	<div ng-show="showRoom"  > 
+	<br><br>
+
+	<div class="list-group" ng-repeat="x in roomData ">
+	
+    <a ng-click="sendRoom(x.id, x.name, x.level, x.year)" class="list-group-item">{{ x.level }} {{ x.name }}</a>
+  </div>
+</div>
+
+<div ng-show="showEditStudent">
+	<form>
+			รหัสประจำตัวนักเรียน:<br>
+			<input type="text" name="codeNumber" ng-model="student.code_number"><br>
+			ชื่อ<br>
+			<input type="text" name="firstName" ng-model="student.first_name"><br>
+			นามสกุล:<br>
+			<input type="text" name="lastName" ng-model="student.last_name"><br>
+			รหัสประชาชน:<br>
+			<input type="text" name="citizenId" ng-model="student.iden_number"><br>
+			<!--ที่อยู่:<br>
+			<input type="text" name="address" ng-model="student.address"><br>
+			E-mail:<br>
+			<input type="text" name="email" ng-model="student.email"><br> -->
+	</form>
+	<button ng-click="sendEditStudent()">send</button>
+</div>
+
+
+<div ng-show="showAddStudent">
+	<form>
+			รหัสประจำตัวนักเรียน:<br>
+			<input type="text" name="codeNumber" ng-model="addStudent.code_number"><br>
+			ชื่อ<br>
+			<input type="text" name="firstName" ng-model="addStudent.first_name"><br>
+			นามสกุล:<br>
+			<input type="text" name="lastName" ng-model="addStudent.last_name"><br>
+			รหัสประชาชน:<br>
+			<input type="text" name="citizenId" ng-model="addStudent.iden_number"><br>
+			<!--ที่อยู่:<br>
+			<input type="text" name="address" ng-model="student.address"><br>
+			E-mail:<br>
+			<input type="text" name="email" ng-model="student.email"><br> -->
+	</form>
+	<button ng-click="sendEditStudent()">send</button>
+</div>
+
+
+<div ng-show="showFile" >
+	<center><h1>เพิ่มนักเรียน  {{roomLevel}} ห้อง {{roomName}}</h1></center>
+<div class="jumbotron">
+<center>
+
+	<h2>เลือกไฟล์รายชื่อนักเรียน</h2>
+  <input type="file" accept=".csv" file-model="myFile" ng-model="excelData" />
+  <br><br>
+   <button class="btn btn-lg btn-primary btn-block" type="submit" ng-click="uploadFile()" value="Upload" style = "width: 40%">Submit</button>
+   </center>
+   </div>
+   </div>
+   <div ng-show="showStudent"  >
+	<br><br>
+	<div id="print">
+	<center><h4>ใบรายชื่อนักเรียน โรงเรียนสาธิตมหาวิทยาลัยศิลปากร (ปฐมวัยและประถมศึกษา) ระดับประถมศึกษา <br><br>
+	ประจำปีการศึกษา  {{year}} <br><br>
+	ระดับชั้น  {{roomLevel}} ห้อง {{roomName}}</h4></center>
+	<br><br>
+	<div class="table-responsive">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+				  <th style="width:70px"><center>ลำดับ</center></th>
+                  <th style="width:100px"><center>เลขประจำตัว</center></th>
+				  <th style="width:150px"><center>ชื่อ</center></th>
+                  <th style="width:150px"><center>นามสกุล</center></th>
+				  <th><center></center></th>
+				  <th><center></center></th>
+				  <th><center></center></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="y in studentData" >
+				  <td><center><a ng-click="editStudent(y.code_number, y.first_name, y.last_name, y.id, y.iden_number)">{{$index + 1}}</a></center></td>
+                  <td><center>{{y.code_number}}</center></td>				  
+				  <td><center>{{y.first_name}}</center></td>
+				  <td><center>{{y.last_name}}</center></td>
+				  <td><center></center></td>
+                  <td><center></center></td>
+				  <td><center></center></td>
+                </tr>
+                
+              </tbody>
+            </table>
+          </div>
+		  </div>
+		<div class="row">
+		<div class="col-sm-10">
+		<button align="left" onclick="refresh()" value="back">กลับ</button>
+		</div>
+		<div class="col-sm-2">
+		 <input type="button" onclick="printDiv('print')" value="พิมพ์รายชื่อ" /> 
+		 </div>
+		 </div>
+</div>
+   <br><br>
+   
+    </div>
+	<div class="col-sm-2">
+	
+	</div>
+  </div>
+
+</div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/lib/bootstrap.min.js"></script>
+	    <!--AngularJS Javascript -->
+    <script src="js/lib/angular.min.js"></script>
+    <script src="js/app.js"></script>
+	<script src="js/lib/angular-route.js"></script>
+	
+  </body>
+</html>

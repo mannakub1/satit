@@ -35,13 +35,13 @@ class Student < ActiveRecord::Base
   has_many :subjects, through: :student_subjects, source: :subject
 
   has_many :father_lists, dependent: :destroy
-  has_many :adults, through: :father_list, source: :adult
+  has_many :father, through: :father_lists, source: :adult
 
   has_many :mother_lists, dependent: :destroy
-  has_many :adults, through: :mother_list, source: :adult
+  has_many :mother, through: :mother_lists, source: :adult
 
   has_many :guardians, dependent: :destroy
-  has_many :adults, through: :guardian, source: :adult
+  has_many :guardian, through: :guardians, source: :adult
 
   require 'csv' 
 

@@ -1,0 +1,3 @@
+json.array!(@current_room) do |text|
+  json.extract! text, :id, :level, :name, :year
+end
