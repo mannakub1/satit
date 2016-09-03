@@ -9,6 +9,7 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  teacher_id :integer
+#  status     :string
 #
 
 class Room < ActiveRecord::Base
@@ -19,4 +20,6 @@ class Room < ActiveRecord::Base
 
   has_many :student_rooms, dependent: :destroy
   has_many :students, through: :student_rooms, source: :student
+
+  scope :present, -> { where(year: DateTime.now.year) }
 end

@@ -9,6 +9,7 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  teacher_id :integer
+#  status     :string
 #
 
 require 'test_helper'

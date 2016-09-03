@@ -3,7 +3,7 @@ module Teacher::Private::StudentAction
   private 
 
   def process_add_student
-    Student.create(iden_number: iden_number, first_name: first_name, last_name: last_name)
+    Student.create(params)
   end
 
   def process_add_room
@@ -22,8 +22,20 @@ module Teacher::Private::StudentAction
     student_subject.update_attributes(grade: calculate_grade)
   end
 
+  def process_edit
+    current_student.update_attributes(params)
+  end
+
+  def change_room_state
+    Student.find(student.id).update_attributes(room_state: true)
+  end
+
   def student_subject
     StudentSubject.find_by(student_id: student.id, subject_id: subject.id)
+  end
+
+  def current_student
+    Student.find_by(id: id)
   end
 
   def calculate_grade

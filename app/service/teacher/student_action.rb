@@ -1,21 +1,22 @@
 class Teacher::StudentAction
   
-  attr_reader :teacher, :student, :room, :subject, :iden_number, :first_name, :last_name, :score_primary_term, :score_secondary_term
+  attr_reader :teacher, :student, :room, :subject \
+    , :code_number, :first_name, :last_name, :score_primary_term, :score_secondary_term, :id, :params
 
   include Teacher::Private::StudentAction
   include Teacher::Private::StudentActionGuard
 
-  def initialize(student)
-    @student = student
-    @teacher = Teacher.find(1)
+  def initialize(option = {})
+    @student = option[:student] || nil
+    @teacher = option[:teacher] || nil
   end
 
 
-  def add_student(iden_number, first_name, last_name)
-
-    @iden_number = iden_number
-    @first_name = first_name
-    @last_name = last_name
+  def add_student(params)
+    @params = params
+    @code_number = params[:code_number]
+    @first_name = params[:first_name]
+    @last_name = params[:last_name]
 
     can_add_student, message = can_add_student?
     fail message unless can_add_student
@@ -61,6 +62,26 @@ class Teacher::StudentAction
     process_add_grade
   end
 
+  def delete_student
+    puts @student
+    @student.update_attributes(delete_status: '1')
+
+    @student
+  end
+
+  def edit(params)
+    @id = params[:id]
+    @params = params
+    # can_edit, message = can_edit?
+    # fail message unless can_edit
+
+    process_edit  
+  end
+
+
+  def current_student
+    Student.find(@user_id)
+  end
   # def add_grade(grade)
   #   subject.update_attributes(grade: grade)
   # end

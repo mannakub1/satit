@@ -3,9 +3,17 @@ Satit::Application.routes.draw do
   mount Satit::API => '/'
   
   root 'students#index'
-  get 'index', to: 'students#index' 
-  post 'add_student_csv', to: 'students#add_student_csv'
-  post 'add_score_csv', to: 'students#add_score_csv'
+
+
+  namespace :api_controller, defaults: { format: 'json' } do 
+    
+    get 'room/students', to: 'students#json_student_list'
+    get 'room', to: 'students#choice_room'
+    get 'room/student_all', to: 'students#student_all'
+    post 'student/add_room', to: 'students#add_room'
+    post 'add_student', to: 'students#json_add_student'
+
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -3,6 +3,9 @@ module Teacher::Private::StudentActionGuard
   private
 
   def can_add_student?
+    return [false, 'not have a code number'] if not_code_number?
+    return [false, 'not hava a first name'] if not_first_name?
+    return [false, 'not have a last_name'] if not_last_name?
     return [false, 'have a student'] if student?
 
     [true, nil]
@@ -41,6 +44,12 @@ module Teacher::Private::StudentActionGuard
     [true, nil]
   end
 
+  def can_edit
+    return [false, 'not have  a student'] if not_student_by_ids?
+
+    [true, nil]
+  end
+
   def student_subject?
     subject.students.find_by(id: student.id)
   end
@@ -50,7 +59,11 @@ module Teacher::Private::StudentActionGuard
   end
 
   def student?
-    Student.find_by(iden_number: iden_number, first_name: first_name, last_name: last_name)
+    Student.find_by(code_number: code_number, first_name: first_name, last_name: last_name)
+  end
+
+  def student_ids?
+    Student.find_by(id: id)
   end
 
   def not_student_subject?
@@ -77,5 +90,20 @@ module Teacher::Private::StudentActionGuard
     !score_secondary_term
   end
 
+  def not_code_number?
+    !code_number 
+  end
+
+  def not_first_name?
+    !first_name
+  end
+
+  def not_last_name?
+    !last_name
+  end
+
+  def not_student_by_ids?
+    !student_ids
+  end
 
 end

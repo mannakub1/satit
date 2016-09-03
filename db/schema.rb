@@ -11,10 +11,68 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160614121733) do
+ActiveRecord::Schema.define(version: 20160831070521) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "admins", force: :cascade do |t|
+    t.string   "username"
+    t.string   "password_digest"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "department"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  create_table "adults", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "address"
+    t.string   "call"
+    t.string   "zip_code"
+    t.string   "enthicity"
+    t.string   "district"
+    t.string   "parish"
+    t.string   "city"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "api_keys", force: :cascade do |t|
+    t.string   "access_token"
+    t.datetime "expires_at"
+    t.integer  "student_id"
+    t.boolean  "active"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "admin_id"
+  end
+
+  add_index "api_keys", ["access_token"], name: "index_api_keys_on_access_token", unique: true, using: :btree
+  add_index "api_keys", ["student_id"], name: "index_api_keys_on_student_id", using: :btree
+
+  create_table "father_lists", force: :cascade do |t|
+    t.integer  "adult_id"
+    t.integer  "student_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "guardians", force: :cascade do |t|
+    t.integer  "adult_id"
+    t.integer  "student_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "mother_lists", force: :cascade do |t|
+    t.integer  "adult_id"
+    t.integer  "student_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "rooms", force: :cascade do |t|
     t.string   "name"
@@ -23,6 +81,7 @@ ActiveRecord::Schema.define(version: 20160614121733) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "teacher_id"
+    t.string   "status"
   end
 
   add_index "rooms", ["teacher_id"], name: "index_rooms_on_teacher_id", using: :btree
@@ -56,9 +115,24 @@ ActiveRecord::Schema.define(version: 20160614121733) do
     t.string   "first_name"
     t.string   "last_name"
     t.float    "gpa"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
     t.string   "iden_number"
+    t.string   "code_number"
+    t.boolean  "room_state"
+    t.string   "blood"
+    t.datetime "birthdate"
+    t.string   "address"
+    t.string   "call"
+    t.string   "zip_code"
+    t.string   "ability"
+    t.string   "nationality"
+    t.string   "ethnicity"
+    t.string   "district"
+    t.string   "parish"
+    t.string   "city"
+    t.string   "prefix"
+    t.string   "delete_status"
   end
 
   create_table "subjects", force: :cascade do |t|
