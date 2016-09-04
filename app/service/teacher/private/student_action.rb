@@ -2,8 +2,29 @@ module Teacher::Private::StudentAction
 
   private 
 
+  def process_authenication
+    return [false, 'Invalid email or password.'] unless valid_password?
+
+    current_student_username
+  end
+
+  def valid_password?
+    compare_password?
+  end
+
+  def compare_password?
+    current_student_username.authenticate(password_digest)
+  end
+
+  def current_student_username
+    Student.find_by(username: username)
+  end
+
   def process_add_student
-    Student.create(params)
+    params[:username] = params[:code_number]
+    params[:password] = params[:code_number]
+
+    student = Student.create(params)
   end
 
   def process_add_room
@@ -52,5 +73,4 @@ module Teacher::Private::StudentAction
   def calculate_score
     (student_subject.score_primary_term + student_subject.score_secondary_term) / 2
   end
-
 end

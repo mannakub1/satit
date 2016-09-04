@@ -10,6 +10,8 @@
 
 
 class Teacher < ActiveRecord::Base
+  has_secure_password
+
   has_many :teacher_rooms, dependent: :destroy
   has_many :rooms, through: :teacher_rooms, source: :room
 

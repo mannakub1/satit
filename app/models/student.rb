@@ -27,6 +27,7 @@
 #
 
 class Student < ActiveRecord::Base
+  has_secure_password
   
   has_many :student_rooms, dependent: :destroy
   has_many :rooms, through: :student_rooms, source: :room

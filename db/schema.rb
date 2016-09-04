@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160831070521) do
+ActiveRecord::Schema.define(version: 20160904090638) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 20160831070521) do
     t.string   "city"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "prefix"
   end
 
   create_table "api_keys", force: :cascade do |t|
@@ -115,8 +116,8 @@ ActiveRecord::Schema.define(version: 20160831070521) do
     t.string   "first_name"
     t.string   "last_name"
     t.float    "gpa"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
     t.string   "iden_number"
     t.string   "code_number"
     t.boolean  "room_state"
@@ -133,6 +134,8 @@ ActiveRecord::Schema.define(version: 20160831070521) do
     t.string   "city"
     t.string   "prefix"
     t.string   "delete_status"
+    t.string   "username"
+    t.string   "password_digest"
   end
 
   create_table "subjects", force: :cascade do |t|
@@ -167,8 +170,11 @@ ActiveRecord::Schema.define(version: 20160831070521) do
   create_table "teachers", force: :cascade do |t|
     t.string   "first_name"
     t.string   "last_name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "username"
+    t.string   "password_digest"
+    t.string   "status"
   end
 
   add_foreign_key "rooms", "teachers"

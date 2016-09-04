@@ -50,6 +50,27 @@ module Teacher::Private::StudentActionGuard
     [true, nil]
   end
 
+  def can_authenication?
+    return [false, 'Invalid email or password'] unless student_username?
+    return [false, 'Invalid email or password'] unless username?
+    return [false, 'Invalid email or password'] unless password?
+    # return [false, 'Invalid email or password3.'] if admin?
+
+    [true, nil]
+  end
+
+  def student_username?
+    Student.find_by(username: username)
+  end
+
+  def username?
+    !username.nil?
+  end
+
+  def password?
+    !password_digest.nil?
+  end 
+
   def student_subject?
     subject.students.find_by(id: student.id)
   end

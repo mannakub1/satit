@@ -6,6 +6,7 @@ module Satit::Prototype
 
     mount TeacherAPI::Post
     mount TeacherAPI::Get
+    mount TeacherAPI::API
     mount RoomAPI::Get
     mount RoomAPI::Post
     mount AdminAPI::Post

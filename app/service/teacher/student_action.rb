@@ -1,14 +1,16 @@
 class Teacher::StudentAction
   
   attr_reader :teacher, :student, :room, :subject \
-    , :code_number, :first_name, :last_name, :score_primary_term, :score_secondary_term, :id, :params
+    , :code_number, :first_name, :last_name, :score_primary_term, :score_secondary_term, :id, :params\
+    , :username, :password_digest
 
   include Teacher::Private::StudentAction
   include Teacher::Private::StudentActionGuard
 
   def initialize(option = {})
-    @student = option[:student] || nil
-    @teacher = option[:teacher] || nil
+    @student = option[:student]
+    @teacher = option[:teacher]
+    @params = option[:params]
   end
 
 
@@ -76,6 +78,18 @@ class Teacher::StudentAction
     # fail message unless can_edit
 
     process_edit  
+  end
+
+  def authenication
+    @username = @params[:username].downcase
+    @password_digest = @params[:password]
+
+    can_authenication, message = can_authenication?
+    fail message unless can_authenication
+
+    puts '5555'
+
+    process_authenication
   end
 
 
