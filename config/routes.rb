@@ -2,7 +2,7 @@ Satit::Application.routes.draw do
 
   mount Satit::API => '/'
   
-  root 'students#index'
+  root :to => redirect('/login')
 
 
   namespace :api_controller, defaults: { format: 'json' } do 

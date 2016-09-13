@@ -121,6 +121,7 @@ module Satit::Prototype::TeacherAPI::StudentAPI
         optional :call, type: String, desc: 'number cell phone'
         optional :zip_code, type: String, desc: 'zip code'
         optional :enthicity, type: String, desc: 'enthicity'
+        optional :nationality, type: String, desc: 'nation'
       end
       post :add_adult do
         present add_adult\
@@ -139,6 +140,7 @@ module Satit::Prototype::TeacherAPI::StudentAPI
         optional :call, type: String, desc: 'number cell phone'
         optional :zip_code, type: String, desc: 'zip code'
         optional :enthicity, type: String, desc: 'enthicity'
+        optional :nationality, type: String, desc: 'nation'
       end
       post :edit_adult do
         present edit_adult\

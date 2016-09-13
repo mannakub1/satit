@@ -1,5 +1,5 @@
 var myApp = angular.module('myApp', ['ngRoute']);
-var address = "http://172.27.162.241:3000/"
+var address = "http://172.27.177.111:3000/"
 var path;
 var pathStudent;
 var pathRoom;
@@ -57,7 +57,10 @@ myApp.service('fileUpload', ['$http', function ($http) {
 
 myApp.controller('mainCtrl',  function($scope, $http, fileUpload) {
 	console.log(localStorage.getItem('token'));
+	//console.log(sessionStorage.getItem('user'));
 	$scope.token = localStorage.getItem('token');
+	$scope.userType = sessionStorage.getItem('user');
+	
 	$scope.student;
 	$scope.roomLevel;
 	$scope.roomName;
@@ -68,8 +71,21 @@ myApp.controller('mainCtrl',  function($scope, $http, fileUpload) {
 	$scope.showFile = false;
 	$scope.showStudent = false;
 	$scope.showEditStudent = false;
+	$scope.showEditFather = false;
+	$scope.showEditMother = false;
+	$scope.showEditGuardian = false;
 	$scope.showStudentData = false;
 	$scope.showAddStudent = false;
+	//console.log($scope.userType);
+	if($scope.userType === "teacher"){
+
+		$scope.userTeacher = true;
+	}
+	else if($scope.userType === "student"){
+		console.log($scope.userType);
+		$scope.userStudent = true;
+		$scope.userTeacher = false;
+	}
 	
 	$scope.addStudent = {code_number : '', first_name : '', last_name : '', iden_number : '', blood : '', birthdate : '', address : ''
 						, district : '', parish : '', city : '', call : '', zip_code : '', ability : '', ethnicity : '', nationality : ''};
@@ -88,30 +104,24 @@ myApp.controller('mainCtrl',  function($scope, $http, fileUpload) {
 	
 
 	
-	$scope.sendStudentData = function(stdCode, stdPrefix, stdFirstName, stdLastName, stdId, stdIden, stdBlood, stdBirth, stdAddr, stdDistrict, stdParish, stdCity, stdCall, stdZip, stdAbility, stdEthnicity, stdNationality){
-		$scope.student = {id : stdId, code_number : stdCode, prefix : stdPrefix, first_name : stdFirstName, last_name : stdLastName, iden_number : stdIden, blood : stdBlood,
-						  birthdate : stdBirth, address : stdAddr, district : stdDistrict, parish : stdParish, city : stdCity, call : stdCall, zip_code : stdZip, ability : stdAbility, ethnicity : stdEthnicity, nationality : stdNationality};
+	$scope.sendStudentData = function(stdCode, stdPrefix, stdFirstName, stdLastName, stdId, stdIden, stdBlood, stdBirth, stdAddr, stdDistrict, stdParish, stdCity, stdCall, stdZip, stdAbility, stdEthnicity, stdNationality, stdIndex){
+		$scope.student = $scope.studentData[stdIndex];
+		console.log($scope.student.father.first_name);
 		$scope.showStudent = false;
 		$scope.showStudentData = true;
+		if(stdBirth !== null){
 		var year = new Date(stdBirth);
 		$scope.stdYear = year.getFullYear() + 543 ;
 		$scope.nowDate = new Date();
 		var timeDiff = Math.abs($scope.nowDate.getTime() - year.getTime());
 		var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24)); 
 		$scope.age = Math.trunc((diffDays)/365);
-		
+		}
 	}
 	
 	
 	$scope.editStudent = function(){
-		for(var i = 0; i < $scope.studentData.length; i++){
-					//console.log("stdData" + i.toString());
-					//console.log($scope.studentData[i].delete_status);
-					if($scope.studentData[i].delete_status === "1"){
-						console.log(document.getElementById("stdDataCode" + i.toString()).id);
-						
-					}
-				}
+		
 		$scope.showEditStudent = true;
 		$scope.showStudentData = false;
 		if($scope.student.prefix === "เด็กชาย"){
@@ -128,6 +138,33 @@ myApp.controller('mainCtrl',  function($scope, $http, fileUpload) {
 		
 	}
 	
+	$scope.editFather = function(){		
+		$scope.showEditFather = true;
+		$scope.showStudentData = false;
+	
+	}
+	
+	$scope.editMother = function(){		
+		$scope.showEditMother = true;
+		$scope.showStudentData = false;
+	}
+	
+	$scope.editGuardian = function(){		
+		$scope.showEditGuardian = true;
+		$scope.showStudentData = false;
+		
+		if($scope.guardian.prefix === "เด็กชาย"){
+			document.getElementById("male").checked = true;
+		}
+		else if($scope.guardian.prefix === "เด็กหญิง"){
+			document.getElementById("female").checked = true;
+		}
+		else{
+			document.getElementById("male").checked = false;
+			document.getElementById("female").checked = false;
+		}
+	}
+	
 	$scope.backEditStudent = function(){
 		$scope.showStudentData = false;
 		$scope.showStudent = true;
@@ -135,6 +172,12 @@ myApp.controller('mainCtrl',  function($scope, $http, fileUpload) {
 	
 	$scope.sendAddStudent = function(){
 		path = address + "api/teacher/add_student";
+		if(document.getElementById("male").checked){
+			$scope.addStudent.prefix = "เด็กชาย";
+		}
+		else{
+			$scope.addStudent.prefix = "เด็กหญิง";
+		}
 		//console.log(student);
 		$http.post(path, angular.toJson($scope.addStudent), {
             transformRequest: angular.identity,
@@ -216,28 +259,36 @@ myApp.controller('mainCtrl',  function($scope, $http, fileUpload) {
 				$scope.showFile = true;
 				}
 			else{
-			
-		
-						
+				
 				$scope.showStudent = true;
+				$scope.showFile = false;
 				$scope.showEditStudent = false;
+				$scope.showEditFather = false;
+				$scope.showEditMother = false;
+				$scope.showEditGuardian = false;
 				$scope.showStudentData = false;
+				$scope.showAddStudent = false;
 				$scope.studentData = data["student_list"];
 		
-				
-			
 
-			
 				//your code to be executed after 1 second
 				    setTimeout(function(){  
 				for(var i = 0; i < $scope.studentData.length; i++){
 					//console.log("stdData" + i.toString());
 					//console.log($scope.studentData[i].delete_status);
 					if($scope.studentData[i].delete_status === "1"){
+						var str = document.getElementById(i.toString()).innerHTML;
+						var result = str.strike();
+						document.getElementById(i.toString()).innerHTML = result;
 						var str = document.getElementById("stdDataCode" + i.toString()).innerHTML;
 						var result = str.strike();
 						document.getElementById("stdDataCode" + i.toString()).innerHTML = result;
-						console.log(document.getElementById("stdDataCode" + i.toString()).innerHTML);
+						var str = document.getElementById("stdDataFName" + i.toString()).innerHTML;
+						var result = str.strike();
+						document.getElementById("stdDataFName" + i.toString()).innerHTML = result;
+						var str = document.getElementById("stdDataLName" + i.toString()).innerHTML;
+						var result = str.strike();
+						document.getElementById("stdDataLName" + i.toString()).innerHTML = result;
 						
 					}
 				}
@@ -315,7 +366,7 @@ myApp.controller('mainCtrl',  function($scope, $http, fileUpload) {
 		.success(function(data, status, headers, config) {
 			console.log(data);
 			window.location.href = 'login.html';
-
+			
       })
 		.error(function(data, status, headers, config) {
       });
@@ -329,15 +380,171 @@ myApp.controller('mainCtrl',  function($scope, $http, fileUpload) {
 	
 });
 
+
+
+
+myApp.controller('stdCtrl',  function($scope, $http, fileUpload) {
+	$scope.student = JSON.parse(sessionStorage.getItem('stdData'));
+	console.log(localStorage.getItem('token'));
+	$scope.token = localStorage.getItem('token');
+	
+	$scope.student;
+	$scope.year;
+	
+	$scope.showRoom = true;
+	$scope.showFile = false;
+	$scope.showStudent = false;
+	$scope.showEditStudent = false;
+	$scope.showEditFather = false;
+	$scope.showEditMother = false;
+	$scope.showEditGuardian = false;
+	$scope.showStudentData = false;
+	$scope.showAddStudent = false;
+	//console.log($scope.userType);
+
+
+	$scope.showStudentDataBtn = function(){
+		$scope.showStudentData = true;
+	}
+	
+	$scope.editStudent = function(){
+		
+		$scope.showEditStudent = true;
+		$scope.showStudentData = false;
+		if($scope.student.prefix === "เด็กชาย"){
+			document.getElementById("male").checked = true;
+		}
+		else if($scope.student.prefix === "เด็กหญิง"){
+			document.getElementById("female").checked = true;
+		}
+		else{
+			document.getElementById("male").checked = false;
+			document.getElementById("female").checked = false;
+		}
+		
+		
+	}
+	
+	$scope.editFather = function(){		
+		$scope.showEditFather = true;
+		$scope.showStudentData = false;
+	
+	}
+	
+	$scope.editMother = function(){		
+		$scope.showEditMother = true;
+		$scope.showStudentData = false;
+	}
+	
+	$scope.editGuardian = function(){		
+		$scope.showEditGuardian = true;
+		$scope.showStudentData = false;
+		
+		if($scope.guardian.prefix === "เด็กชาย"){
+			document.getElementById("male").checked = true;
+		}
+		else if($scope.guardian.prefix === "เด็กหญิง"){
+			document.getElementById("female").checked = true;
+		}
+		else{
+			document.getElementById("male").checked = false;
+			document.getElementById("female").checked = false;
+		}
+	}
+	
+	$scope.backEditStudent = function(){
+		$scope.showStudentData = false;
+		$scope.showStudent = true;
+	}
+
+	
+	$scope.sendEditStudent = function(){
+		path = address + "api/teacher/edit_profile";
+		if(document.getElementById("male").checked){
+			$scope.student.prefix = "เด็กชาย";
+		}
+		else{
+			$scope.student.prefix = "เด็กหญิง";
+		}
+		//console.log(student)
+		$http.post(path, angular.toJson($scope.student), {
+            transformRequest: angular.identity,
+            headers: {'token' : $scope.token, 'Content-Type': "application/json"}
+			
+        })
+		.success(function(data, status, headers, config) {
+			console.log(data);
+			$scope.student = data.student;
+			console.log(data.student);
+			$http.get(pathStudent, {headers: {'token': $scope.token} }).then(function(response) {	
+				$scope.studentData = response.data["student_list"];			
+		});
+			$scope.showEditStudent = false;
+			$scope.showStudentData = true;
+		//	$scope.showStudent = true;
+
+      })
+		.error(function(data, status, headers, config) {
+        if(data.error === 'token expired'){
+			window.location.href = 'login.html';;
+		}
+      });
+	}
+	
+	
+
+
+	
+	$scope.refresh = function(){
+    $http.get(pathStudent)
+          .success(function(data){
+               $scope.users = data;
+          })
+		  .error(function(data, status, headers, config) {
+				if(data.error === 'token expired'){
+					window.location.href = 'login.html';;
+				}
+			});
+}
+	
+	
+	
+	
+	
+
+	
+	$scope.logout = function(){
+		path = address + "api/logout";
+		$http.post(path, angular.toJson($scope.student), {
+            transformRequest: angular.identity,
+            headers: {'token' : $scope.token, 'Content-Type': "application/json"}
+			
+        })
+		.success(function(data, status, headers, config) {
+			console.log(data);
+			window.location.href = 'login.html';
+			
+      })
+		.error(function(data, status, headers, config) {
+      });
+	}
+	
+	
+	
+});
+
+
 myApp.controller('loginCtrl',  function($scope, $http) {
+	$scope.apiUser = 'canet';
+	$scope.apiPass = '1234';
 	$scope.user = '';
 	$scope.pass = '';
-
+	
 
 	
 	$scope.login = function(){
 		path = address + "api/login";
-		var authen = {username : $scope.user, password : $scope.pass};
+		var authen = {username : $scope.apiUser, password : $scope.apiPass};
 		$http.post(path, angular.toJson(authen), {
             transformRequest: angular.identity,
             headers: {'Content-Type': "application/json"}
@@ -346,8 +553,44 @@ myApp.controller('loginCtrl',  function($scope, $http) {
 		.success(function(data, status, headers, config) {
 				console.log(data);
 				if(data.status){
+					$scope.token = data.token;
 					localStorage.setItem('token', data.token);
+					path = address + "api/teacher/login";
+		var authen = {username : $scope.user, password : $scope.pass};
+		console.log(authen);
+		console.log($scope.token);
+		$http.post(path, angular.toJson(authen), {
+            transformRequest: angular.identity,
+            headers: {'token' : $scope.token, 'Content-Type': "application/json"}
+			
+        })
+		.success(function(data, status, headers, config) {
+				sessionStorage.setItem('user', "teacher");
 					window.location.href = 'Dashboard.html';
+	
+      })
+		.error(function(data, status, headers, config) {
+			if(data.error === "not teacher"){
+				path = address + "api/teacher/student/login";
+					$http.post(path, angular.toJson(authen), {
+					transformRequest: angular.identity,
+					headers: {'token' : $scope.token, 'Content-Type': "application/json"}
+					
+					})
+					.success(function(data, status, headers, config) {
+					console.log(data);
+					sessionStorage.setItem('stdData', JSON.stringify(data.student));
+						window.location.href = 'DashboardStudent.html';		
+					})
+					.error(function(data, status, headers, config) {
+						console.log(data);
+						alert("Connection Error")
+					});
+			}
+			else{
+				alert("Username or Password is invalid");
+			}
+      });
 				}
 				//console.log(authen);
 				else{
@@ -358,9 +601,9 @@ myApp.controller('loginCtrl',  function($scope, $http) {
         console.log("error")
 		alert("Connection Error")
       });
+		
 	}
 });
-
 
 
 

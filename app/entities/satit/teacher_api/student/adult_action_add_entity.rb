@@ -9,6 +9,7 @@ module Satit::TeacherAPI::Student
     expose :call
     expose :zip_code
     expose :enthicity
+    expose :nationality
     expose :district
     expose :parish
     expose :city

@@ -15,7 +15,6 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
-
 class Adult < ActiveRecord::Base
 
   has_many :father_lists, dependent: :destroy
