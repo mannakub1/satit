@@ -7,6 +7,17 @@ module Satit::Prototype::TeacherAPI
        return error!('token expired', 500) unless check_token?
       end
 
+      helpers do
+
+        def current_student
+          Student.find(params[:student_id])
+        end
+
+        def current_student_subject
+          StudentSubject.find(params[:student_subject_id])
+        end
+      end
+
       desc 'login'
       params do 
         requires :username, type: String, desc: 'usrename teacher for login'
@@ -15,6 +26,20 @@ module Satit::Prototype::TeacherAPI
       post :login do
         present :teacher, Teacher::TeacherAction.new(params: params).authenication\
         , with: Satit::TeacherAPI::TeacherActionEntity
+      end
+
+      desc 'edit score student'
+      params do 
+        requires :student_id, type: Integer, desc: 'id of student'
+        requires :student_subject_id, type: Integer, desc: 'id of student subject'
+        requires :score1, type: Integer, desc: 'number is change score1'
+        requires :score2, type: Integer, desc: 'number is change scroe2'
+        optional :grade, type: String, desc: ''
+      end
+      post :edit_score do
+        present Teacher::SubjectAction.new(student: current_student, student_subject: current_student_subject)\
+        .edit_score(params[:score1], params[:score2])\
+        , with: Satit::StudentAPI::StudentRoomListEntity
       end
 
     end

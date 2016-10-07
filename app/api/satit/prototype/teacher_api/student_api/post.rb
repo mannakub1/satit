@@ -27,6 +27,8 @@ module Satit::Prototype::TeacherAPI::StudentAPI
         end
 
         def edit_adult
+          puts params
+
           Teacher::AdultAction.new.edit(params)
         end 
 
@@ -110,10 +112,10 @@ module Satit::Prototype::TeacherAPI::StudentAPI
 
       desc 'add adult'
       params do
-        requires :id, type: Integer, desc: 'id each of student in database'
         requires :prefix, type: String, desc: 'prefix name of student'
         requires :first_name, type: String, desc: 'frist name of student'
         requires :last_name, type: String, desc: 'last name of student'
+        optional :iden_number, type: String, desc: 'number card identity'
         optional :address, type: String, desc: 'address'
         optional :district, type: String, desc: 'district'
         optional :parish, type: String, desc: ''
@@ -130,9 +132,11 @@ module Satit::Prototype::TeacherAPI::StudentAPI
 
       desc 'edit adult'
       params do
+        requires :id, type: Integer, desc: 'id each of adult'
         requires :prefix, type: String, desc: 'prefix name of student'
         requires :first_name, type: String, desc: 'frist name of student'
         requires :last_name, type: String, desc: 'last name of student'
+        optional :iden_number, type: String, desc: 'number card identity'
         optional :address, type: String, desc: 'address'
         optional :district, type: String, desc: 'district'
         optional :parish, type: String, desc: ''

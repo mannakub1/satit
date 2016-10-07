@@ -63,7 +63,7 @@ module Teacher::Private::AdultActionGuard
   end
 
   def adult_by_ids?
-    Adult.find_by(id: id)
+    Adult.find_by(id: adult_id)
   end
 
   def adult 

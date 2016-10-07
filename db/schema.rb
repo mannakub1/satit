@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160913102725) do
+ActiveRecord::Schema.define(version: 20161006135311) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20160913102725) do
     t.datetime "updated_at",  null: false
     t.string   "prefix"
     t.string   "nationality"
+    t.string   "iden_number"
   end
 
   create_table "api_keys", force: :cascade do |t|
@@ -54,6 +55,19 @@ ActiveRecord::Schema.define(version: 20160913102725) do
 
   add_index "api_keys", ["access_token"], name: "index_api_keys_on_access_token", unique: true, using: :btree
   add_index "api_keys", ["student_id"], name: "index_api_keys_on_student_id", using: :btree
+
+  create_table "course_lists", force: :cascade do |t|
+    t.integer  "course_id"
+    t.integer  "room_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "courses", force: :cascade do |t|
+    t.string   "year"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "father_lists", force: :cascade do |t|
     t.integer  "adult_id"
@@ -82,11 +96,15 @@ ActiveRecord::Schema.define(version: 20160913102725) do
     t.string   "year"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "teacher_id"
     t.string   "status"
   end
 
-  add_index "rooms", ["teacher_id"], name: "index_rooms_on_teacher_id", using: :btree
+  create_table "student_course_lists", force: :cascade do |t|
+    t.integer  "student_id"
+    t.integer  "course_list_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
 
   create_table "student_rooms", force: :cascade do |t|
     t.integer  "student_id"
@@ -99,19 +117,14 @@ ActiveRecord::Schema.define(version: 20160913102725) do
   add_index "student_rooms", ["student_id"], name: "index_student_rooms_on_student_id", using: :btree
 
   create_table "student_subjects", force: :cascade do |t|
-    t.integer  "student_id"
     t.integer  "subject_id"
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
-    t.float    "grade"
-    t.float    "score1"
-    t.float    "score2"
-    t.float    "score_primary_term"
-    t.float    "score_secondary_term"
+    t.integer  "score1",          default: 0
+    t.integer  "score2",          default: 0
+    t.string   "grade",           default: ""
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.integer  "student_room_id"
   end
-
-  add_index "student_subjects", ["student_id"], name: "index_student_subjects_on_student_id", using: :btree
-  add_index "student_subjects", ["subject_id"], name: "index_student_subjects_on_subject_id", using: :btree
 
   create_table "students", force: :cascade do |t|
     t.string   "first_name"
@@ -142,11 +155,22 @@ ActiveRecord::Schema.define(version: 20160913102725) do
   create_table "subjects", force: :cascade do |t|
     t.string   "name"
     t.integer  "teacher_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.string   "code"
+    t.string   "hour_per_year"
+    t.integer  "course_list_id"
+    t.string   "type"
   end
 
   add_index "subjects", ["teacher_id"], name: "index_subjects_on_teacher_id", using: :btree
+
+  create_table "teacher_courses", force: :cascade do |t|
+    t.integer  "teacher_id"
+    t.integer  "course_list_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
 
   create_table "teacher_rooms", force: :cascade do |t|
     t.integer  "teacher_id"
@@ -158,16 +182,6 @@ ActiveRecord::Schema.define(version: 20160913102725) do
   add_index "teacher_rooms", ["room_id"], name: "index_teacher_rooms_on_room_id", using: :btree
   add_index "teacher_rooms", ["teacher_id"], name: "index_teacher_rooms_on_teacher_id", using: :btree
 
-  create_table "teacher_subjects", force: :cascade do |t|
-    t.integer  "teacher_id"
-    t.integer  "subject_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "teacher_subjects", ["subject_id"], name: "index_teacher_subjects_on_subject_id", using: :btree
-  add_index "teacher_subjects", ["teacher_id"], name: "index_teacher_subjects_on_teacher_id", using: :btree
-
   create_table "teachers", force: :cascade do |t|
     t.string   "first_name"
     t.string   "last_name"
@@ -178,14 +192,9 @@ ActiveRecord::Schema.define(version: 20160913102725) do
     t.string   "status"
   end
 
-  add_foreign_key "rooms", "teachers"
   add_foreign_key "student_rooms", "rooms"
   add_foreign_key "student_rooms", "students"
-  add_foreign_key "student_subjects", "students"
-  add_foreign_key "student_subjects", "subjects"
   add_foreign_key "subjects", "teachers"
   add_foreign_key "teacher_rooms", "rooms"
   add_foreign_key "teacher_rooms", "teachers"
-  add_foreign_key "teacher_subjects", "subjects"
-  add_foreign_key "teacher_subjects", "teachers"
 end

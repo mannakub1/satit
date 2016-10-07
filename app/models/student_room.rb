@@ -12,4 +12,8 @@
 class StudentRoom < ActiveRecord::Base
   belongs_to :student
   belongs_to :room
+
+  has_many :student_subjects
+  has_many :subjects, through: :student_subjects, source: :subject
+
 end

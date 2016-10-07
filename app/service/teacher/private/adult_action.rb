@@ -5,6 +5,7 @@ module Teacher::Private::AdultAction
   end
 
   def process_edit
+    params.delete(:id)
     current_adult.update_attributes(params)
 
     current_adult
@@ -23,7 +24,7 @@ module Teacher::Private::AdultAction
   end
 
   def current_adult
-    Adult.find_by(id: id)
+    Adult.find_by(id: adult_id)
   end
 
 end

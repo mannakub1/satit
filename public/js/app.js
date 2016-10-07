@@ -1,5 +1,5 @@
 var myApp = angular.module('myApp', ['ngRoute']);
-var address = "http://172.27.177.111:3000/"
+var address = "http://172.27.171.192:3000/";
 var path;
 var pathStudent;
 var pathRoom;
@@ -61,11 +61,9 @@ myApp.controller('mainCtrl',  function($scope, $http, fileUpload) {
 	$scope.token = localStorage.getItem('token');
 	$scope.userType = sessionStorage.getItem('user');
 	
-	$scope.student;
-	$scope.roomLevel;
-	$scope.roomName;
+
 	$scope.roomId = -1;
-	$scope.year;
+
 	
 	$scope.showRoom = true;
 	$scope.showFile = false;
@@ -106,6 +104,15 @@ myApp.controller('mainCtrl',  function($scope, $http, fileUpload) {
 	
 	$scope.sendStudentData = function(stdCode, stdPrefix, stdFirstName, stdLastName, stdId, stdIden, stdBlood, stdBirth, stdAddr, stdDistrict, stdParish, stdCity, stdCall, stdZip, stdAbility, stdEthnicity, stdNationality, stdIndex){
 		$scope.student = $scope.studentData[stdIndex];
+		if($scope.student.father.length !== 0){
+			$scope.hasFather = true;
+		}
+		if($scope.student.mother.length !== 0){
+			$scope.hasMother = true;
+		}
+		if($scope.student.guardian.length !== 0){
+			$scope.hasGuardian = true;
+		}
 		console.log($scope.student.father.first_name);
 		$scope.showStudent = false;
 		$scope.showStudentData = true;
@@ -153,16 +160,23 @@ myApp.controller('mainCtrl',  function($scope, $http, fileUpload) {
 		$scope.showEditGuardian = true;
 		$scope.showStudentData = false;
 		
-		if($scope.guardian.prefix === "เด็กชาย"){
-			document.getElementById("male").checked = true;
-		}
-		else if($scope.guardian.prefix === "เด็กหญิง"){
-			document.getElementById("female").checked = true;
-		}
-		else{
-			document.getElementById("male").checked = false;
-			document.getElementById("female").checked = false;
-		}
+		
+	}
+
+	$scope.addFather = function(){
+		$scope.showAddFather = true;
+		$scope.showStudentData = false;
+
+	}
+
+	$scope.addMother = function(){
+		$scope.showAddMother = true;
+		$scope.showStudentData = false;
+	}
+
+	$scope.addGuardian = function(){
+		$scope.showAddGuardian = true;
+		$scope.showStudentData = false;
 	}
 	
 	$scope.backEditStudent = function(){
@@ -245,11 +259,174 @@ myApp.controller('mainCtrl',  function($scope, $http, fileUpload) {
       });
 	}
 	
+	$scope.sendEditFather = function(){
+		path = address + "api/teacher/edit_adult";
+		//console.log(student)
+		$http.post(path, angular.toJson($scope.student.father[0]), {
+            transformRequest: angular.identity,
+            headers: {'token' : $scope.token, 'Content-Type': "application/json"}
+			
+        })
+		.success(function(data, status, headers, config) {
+			console.log(data);
+			$scope.student.father[0] = data;
+			
+			$scope.showEditFather = false;
+			$scope.showStudentData = true;
+		//	$scope.showStudent = true;
+
+      })
+		.error(function(data, status, headers, config) {
+        if(data.error === 'token expired'){
+			window.location.href = 'login.html';;
+		}
+      });
+	}
+
+	$scope.sendEditMother = function(){
+		path = address + "api/teacher/edit_adult";
+		//console.log(student)
+		$http.post(path, angular.toJson($scope.student.mother[0]), {
+            transformRequest: angular.identity,
+            headers: {'token' : $scope.token, 'Content-Type': "application/json"}
+			
+        })
+		.success(function(data, status, headers, config) {
+			console.log(data);
+			$scope.student.mother[0] = data;
+			
+			$scope.showEditMother = false;
+			$scope.showStudentData = true;
+
+      })
+		.error(function(data, status, headers, config) {
+        if(data.error === 'token expired'){
+			window.location.href = 'login.html';
+		}
+      });
+	}
+	
+	$scope.sendEditGuardian = function(){
+		path = address + "api/teacher/edit_adult";
+		consolt.log($scope.student.guardian[0]);
+		//console.log(student)
+		$http.post(path, angular.toJson($scope.student.guardian[0]), {
+            transformRequest: angular.identity,
+            headers: {'token' : $scope.token, 'Content-Type': "application/json"}
+			
+        })
+		.success(function(data, status, headers, config) {
+			console.log(data);
+			$scope.student.guardian[0] = data;
+			
+			$scope.showEditFather = false;
+			$scope.showStudentData = true;
+		//	$scope.showStudent = true;
+
+      })
+		.error(function(data, status, headers, config) {
+        if(data.error === 'token expired'){
+			window.location.href = 'login.html';;
+		}
+      });
+	}
+
+	$scope.sendAddFather = function(){
+		path = address + "api/teacher/add_adult";
+		//console.log(student)
+		$http.post(path, angular.toJson($scope.student.father[0]), {
+			transformRequest: angular.identity,
+			headers: {'token' : $scope.token, 'Content-Type': "application/json"}
+
+		})
+			.success(function(data, status, headers, config) {
+				path = address + "api/teacher/add_father";
+				$http.post(path, angular.toJson({id : $scope.student.id, adult_id : data.id} ), {
+					transformRequest: angular.identity,
+					headers: {'token' : $scope.token, 'Content-Type': "application/json"}
+
+				})
+				$scope.student.father[0] = data;
+				$scope.hasMother = true;
+				$scope.showAddFather = false;
+				$scope.showStudentData = true;
+				//	$scope.showStudent = true;
+
+			})
+			.error(function(data, status, headers, config) {
+				if(data.error === 'token expired'){
+					window.location.href = 'login.html';;
+				}
+			});
+	}
+
+	$scope.sendAddMother = function(){
+		path = address + "api/teacher/add_adult";
+		//console.log(student)
+		$http.post(path, angular.toJson($scope.student.mother[0]), {
+			transformRequest: angular.identity,
+			headers: {'token' : $scope.token, 'Content-Type': "application/json"}
+
+		})
+			.success(function(data, status, headers, config) {
+				path = address + "api/teacher/add_mother";
+				$http.post(path, angular.toJson({id : $scope.student.id, adult_id : data.id} ), {
+					transformRequest: angular.identity,
+					headers: {'token' : $scope.token, 'Content-Type': "application/json"}
+
+				})
+
+				$scope.student.mother[0] = data;
+				$scope.hasMother = true;
+				$scope.showAddMother = false;
+				$scope.showStudentData = true;
+
+			})
+			.error(function(data, status, headers, config) {
+				if(data.error === 'token expired'){
+					window.location.href = 'login.html';;
+				}
+			});
+	}
+
+	$scope.sendAddGuardian = function(){
+		path = address + "api/teacher/add_adult";
+
+		//console.log(student)
+		$http.post(path, angular.toJson($scope.student.guardian[0]), {
+			transformRequest: angular.identity,
+			headers: {'token' : $scope.token, 'Content-Type': "application/json"}
+
+		})
+			.success(function(data, status, headers, config) {
+				path = address + "api/teacher/add_guardian";
+				$http.post(path, angular.toJson({id : $scope.student.id, adult_id : data.id} ), {
+					transformRequest: angular.identity,
+					headers: {'token' : $scope.token, 'Content-Type': "application/json"}
+
+				})
+				$scope.student.guardian[0] = data;
+				$scope.showAddGuardian = false;
+				$scope.hasGuardian = true;
+				$scope.showStudentData = true;
+				//	$scope.showStudent = true;
+
+			})
+			.error(function(data, status, headers, config) {
+				if(data.error === 'token expired'){
+					window.location.href = 'login.html';;
+				}
+			});
+	}
+	
 	$scope.sendRoom = function(roomId, roomName, roomLevel, year){	
 	$scope.roomLevel = roomLevel;
 	$scope.roomName = roomName;
 	$scope.roomId = roomId;
 	$scope.year = parseInt(year) + 543;
+		$scope.hasFather = false;
+		$scope.hasMother = false;
+		$scope.hasGuardian = false;
 	//path ของนักเรียน
 	pathStudent = address + 'api/teacher/students?&room_id=' + roomId;
 	
@@ -268,6 +445,7 @@ myApp.controller('mainCtrl',  function($scope, $http, fileUpload) {
 				$scope.showEditGuardian = false;
 				$scope.showStudentData = false;
 				$scope.showAddStudent = false;
+				$scope.showStdGrade = false;
 				$scope.studentData = data["student_list"];
 		
 
@@ -355,6 +533,58 @@ myApp.controller('mainCtrl',  function($scope, $http, fileUpload) {
 		}
       });
 	}
+
+	$scope.viewGradeStudent = function(stdId){
+		$scope.showStdGrade = true;
+		$scope.showStudent = false;
+		$scope.getGrade(stdId);
+	}
+
+	$scope.sendEditScore = function (stdId) {
+		path = address + "api/teacher/edit_score";
+		//console.log($scope.stdRoom);
+		$scope.sentDataArr = [];
+		var count = 0;
+		var isError = false;
+		for(var i = 0; i < $scope.stdRoom.length; ++i) {
+			for(var j = 0; j < $scope.stdRoom[i].student_subjects.length; ++j) {
+				$scope.sentData = {student_id: "", student_subject_id: "", score1: "", score2: ""};
+				$scope.sentData.student_id = $scope.stdId;
+				$scope.sentData.student_subject_id = $scope.stdRoom[i].student_subjects[j].id;
+				$scope.sentData.score1 = $scope.stdRoom[i].student_subjects[j].score1;
+				$scope.sentData.score2 = $scope.stdRoom[i].student_subjects[j].score2;
+				$scope.sentDataArr[count] = $scope.sentData;
+				console.log($scope.sentData);
+				$http.post(path, angular.toJson($scope.sentData), {
+					transformRequest: angular.identity,
+					headers: {'token': $scope.token, 'Content-Type': "application/json"}
+
+				})
+					.success(function (data, status, headers, config) {
+						console.log(data);
+						isError = true;
+					})
+					.error(function (data, status, headers, config) {
+						console.log("error");
+						if (data.error === 'token expired') {
+							window.location.href = 'login.html';
+						}
+						else{
+							isError = true;
+						}
+					});
+				count++;
+			}
+		}
+		if(!isError){
+			alert("Sucess!");
+			refresh();
+		}
+		else{
+			alert("Error! Please Try Again");
+		}
+		//console.log($scope.sentDataArr);
+	}
 	
 	$scope.logout = function(){
 		path = address + "api/logout";
@@ -377,21 +607,57 @@ myApp.controller('mainCtrl',  function($scope, $http, fileUpload) {
 			document.getElementById("stdData").strike();	
 		}
 	}
-	
+
+	$scope.getGrade = function (stdId) {
+		path = address + "api/student/courses?student_id=" + stdId;
+		$scope.stdId = stdId;
+		$http.get(path , {headers: {'token': $scope.token} })
+			.success(function(data){
+				console.log(data);
+				$scope.stdRoom = data.student_room;
+				console.log($scope.stdRoom);
+			})
+			.error(function(data, status, headers, config) {
+				if(data.error === 'token expired'){
+					window.location.href = 'login.html';;
+				}
+			});
+	}
+
+	$scope.changeYearPlus = function(year){
+		return parseInt(year) + 543;
+	}
+
+	$scope.changeYearMinus = function(year){
+		return parseInt(year) - 543;
+	}
+
+
 });
 
 
 
 
 myApp.controller('stdCtrl',  function($scope, $http, fileUpload) {
-	$scope.student = JSON.parse(sessionStorage.getItem('stdData'));
+
+		$scope.student = JSON.parse(sessionStorage.getItem('stdData'));
+
 	console.log(localStorage.getItem('token'));
 	$scope.token = localStorage.getItem('token');
 	
 	$scope.student;
 	$scope.year;
-	
-	$scope.showRoom = true;
+
+	if($scope.student.father.length !== 0){
+		$scope.hasFather = true;
+	}
+	if($scope.student.mother.length !== 0){
+		$scope.hasMother = true;
+	}
+	if($scope.student.guardian.length !== 0){
+		$scope.hasGuardian = true;
+	}
+
 	$scope.showFile = false;
 	$scope.showStudent = false;
 	$scope.showEditStudent = false;
@@ -405,6 +671,34 @@ myApp.controller('stdCtrl',  function($scope, $http, fileUpload) {
 
 	$scope.showStudentDataBtn = function(){
 		$scope.showStudentData = true;
+		$scope.showStudentGrade = false;
+		$scope.showFile = false;
+	$scope.showStudent = false;
+	$scope.showEditStudent = false;
+	$scope.showEditFather = false;
+	$scope.showEditMother = false;
+	$scope.showEditGuardian = false;
+	$scope.showAddStudent = false;
+		$scope.showAddFather = false;
+		$scope.showAddGuardian = false;
+		$scope.showAddMother = false;
+	}
+
+	$scope.showStudentGradeBtn = function(){
+		$scope.showStdGrade = true;
+		$scope.showStudentData = false;
+		$scope.showFile = false;
+		$scope.showStudent = false;
+		$scope.showEditStudent = false;
+		$scope.showEditFather = false;
+		$scope.showEditMother = false;
+		$scope.showEditGuardian = false;
+		$scope.showAddStudent = false;
+		$scope.showAddFather = false;
+		$scope.showAddGuardian = false;
+		$scope.showAddMother = false;
+		$scope.getGrade();
+
 	}
 	
 	$scope.editStudent = function(){
@@ -440,16 +734,23 @@ myApp.controller('stdCtrl',  function($scope, $http, fileUpload) {
 		$scope.showEditGuardian = true;
 		$scope.showStudentData = false;
 		
-		if($scope.guardian.prefix === "เด็กชาย"){
-			document.getElementById("male").checked = true;
-		}
-		else if($scope.guardian.prefix === "เด็กหญิง"){
-			document.getElementById("female").checked = true;
-		}
-		else{
-			document.getElementById("male").checked = false;
-			document.getElementById("female").checked = false;
-		}
+		
+	}
+
+	$scope.addFather = function(){
+		$scope.showAddFather = true;
+		$scope.showStudentData = false;
+
+	}
+
+	$scope.addMother = function(){
+		$scope.showAddMother = true;
+		$scope.showStudentData = false;
+	}
+
+	$scope.addGuardian = function(){
+		$scope.showAddGuardian = true;
+		$scope.showStudentData = false;
 	}
 	
 	$scope.backEditStudent = function(){
@@ -491,9 +792,184 @@ myApp.controller('stdCtrl',  function($scope, $http, fileUpload) {
       });
 	}
 	
+	$scope.sendEditFather = function(){
+		path = address + "api/teacher/edit_adult";
+		//console.log(student)
+		$http.post(path, angular.toJson($scope.student.father[0]), {
+            transformRequest: angular.identity,
+            headers: {'token' : $scope.token, 'Content-Type': "application/json"}
+			
+        })
+		.success(function(data, status, headers, config) {
+			console.log(data);
+			$scope.student.father[0] = data;
+			sessionStorage.setItem('stdData', JSON.stringify($scope.student));
+			$scope.showEditFather = false;
+			$scope.showStudentData = true;
+		//	$scope.showStudent = true;
+
+      })
+		.error(function(data, status, headers, config) {
+        if(data.error === 'token expired'){
+			window.location.href = 'login.html';;
+		}
+      });
+	}
+
+	$scope.sendEditMother = function(){
+		path = address + "api/teacher/edit_adult";
+		//console.log(student)
+		$http.post(path, angular.toJson($scope.student.mother[0]), {
+            transformRequest: angular.identity,
+            headers: {'token' : $scope.token, 'Content-Type': "application/json"}
+			
+        })
+		.success(function(data, status, headers, config) {
+			console.log(data);
+			$scope.student.mother[0] = data;
+			sessionStorage.setItem('stdData', JSON.stringify($scope.student));
+			$scope.showEditMother = false;
+			$scope.showStudentData = true;
+
+      })
+		.error(function(data, status, headers, config) {
+        if(data.error === 'token expired'){
+			window.location.href = 'login.html';;
+		}
+      });
+	}
 	
+	$scope.sendEditGuardian = function(){
+		path = address + "api/teacher/edit_adult";
+	
+		console.log($scope.student.guardian[0]);
+		$http.post(path, angular.toJson($scope.student.guardian[0]), {
+            transformRequest: angular.identity,
+            headers: {'token' : $scope.token, 'Content-Type': "application/json"}
+			
+        })
+		.success(function(data, status, headers, config) {
+			console.log(data);
 
+			$scope.student.guardian[0] = data;
+			sessionStorage.setItem('stdData', JSON.stringify($scope.student));
+			$scope.showEditGuardian = false;
+			$scope.showStudentData = true;
+		//	$scope.showStudent = true;
 
+      })
+		.error(function(data, status, headers, config) {
+        if(data.error === 'token expired'){
+			window.location.href = 'login.html';;
+		}
+      });
+	}
+
+	$scope.sendAddFather = function(){
+		path = address + "api/teacher/add_adult";
+		//console.log(student)
+		$http.post(path, angular.toJson($scope.student.father[0]), {
+			transformRequest: angular.identity,
+			headers: {'token' : $scope.token, 'Content-Type': "application/json"}
+
+		})
+			.success(function(data, status, headers, config) {
+				path = address + "api/teacher/add_father";
+				$http.post(path, angular.toJson({id : $scope.student.id, adult_id : data.id} ), {
+					transformRequest: angular.identity,
+					headers: {'token' : $scope.token, 'Content-Type': "application/json"}
+
+				})
+				$scope.student.father[0] = data;
+				sessionStorage.setItem('stdData', JSON.stringify($scope.student));
+				$scope.hasFather = true;
+				$scope.showAddFather = false;
+				$scope.showStudentData = true;
+				//	$scope.showStudent = true;
+
+			})
+			.error(function(data, status, headers, config) {
+				if(data.error === 'token expired'){
+					window.location.href = 'login.html';;
+				}
+			});
+	}
+
+	$scope.sendAddMother = function(){
+		path = address + "api/teacher/add_adult";
+		//console.log(student)
+		$http.post(path, angular.toJson($scope.student.mother[0]), {
+			transformRequest: angular.identity,
+			headers: {'token' : $scope.token, 'Content-Type': "application/json"}
+
+		})
+			.success(function(data, status, headers, config) {
+				path = address + "api/teacher/add_mother";
+				$http.post(path, angular.toJson({id : $scope.student.id, adult_id : data.id} ), {
+					transformRequest: angular.identity,
+					headers: {'token' : $scope.token, 'Content-Type': "application/json"}
+
+				})
+
+				$scope.student.mother[0] = data;
+				sessionStorage.setItem('stdData', JSON.stringify($scope.student));
+				$scope.hasMother = true;
+				$scope.showAddMother = false;
+				$scope.showStudentData = true;
+
+			})
+			.error(function(data, status, headers, config) {
+				if(data.error === 'token expired'){
+					window.location.href = 'login.html';;
+				}
+			});
+	}
+
+	$scope.sendAddGuardian = function(){
+		path = address + "api/teacher/add_adult";
+
+		//console.log(student)
+		$http.post(path, angular.toJson($scope.student.guardian[0]), {
+			transformRequest: angular.identity,
+			headers: {'token' : $scope.token, 'Content-Type': "application/json"}
+
+		})
+			.success(function(data, status, headers, config) {
+				path = address + "api/teacher/add_guardian";
+				$http.post(path, angular.toJson({id : $scope.student.id, adult_id : data.id} ), {
+					transformRequest: angular.identity,
+					headers: {'token' : $scope.token, 'Content-Type': "application/json"}
+
+				})
+				$scope.student.guardian[0] = data;
+				sessionStorage.setItem('stdData', JSON.stringify($scope.student));
+				$scope.showAddGuardian = false;
+				$scope.hasGuardian = true;
+				$scope.showStudentData = true;
+				//	$scope.showStudent = true;
+
+			})
+			.error(function(data, status, headers, config) {
+				if(data.error === 'token expired'){
+					window.location.href = 'login.html';;
+				}
+			});
+	}
+
+	$scope.getGrade = function () {
+		path = address + "api/student/courses?student_id=" + $scope.student.id;
+		$http.get(path , {headers: {'token': $scope.token} })
+			.success(function(data){
+				console.log(data);
+				$scope.stdRoom = data.student_room;
+				console.log($scope.stdRoom);
+			})
+			.error(function(data, status, headers, config) {
+				if(data.error === 'token expired'){
+					window.location.href = 'login.html';;
+				}
+			});
+	}
 	
 	$scope.refresh = function(){
     $http.get(pathStudent)
@@ -507,7 +983,13 @@ myApp.controller('stdCtrl',  function($scope, $http, fileUpload) {
 			});
 }
 	
-	
+	$scope.changeYearPlus = function(year){
+		return parseInt(year) + 543;
+	}
+
+	$scope.changeYearMinus = function(year){
+		return parseInt(year) - 543;
+	}
 	
 	
 	

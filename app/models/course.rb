@@ -1,15 +1,16 @@
 # == Schema Information
 #
-# Table name: teacher_subjects
+# Table name: courses
 #
 #  id         :integer          not null, primary key
-#  teacher_id :integer
-#  subject_id :integer
+#  year       :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
 
-class TeacherSubject < ActiveRecord::Base
-  belongs_to :teacher
-  belongs_to :subject
+class Course < ActiveRecord::Base
+  
+  has_many :course_lists
+  has_many :rooms, through: :course_lists, source: :room
+
 end

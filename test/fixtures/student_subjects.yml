@@ -2,26 +2,27 @@
 #
 # Table name: student_subjects
 #
-#  id                   :integer          not null, primary key
-#  student_id           :integer
-#  subject_id           :integer
-#  created_at           :datetime         not null
-#  updated_at           :datetime         not null
-#  grade                :float
-#  score1               :float
-#  score2               :float
-#  score_primary_term   :float
-#  score_secondary_term :float
+#  id         :integer          not null, primary key
+#  subject_id :integer
+#  score1     :float
+#  score2     :float
+#  grade      :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-# This model initially had no columns defined.  If you add columns to the
-# model remove the '{}' from the fixture names and add the columns immediately
-# below each fixture, per the syntax in the comments below
-#
-one: {}
-# column: value
-#
-two: {}
-#  column: value
+one:
+  student_course_list_id: 1
+  subject_id: 1
+  score1: 1.5
+  score2: 1.5
+  grade: MyString
+
+two:
+  student_course_list_id: 1
+  subject_id: 1
+  score1: 1.5
+  score2: 1.5
+  grade: MyString

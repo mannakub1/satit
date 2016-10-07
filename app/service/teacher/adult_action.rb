@@ -1,6 +1,6 @@
 class Teacher::AdultAction
 
-  attr_reader :params, :student, :father_id, :mother_id, :guardian_id, :first_name, :last_name, :id
+  attr_reader :params, :student, :father_id, :mother_id, :guardian_id, :first_name, :last_name, :id, :adult_id
 
   include Teacher::Private::AdultActionGuard
   include Teacher::Private::AdultAction
@@ -11,7 +11,7 @@ class Teacher::AdultAction
 
   def edit(params)
     @params = params
-    @id = params[:id]
+    @adult_id = params[:id]
 
     can_edit, messege = can_edit?
     fail messege unless can_edit

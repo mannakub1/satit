@@ -2,28 +2,30 @@
 #
 # Table name: students
 #
-#  id            :integer          not null, primary key
-#  first_name    :string
-#  last_name     :string
-#  gpa           :float
-#  created_at    :datetime         not null
-#  updated_at    :datetime         not null
-#  iden_number   :string
-#  code_number   :string
-#  room_state    :boolean
-#  blood         :string
-#  birthdate     :datetime
-#  address       :string
-#  call          :string
-#  zip_code      :string
-#  ability       :string
-#  nationality   :string
-#  ethnicity     :string
-#  district      :string
-#  parish        :string
-#  city          :string
-#  prefix        :string
-#  delete_status :string
+#  id              :integer          not null, primary key
+#  first_name      :string
+#  last_name       :string
+#  gpa             :float
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#  iden_number     :string
+#  code_number     :string
+#  room_state      :boolean
+#  blood           :string
+#  birthdate       :datetime
+#  address         :string
+#  call            :string
+#  zip_code        :string
+#  ability         :string
+#  nationality     :string
+#  ethnicity       :string
+#  district        :string
+#  parish          :string
+#  city            :string
+#  prefix          :string
+#  delete_status   :string
+#  username        :string
+#  password_digest :string
 #
 
 class Student < ActiveRecord::Base
@@ -31,9 +33,6 @@ class Student < ActiveRecord::Base
   
   has_many :student_rooms, dependent: :destroy
   has_many :rooms, through: :student_rooms, source: :room
-
-  has_many :student_subjects, dependent: :destroy
-  has_many :subjects, through: :student_subjects, source: :subject
 
   has_many :father_lists, dependent: :destroy
   has_many :father, through: :father_lists, source: :adult
@@ -44,6 +43,10 @@ class Student < ActiveRecord::Base
   has_many :guardians, dependent: :destroy
   has_many :guardian, through: :guardians, source: :adult
 
+  has_many :student_course_lists, dependent: :destroy
+  has_many :courses, through: :student_course_lists, source: :course_list
+
+  
   require 'csv' 
 
   def add_student(file)

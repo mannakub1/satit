@@ -13,5 +13,6 @@ module Satit::TeacherAPI::Student
     expose :district
     expose :parish
     expose :city
+    expose :iden_number
   end
 end

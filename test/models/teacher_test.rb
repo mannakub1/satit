@@ -2,11 +2,14 @@
 #
 # Table name: teachers
 #
-#  id         :integer          not null, primary key
-#  first_name :string
-#  last_name  :string
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id              :integer          not null, primary key
+#  first_name      :string
+#  last_name       :string
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#  username        :string
+#  password_digest :string
+#  status          :string
 #
 
 require 'test_helper'
