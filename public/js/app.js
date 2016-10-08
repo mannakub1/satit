@@ -183,6 +183,10 @@ myApp.controller('mainCtrl',  function($scope, $http, fileUpload) {
 		$scope.showStudentData = false;
 		$scope.showStudent = true;
 	}
+
+	$scope.backToStdTable = function () {
+		$scope.sendRoom($scope.roomId, $scope.roomName, $scope.roomLevel, (parseInt($scope.year) - 543));
+	}
 	
 	$scope.sendAddStudent = function(){
 		path = address + "api/teacher/add_student";
@@ -578,7 +582,7 @@ myApp.controller('mainCtrl',  function($scope, $http, fileUpload) {
 		}
 		if(!isError){
 			alert("Sucess!");
-			refresh();
+			$scope.sendRoom($scope.roomId, $scope.roomName, $scope.roomLevel, (parseInt($scope.year) - 543));
 		}
 		else{
 			alert("Error! Please Try Again");
@@ -670,6 +674,7 @@ myApp.controller('stdCtrl',  function($scope, $http, fileUpload) {
 
 
 	$scope.showStudentDataBtn = function(){
+		$scope.student = JSON.parse(sessionStorage.getItem('stdData'));
 		$scope.showStudentData = true;
 		$scope.showStudentGrade = false;
 		$scope.showFile = false;
@@ -682,6 +687,7 @@ myApp.controller('stdCtrl',  function($scope, $http, fileUpload) {
 		$scope.showAddFather = false;
 		$scope.showAddGuardian = false;
 		$scope.showAddMother = false;
+		$scope.showStdGrade = false;
 	}
 
 	$scope.showStudentGradeBtn = function(){
@@ -776,8 +782,9 @@ myApp.controller('stdCtrl',  function($scope, $http, fileUpload) {
 		.success(function(data, status, headers, config) {
 			console.log(data);
 			$scope.student = data.student;
+			sessionStorage.setItem('stdData', $scope.student);
 			console.log(data.student);
-			$http.get(pathStudent, {headers: {'token': $scope.token} }).then(function(response) {	
+			$http.get(pathStudent, {headers: {'token': $scope.token} }).then(function(response) {
 				$scope.studentData = response.data["student_list"];			
 		});
 			$scope.showEditStudent = false;

@@ -33,7 +33,7 @@
                             <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">Admin</strong>
                              </span> <span class="text-muted text-xs block">JAMZ Dev <b class="caret"></b></span> </span> </a>
                             <ul class="dropdown-menu animated fadeInRight m-t-xs">
-                                <li><a href="Profile.html">Profile</a></li>
+                                <li><a href="#">Profile</a></li>
                                 <li><a href="login.html">Logout</a></li>
                             </ul>
                     </div>
@@ -1502,36 +1502,39 @@
 							<!--</div>-->
 						<!--</center>-->
 						<center>
-							<div class="table-responsive" ng-show="showStdGrade">
-							<table class="table table-bordered" style="width:58%">
+							<div ng-show="showStdGrade">
+								<div class="table-responsive" ng-show="showStdGrade" ng-repeat="y in stdRoom">
+									<table class="table table-bordered" style="width:58%">
 
-								<thead>
-								<tr style="background-color: greenyellow;">
-									<th style="background-color: #ffa31a; color:black;" colspan="6"><center>ชั้น {{stdRoom[0].room.level}} ห้อง {{stdRoom[0].room.name}} ปี {{changeYearPlus(stdRoom[0].room.year)}}</center></th>
-								</tr>
-								<tr style="background-color: grey;">
-									<th style="background-color: #ffd11a; color:black; width:8%"><center>รหัสวิชา</center></th>
-									<th style="background-color: #ffd11a; color:black; width:30%"><center>ชื่อรายวิชา</center></th>
-									<th style="background-color: #ffd11a; color:black; width:5%"><center>คะแนนเทอม1</center></th>
-									<th style="background-color: #ffd11a; color:black; width:5%"><center>คะแนนเทอม2</center></th>
-									<th style="background-color: #ffd11a; color:black; width:5%"><center>เกรด</center></th>
+										<thead>
+										<tr style="background-color: greenyellow;">
+											<th style="background-color: #ffa31a; color:black;" colspan="6"><center>ชั้น {{y.room.level}} ห้อง {{y.room.name}} ปี {{changeYearPlus(y.room.year)}}</center></th>
+										</tr>
+										<tr style="background-color: grey;">
+											<th style="background-color: #ffd11a; color:black; width:8%"><center>รหัสวิชา</center></th>
+											<th style="background-color: #ffd11a; color:black; width:77%"><center>ชื่อรายวิชา</center></th>
+											<th style="background-color: #ffd11a; color:black; max-width:5%"><center>คะแนนเทอม1</center></th>
+											<th style="background-color: #ffd11a; color:black; width:5%"><center>คะแนนเทอม2</center></th>
+											<th style="background-color: #ffd11a; color:black; width:5%"><center>เกรด</center></th>
 
-								</tr>
-								</thead>
-								<tbody>
-								<tr ng-repeat="x in stdRoom[0].student_subjects" >
-									<td style="background-color: #ffe680; color:black;"><center>{{x.subject.code}}</center></td>
-									<td style="background-color: #ffe680; color:black;"><center>{{x.subject.name}}</center></td>
+										</tr>
+										</thead>
+										<tbody>
+										<tr ng-repeat="x in y.student_subjects" >
+											<td style="background-color: #ffe680; color:black; width:8%"><center>{{x.subject.code}}</center></td>
+											<td style="background-color: #ffe680; color:black; width:77%"><center>{{x.subject.name}}</center></td>
 
-									<td style="background-color: #ffe680; color:black;"><center>{{x.score1}}</center></td>
-									<td style="background-color: #ffe680; color:black"><center>{{x.score2}}</center></td>
-									<td style="background-color: #ffe680; color:black"><center>{{x.grade}}</center></td>
+											<td style="background-color: #ffe680; color:black; max-width:5%"><center>{{x.score1}}
+											</center></td>
+											<td style="background-color: #ffe680; color:black; width:5%"><center>{{x.score2}}</center></td>
+											<td style="background-color: #ffe680; color:black; width:5%"><center>{{x.grade}}</center></td>
 
-								</tr>
+										</tr>
 
-								</tbody>
-							</table>
+										</tbody>
+									</table>
 						</div>
+								</div>
 						</center>
             </div>
         </div>
