@@ -682,6 +682,7 @@ myApp.controller('stdCtrl',  function($scope, $http, fileUpload) {
 		$scope.showAddFather = false;
 		$scope.showAddGuardian = false;
 		$scope.showAddMother = false;
+		$scope.showStdGrade = false;
 	}
 
 	$scope.showStudentGradeBtn = function(){
