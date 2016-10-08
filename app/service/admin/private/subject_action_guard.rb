@@ -9,7 +9,7 @@ module Admin::Private::SubjectActionGuard
   end
 
   def already_subject?
-    !course_list.subjects.find_by(name: name, code: code, hour_per_year: hour_per_year)
+    !course_list.subjects.find_by(name: name, code: code, hour_per_year: hour_per_year, type: type)
   end
 
 end

@@ -11,7 +11,6 @@
 
 class CourseList < ActiveRecord::Base
   belongs_to :course
-  belongs_to :room
 
   # has_many :course_mains
   # has_many :subject_mains, through: :course_mains, source: :subject
