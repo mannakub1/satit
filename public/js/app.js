@@ -3,8 +3,6 @@ var address = "http://172.27.171.192:3000/";
 var path;
 var pathStudent;
 var pathRoom;
-var hasStudent;
-
 
 myApp.directive('fileModel', ['$parse', function ($parse) {
     return {
@@ -25,7 +23,7 @@ myApp.directive('fileModel', ['$parse', function ($parse) {
 myApp.service('fileUpload', ['$http', function ($http) {
     this.uploadFileToUrl = function(roomId,file, uploadUrl){
 		//path ที่จะส่งเลขห้องรอบ 2
-		var roomPath = address + "api_controller/student/add_room"
+		var roomPath = address + "api_controller/student/add_room";
 		var room = JSON.stringify({room_id:roomId});
         var fd = new FormData();
         fd.append('csv', file);
@@ -238,8 +236,15 @@ myApp.controller('mainCtrl',  function($scope, $http, fileUpload) {
 		else{
 			$scope.student.prefix = "เด็กหญิง";
 		}
-		//console.log(student)
-		$http.post(path, angular.toJson($scope.student), {
+
+		$scope.sentStudent = {id : $scope.student.id, prefix : $scope.student.prefix, code_number : $scope.student.code_number,
+			first_name : $scope.student.first_name, last_name : $scope.student.last_name, iden_number : $scope.student.iden_number,
+			blood : $scope.student.blood, birthdate : $scope.student.birthdate, address : $scope.student.address,
+			district : $scope.student.district, parish : $scope.student.parish, city : $scope.student.city, call : $scope.student.call
+			, zip_code : $scope.student.zip_code, ability : $scope.student.ability, ethnicity : $scope.student.ethnicity,
+			nationality : $scope.student.nationality};
+		console.log($scope.sentStudent);
+		$http.post(path, angular.toJson($scope.sentStudent), {
             transformRequest: angular.identity,
             headers: {'token' : $scope.token, 'Content-Type': "application/json"}
 			
@@ -648,9 +653,6 @@ myApp.controller('stdCtrl',  function($scope, $http, fileUpload) {
 
 	console.log(localStorage.getItem('token'));
 	$scope.token = localStorage.getItem('token');
-	
-	$scope.student;
-	$scope.year;
 
 	if($scope.student.father.length !== 0){
 		$scope.hasFather = true;
@@ -673,17 +675,17 @@ myApp.controller('stdCtrl',  function($scope, $http, fileUpload) {
 	//console.log($scope.userType);
 
 
-	$scope.showStudentDataBtn = function(){
+	$scope.showStudentDataBtn = function() {
 		$scope.student = JSON.parse(sessionStorage.getItem('stdData'));
 		$scope.showStudentData = true;
 		$scope.showStudentGrade = false;
 		$scope.showFile = false;
-	$scope.showStudent = false;
-	$scope.showEditStudent = false;
-	$scope.showEditFather = false;
-	$scope.showEditMother = false;
-	$scope.showEditGuardian = false;
-	$scope.showAddStudent = false;
+		$scope.showStudent = false;
+		$scope.showEditStudent = false;
+		$scope.showEditFather = false;
+		$scope.showEditMother = false;
+		$scope.showEditGuardian = false;
+		$scope.showAddStudent = false;
 		$scope.showAddFather = false;
 		$scope.showAddGuardian = false;
 		$scope.showAddMother = false;
