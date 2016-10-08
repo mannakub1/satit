@@ -72,7 +72,6 @@ class Teacher::StudentAction
   end
 
   def edit(params)
-    @id = params[:id]
     @params = params
     # can_edit, message = can_edit?
     # fail message unless can_edit
