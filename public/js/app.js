@@ -184,6 +184,9 @@ myApp.controller('mainCtrl',  function($scope, $http, fileUpload) {
 
 	$scope.backToStdTable = function () {
 		$scope.sendRoom($scope.roomId, $scope.roomName, $scope.roomLevel, (parseInt($scope.year) - 543));
+		$scope.showStdGrade = false;
+		$scope.showStudent = true;
+
 	}
 	
 	$scope.sendAddStudent = function(){
@@ -563,7 +566,7 @@ myApp.controller('mainCtrl',  function($scope, $http, fileUpload) {
 				$scope.sentData.score1 = $scope.stdRoom[i].student_subjects[j].score1;
 				$scope.sentData.score2 = $scope.stdRoom[i].student_subjects[j].score2;
 				$scope.sentDataArr[count] = $scope.sentData;
-				console.log($scope.sentData);
+				//console.log($scope.sentData);
 				$http.post(path, angular.toJson($scope.sentData), {
 					transformRequest: angular.identity,
 					headers: {'token': $scope.token, 'Content-Type': "application/json"}
@@ -571,7 +574,8 @@ myApp.controller('mainCtrl',  function($scope, $http, fileUpload) {
 				})
 					.success(function (data, status, headers, config) {
 						console.log(data);
-						isError = true;
+						$scope.stdRoom = data.stdRoom;
+
 					})
 					.error(function (data, status, headers, config) {
 						console.log("error");
@@ -587,7 +591,7 @@ myApp.controller('mainCtrl',  function($scope, $http, fileUpload) {
 		}
 		if(!isError){
 			alert("Sucess!");
-			$scope.sendRoom($scope.roomId, $scope.roomName, $scope.roomLevel, (parseInt($scope.year) - 543));
+
 		}
 		else{
 			alert("Error! Please Try Again");
