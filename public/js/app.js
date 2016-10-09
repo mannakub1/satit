@@ -102,6 +102,7 @@ myApp.controller('mainCtrl',  function($scope, $http, fileUpload) {
 	
 	$scope.sendStudentData = function(stdCode, stdPrefix, stdFirstName, stdLastName, stdId, stdIden, stdBlood, stdBirth, stdAddr, stdDistrict, stdParish, stdCity, stdCall, stdZip, stdAbility, stdEthnicity, stdNationality, stdIndex){
 		$scope.student = $scope.studentData[stdIndex];
+		$scope.stdIndex = stdIndex;
 		if($scope.student.father.length !== 0){
 			$scope.hasFather = true;
 		}
@@ -183,12 +184,24 @@ myApp.controller('mainCtrl',  function($scope, $http, fileUpload) {
 	}
 
 	$scope.backToStdTable = function () {
-		$scope.sendRoom($scope.roomId, $scope.roomName, $scope.roomLevel, (parseInt($scope.year) - 543));
 		$scope.showStdGrade = false;
-		$scope.showStudent = true;
+		$scope.sendRoom($scope.roomId, $scope.roomName, $scope.roomLevel, (parseInt($scope.year) - 543));
 
+		$scope.showStudent = true;
 	}
-	
+
+	$scope.backToStdData = function () {
+		$scope.student = $scope.studentData[$scope.stdIndex];
+		$scope.showStudentData = true;
+		$scope.showEditMother = false;
+		$scope.showEditGuardian = false;
+		$scope.showEditFather = false;
+		$scope.showEditStudent = false;
+		$scope.showAddFather = false;
+		$scope.showAddGuardian = false;
+		$scope.showAddMother = false;
+	}
+
 	$scope.sendAddStudent = function(){
 		path = address + "api/teacher/add_student";
 		if(document.getElementById("male").checked){
@@ -591,7 +604,6 @@ myApp.controller('mainCtrl',  function($scope, $http, fileUpload) {
 		}
 		if(!isError){
 			alert("Sucess!");
-
 		}
 		else{
 			alert("Error! Please Try Again");
