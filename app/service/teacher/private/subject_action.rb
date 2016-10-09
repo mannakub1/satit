@@ -13,7 +13,7 @@ module Teacher::Private::SubjectAction
       student_subject.update_attributes(grade: '')
     end
 
-    student.student_rooms
+    student.student_rooms.order(:created_at)
   end
 
   def grade
@@ -28,6 +28,6 @@ module Teacher::Private::SubjectAction
   end
 
   def result_score
-    (student_subject.score1 + student_subject.score2) / 2 
+    ( student_subject.score1 + student_subject.score2 ) / 2 
   end
 end

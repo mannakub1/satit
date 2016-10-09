@@ -6,6 +6,14 @@ module Teacher::Private::TeacherAction
     current_teacher
   end
 
+  def process_add
+    Teacher.create(params)
+  end
+
+  def process_edit
+    current_teacher.update_attribute(params)
+  end
+
   def valid_password?
     !compare_password?
   end
