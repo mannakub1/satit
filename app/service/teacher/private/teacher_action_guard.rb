@@ -9,6 +9,26 @@ module Teacher::Private::TeacherActionGuard
     [true, nil]
   end
 
+  def can_add?
+    return [false, 'this teacher is already'] unless already_teacher?
+
+    [true, nil]
+  end
+
+  def can_edit?
+    return [false, 'have not teacher is already'] unless not_already_teacher?
+
+    [true, nil]
+  end
+
+  def not_already_teacher?
+    !already_teacher?
+  end
+
+  def already_teacher?
+    Teacher.find_by(first_name: params[:first_name], last_name: params[:last_name], username: params[:username])
+  end
+
   def teacher?
     Teacher.find_by(username: username)
   end

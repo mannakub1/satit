@@ -1,6 +1,6 @@
 class Teacher::TeacherAction
 
-  attr_reader :username, :password_digest
+  attr_reader :username, :password_digest, :params
 
 
   include Teacher::Private::TeacherActionGuard
@@ -19,6 +19,25 @@ class Teacher::TeacherAction
     fail message unless can_authenication
 
     process_authenication
+  end
+
+  def add(params)
+    @params = params
+
+    can_add, message = can_add?
+    fail message unless can_add
+
+    process_add
+  end
+
+  def edit(params)
+    @username = params[:username]
+    @params = params
+
+    can_edit, message = can_edit?
+    fail messgae unless can_edit
+
+    process_edit
   end
 
 end

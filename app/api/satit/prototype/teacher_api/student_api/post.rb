@@ -8,6 +8,7 @@ module Satit::Prototype::TeacherAPI::StudentAPI
       end
 
       helpers do 
+        
         def edit
           Teacher::StudentAction.new(student: current_student).edit(params)
           current_student
@@ -53,7 +54,7 @@ module Satit::Prototype::TeacherAPI::StudentAPI
         end
 
         def current_student
-          Student.find_by(id: params[:id])
+          Student.find(params[:id])
         end
 
         def current_adult
@@ -83,6 +84,8 @@ module Satit::Prototype::TeacherAPI::StudentAPI
         optional :call, type: String, desc: 'number cell phone'
         optional :zip_code, type: String, desc: 'zip code'
         optional :ability, type: String, desc: 'student can it'
+        optional :ethnicity, type: String, desc: 'enthicity'
+        optional :nationality, type: String, desc: 'nation'
       end 
       post '/edit_profile' do
         present :student, edit\
@@ -104,6 +107,8 @@ module Satit::Prototype::TeacherAPI::StudentAPI
         optional :call, type: String, desc: 'number cell phone'
         optional :zip_code, type: String, desc: 'zip code'
         optional :ability, type: String, desc: 'student can it'
+        optional :ethnicity, type: String, desc: 'enthicity'
+        optional :nationality, type: String, desc: 'nation'
       end 
       post '/add_student' do
         present :student, add_student\

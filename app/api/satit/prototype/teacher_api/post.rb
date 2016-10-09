@@ -42,6 +42,31 @@ module Satit::Prototype::TeacherAPI
         , with: Satit::StudentAPI::StudentRoomListEntity
       end
 
+      desc 'add teacher'
+      params do
+        requires :first_name, type: String, desc: 'first name of teacher'
+        requires :last_name, type: String, desc: 'last name of teacher'
+        requires :username, type: String, desc: 'usernaem of teacher for login'
+        requires :password, type: String, desc: 'password of teacher for login'
+        requires :status, type: String, desc: 'type for permisstion'
+      end
+      post :add do
+        present Teacher::TeacherAction.new.add(params)\
+        , with: Satit::TeacherAPI::TeacherActionEntity
+      end
+
+      desc 'edit profile'
+      params do
+        requires :first_name, type: String, desc: 'first name of teacher'
+        requires :last_name, type: String, desc: 'last name of teacher'
+        requires :username, type: String, desc: 'usernaem of teacher for login'
+        requires :password, type: String, desc: 'password of teacher for login'
+        requires :status, type: String, desc: 'type for permisstion'
+      end
+      post :edit_profile do
+        present Teacher::TeacherAction.new.edit(params)\
+        , with: Satit::TeacherAPI::TeacherActionEntity
+      end
     end
 
     resource '/teacher/student' do
@@ -59,6 +84,7 @@ module Satit::Prototype::TeacherAPI
         , with: Satit::TeacherAPI::Student::StudentListEntity
       end
     
+
     end
   end
 
