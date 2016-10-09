@@ -604,6 +604,7 @@ myApp.controller('mainCtrl',  function($scope, $http, fileUpload) {
 		}
 		if(!isError){
 			alert("Sucess!");
+			$scope.viewGradeStudent(stdId);
 		}
 		else{
 			alert("Error! Please Try Again");
