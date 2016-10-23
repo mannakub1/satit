@@ -1,5 +1,5 @@
 var myApp = angular.module('myApp', ['ngRoute']);
-var address = "http://172.27.171.192:3000/";
+var address = "http://172.27.171.134:3000/";
 var path;
 var pathStudent;
 var pathRoom;
@@ -650,6 +650,15 @@ myApp.controller('mainCtrl',  function($scope, $http, fileUpload) {
 			});
 	}
 
+	$scope.chkScore = function (score) {
+		if(score === 0){
+			return "-";
+		}
+		else{
+			return score;
+		}
+	}
+
 	$scope.changeYearPlus = function(year){
 		return parseInt(year) + 543;
 	}
@@ -1113,7 +1122,37 @@ myApp.controller('loginCtrl',  function($scope, $http) {
 	}
 });
 
+myApp.controller('addTeacherCtrl',  function($scope, $http) {
+	var token = localStorage.getItem("token");
+	$scope.sendAddTeacher = function() {
+		if($scope.teacher.password === $scope.teacher2.password){
+			var path = address + "api/teacher/add";
+			$scope.teacher.status = document.getElementById("status").value;
+			console.log($scope.teacher);
+			$http.post(path, angular.toJson($scope.teacher), {
+				transformRequest: angular.identity,
+				headers: {'token' : token, 'Content-Type': "application/json"}
 
+			})
+				.success(function(data, status, headers, config) {
+				console.log(data);
+
+				})
+				.error(function(data, status, headers, config) {
+				console.log(data);
+					if(data.error === "this teacher is already"){
+						alert("this teacher is already has");
+					}
+					else if(data.error === "this username is already"){
+						alert("this username is already has");
+					}
+				});
+		}
+		else if($scope.teacher.password !== $scope.teacher2.password){
+			alert("Your password doesn't match");
+		}
+	}
+});
 
 function printDiv(divName) {
      var printContents = document.getElementById(divName).innerHTML;
