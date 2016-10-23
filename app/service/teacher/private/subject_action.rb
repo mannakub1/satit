@@ -2,16 +2,21 @@ module Teacher::Private::SubjectAction
 
   private 
 
+  def process_add
+    course_list.subjects.add(params)
+  end
+
   def process_edit
     student_subject.update_attributes(score1: score1, score2: score2)
 
     if(student_subject.score2 > 0) 
-      student_subject.update_attributes(grade: grade)
+      student_subject.update_attributes(grade: grade, score_result: (score1 + score2) /2)
     end
 
     if(student_subject.score2 == 0) 
       student_subject.update_attributes(grade: '')
     end
+
 
     student.student_rooms.order(:created_at)
   end

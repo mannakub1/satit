@@ -16,6 +16,7 @@ module Satit::Prototype::TeacherAPI
         def current_student_subject
           StudentSubject.find(params[:student_subject_id])
         end
+        
       end
 
       desc 'login'

@@ -4,6 +4,7 @@ module Satit::TeacherAPI
     expose :id
     expose :first_name
     expose :last_name
+    expose :username
     expose :status
   end
 end

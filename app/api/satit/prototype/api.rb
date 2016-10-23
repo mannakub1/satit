@@ -10,6 +10,7 @@ module Satit::Prototype
     mount RoomAPI::Get
     mount RoomAPI::Post
     mount AdminAPI::Post
+    mount SubjectAPI::Post
   end
 
 end
