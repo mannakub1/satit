@@ -1,5 +1,5 @@
 var myApp = angular.module('myApp', ['ngRoute']);
-var address = "http://172.27.171.192:3000/";
+var address = "http://172.27.171.134:3000/";
 var path;
 var pathStudent;
 var pathRoom;
