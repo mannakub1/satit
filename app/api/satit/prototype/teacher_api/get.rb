@@ -27,6 +27,8 @@ module Satit::Prototype::TeacherAPI
 
       end
 
+      
+
       desc 'return student list'
       params do 
         requires :room_id, type: Integer, desc: 'room_id'

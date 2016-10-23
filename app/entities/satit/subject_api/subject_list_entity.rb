@@ -5,6 +5,7 @@ module Satit::SubjectAPI
     expose :name
     expose :type
     expose :hour_per_year
+    expose :credit
   end
 
 end

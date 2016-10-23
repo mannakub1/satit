@@ -6,6 +6,7 @@ module Satit::StudentAPI
     , with: Satit::SubjectAPI::SubjectListEntity
     expose :score1
     expose :score2
+    expose :score_result
     expose :grade
   end
 end
