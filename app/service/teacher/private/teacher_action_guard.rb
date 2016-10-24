@@ -22,8 +22,22 @@ module Teacher::Private::TeacherActionGuard
     [true, nil]
   end
 
+  def can_delete?
+    return [false, 'have not teacher is already'] unless not_already_teacher_by_ids?
+
+    [true, nil]
+  end
+
+  def not_already_teacher_by_ids?
+    !already_teacher_by_ids?
+  end
+
   def not_already_teacher?
     !already_teacher?
+  end
+
+  def already_teacher_by_ids?
+    !Teacher.present.find_by(id: teacher_id)
   end
 
   def already_teacher?

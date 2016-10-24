@@ -1,6 +1,6 @@
 class Teacher::TeacherAction
 
-  attr_reader :username, :password_digest, :params
+  attr_reader :username, :password_digest, :params, :teacher_id
 
 
   include Teacher::Private::TeacherActionGuard
@@ -8,6 +8,7 @@ class Teacher::TeacherAction
 
   def initialize(option = {})
     @params ||= option[:params]
+    @teacher_id ||= option[:id]
   end
 
 
@@ -38,6 +39,14 @@ class Teacher::TeacherAction
     fail messgae unless can_edit
 
     process_edit
+  end
+
+  def delete
+    can_delete, message = can_delete?
+    fail message unless can_delete
+
+    puts '5555'
+    process_delete
   end
 
 end

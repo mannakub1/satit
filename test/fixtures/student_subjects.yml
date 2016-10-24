@@ -2,13 +2,15 @@
 #
 # Table name: student_subjects
 #
-#  id         :integer          not null, primary key
-#  subject_id :integer
-#  score1     :float
-#  score2     :float
-#  grade      :string
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id              :integer          not null, primary key
+#  subject_id      :integer
+#  score1          :integer          default(0)
+#  score2          :integer          default(0)
+#  grade           :string           default("")
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#  student_room_id :integer
+#  score_result    :float
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

@@ -10,6 +10,7 @@
 #  username        :string
 #  password_digest :string
 #  status          :string
+#  resign          :boolean
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

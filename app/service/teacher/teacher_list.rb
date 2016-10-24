@@ -5,7 +5,7 @@ class Teacher::TeacherList
   end
 
   def teacher
-    Teacher.all
+    Teacher.present
   end
 
 end

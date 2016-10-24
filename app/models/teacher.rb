@@ -10,6 +10,7 @@
 #  username        :string
 #  password_digest :string
 #  status          :string
+#  resign          :boolean
 #
 
 class Teacher < ActiveRecord::Base
@@ -20,4 +21,6 @@ class Teacher < ActiveRecord::Base
   
   has_many :teacher_course, dependent: :destroy
   has_many :subject, through: :teacher_course, source: :subject
+
+  scope :present, -> { where(resign: nil)}
 end

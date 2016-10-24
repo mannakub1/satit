@@ -56,6 +56,14 @@ module Satit::Prototype::TeacherAPI
         , with: Satit::TeacherAPI::TeacherActionEntity
       end
 
+      desc 'delete teacher'
+      params do
+        requires :id, type: Integer, desc: 'id of teacher'
+      end
+      post :delete do
+        present Teacher::TeacherAction.new(id: params[:id]).delete
+      end
+
       desc 'edit profile'
       params do
         requires :first_name, type: String, desc: 'first name of teacher'
@@ -69,6 +77,7 @@ module Satit::Prototype::TeacherAPI
         , with: Satit::TeacherAPI::TeacherActionEntity
       end
     end
+
 
     resource '/teacher/student' do
       before do

@@ -1,8 +1,9 @@
 var myApp = angular.module('myApp', ['ngRoute']);
-var address = "http://172.27.171.134:3000/";
+var address = "http://localhost:3000/";
 var path;
 var pathStudent;
 var pathRoom;
+
 
 myApp.directive('fileModel', ['$parse', function ($parse) {
     return {
@@ -1136,6 +1137,7 @@ myApp.controller('addTeacherCtrl',  function($scope, $http) {
 			})
 				.success(function(data, status, headers, config) {
 				console.log(data);
+					window.location.herf = 'Dashboard_Teacher.html'
 
 				})
 				.error(function(data, status, headers, config) {

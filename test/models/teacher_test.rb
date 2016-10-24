@@ -10,6 +10,7 @@
 #  username        :string
 #  password_digest :string
 #  status          :string
+#  resign          :boolean
 #
 
 require 'test_helper'

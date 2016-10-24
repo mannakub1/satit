@@ -11,7 +11,11 @@ module Teacher::Private::TeacherAction
   end
 
   def process_edit
-    current_teacher.update_attribute(params)
+    current_teacher.update_attributes(params)
+  end
+
+  def process_delete
+    current_teacher_ids.update_attributes(resign: false)
   end
 
   def valid_password?
@@ -22,8 +26,12 @@ module Teacher::Private::TeacherAction
     current_teacher.authenticate(password_digest)
   end
 
+  def current_teacher_ids
+    Teacher.present.find_by(id: teacher_id)
+  end
+
   def current_teacher
-    Teacher.find_by(username: username)
+    Teacher.present.find_by(username: username)
   end
 
 

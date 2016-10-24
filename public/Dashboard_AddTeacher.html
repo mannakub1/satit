@@ -35,7 +35,7 @@
                     </div>
                 </li>
                 <li>
-                    <a href="Dashboard.html"><i class="fa fa-backward"></i> <span class="nav-label">กลับ</span></a>
+                    <a href="Dashboard_Teacher.html"><i class="fa fa-backward"></i> <span class="nav-label">กลับ</span></a>
 
                 </li>
 
@@ -63,85 +63,99 @@
             </nav>
         </div>
 
-        <div class="wrapper wrapper-content ">
-            <!-- <div class="wrapper wrapper-content animated fadeInRight"> -->
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="ibox float-e-margins">
+        <center>
+            <div class="wrapper wrapper-content ">
+                <!-- <div class="wrapper wrapper-content animated fadeInRight"> -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="ibox float-e-margins">
 
-                        <div class="ibox-content" >
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <div >
-                                        <form>
-                                            <div class="row">
-                                                <div class="col-lg-2">
-                                                    ชื่อ-สกุล :
+                            <div class="ibox-content" style="width: 75%" >
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div >
+                                            <form>
+                                                <div class="row">
+                                                    <div class="col-lg-2">
+                                                        ชื่อ-สกุล :
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <input type="text" name="firstName" ng-model="teacher.first_name" required=""> -
+                                                        <input type="text" name="lastName" ng-model="teacher.last_name" required="">
+                                                    </div>
+                                                    <br><br>
                                                 </div>
-                                                <div class="col-lg-6">
-                                                    <input type="text" name="firstName" ng-model="teacher.first_name" required=""> -
-                                                    <input type="text" name="lastName" ng-model="teacher.last_name" required="">
+                                                <div class="row">
+                                                    <div class="col-lg-2">
+                                                        ตำแหน่ง :
+                                                    </div>
+                                                    <div class="col-lg-3">
+                                                        <select id="status" name="Status">
+                                                        <option value="teacher">อาจารย์ทั่วไป</option>
+                                                        <option value="ceo">ผู้บริหาร</option>
+                                                        <option value="admin">แอดมิน</option>
+                                                    </select>
+                                                    </div>
+                                                    <br>
+                                                    <br>
                                                 </div>
-                                                <br><br>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-lg-2">
-                                                    ตำแหน่ง :
+                                                <div class="row">
+                                                    <div class="col-lg-2">
+                                                        username :
+                                                    </div>
+                                                    <div class="col-lg-3">
+                                                        <input type="text" name="userName" ng-model="teacher.username" required=""><br>
+                                                    </div>
+                                                    <br>
+                                                    <br>
                                                 </div>
-                                                <div class="col-lg-3">
-                                                    <select id="status" name="Status">
-                                                    <option value="teacher">อาจารย์ทั่วไป</option>
-                                                    <option value="ceo">ผู้บริหาร</option>
-                                                    <option value="admin">แอดมิน</option>
-                                                </select>
+                                                <div class="row">
+                                                    <div class="col-lg-2">
+                                                        password :
+                                                    </div>
+                                                    <div class="col-lg-3">
+                                                        <input type="password"  name="lastName" ng-model="teacher.password" required=""><br>
+                                                    </div>
+                                                    <br>
+                                                    <br>
                                                 </div>
-                                                <br>
-                                                <br>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-lg-2">
-                                                    username :
+                                                <div class="row">
+                                                    <div class="col-lg-2">
+                                                        Re-password :
+                                                    </div>
+                                                    <div class="col-lg-3">
+                                                        <input type="password"  name="lastName" ng-model="teacher2.password" required=""><br>
+                                                    </div>
+                                                    <br>
+                                                    <br>
                                                 </div>
-                                                <div class="col-lg-3">
-                                                    <input type="text" name="userName" ng-model="teacher.username" required=""><br>
+                                                <left>
+                                                <div class="row">
+                                                    <div class="col-lg-2">
+
+                                                    </div>
+                                                    <div class="col-lg-1">
+                                                        <button class="btn btn-info m-r-sm" ng-click="sendAddTeacher()">เพิ่ม</button>
+                                                    </div>
+                                                    <!-- <div class="col-lg-1">
+                                                        <a href="Dashboard_Teacher.html"><button class="btn btn-danger m-r-sm">ยกเลิก</button> </a>
+                                                    </div> -->
                                                 </div>
-                                                <br>
-                                                <br>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-lg-2">
-                                                    password :
-                                                </div>
-                                                <div class="col-lg-3">
-                                                    <input type="password"  name="lastName" ng-model="teacher.password" required=""><br>
-                                                </div>
-                                                <br>
-                                                <br>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-lg-2">
-                                                    Re-password :
-                                                </div>
-                                                <div class="col-lg-3">
-                                                    <input type="password"  name="lastName" ng-model="teacher2.password" required=""><br>
-                                                </div>
-                                                <br>
-                                                <br>
-                                            </div>
-                                            <button ng-click="sendAddTeacher()">เพิ่ม</button>
-                                        </form>
+                                                
+                                                </left>
+                                            </form>
 
 
+                                        </div>
                                     </div>
+
                                 </div>
-
                             </div>
-                        </div>
 
+                        </div>
                     </div>
                 </div>
-            </div>
-
+            </center>
             <div class="footer">
                 <div class="pull-right">
                     ....... <strong>.......</strong> .......

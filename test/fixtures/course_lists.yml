@@ -4,9 +4,9 @@
 #
 #  id         :integer          not null, primary key
 #  course_id  :integer
-#  room_id    :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  room_level :string
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

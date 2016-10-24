@@ -10,6 +10,8 @@
 #  code           :string
 #  hour_per_year  :string
 #  course_list_id :integer
+#  type           :string
+#  credit         :float
 #
 
 require 'test_helper'
