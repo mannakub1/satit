@@ -11,7 +11,13 @@ module Teacher::Private::TeacherActionGuard
 
   def can_add?
     return [false, 'this username is already'] unless already_username?
-    return [false, 'this teacher is already'] unless already_teacher?
+    # return [false, 'this teacher is already'] unless already_teacher?
+
+    [true, nil]
+  end
+
+  def can_edit_password?
+    return [false, 'have not teacher is already'] unless not_already_teacher_by_ids?
 
     [true, nil]
   end

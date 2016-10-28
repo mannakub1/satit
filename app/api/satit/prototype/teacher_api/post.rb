@@ -16,7 +16,12 @@ module Satit::Prototype::TeacherAPI
         def current_student_subject
           StudentSubject.find(params[:student_subject_id])
         end
-        
+          
+        def new_params
+          params.delete(:id)
+
+          params
+        end
       end
 
       desc 'login'
@@ -76,21 +81,30 @@ module Satit::Prototype::TeacherAPI
         present Teacher::TeacherAction.new.edit(params)\
         , with: Satit::TeacherAPI::TeacherActionEntity
       end
-    end
 
+      desc 'teacher edit password'
+      params do
+        requires :id, type: Integer, desc: 'id of teacher'
+        requires :password, type: String, desc: 'password of teacher for login'
+      end
+      post :edit_password do
+        present Teacher::TeacherAction.new(teacher_id: params[:id]).edit_password(new_params)\
+        , with: Satit::TeacherAPI::TeacherActionEntity
+      end
+    end
 
     resource '/teacher/student' do
       before do
        return error!('token expired', 500) unless check_token?
       end
 
-      desc 'login'
+      desc 'login student'
       params do 
         requires :username, type: String, desc: 'usrename teacher for login'
         requires :password, type: String, desc: 'password teacher for login'
       end
       post :login do
-        present :student, Teacher::StudentAction.new(params: params).authenication\
+        present :student, Student::StudentAction.new(params: params).authenication\
         , with: Satit::TeacherAPI::Student::StudentListEntity
       end
     

@@ -14,6 +14,12 @@ module Teacher::Private::TeacherAction
     current_teacher.update_attributes(params)
   end
 
+  def process_edit_password
+    current_teacher_ids.update_attributes(params)
+
+    Teacher.present
+  end
+
   def process_delete
     current_teacher_ids.update_attributes(resign: false)
   end

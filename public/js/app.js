@@ -1,5 +1,6 @@
 var myApp = angular.module('myApp', ['ngRoute']);
 var address = "http://localhost:3000/";
+sessionStorage.setItem('address', address);
 var path;
 var pathStudent;
 var pathRoom;
@@ -1137,7 +1138,7 @@ myApp.controller('addTeacherCtrl',  function($scope, $http) {
 			})
 				.success(function(data, status, headers, config) {
 				console.log(data);
-					window.location.herf = 'Dashboard_Teacher.html'
+					window.location.href = 'Dashboard_Teacher.html'
 
 				})
 				.error(function(data, status, headers, config) {

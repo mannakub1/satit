@@ -1,5 +1,5 @@
 var myApp = angular.module('myApp', ['ngRoute']);
-var address = "http://localhost:3000/";
+var address = sessionStorage.getItem('address');
 
 
 myApp.controller('teachers', function($scope, $http)  {
@@ -22,6 +22,22 @@ myApp.controller('teachers', function($scope, $http)  {
 			return 'ผู้บิรหาร'
 		}
 	}
+	
+	$scope.logout = function(){
+		path = address + "api/logout";
+		$http.post(path, angular.toJson($scope.student), {
+            transformRequest: angular.identity,
+            headers: {'token' : $scope.token, 'Content-Type': "application/json"}
+			
+        })
+		.success(function(data, status, headers, config) {
+			console.log(data);
+			window.location.href = 'login.html';
+			
+      })
+		.error(function(data, status, headers, config) {
+      });
+	}
 
 	$scope.deleteTeacher = function(data) {
 		var teacher_action_delete_path = address + 'api/teacher/delete'
@@ -34,6 +50,36 @@ myApp.controller('teachers', function($scope, $http)  {
 		.success(function(data, status, header, config){
 			window.location.href = 'Dashboard_Teacher.html'
 		})
+	}
+
+	$scope.editPasswordPage = function(data) {
+		sessionStorage.setItem('teacher_id', data)
+		window.location.href = 're_password_teacher.html'
+	}
+
+	$scope.sendDataEditPassword = function() {
+		var newPassword = $scope.teacher.newPassword
+		var rePassword = $scope.teacher.rePassword
+		var teacher_id = sessionStorage.getItem('teacher_id')
+		var teacher_edit_password_path = address + 'api/teacher/edit_password'
+
+		if( newPassword === rePassword ){
+			var params = { id: teacher_id, password: newPassword }
+
+			$http.post(teacher_edit_password_path, angular.toJson(params), {
+			transformRequest: angular.identity,
+			headers: {'token': $scope.token, 'Content-Type': "application/json"}
+			})
+			.success(function(data, status, header, config){
+				window.location.href = 'Dashboard_Teacher.html'
+			})
+			.error(function(data, status, headers, config) {
+        		if(data.error === 'token expired'){
+					window.location.href = 'login.html';;
+				}
+			});
+		}
+		
 	}
 
 });

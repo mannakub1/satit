@@ -8,7 +8,7 @@ class Teacher::TeacherAction
 
   def initialize(option = {})
     @params ||= option[:params]
-    @teacher_id ||= option[:id]
+    @teacher_id ||= option[:teacher_id]
   end
 
 
@@ -41,11 +41,19 @@ class Teacher::TeacherAction
     process_edit
   end
 
+  def edit_password(params)
+    @params = params
+
+    can_edit_password, message = can_edit_password?
+    fail message unless can_edit_password?
+
+    process_edit_password
+  end
+
   def delete
     can_delete, message = can_delete?
     fail message unless can_delete
 
-    puts '5555'
     process_delete
   end
 

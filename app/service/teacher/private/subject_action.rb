@@ -9,11 +9,11 @@ module Teacher::Private::SubjectAction
   def process_edit
     student_subject.update_attributes(score1: score1, score2: score2)
 
-    if(student_subject.score2 > 0) 
-      student_subject.update_attributes(grade: grade, score_result: (score1 + score2) /2)
+    if student_subject.score2.to_i > 0.0
+      student_subject.update_attributes(grade: grade, score_result: (score1 + score2) / 2.0)
     end
 
-    if(student_subject.score2 == 0) 
+    if student_subject.score2.to_i == 0.0
       student_subject.update_attributes(grade: '')
     end
 
@@ -33,6 +33,6 @@ module Teacher::Private::SubjectAction
   end
 
   def result_score
-    ( student_subject.score1 + student_subject.score2 ) / 2 
+    (student_subject.score1.to_i + student_subject.score2.to_i) / 2.0 
   end
 end
