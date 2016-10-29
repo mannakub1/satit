@@ -1007,6 +1007,17 @@ myApp.controller('stdCtrl',  function($scope, $http, fileUpload) {
 				}
 			});
 	}
+
+
+	$scope.Grade =  [];
+	$scope.collapseGrade = function () {
+		var e = document.getElementById("selectGradeLevel").value;
+		for(var i = 0; i < $scope.Grade.length; ++i){
+			$scope.Grade[i] = false;
+		}
+		$scope.Grade[e] = true;
+
+	}
 	
 	$scope.refresh = function(){
     $http.get(pathStudent)
