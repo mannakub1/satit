@@ -19,5 +19,8 @@ class Room < ActiveRecord::Base
   has_many :student_rooms, dependent: :destroy
   has_many :students, through: :student_rooms, source: :student
 
+  has_many :course_rooms
+  has_many :course_lists, through: :course_rooms, source: :course_list
+
   scope :present, -> { where(year: DateTime.now.year) }
 end

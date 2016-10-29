@@ -1,23 +1,20 @@
 # == Schema Information
 #
-# Table name: subjects
+# Table name: course_rooms
 #
 #  id             :integer          not null, primary key
-#  name           :string
-#  teacher_id     :integer
+#  course_list_id :integer
+#  room_id        :integer
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
-#  code           :string
-#  hour_per_year  :string
-#  course_list_id :integer
-#  credit         :float
-#  status         :string
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
+  course_list_id: 1
+  room_id: 1
 
 two:
-  name: MyString
+  course_list_id: 1
+  room_id: 1

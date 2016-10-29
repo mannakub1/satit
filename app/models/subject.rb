@@ -10,15 +10,15 @@
 #  code           :string
 #  hour_per_year  :string
 #  course_list_id :integer
-#  type           :string
 #  credit         :float
+#  status         :string
 #
 
 class Subject < ActiveRecord::Base
   belongs_to :course_list
 
   has_many :student_subjects
-  has_many :student_rooms , through: :student_subjects, source: :student_room
+  has_many :student_rooms, through: :student_subjects, source: :student_room
 
   # has_many :course_mains
   # has_many :subject_mains, through: :course_mains, source: :course_list

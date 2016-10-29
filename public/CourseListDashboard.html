@@ -35,7 +35,7 @@
                     </div>
                 </li>
                 <li>
-                    <a href="../Dashboard.html"><i class="fa fa-backward"></i> <span class="nav-label">กลับ</span></a>
+                    <a href="../CourseDashboard.html"><i class="fa fa-backward"></i> <span class="nav-label">กลับ</span></a>
 
                 </li>
 
@@ -74,8 +74,8 @@
                             <div class="row">
                               <!-- body chang -->
                                 <div class="col-lg-12">
-                                    <div ng-repeat='y in courses'>
-                                        <a ng-click="getCourseList(y.id)"><p>หลักสูตรปี  พ.ศ. {{y.year}}</p></a>
+                                    <div ng-repeat='y in course_lists'>
+                                        <a ng-click="getSubject(y.id)"><p>{{y.room_level}}</p></a>
                                     </div>
                                 </div>
 

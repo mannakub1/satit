@@ -20,7 +20,9 @@ class CourseList < ActiveRecord::Base
  
   # has_many :activities
   # has_many :subject_activities, through: :activities, source: :subject
-  
+  has_many :course_rooms
+  has_many :rooms, through: :course_rooms, source: :room
+
   has_many :techer_courses
   has_many :subjects
 
