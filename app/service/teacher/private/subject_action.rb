@@ -6,6 +6,18 @@ module Teacher::Private::SubjectAction
     course_list.subjects.add(params)
   end
 
+  def process_add_teacher
+    TeacherCourse.create(subject_id: subject_id, teacher_id: params)
+  end
+
+  def process_delete_teacher
+    current_teacher_course.destroy
+  end
+
+  def current_teacher_course
+    TeacherCourse.find_by(subject_id: subject_id, teacher_id: params)
+  end
+
   def process_edit
     student_subject.update_attributes(score1: score1, score2: score2)
 

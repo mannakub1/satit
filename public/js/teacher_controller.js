@@ -4,7 +4,7 @@ var address = sessionStorage.getItem('address');
 
 myApp.controller('teachers', function($scope, $http)  {
 	$scope.token = localStorage.getItem('token');
-	teacher_list_path = address + 'api/teacher/all'
+	teacher_list_path = address + 'api/teacher/present'
 
 	$http.get( teacher_list_path , {headers: {'token': $scope.token}})
 	.success(function(data, status, header, config) {
@@ -19,7 +19,7 @@ myApp.controller('teachers', function($scope, $http)  {
 		}else if( data === 'teacher') {
 			return 'ครู'
 		}else if( data === 'ceo') {
-			return 'ผู้บิรหาร'
+			return 'ผู้บริหาร'
 		}
 	}
 	

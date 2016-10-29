@@ -4,7 +4,6 @@
 #
 #  id             :integer          not null, primary key
 #  name           :string
-#  teacher_id     :integer
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
 #  code           :string
@@ -19,6 +18,9 @@ class Subject < ActiveRecord::Base
 
   has_many :student_subjects
   has_many :student_rooms, through: :student_subjects, source: :student_room
+
+  has_many :teacher_courses
+  has_many :teachers, through: :teacher_courses, source: :teacher
 
   # has_many :course_mains
   # has_many :subject_mains, through: :course_mains, source: :course_list

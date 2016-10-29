@@ -51,8 +51,14 @@ module Satit::Prototype::TeacherAPI
       end
 
       desc 'return teacher all'
-      get '/all' do
-        present :teacher, Teacher::TeacherList.new.teacher \
+      get '/present' do
+        present :teacher, Teacher::TeacherList.new.present \
+        , with: Satit::TeacherAPI::TeacherActionEntity 
+      end
+
+      desc 'return teacher all'
+      get '/teacher_spec' do
+        present :teacher, Teacher::TeacherList.new.teacher_spec \
         , with: Satit::TeacherAPI::TeacherActionEntity 
       end
     end

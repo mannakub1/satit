@@ -66,7 +66,7 @@ module Satit::Prototype::TeacherAPI
         requires :id, type: Integer, desc: 'id of teacher'
       end
       post :delete do
-        present Teacher::TeacherAction.new(id: params[:id]).delete
+        present Teacher::TeacherAction.new(teacher_id: params[:id]).delete
       end
 
       desc 'edit profile'

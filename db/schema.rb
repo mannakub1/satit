@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161028151124) do
+ActiveRecord::Schema.define(version: 20161029053337) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -162,7 +162,6 @@ ActiveRecord::Schema.define(version: 20161028151124) do
 
   create_table "subjects", force: :cascade do |t|
     t.string   "name"
-    t.integer  "teacher_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
     t.string   "code"
@@ -172,13 +171,11 @@ ActiveRecord::Schema.define(version: 20161028151124) do
     t.string   "status"
   end
 
-  add_index "subjects", ["teacher_id"], name: "index_subjects_on_teacher_id", using: :btree
-
   create_table "teacher_courses", force: :cascade do |t|
     t.integer  "teacher_id"
-    t.integer  "course_list_id"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "subject_id"
   end
 
   create_table "teacher_rooms", force: :cascade do |t|
@@ -204,7 +201,6 @@ ActiveRecord::Schema.define(version: 20161028151124) do
 
   add_foreign_key "student_rooms", "rooms"
   add_foreign_key "student_rooms", "students"
-  add_foreign_key "subjects", "teachers"
   add_foreign_key "teacher_rooms", "rooms"
   add_foreign_key "teacher_rooms", "teachers"
 end

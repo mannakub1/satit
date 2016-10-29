@@ -34,6 +34,9 @@
                         IN+
                     </div>
                 </li>
+                 <li>
+                    <a href="Dashboard.html"><i class="fa fa-backward"></i> <span class="nav-label">หน้าแรก</span></a>
+                </li>
                 <li>
                     <a href="../CourseListDashboard.html"><i class="fa fa-backward"></i> <span class="nav-label">กลับ</span></a>
 
@@ -98,7 +101,7 @@
                                                             <td>{{y.hour_per_year}}</td>
                                                             <td>{{y.status}}</td>
                                                             <td>
-                                                            <button ng-click="" class="btn btn-info btn-sm" align = "right" >ดูรายละเอียด</button>
+                                                            <button ng-click="getSubjectList(y.id)" class="btn btn-info btn-sm" align = "right" >ดูรายละเอียด</button>
                                                                 <!-- <button 
                                                                 ng-click="editPasswordPage(y.id)" class="btn btn-default m-r-sm" align = "right" >เปลี่ยนพาสเวิด</button>
                                                                  <button class="btn btn-danger btn-sm" ng-click="deleteTeacher(y.id)"><i class="fa fa-trash-o"></i> ลบ</button> -->
@@ -107,6 +110,31 @@
                                                     </tbody>
                                                 </table>
                                                 <h1 align="left">รายชื่อห้องที่เรียน</h1>
+                                                <div class="table-responsive">
+                                                    <table class="table table-hover" >
+                                                        <thead>
+                                                            <tr>
+                                                                <th>#</th>
+                                                                <th>ชื่อห้อง</th>
+                                                                <th>ชั้น</th>
+                                                                <th>ปีการศึกษา</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr ng-repeat="y in rooms">
+                                                                <td>{{$index + 1}}</td>
+                                                                <td>{{y.name}}</td>
+                                                                <td>{{y.level}}</td>
+                                                                <td>{{y.year}}</td>
+                                                                <td>
+                                                                <button ng-click="" class="btn btn-info btn-sm" align = "right" >ดูรายละเอียด</button>
+                                                                    <!-- <button 
+                                                                    ng-click="editPasswordPage(y.id)" class="btn btn-default m-r-sm" align = "right" >เปลี่ยนพาสเวิด</button>
+                                                                     <button class="btn btn-danger btn-sm" ng-click="deleteTeacher(y.id)"><i class="fa fa-trash-o"></i> ลบ</button> -->
+                                                                <td/>   
+                                                            </tr>
+                                                        </tbody>
+                                                     </table>
                                             </div>
                                 </div>
 
