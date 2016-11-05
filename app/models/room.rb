@@ -22,5 +22,7 @@ class Room < ActiveRecord::Base
   has_many :course_rooms
   has_many :course_lists, through: :course_rooms, source: :course_list
 
+  belongs_to :year_room
+
   scope :present, -> { where(year: DateTime.now.year) }
 end

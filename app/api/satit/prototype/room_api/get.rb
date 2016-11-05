@@ -26,7 +26,20 @@ module Satit::Prototype::RoomAPI
         , with: Satit::RoomAPI::RoomListEntity
       end
 
-      
+      desc 'return year_room all'
+      get :year_room_all do
+        present :year_rooms, Room::RoomList.new.year_room_all\
+        , with: Satit::RoomAPI::YearRoomListEntity
+      end
+
+      desc 'room list by year_room id'
+      params do
+        requires :id, type: Integer, desc: 'id of year_room'
+      end
+      get :room_ids do
+        present :rooms, Room::RoomList.new(year_room_id: params[:id]).rooms_by_year_room_ids\
+        , with: Satit::RoomAPI::RoomListEntity
+      end
     end
 
   end
