@@ -1,5 +1,5 @@
 var myApp = angular.module('myApp', ['ngRoute']);
-var address = "http://172.27.171.247:3000/";
+var address = "http://172.27.170.117:8000/";
 sessionStorage.setItem('address', address);
 var path;
 var pathStudent;
@@ -74,6 +74,7 @@ myApp.controller('mainCtrl',  function($scope, $http, fileUpload) {
 	$scope.showEditGuardian = false;
 	$scope.showStudentData = false;
 	$scope.showAddStudent = false;
+	$scope.showHome = true;
 	//console.log($scope.userType);
 	if($scope.userType === "teacher"){
 
@@ -451,6 +452,7 @@ myApp.controller('mainCtrl',  function($scope, $http, fileUpload) {
 	$scope.roomName = roomName;
 	$scope.roomId = roomId;
 	$scope.year = parseInt(year) + 543;
+		$scope.showHome = false;
 		$scope.hasFather = false;
 		$scope.hasMother = false;
 		$scope.hasGuardian = false;
@@ -652,6 +654,18 @@ myApp.controller('mainCtrl',  function($scope, $http, fileUpload) {
 			});
 	}
 
+	$scope.Grade =  [];
+	$scope.collapseGrade = function () {
+		var e = document.getElementById("selectGradeLevel").value;
+		for(var i = 0; i < $scope.Grade.length; ++i){
+			$scope.Grade[i] = false;
+		}
+		$scope.Grade[e] = true;
+
+			$scope.showStdGradeBtn = true;
+
+	}
+
 	$scope.chkScore = function (score) {
 		if(score === 0){
 			return "-";
@@ -676,7 +690,7 @@ myApp.controller('mainCtrl',  function($scope, $http, fileUpload) {
 
 
 myApp.controller('stdCtrl',  function($scope, $http, fileUpload) {
-
+	$scope.showHome = true;
 		$scope.student = JSON.parse(sessionStorage.getItem('stdData'));
 
 	console.log(localStorage.getItem('token'));
@@ -718,6 +732,7 @@ myApp.controller('stdCtrl',  function($scope, $http, fileUpload) {
 		$scope.showAddGuardian = false;
 		$scope.showAddMother = false;
 		$scope.showStdGrade = false;
+		$scope.showHome = false;
 	}
 
 	$scope.showStudentGradeBtn = function(){
@@ -734,6 +749,7 @@ myApp.controller('stdCtrl',  function($scope, $http, fileUpload) {
 		$scope.showAddGuardian = false;
 		$scope.showAddMother = false;
 		$scope.getGrade();
+		$scope.showHome = false;
 
 	}
 	
