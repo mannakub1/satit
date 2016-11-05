@@ -1,5 +1,5 @@
 var myApp = angular.module('myApp', ['ngRoute']);
-var address = "http://172.27.170.117:8000/";
+var address = "http://172.27.170.117:3000/";
 sessionStorage.setItem('address', address);
 var path;
 var pathStudent;
