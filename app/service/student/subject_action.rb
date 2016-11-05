@@ -1,18 +1,15 @@
 class Student::SubjectAction
 
-  attr_reader :student, :subject, :student_course_list
+  attr_reader :course_list_id, :room_id
 
   include Student::Private::SubjectActionGuard
+  include Student::Private::SubjectAction
 
   def initialize(option = {})
-    @subject = option[:subject]
-    @student_course_list = option[:student_course_list]
+    @course_list_id = option[:course_list_id]
   end
 
   def add
-    can_add ,message = can_add?
-    fail message unless can_add
-
     process_add
   end
 

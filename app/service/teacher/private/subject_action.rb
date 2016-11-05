@@ -3,7 +3,16 @@ module Teacher::Private::SubjectAction
   private 
 
   def process_add
-    course_list.subjects.add(params)
+    subject = current_course_list.subjects.create(params)
+    Student::SubjectAction.new(course_list_id: course_list_id).add
+    subject
+  end
+
+  def process_add_room
+    current_course_list.course_rooms.create(room_id: room_id)
+    Student::SubjectAction.new(course_list_id: course_list_id).add
+    current_course_list
+
   end
 
   def process_add_teacher
@@ -31,6 +40,10 @@ module Teacher::Private::SubjectAction
 
 
     student.student_rooms.order(:created_at)
+  end
+
+  def current_course_list
+    CourseList.find_by(id: course_list_id)
   end
 
   def grade

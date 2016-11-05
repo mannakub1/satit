@@ -1,5 +1,5 @@
 var myApp = angular.module('myApp', ['ngRoute']);
-var address = "http://172.27.171.247:3000/";
+var address = "http://localhost:3000/";
 sessionStorage.setItem('address', address);
 var path;
 var pathStudent;
@@ -94,6 +94,7 @@ myApp.controller('mainCtrl',  function($scope, $http, fileUpload) {
 		$scope.roomData = data.room_list;
 	})
 	.error(function(data, status, headers, config) {
+		console.log('error')
         if(data.error === 'token expired'){
 			window.location.href = 'login.html';;
 		}

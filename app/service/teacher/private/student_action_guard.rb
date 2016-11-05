@@ -2,6 +2,8 @@ module Teacher::Private::StudentActionGuard
   
   private
 
+ 
+
   def can_add_student?
     return [false, 'not have a code number'] if not_code_number?
     return [false, 'not hava a first name'] if not_first_name?

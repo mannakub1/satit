@@ -15,19 +15,25 @@ module Satit::Prototype::SubjectAPI
           params.delete(cours_list_id)
           CourseList.find(cours_list_id)
         end
+
+        def new_params
+          params.delete(:course_list_id)
+
+          params
+        end
       end 
 
       desc 'add subject in course'
       params do 
-        requires :courst_list_id, type: Integer, desc: 'id of course_list'
+        requires :course_list_id, type: Integer, desc: 'id of course_list'
         requires :name, type: String, desc: 'name of subject'
         requires :code, type: String, desc: 'code of subject'
         requires :hour_per_year, type: String, desc: 'time of teaching'
-        requires :type, type: String, desc: 'type of subject'
+        requires :status, type: String, desc: 'type of subject'
         requires :credit, type: Float, desc: 'number credit of subject'
       end
       post :add do
-        present Teacher::SubjectAction.new(course_list: course_list).add(params)\
+        present :subject, Teacher::SubjectAction.new(course_list_id: params[:course_list_id]).add(new_params)\
         , with: Satit::SubjectAPI::SubjectListEntity
       end
 
@@ -47,6 +53,15 @@ module Satit::Prototype::SubjectAPI
       end
       post :add_teacher do 
         present Teacher::SubjectAction.new(subject_id: params[:subject_id]).add_teacher(params[:teacher_id])
+      end
+
+      desc 'add course room in course_list'
+      params do 
+        requires :course_list_id, type: Integer, desc: 'id of course_list'
+        requires :room_id, type: Integer, desc: 'id of room'
+      end
+      post :add_room do 
+        present Teacher::SubjectAction.new(course_list_id: params[:course_list_id]).add_room(params[:room_id])
       end
     end
 
