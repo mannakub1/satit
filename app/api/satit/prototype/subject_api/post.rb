@@ -16,6 +16,12 @@ module Satit::Prototype::SubjectAPI
           CourseList.find(cours_list_id)
         end
 
+        def params_without_id
+          params.delete(:id)
+
+          params
+        end
+
         def new_params
           params.delete(:course_list_id)
 
@@ -34,6 +40,20 @@ module Satit::Prototype::SubjectAPI
       end
       post :add do
         present :subject, Teacher::SubjectAction.new(course_list_id: params[:course_list_id]).add(new_params)\
+        , with: Satit::SubjectAPI::SubjectListEntity
+      end
+
+      desc 'edit subject in course'
+      params do 
+        requires :id, type: Integer, desc: 'id of subject'
+        requires :name, type: String, desc: 'name of subject'
+        requires :code, type: String, desc: 'code of subject'
+        requires :hour_per_year, type: String, desc: 'time of teaching'
+        requires :status, type: String, desc: 'type of subject'
+        requires :credit, type: Float, desc: 'number credit of subject'
+      end
+      post :edit do
+        present :subject, Teacher::SubjectAction.new(subject_id: params[:id]).edit(params_without_id)\
         , with: Satit::SubjectAPI::SubjectListEntity
       end
 
@@ -63,6 +83,34 @@ module Satit::Prototype::SubjectAPI
       post :add_room do 
         present Teacher::SubjectAction.new(course_list_id: params[:course_list_id]).add_room(params[:room_id])
       end
+
+      desc 'add course '
+      params do 
+        requires :year, type: Integer, desc: 'year of course'
+      end
+      post :add_course do 
+        present Teacher::CourseAction.new.add(params)
+      end
+
+      desc 'delete subject out of course_list'
+      params do
+        requires :course_list_id, type: Integer, desc: 'id of course_list'
+        requires :subject_id, type: Integer, desc: 'id of subject'
+      end
+      post :delete do 
+        present Student::SubjectAction.new(course_list_id: params[:course_list_id]).delete_subject(params[:subject_id])
+      end
+
+      desc 'delete subject out of course_list'
+      params do
+        requires :course_list_id, type: Integer, desc: 'id of course_list'
+        requires :room_id, type: Integer, desc: 'id of subject'
+      end
+      post :delete_room do 
+        present Student::SubjectAction.new(course_list_id: params[:course_list_id]).delete_room(params[:room_id])
+      end
+
+
     end
 
   end

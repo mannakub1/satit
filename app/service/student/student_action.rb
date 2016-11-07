@@ -1,12 +1,13 @@
 class Student::StudentAction
 
-  attr_reader :username, :password_digest, :params
+  attr_reader :username, :password_digest, :params, :student, :room
 
   include Student::Private::StudentAction
   include Student::Private::StudentActionGuard
 
   def initialize(option = {})
     @params ||= option[:params]
+    @student ||= option[:student]
   end
 
   def add 
@@ -39,4 +40,6 @@ class Student::StudentAction
 
     process_authenication
   end
+
+  
 end

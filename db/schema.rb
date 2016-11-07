@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161030050654) do
+ActiveRecord::Schema.define(version: 20161106125518) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,9 +58,11 @@ ActiveRecord::Schema.define(version: 20161030050654) do
 
   create_table "course_lists", force: :cascade do |t|
     t.integer  "course_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
     t.string   "room_level"
+    t.integer  "year_room_id"
+    t.string   "full_name"
   end
 
   create_table "course_rooms", force: :cascade do |t|
@@ -129,10 +131,11 @@ ActiveRecord::Schema.define(version: 20161030050654) do
     t.integer  "score1",          default: 0
     t.integer  "score2",          default: 0
     t.string   "grade",           default: ""
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
     t.integer  "student_room_id"
     t.float    "score_result"
+    t.boolean  "status",          default: true
   end
 
   create_table "students", force: :cascade do |t|

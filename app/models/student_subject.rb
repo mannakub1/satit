@@ -16,4 +16,6 @@
 class StudentSubject < ActiveRecord::Base
   belongs_to :student_room
   belongs_to :subject
+
+  scope :present, -> { where(status: true) }
 end

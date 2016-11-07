@@ -6,9 +6,16 @@ module Satit::Prototype::SubjectAPI
         return error!('token expired', 500) unless check_token?
       end
 
+      helpers do 
+        def courses 
+          Teacher::SubjectList.new.courses
+        end
+
+      end
+
       desc 'course all'
       get :courses do
-        present :courses, Teacher::SubjectList.new.courses\
+        present :courses, courses.order(:id)\
         , with: Satit::SubjectAPI::CourseListEntity
       end
 
@@ -36,7 +43,7 @@ module Satit::Prototype::SubjectAPI
       end
       get :rooms do
         present :rooms, Teacher::SubjectList.new(course_list_id: params[:id]).course_rooms\
-        , with: Satit::RoomAPI::RoomListEntity
+        , with: Satit::RoomAPI::RoomEntity
       end
 
       desc 'subject onec'

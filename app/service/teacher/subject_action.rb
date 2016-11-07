@@ -32,6 +32,16 @@ class Teacher::SubjectAction
     process_add_room
   end
 
+  def edit(params)
+    puts '555'
+    @params = params
+
+    can_edit, message = can_edit?
+    fail message unless can_edit
+
+    process_edit
+  end
+
 
   def edit_score(score1, score2)
     @score1 = score1
@@ -40,7 +50,7 @@ class Teacher::SubjectAction
     # can_edit, message = can_edit?
     # fail message unless can_edit
     
-    process_edit
+    process_edit_score
   end
 
   def add_teacher(params)

@@ -15,6 +15,12 @@ module Teacher::Private::SubjectAction
 
   end
 
+  def process_edit
+    current_subject.update_attributes(params)
+
+    current_subject
+  end
+
   def process_add_teacher
     TeacherCourse.create(subject_id: subject_id, teacher_id: params)
   end
@@ -27,7 +33,11 @@ module Teacher::Private::SubjectAction
     TeacherCourse.find_by(subject_id: subject_id, teacher_id: params)
   end
 
-  def process_edit
+  def current_subject
+    Subject.find_by(id: subject_id)
+  end
+
+  def process_edit_score
     student_subject.update_attributes(score1: score1, score2: score2)
 
     if student_subject.score2.to_i > 0.0

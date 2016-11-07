@@ -9,6 +9,12 @@ module Teacher::Private::SubjectActionGuard
     [true, nil]
   end
 
+  def can_edit?
+    return [false, 'subject not have a exist'] unless not_already_subject?
+
+    [true, nil]
+  end
+
   def can_add_room?
     return [false, 'CourseList not have exist'] unless course_list_exist_by_ids?
     return [false, 'Room not have exist'] unless room_exist_by_ids?
@@ -47,6 +53,10 @@ module Teacher::Private::SubjectActionGuard
 
   def already_subject?
     !current_course_list.subjects.find_by(params)
+  end
+
+  def not_already_subject?
+    Subject.find_by(id: subject_id)
   end
 
   def current_course_list

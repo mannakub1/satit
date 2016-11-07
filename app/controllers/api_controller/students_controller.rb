@@ -35,7 +35,8 @@ module ApiController
 
     def add_student(file)
       CSV.foreach(file.path, headers: true) do |row|
-        student = Teacher::StudentAction.new.add_student(row['เลขประจำตัว'], row['ชื่อ'], row['นามสกุล'])
+        puts row['เลขประจำตัว']
+       student = Teacher::StudentAction.new.add_student(row['เลขประจำตัว'], row['ชื่อ'], row['นามสกุล'])
       end
     end
 

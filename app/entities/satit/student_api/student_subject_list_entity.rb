@@ -8,5 +8,6 @@ module Satit::StudentAPI
     expose :score2
     expose :score_result
     expose :grade
+    expose :status
   end
 end
