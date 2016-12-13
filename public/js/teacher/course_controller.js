@@ -19,3 +19,8 @@ myApp.controller('room_index', function($scope, $http)  {
 		}
 	});
 });
+
+myApp.controller('student_list', function($scope, $http)  {
+
+
+});
