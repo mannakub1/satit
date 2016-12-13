@@ -11,10 +11,10 @@
     <!-- Morris -->
     <link href="css/plugins/morris/morris-0.4.3.min.css" rel="stylesheet">
 </head>
-<body ng-app="myJsCourse">
+<body ng-app="myApp">
 
 
-<div id="wrapper" ng-controller="students">
+<div id="wrapper" ng-controller="teacher">
     <nav class="navbar-default navbar-static-side" role="navigation">
         <div class="sidebar-collapse">
             <ul class="nav" id="side-menu">
@@ -35,10 +35,7 @@
                     </div>
                 </li>
                 <li>
-                    <a href="Dashboard.html"><i class="fa fa-backward"></i> <span class="nav-label">หน้าแรก</span></a>
-                </li>
-                <li>
-                    <a href="CourseDashboard.html"><i class="fa fa-backward"></i> <span class="nav-label">กลับ</span></a>
+                    <a href="Dashboard.html"><i class="fa fa-backward"></i> <span class="nav-label">กลับ</span></a>
 
                 </li>
 
@@ -66,43 +63,20 @@
             </nav>
         </div>
 
-        <center>
         <div class="wrapper wrapper-content ">
             <!-- <div class="wrapper wrapper-content animated fadeInRight"> -->
             <div class="row">
                 <div class="col-lg-12">
                     <div class="ibox float-e-margins">
 
-                        <div class="ibox-content " style="width: 75%">
-                            <div class="row" align="left">
-                                 <div class="table-responsive">
-                                    <table class="table table-hover" >
-                                        <thead>
-                                            <tr>
-                                                <th>#</th>
-                                                <th>รหัสประจำตัว</th>
-                                                <th>คำนำหน้าชื่อ</th>
-                                                <th>ชื่อจริง</th>
-                                                <th>นามสกุล</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr ng-repeat="y in students">
-                                                <td>{{$index + 1}}</td>
-                                                <td>{{y.code_number}}</td>
-                                                 <td>{{y.prefix}}</td>
-                                                <td>{{y.first_name}}</td>
-                                                <td>{{y.last_name}}</td>
-                                                <td>
-                                                <button ng-click="getStudent(y)" class="btn btn-info btn-sm" align = "right" >ดูรายละเอียด</button>
-                                                    <!-- <button 
-                                                    ng-click="editPasswordPage(y.id)" class="btn btn-default m-r-sm" align = "right" >เปลี่ยนพาสเวิด</button>
-                                                     <button class="btn btn-danger btn-sm" ng-click="deleteTeacher(y.id)"><i class="fa fa-trash-o"></i> ลบ</button> -->
-                                                <td/>   
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                            </div>   
+                        <div class="ibox-content" >
+                            <div class="row">
+                              <!-- body chang -->
+                                <div class="col-lg-12">
+
+                                </div>
+
+                            </div>
                         </div>
 
                     </div>
@@ -132,7 +106,7 @@
 
 <!--AngularJS Javascript -->
 <script src="js/lib/angular.min.js"></script>
-<script src="js/course_controller.js"></script>
+<script src="js/teacher_index_controller.js"></script>
 <script src="js/lib/angular-route.js"></script>
 
 <!-- Peity -->

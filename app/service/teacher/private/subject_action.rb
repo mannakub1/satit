@@ -42,9 +42,7 @@ module Teacher::Private::SubjectAction
 
     if student_subject.score2.to_i > 0.0
       student_subject.update_attributes(grade: grade, score_result: (score1 + score2) / 2.0)
-    end
-
-    if student_subject.score2.to_i == 0.0
+    elsif student_subject.score2.to_i == 0.0
       student_subject.update_attributes(grade: '')
     end
 

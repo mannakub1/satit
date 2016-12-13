@@ -2,7 +2,7 @@ module Satit::Prototype::TeacherAPI::StudentAPI
 
   class Post < Grape::API
 
-    resource :teacher do
+    resource :student do
       before do
        return error!('token expired', 500) unless check_token?
       end
@@ -11,7 +11,6 @@ module Satit::Prototype::TeacherAPI::StudentAPI
         
         def edit
           Teacher::StudentAction.new(student: current_student).edit(params)
-          current_student
         end
 
         def add_student
@@ -54,7 +53,16 @@ module Satit::Prototype::TeacherAPI::StudentAPI
         end
 
         def current_student
-          Student.find(params[:id])
+          id = params[:id]
+          params.delete!(:id)
+          Student.find(id)
+        end
+
+        def student_id
+          id = params[:id]
+          params.delete!(:id)
+
+          id
         end
 
         def current_adult
@@ -88,7 +96,7 @@ module Satit::Prototype::TeacherAPI::StudentAPI
         optional :nationality, type: String, desc: 'nation'
       end 
       post '/edit_profile' do
-        present :student, edit\
+        present :student, Teacher::StudentAction.new(student_id: params[:id]).edit(params)\
         , with: Satit::TeacherAPI::Student::StudentListEntity
       end
 

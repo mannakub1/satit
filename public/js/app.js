@@ -1,10 +1,10 @@
 var myApp = angular.module('myApp', ['ngRoute']);
-<<<<<<< HEAD
+
 // var address = "http://172.27.170.117:3000/";
 var address = "http://localhost:3000/";
-=======
-var address = "http://172.27.170.117:3000/";
->>>>>>> d6ca384edf80fc44571d45971fea27fe792c11ea
+
+// var address = "http://172.27.160.166:3000/";
+
 sessionStorage.setItem('address', address);
 var path;
 var pathStudent;
@@ -574,6 +574,7 @@ myApp.controller('mainCtrl',  function($scope, $http, fileUpload) {
 	}
 
 	$scope.viewGradeStudent = function(stdId){
+
 		$scope.showStdGrade = true;
 		$scope.showStudent = false;
 		$scope.getGrade(stdId);
@@ -1110,8 +1111,14 @@ myApp.controller('loginCtrl',  function($scope, $http) {
         })
 		.success(function(data, status, headers, config) {
 				sessionStorage.setItem('user', "teacher");
-					window.location.href = 'Dashboard.html';
-	
+					if(data.teacher.status === 'teacher') {
+						sessionStorage.setItem('teacher_id', data.teacher.id);
+
+						window.location.href = '../teacher/index.html'
+					}
+					else {
+						window.location.href = 'Dashboard.html';
+					}
       })
 		.error(function(data, status, headers, config) {
 			if(data.error === "not teacher"){
@@ -1142,7 +1149,7 @@ myApp.controller('loginCtrl',  function($scope, $http) {
 				}
       })
 		.error(function(data, status, headers, config) {
-        console.log("error")
+        console.log(data)
 		alert("Connection Error")
       });
 		
@@ -1251,7 +1258,9 @@ myApp.controller('viewStdCtrl', function ($scope, $http) {
 		});
 
 	$scope.viewGradeStudent = function(stdId){
+		sessionStorage.setItem('student_id', stdId);
 		$scope.getGrade(stdId);
+		// ade(stdId);
 	}
 
 	$scope.getGrade = function (stdId) {
@@ -1273,13 +1282,90 @@ myApp.controller('viewStdCtrl', function ($scope, $http) {
 	}
 
 
+	$scope.getDetail = function(student) {
+		var newData = JSON.stringify(student)
+		sessionStorage.setItem('student', newData)
+
+		window.location.href = 'DashboardStudent.html' 
+	}
+});
+
+
+myApp.controller('viewStudentDetail', function ($scope, $http) {
+
+	student = sessionStorage.getItem('student')
+
+	$scope.hasFather = false
+	$scope.hasMother = false
+	$scope.hasGuardian = false 	
+	
+	if( student !== null) {
+		$scope.student = JSON.parse(student);
+		$scope.showStudentData = true
+	}
+
+	if($scope.student.father.length !== 0) {
+		$scope.hasFather = true 
+	}
+	if($scope.student.mother.length !== 0) {
+		$scope.hasMother = true 
+	}
+	if($scope.student.guardian.length !== 0) {
+		$scope.hasGuardian = true 
+	}
+	
+	
+	
+
+	$scope.editStudent = function() {
+		window.location.href = 'edit_student.html'
+	}
+
+	$scope.sendEditStudent = function() {
+		$scope.token = localStorage.getItem('token');
+		path = address + "api/student/edit_profile";
+		if(document.getElementById("male").checked){
+			$scope.student.prefix = "เด็กชาย";
+		}
+		else{
+			$scope.student.prefix = "เด็กหญิง";
+		}
+
+		$scope.sentStudent = {id : $scope.student.id, prefix : $scope.student.prefix, code_number : $scope.student.code_number,
+			first_name : $scope.student.first_name, last_name : $scope.student.last_name, iden_number : $scope.student.iden_number,
+			blood : $scope.student.blood, birthdate : $scope.student.birthdate, address : $scope.student.address,
+			district : $scope.student.district, parish : $scope.student.parish, city : $scope.student.city, call : $scope.student.call
+			, zip_code : $scope.student.zip_code, ability : $scope.student.ability, ethnicity : $scope.student.ethnicity,
+			nationality : $scope.student.nationality};
+		// console.log($scope.sentStudent);
+		$http.post(path, angular.toJson($scope.sentStudent), {
+            transformRequest: angular.identity,
+            headers: {'token' : $scope.token, 'Content-Type': "application/json"}
+			
+        })
+		.success(function(data, status, headers, config) {
+			// console.log(data.student)
+			var newData = JSON.stringify(data.student)
+			sessionStorage.setItem('student', newData)
+			window.location.href = 'details.html'
+      })
+		.error(function(data, status, headers, config) {
+        if(data.error === 'token expired'){
+			window.location.href = 'login.html';;
+		}
+      });
+	}
 
 });
 
+
 myApp.controller('viewStdGradeCtrl', function ($scope, $http) {
+	$scope.token = localStorage.getItem('token');
 	$scope.Grade = [];
-$scope.stdRoom = JSON.parse(sessionStorage.getItem('stdGrade'));
+	$scope.stdRoom = JSON.parse(sessionStorage.getItem('stdGrade'));
+	$scope.stdId = sessionStorage.getItem('student_id')
 	console.log($scope.stdRoom);
+
 	$scope.collapseGrade = function () {
 		var e = document.getElementById("selectGradeLevel").value;
 		for(var i = 0; i < $scope.Grade.length; ++i){
@@ -1288,6 +1374,76 @@ $scope.stdRoom = JSON.parse(sessionStorage.getItem('stdGrade'));
 		$scope.Grade[e] = true;
 
 
+	}
+
+	$scope.sendEditScore = function () {
+		path = address + "api/teacher/edit_score";
+		//console.log($scope.stdRoom);
+
+		$scope.sentDataArr = [];
+		var count = 0;
+		var isError = false;
+		for(var i = 0; i < $scope.stdRoom.length; ++i) {
+			for(var j = 0; j < $scope.stdRoom[i].student_subjects.length; ++j) {
+				$scope.sentData = {student_id: "", student_subject_id: "", score1: "", score2: ""};
+				$scope.sentData.student_id = $scope.stdId;
+				$scope.sentData.student_subject_id = $scope.stdRoom[i].student_subjects[j].id;
+				$scope.sentData.score1 = $scope.stdRoom[i].student_subjects[j].score1;
+				$scope.sentData.score2 = $scope.stdRoom[i].student_subjects[j].score2;
+				$scope.sentDataArr[count] = $scope.sentData;
+				console.log($scope.sentData);
+				$http.post(path, angular.toJson($scope.sentData), {
+					transformRequest: angular.identity,
+					headers: {'token': $scope.token, 'Content-Type': "application/json"}
+
+				})
+					.success(function (data, status, headers, config) {
+						console.log(data);
+						$scope.stdRoom = data.stdRoom;
+
+					})
+					.error(function (data, status, headers, config) {
+						console.log("error");
+						if (data.error === 'token expired') {
+							window.location.href = 'login.html';
+						}
+						else{
+							isError = true;
+						}
+					});
+				count++;
+			}
+		}
+		if(isError !== true){
+			alert("Sucess!");
+			$scope.viewGradeStudent($scope.stdId);
+		}
+		else{
+			alert("Error! Please Try Again");
+		}
+		//console.log($scope.sentDataArr);
+	}
+
+	$scope.viewGradeStudent = function(stdId){
+		$scope.showStdGrade = true;
+		$scope.showStudent = false;
+		$scope.getGrade(stdId);
+	}
+
+	$scope.getGrade = function (stdId) {
+		path = address + "api/student/courses?student_id=" + stdId;
+		$scope.stdId = stdId;
+		$http.get(path , {headers: {'token': $scope.token} })
+			.success(function(data){
+				console.log(data);
+				$scope.stdRoom = data.student_room;
+				console.log($scope.stdRoom);
+			})
+			.error(function(data, status, headers, config) {
+				if(data.error === 'token expired'){
+					window.location.href = 'login.html';;
+				}
+			});
 	}
 });
 

@@ -11,6 +11,7 @@
 #  updated_at      :datetime         not null
 #  student_room_id :integer
 #  score_result    :float
+#  status          :boolean          default(TRUE)
 #
 
 class StudentSubject < ActiveRecord::Base

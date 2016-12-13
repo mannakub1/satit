@@ -109,8 +109,7 @@
                                                         <td><center><span ng-attr-id="{{'stdDataCode' + $index}}">{{y.code_number}}</span></center></td>
                                                         <td><center><span ng-attr-id="{{'stdDataFName' + $index}}">{{y.first_name}}</span></center></td>
                                                         <td><center><span ng-attr-id="{{'stdDataLName' + $index}}"> {{y.last_name}}</span></center></td>
-                                                        <td ><button class="btn btn-info btn-sm" ng-click="sendStudentData(y.code_number, y.prefix, y.first_name, y.last_name, y.id, y.iden_number, y.blood,
-																										 y.birthdate, y.address, y.district, y.parish, y.city, y.call, y.zip_code, y.ability, y.ethnicity, y.nationality, $index)">ดูประวัติ</button>
+                                                        <td ><button class="btn btn-info btn-sm" ng-click="getDetail(y)">ดูประวัติ</button>
                                                             <button class="btn btn-info btn-sm" ng-click="viewGradeStudent(y.id)"><i class="fa fa-trash-o"></i> ดูผลการศึกษา</button>
 
                                                             <button class="btn btn-danger btn-sm" ng-click="deleteStudent(y.id)"><i class="fa fa-trash-o"></i> ลบรายชื่อนักเรียน</button>

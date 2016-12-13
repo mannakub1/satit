@@ -10,9 +10,6 @@ myJsCourse.controller('courses', function($scope, $http){
 	// var course_list_id = sessionStorage.getItem('course_list_id');
 	// var subject = sessionStorage.getItem('subjects');
 	// var room = sessionStorage.getItem('rooms');
-	var students = sessionStorage.getItem('students');
-	var student = sessionStorage.getItem('student')
-
 	// if( course_list !== null ) {
 	// 	$scope.course_lists = JSON.parse(course_list);
 	// 	console.log($scope.course_lists);
@@ -24,33 +21,10 @@ myJsCourse.controller('courses', function($scope, $http){
 	// 	console.log($scope.subjects);
 	// }
 
-	// if( room !== null) {
+	// if( room !== null) { 
 	// 	$scope.rooms = JSON.parse(room);
 	// 	console.log($scope.rooms);
 	// }
-
-	if( students !== null) {
-		$scope.students = JSON.parse(students);
-		console.log($scope.students);
-	}
-
-	if( student !== null) {
-		$scope.student = JSON.parse(student);
-		console.log('666666555555')
-		console.log($scope.student);
-	
-		if($scope.student.father[0].id !== null) {
-			$scope.hasFather = true 
-		}
-		if($scope.student.mother[0].id !== null) {
-			$scope.hasMother = true 
-		}
-		if($scope.student.guardian[0].id !== null) {
-			$scope.hasGuardian = true 
-		}
-
-	}
-
 
 
 	$http.get( teacher_list_path , {headers: {'token': $scope.token}})
@@ -89,14 +63,15 @@ myJsCourse.controller('courses', function($scope, $http){
 
 		$http.post(subject_delete_action, angular.toJson(params), {
 			transformRequest: angular.identity,
-			headers: {'token': $scope.token, 'Content-Type': "application/json"}})
-			.success(function(data, status, header, config){
-				window.location.href = 'CourseDashboard.html'
-			})
-			.error(function(data, status, headers, config) {
-        		if(data.error === 'token expired'){
-					window.location.href = 'login.html';;
-				}
+			headers: {'token': $scope.token, 'Content-Type': "application/json"}
+		})
+		.success(function(data, status, header, config){
+			window.location.href = 'CourseDashboard.html'
+		})
+		.error(function(data, status, headers, config) {
+    		if(data.error === 'token expired'){
+				window.location.href = 'login.html';;
+			}
 		});
 	}
 
@@ -145,6 +120,7 @@ myJsCourse.controller('courses', function($scope, $http){
 		course_list_id = $scope.courses[$scope.course_index].course_lists[e].id
 		$scope.course_list_id = $scope.courses[$scope.course_index].course_lists[e].id
 		console.log($scope.course_list_id)
+		
 		$scope.getSubject(course_list_id)
 		$scope.getRoom(course_list_id)	
 		$scope.showButtonManageCourse = false;
@@ -211,27 +187,26 @@ myJsCourse.controller('courses', function($scope, $http){
     	});
 	}
 
-	$scope.getRoomList = function(data) {
-		var get_room_path = address + "api/subject/room?id=" + data
+	$scope.getRoomList = function(room_id) {
+		// var get_room_path = address + "api/subject/room?id=" + room_id
 		
-		$http.get(get_room_path , {headers: {'token': $scope.token}})
-		.success(function(data, status, header, config) {
-			var newData = JSON.stringify(data.room)
-			sessionStorage.setItem('room', newData)
+		// $http.get(get_room_path , {headers: {'token': $scope.token}})
+		// .success(function(data, status, header, config) {
+		// 	var newData = JSON.stringify(data.room)
+		// 	sessionStorage.setItem('room', newData)
+		// 	console.log(data.room)
+		// 	$scope.room = data.room
+			
+			sessionStorage.setItem('room_id', room_id)
+		// 	// $scope.getStudentList(data.room.id)
 
-			$scope.room = data.room
-			// $scope.students = data.room.students
-			$scope.getStudentList(data.room.id)
-
-			// var newData = JSON.stringify(data.rooms.students)
-			// sessionStorage.setItem('students', newData)
 			window.location.href = 'RoomList.html'
-		}).error(function(data, status, headers, config) {
-       		console.log("error")
-			if(data.error === 'token expired'){
-				window.location.href = 'login.html';;
-			}
-    	});
+		// }).error(function(data, status, headers, config) {
+  //      		console.log("error")
+		// 	if(data.error === 'token expired'){
+		// 		window.location.href = 'login.html';;
+		// 	}
+  //   	});
 	}
 
 	$scope.getStudentList = function(data) {
@@ -239,7 +214,6 @@ myJsCourse.controller('courses', function($scope, $http){
 		
 		$http.get(get_student_path , {headers: {'token': $scope.token}})
 		.success(function(data, status, header, config) {
-			console.log(data)
 			var newData = JSON.stringify(data.students)
 			sessionStorage.setItem('students', newData)
 
@@ -277,7 +251,43 @@ myJsCourse.controller('courses', function($scope, $http){
 				}
 		});
 	}
+});
 
+
+
+myJsCourse.controller('students', function($scope, $http){
+	$scope.token = localStorage.getItem('token');
+	room_id = sessionStorage.getItem('room_id');
+	student = sessionStorage.getItem('student')
+	console.log(room_id)
+	if( student !== null) {
+		$scope.student = JSON.parse(student);
+	
+		if($scope.student.father.id !== null) {
+			$scope.hasFather = true 
+		}
+		if($scope.student.mother.id !== null) {
+			$scope.hasMother = true 
+		}
+		if($scope.student.guardian.id !== null) {
+			$scope.hasGuardian = true 
+		}
+
+	}
+
+	get_student = address + 'api/teacher/students?room_id='+ room_id  
+
+	$http.get(get_student , {headers: {'token': $scope.token}})
+		.success(function(data, status, header, config) {
+			$scope.students = data.student_list
+		})
+		.error(function(data, status, headers, config) {
+       		console.log("error")
+			if(data.error === 'token expired'){
+				window.location.href = 'login.html';
+			}
+    	}
+    );
 
 	$scope.getStudent = function(data) {
 		var newData = JSON.stringify(data)
@@ -286,4 +296,7 @@ myJsCourse.controller('courses', function($scope, $http){
 
 		window.location.href = 'StudentList.html';
 	}
+
+
 });
+

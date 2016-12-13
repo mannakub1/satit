@@ -60,6 +60,24 @@ module Satit::Prototype::TeacherAPI
         present :teacher, Teacher::TeacherList.new.teacher_spec \
         , with: Satit::TeacherAPI::TeacherActionEntity 
       end
+
+      desc 'return student of teacher teach room'
+      get '/rooms' do
+        params do 
+          requires :teacher_id, type: Integer, desc: 'id of teacher'
+        end
+        present :room, Teacher::RoomList.new(teacher_id: params[:teacher_id]).room\
+        , with: Satit::TeacherAPI::Student::RoomListEntity
+      end
+
+      desc 'return subjects in teacher'
+      params do 
+        requires :teacher_id, type: Integer, desc: 'room_id'
+      end
+      get '/subjects' do
+        present :subjects, Teacher::SubjectList.new(teacher_id: params[:teacher_id]).subjects_by_teacher\
+        , with: Satit::SubjectAPI::SubjectListEntity
+      end
     end
 
   end

@@ -46,7 +46,7 @@ class Teacher::SubjectAction
   def edit_score(score1, score2)
     @score1 = score1
     @score2 = score2
-
+    puts '55555'
     # can_edit, message = can_edit?
     # fail message unless can_edit
     

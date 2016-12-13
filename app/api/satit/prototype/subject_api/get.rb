@@ -82,6 +82,15 @@ module Satit::Prototype::SubjectAPI
         , with: Satit::StudentAPI::StudentListEntity
       end
 
+      desc 'room once in subject'
+      params do 
+        requires :subject_id, type: Integer, desc: 'id of subject'
+      end
+      get :rooms_by_subject do
+        present :rooms, Teacher::SubjectList.new(subject_id: params[:subject_id]).rooms_by_subject\
+        , with: Satit::RoomAPI::RoomListEntity
+      end
+
     end
   end
 end

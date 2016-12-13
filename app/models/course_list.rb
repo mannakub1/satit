@@ -2,11 +2,13 @@
 #
 # Table name: course_lists
 #
-#  id         :integer          not null, primary key
-#  course_id  :integer
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#  room_level :string
+#  id           :integer          not null, primary key
+#  course_id    :integer
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#  room_level   :string
+#  year_room_id :integer
+#  full_name    :string
 #
 
 class CourseList < ActiveRecord::Base
