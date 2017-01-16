@@ -11,7 +11,7 @@
             <!-- Morris -->
             <link href="../../css/plugins/morris/morris-0.4.3.min.css" rel="stylesheet">
         </head>
-        <body ng-app="student" ng-controller="room_index">
+        <body ng-app="course" ng-controller="roomindex">
             <div id="wrapper" >
                     <nav class="navbar-default navbar-static-side" role="navigation">
                         <div class="sidebar-collapse">
@@ -79,13 +79,13 @@
                                                             </tr>
                                                             </thead>
                                                             <tbody>
-                                                            <tr ng-repeat="y in rooms">
+                                                            <tr ng-repeat="y in room_list">
                                                                 <td>{{$index + 1}}</td>
                                                                 <td>{{y.name}}</td>
                                                                 <td>{{y.level}}</td>
                                                                 <td>{{y.year}}</td>
                                                                 <td>
-                                                                    <button ng-click="getStudentList(y.id)" class="btn btn-info btn-sm" align = "right" >เลือก</button>
+                                                                    <button ng-click="get(y.id)" class="btn btn-info btn-sm" align = "right" >เลือก</button>
                                                                 <td/>
                                                             </tr>
                                                             </tbody>

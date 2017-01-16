@@ -68,12 +68,20 @@ myApp.controller('details', function($scope, $http)  {
 	if($scope.student.guardian.length !== 0) {
 		$scope.hasGuardian = true 
 	}
-	
-	$scope.hasFather = false
-	$scope.hasMother = false
-	$scope.hasGuardian = false 	
-	
-	
+
+
+    $scope.addFather = function(){
+        window.location.href = "add_father.html";
+
+    }
+
+    $scope.addMother = function(){
+        window.location.href = "add_mother.html";
+    }
+
+    $scope.addGuardian = function(){
+        window.location.href = "add_guardian.html";
+    }
 
 	$scope.editStudent = function() {
 		window.location.href = 'edit_student.html'
@@ -192,4 +200,162 @@ myApp.controller('grade', function($scope, $http)  {
 		}
 	}
 
-});	
+});
+
+myApp.controller('add_father', function($scope, $http)  {
+	$scope.token = localStorage.getItem("token");
+    student = sessionStorage.getItem('student')
+    if( student !== null) {
+        $scope.student = JSON.parse(student);
+    }
+
+    $scope.sendFatherData = function(){
+        path = address + "api/student/add_adult";
+        console.log($scope.student.father[0])
+        $http.post(path, angular.toJson($scope.student.father[0]), {
+            transformRequest: angular.identity,
+            headers: {'token' : $scope.token, 'Content-Type': "application/json"}
+
+        })
+            .success(function(data, status, headers, config) {
+                path = address + "api/student/add_father";
+
+                $http.post(path, angular.toJson({id : $scope.student.id, adult_id : data.id} ), {
+                    transformRequest: angular.identity,
+                    headers: {'token' : $scope.token, 'Content-Type': "application/json"}
+
+                })
+                $scope.student.father[0] = data;
+                var newData = JSON.stringify($scope.student);
+                sessionStorage.setItem('student', newData);
+                window.location.href = "details.html"
+            })
+            .error(function(data, status, headers, config) {
+                if(data.error === 'token expired'){
+                    window.location.href = '../../../login.html';
+                }
+            });
+    }
+
+    $scope.backToStdData = function(){
+		window.location.href = "details.html"
+    }
+
+});
+
+myApp.controller('add_mother', function($scope, $http)  {
+    $scope.token = localStorage.getItem("token");
+    student = sessionStorage.getItem('student')
+    if( student !== null) {
+        $scope.student = JSON.parse(student);
+    }
+
+    $scope.sendAddMother = function(){
+        path = address + "api/student/add_adult";
+        console.log($scope.student.mother[0])
+        $http.post(path, angular.toJson($scope.student.mother[0]), {
+            transformRequest: angular.identity,
+            headers: {'token' : $scope.token, 'Content-Type': "application/json"}
+
+        })
+            .success(function(data, status, headers, config) {
+                path = address + "api/student/add_mother";
+
+                $http.post(path, angular.toJson({id : $scope.student.id, adult_id : data.id} ), {
+                    transformRequest: angular.identity,
+                    headers: {'token' : $scope.token, 'Content-Type': "application/json"}
+
+                })
+                $scope.student.mother[0] = data;
+                var newData = JSON.stringify($scope.student);
+                sessionStorage.setItem('student', newData);
+                window.location.href = "details.html"
+            })
+            .error(function(data, status, headers, config) {
+                if(data.error === 'token expired'){
+                    window.location.href = '../../../login.html';
+                }
+            });
+    }
+
+    $scope.backToStdData = function(){
+        window.location.href = "details.html"
+    }
+
+});
+
+myApp.controller('add_guardian', function($scope, $http)  {
+    $scope.token = localStorage.getItem("token");
+    student = sessionStorage.getItem('student')
+    if( student !== null) {
+        $scope.student = JSON.parse(student);
+    }
+
+    $scope.sendAddGuardian = function(){
+        path = address + "api/student/add_adult";
+        console.log($scope.student.guardian[0])
+        $http.post(path, angular.toJson($scope.student.guardian[0]), {
+            transformRequest: angular.identity,
+            headers: {'token' : $scope.token, 'Content-Type': "application/json"}
+
+        })
+            .success(function(data, status, headers, config) {
+                path = address + "api/student/add_guardian";
+
+                $http.post(path, angular.toJson({id : $scope.student.id, adult_id : data.id} ), {
+                    transformRequest: angular.identity,
+                    headers: {'token' : $scope.token, 'Content-Type': "application/json"}
+
+                })
+                $scope.student.guardian[0] = data;
+                var newData = JSON.stringify($scope.student);
+                sessionStorage.setItem('student', newData);
+                window.location.href = "details.html"
+            })
+            .error(function(data, status, headers, config) {
+                if(data.error === 'token expired'){
+                    window.location.href = '../../../login.html';
+                }
+            });
+    }
+
+    $scope.backToStdData = function(){
+        window.location.href = "details.html"
+    }
+
+});
+
+myApp.controller('edit_father', function($scope, $http)  {
+    $scope.token = localStorage.getItem("token");
+    student = sessionStorage.getItem('student')
+    if( student !== null) {
+        $scope.student = JSON.parse(student);
+    }
+
+    $scope.sendEditFather = function(){
+        path = address + "api/teacher/edit_adult";
+        //console.log(student)
+        $http.post(path, angular.toJson($scope.student.father[0]), {
+            transformRequest: angular.identity,
+            headers: {'token' : $scope.token, 'Content-Type': "application/json"}
+
+        })
+            .success(function(data, status, headers, config) {
+                console.log(data);
+                $scope.student.father[0] = data;
+                sessionStorage.setItem('student', JSON.stringify($scope.student));
+                window.location.href = "details.html"
+
+            })
+            .error(function(data, status, headers, config) {
+                if(data.error === 'token expired'){
+                    window.location.href = 'login.html';;
+                }
+            });
+    }
+
+    $scope.backToStdData = function(){
+        window.location.href = "details.html"
+    }
+
+});
