@@ -1,9 +1,6 @@
 module Satit::Prototype
  
   class API < Grape::API
-
-      
-
     mount TeacherAPI::Post
     mount TeacherAPI::Get
     mount TeacherAPI::API
