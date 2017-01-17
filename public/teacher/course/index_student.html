@@ -11,7 +11,7 @@
             <!-- Morris -->
             <link href="../../css/plugins/morris/morris-0.4.3.min.css" rel="stylesheet">
         </head>
-        <body ng-app="course" ng-controller="roomindex">
+        <body ng-app="student" ng-controller="students">
             <div id="wrapper" >
                     <nav class="navbar-default navbar-static-side" role="navigation">
                         <div class="sidebar-collapse">
@@ -62,91 +62,52 @@
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="ibox float-e-margins">
-                                        <div class="ibox-content" style="width: 75%">
-                                            <div class="row">
-                                                <!-- body chang -->
 
-                                                <div class="col-lg-12">
-
-<<<<<<< HEAD
-                                                <table class="table table-hover" >
-                                                    <thead>
-                                                        <tr>
-                                                            <th>#</th>
-                                                            <th>ชื่อ</th>
-                                                            <th>ชั้น</th>
-                                                            <th>ปีการศึกษา</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr ng-repeat="y in room_list">
-                                                            <td>{{$index + 1}}</td>
-                                                            <td>{{y.name}}</td>
-                                                            <td>{{y.level}}</td>
-                                                            <td>{{y.year}}</td>
-                                                            <td>
-                                                                <button ng-click="get(y.id)" class="btn btn-info btn-sm" align = "right" >เลือก</button>
-                                                            <td/>   
-                                                        </tr>
-                                                    </tbody>
-                                                </table>                                
-                                            </div>   
-=======
-                                                    <div class="table-responsive">
-                                                        <table class="table table-hover" >
-                                                            <thead>
+                                        <div class="ibox-content " style="width: 75%">
+                                            <div class="row" align="left">
+                                               <table class="table table-hover" >
+                                                        <thead>
                                                             <tr>
                                                                 <th>#</th>
-                                                                <th>ชื่อ</th>
-                                                                <th>ชั้น</th>
-                                                                <th>ปีการศึกษา</th>
+                                                                <th>รหัสประจำตัว</th>
+                                                                <th>คำนำหน้าชื่อ</th>
+                                                                <th>ชื่อจริง</th>
+                                                                <th>นามสกุล</th>
                                                             </tr>
-                                                            </thead>
-                                                            <tbody>
-                                                            <tr ng-repeat="y in room_list">
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr ng-repeat="y in students">
                                                                 <td>{{$index + 1}}</td>
-                                                                <td>{{y.name}}</td>
-                                                                <td>{{y.level}}</td>
-                                                                <td>{{y.year}}</td>
+                                                                <td>{{y.code_number}}</td>
+                                                                <td>{{y.prefix}}</td>
+                                                                <td>{{y.first_name}}</td>
+                                                                <td>{{y.last_name}}</td>
                                                                 <td>
-                                                                    <button ng-click="get(y.id)" class="btn btn-info btn-sm" align = "right" >เลือก</button>
-                                                                <td/>
-                                                            </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </div>
+                                                                <button ng-click="getDetails(y)" class="btn btn-info btn-sm" align = "right" >ดูประวัติ</button>
+                                                                <button ng-click="getGrade(y.id)" class="btn btn-info btn-sm" align = "right" >ดูผลการศึกษา</button>
 
-                                                </div>
-                                            </div>
->>>>>>> ea775d76ee47e0ef0a9d8063f949ecb775b1d61b
+                                                                <td/>   
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>                              
+                                            </div>   
                                         </div>
                                     </div>
                                 </div>
                             </div>
-<<<<<<< HEAD
-                            <div class="footer">
-                                <div class="pull-right">
-                                    ....... <strong>.......</strong> .......
-                                </div>
-                                <div>
-                                    <strong>.......</strong> ....................
-                                </div>
-=======
                         </div>
-                    </center>
                         <div class="footer">
                             <div class="pull-right">
                                 ....... <strong>.......</strong> .......
                             </div>
                             <div>
                                 <strong>.......</strong> ....................
->>>>>>> ea775d76ee47e0ef0a9d8063f949ecb775b1d61b
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            
+
             <script src="../../js/jquery-2.1.1.js"></script>
             <script src="../../js/bootstrap.min.js"></script>
             <script src="../../js/plugins/metisMenu/jquery.metisMenu.js"></script>
@@ -155,7 +116,7 @@
 
             <!--AngularJS Javascript -->
             <script src="../../js/lib/angular.min.js"></script>
-            <script src="../../js/teacher/coursecontroller.js"></script>
+            <script src="../../js/teacher/course_controller.js"></script>
             <script src="../../js/lib/angular-route.js"></script>
 
             <!-- Peity -->

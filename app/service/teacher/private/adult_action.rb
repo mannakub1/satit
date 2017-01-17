@@ -2,6 +2,7 @@ module Teacher::Private::AdultAction
 
   def process_add
     Adult.create(params)
+    Adult.last
   end
 
   def process_edit
