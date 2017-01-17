@@ -1,7 +1,7 @@
 var myApp = angular.module('myApp', ['ngRoute']);
 
 // var address = "http://172.27.170.117:3000/";
-var address = "http://localhost:3000/";
+var address = "http://172.27.225.52:3000/";
 
 // var address = "http://172.27.160.166:3000/";
 
@@ -26,6 +26,16 @@ myApp.directive('fileModel', ['$parse', function ($parse) {
         }
     };
 }]);
+
+myApp.directive('navIndex', function () {
+	return {
+		restrict: 'E',
+		scope: {
+			someAttr: '&'
+		},
+		template: '<button ng-click="someAttr()">Go to Work</button>'
+	};
+});
 
 myApp.service('fileUpload', ['$http', function ($http) {
     this.uploadFileToUrl = function(roomId,file, uploadUrl){
