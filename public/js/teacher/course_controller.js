@@ -23,6 +23,8 @@ myApp.controller('roomindex', function($scope, $http)  {
         sessionStorage.setItem('room_id', room_id);
         window.location.href = '../course/index_student.html'
     }
+
+
 });
 
 myApp.controller('students', function($scope, $http)  {

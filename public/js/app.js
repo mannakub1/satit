@@ -1124,7 +1124,7 @@ myApp.controller('loginCtrl',  function($scope, $http) {
 					if(data.teacher.status === 'teacher') {
 						sessionStorage.setItem('teacher_id', data.teacher.id);
 
-						window.location.href = '../teacher/index.html'
+						window.location.href = 'teacher/index.html'
 					}
 					else {
 						window.location.href = 'Dashboard.html';

@@ -4,7 +4,7 @@ var token = localStorage.getItem('token');
 
 myApp.controller('index', function($scope, $http)  {
  	var room_id = sessionStorage.getItem('room_id');
- 	
+ 	console.log(room_id)
  	get_student = address + 'api/teacher/students?room_id='+ room_id  
  	get_room = address + 'api/room/?id=' + room_id
 
@@ -68,12 +68,20 @@ myApp.controller('details', function($scope, $http)  {
 	if($scope.student.guardian.length !== 0) {
 		$scope.hasGuardian = true 
 	}
-	
-	$scope.hasFather = false
-	$scope.hasMother = false
-	$scope.hasGuardian = false 	
-	
-	
+
+
+    $scope.addFather = function(){
+        window.location.href = "add_father.html";
+
+    }
+
+    $scope.addMother = function(){
+        window.location.href = "add_mother.html";
+    }
+
+    $scope.addGuardian = function(){
+        window.location.href = "add_guardian.html";
+    }
 
 	$scope.editStudent = function() {
 		window.location.href = 'edit_student.html'
@@ -205,9 +213,6 @@ myApp.controller('grade', function($scope, $http)  {
 		}
 	}
 
-<<<<<<< HEAD
-});	
-=======
 });
 
 myApp.controller('add_father', function($scope, $http)  {
@@ -437,4 +442,3 @@ myApp.controller('edit_guardian', function($scope, $http)  {
     }
 
 });
->>>>>>> 43ff8db0827b888d3acca802d16d6d42e8edccc9
