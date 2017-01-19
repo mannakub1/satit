@@ -11,14 +11,14 @@
             <!-- Morris -->
             <link href="../../css/plugins/morris/morris-0.4.3.min.css" rel="stylesheet">
         </head>
-        <body ng-app="student" ng-controller="students">
+        <body ng-app="course" ng-controller="students">
             <div id="wrapper" >
                     <nav class="navbar-default navbar-static-side" role="navigation">
                         <div class="sidebar-collapse">
                             <ul class="nav" id="side-menu">
                                 <li class="nav-header">
                                     <div class="dropdown profile-element">
-                                            <span> <img alt="image" class="img-circle" src="../img/profile_small.jpg" /></span>
+                                            <span> <img alt="image" class="img-circle" src="../../img/profile_small.jpg" /></span>
                                             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                                             <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">Admin</strong>
                                              </span> <span class="text-muted text-xs block">JAMZ Dev <b class="caret"></b></span> </span> </a>
@@ -32,7 +32,7 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <a href="../index.html"><i class="fa fa-backward"></i> <span class="nav-label">กลับ</span></a>
+                                    <a href='../course/index.html'><i class="fa fa-backward"></i> <span class="nav-label">กลับ</span></a>
                                 </li>
                             </ul>
                         </div>
@@ -73,15 +73,17 @@
                                                                 <th>คำนำหน้าชื่อ</th>
                                                                 <th>ชื่อจริง</th>
                                                                 <th>นามสกุล</th>
+                                                                <th>score1</th>
                                                             </tr>
                                                         </thead>
                                                         <tbody>
                                                             <tr ng-repeat="y in students">
                                                                 <td>{{$index + 1}}</td>
-                                                                <td>{{y.code_number}}</td>
-                                                                <td>{{y.prefix}}</td>
-                                                                <td>{{y.first_name}}</td>
-                                                                <td>{{y.last_name}}</td>
+                                                                <td>{{y.student_room.student.code_number}}</td>
+                                                                <td>{{y.student_room.student.prefix}}</td>
+                                                                <td>{{y.student_room.student.first_name}}</td>
+                                                                <td>{{y.student_room.student.last_name}}</td>
+                                                                <td>{{y.score1}}</td>
                                                                 <td>
                                                                 <button ng-click="getDetails(y)" class="btn btn-info btn-sm" align = "right" >ดูประวัติ</button>
                                                                 <button ng-click="getGrade(y.id)" class="btn btn-info btn-sm" align = "right" >ดูผลการศึกษา</button>

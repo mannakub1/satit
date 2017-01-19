@@ -211,6 +211,8 @@ module Satit::Prototype::TeacherAPI::StudentAPI
         present delete_student\
         , with: Satit::TeacherAPI::Student::StudentListEntity
       end
+
+      
     end
   end
 

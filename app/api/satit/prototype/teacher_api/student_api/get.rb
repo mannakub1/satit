@@ -8,7 +8,6 @@ module Satit::Prototype::TeacherAPI::StudentAPI
       end
 
       helpers do
-
         def current_student
           Student.find(params[:student_id])
         end 
@@ -24,7 +23,7 @@ module Satit::Prototype::TeacherAPI::StudentAPI
       end
 
       desc 'return student'
-      params do 
+      params do
         requires :student_id, type: Integer, desc: 'id of student'
       end
       get '/person' do 
@@ -32,8 +31,16 @@ module Satit::Prototype::TeacherAPI::StudentAPI
         , with: Satit::TeacherAPI::Student::StudentListEntity
       end
 
+      desc 'return student subject'
+      params do
+        requires :room_id, type: Integer, desc: 'id of room'
+        requires :subject_id, type: Integer, desc: 'id of subject'
+      end
+      get '/student_subject' do
+        present :student_list, Student::SubjectList.new(room_id: params[:room_id], subject_id: params[:subject_id]).current_student_subject \
+        , with: Satit::StudentAPI::StudentSubjectListEntity
+      end
+
     end
-
   end
-
 end

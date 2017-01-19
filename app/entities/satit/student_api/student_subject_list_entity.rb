@@ -9,5 +9,7 @@ module Satit::StudentAPI
     expose :score_result
     expose :grade
     expose :status
+    expose :student_room \
+    , with: Satit::StudentAPI::StudentRoomEntity
   end
 end
