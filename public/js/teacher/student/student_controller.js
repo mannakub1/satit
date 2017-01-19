@@ -40,6 +40,23 @@ myApp.controller('index', function($scope, $http)  {
 
   		window.location.href = 'grade.html'
   	}
+
+    $scope.logout = function(){
+        path = address + "api/logout";
+        $http.post(path, angular.toJson($scope.student), {
+            transformRequest: angular.identity,
+            headers: {'token' : $scope.token, 'Content-Type': "application/json"}
+
+        })
+            .success(function(data, status, headers, config) {
+                console.log(data);
+                window.location.href = 'login.html/../../..';
+
+            })
+            .error(function(data, status, headers, config) {
+            });
+    }
+
 });
 
 
