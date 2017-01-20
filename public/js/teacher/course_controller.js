@@ -43,5 +43,53 @@ myApp.controller('students', function($scope, $http)  {
         }
     });
 
+    $scope.sendEditScore = function () {
+        path = address + "api/teacher/edit_score";
+        //console.log($scope.stdRoom);
+
+        $scope.sentDataArr = [];
+        var count = 0;
+        var isError = false;
+        for(var i = 0; i < $scope.students.length; ++i) {
+                $scope.sentData = {student_id: "", student_subject_id: "", score1: "", score2: ""};
+                $scope.sentData.student_id = $scope.students[i].student_room.student.id;
+                $scope.sentData.student_subject_id = $scope.students[i].subject.id;
+                $scope.sentData.score1 = $scope.students[i].score1;
+                $scope.sentData.score2 = $scope.students[i].score2;
+                $scope.sentDataArr[count] = $scope.sentData;
+                console.log($scope.sentData);
+                $http.post(path, angular.toJson($scope.sentData), {
+                    transformRequest: angular.identity,
+                    headers: {'token': token, 'Content-Type': "application/json"}
+
+                })
+                    .success(function (data, status, headers, config) {
+                        console.log(data);
+
+
+                    })
+                    .error(function (data, status, headers, config) {
+                        console.log("error");
+                        if (data.error === 'token expired') {
+                            window.location.href = 'login.html';
+                        }
+                        else{
+                            isError = true;
+                        }
+                    });
+                count++;
+
+        }
+        if(isError !== true){
+            if(alert("Success!")){
+                window.location.reload();
+            }
+
+        }
+        else{
+            alert("Error! Please Try Again");
+        }
+        //console.log($scope.sentDataArr);
+    }
 
 });
