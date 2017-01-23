@@ -52,7 +52,7 @@ myApp.controller('students', function($scope, $http)  {
         var isError = false;
         for(var i = 0; i < $scope.students.length; ++i) {
                 $scope.sentData = {student_id: "", student_subject_id: "", score1: "", score2: ""};
-                $scope.sentData.student_id = $scope.students[i].student_room.student.id;
+                $scope.sentData.student_id = $scope.students[i].id;
                 $scope.sentData.student_subject_id = $scope.students[i].subject.id;
                 $scope.sentData.score1 = $scope.students[i].score1;
                 $scope.sentData.score2 = $scope.students[i].score2;
