@@ -28,7 +28,7 @@ class Student::SubjectList
   end
 
   def current_student_rooms
-    current_room.student_rooms.order('Student.code_number DESC')
+    current_room.student_rooms.order(:id)
   end
 
 end
