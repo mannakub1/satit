@@ -13,14 +13,14 @@ class Student::StudentList
   end
 
   def current_student_by_code_number
-    Student.find_by(code_number: @code_number)
+    Student.where('code_number LIKE ?', "%#{@code_number}%").order(:code_number)
   end
 
   def current_student_by_first_name
-    Student.find_by(first_name: @first_name)
+     Student.where('first_name LIKE ?', "%#{@first_name}%").order(:code_number)
   end
 
   def current_student_by_last_name
-    Student.find_by(last_name: @last_name)
+     Student.where('last_name LIKE ?', "%#{@last_name}%").order(:code_number)
   end
 end
