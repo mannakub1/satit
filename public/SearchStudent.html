@@ -11,7 +11,7 @@
     <!-- Morris -->
     <link href="css/plugins/morris/morris-0.4.3.min.css" rel="stylesheet">
 </head>
-<body ng-app="course" ng-controller="roomindex">
+<body ng-app="search" ng-controller="student">
 <div id="wrapper" >
     <nav class="navbar-default navbar-static-side" role="navigation">
         <div class="sidebar-collapse">
@@ -32,7 +32,7 @@
                     </div>
                 </li>
                 <li>
-                    <a href="../index.html"><i class="fa fa-backward"></i> <span class="nav-label">กลับ</span></a>
+                    <a href="Dashboard.html"><i class="fa fa-backward"></i> <span class="nav-label">กลับ</span></a>
                 </li>
             </ul>
         </div>
@@ -65,25 +65,17 @@
                             <div class="ibox-content" style="width: 75%">
                                 <div class="row">
                                     <!-- body chang -->
-
                                     <div class="col-lg-12">
-                                        <form>
-                                            <select style="margin-right: 70%">
-                                                <option>---Please select---</option>
-                                                <option>รหัสนักเรียน</option>
-                                                <option>ชื่อนักเรียน</option>
-                                            </select>
-                                        </form>
-                                        <form>
-                                            รหัสนักเรียน: <input type="text">
-                                            <button>ค้นหา</button>
-                                        </form>
-                                        <br>
-                                        <form>
-                                            ชื่อนักเรียน: <input type="text">
-                                            <button>ค้นหา</button>
-                                        </form>
+                                        <select id="selectType">
+                                            <option>-----ค้นจาก-----</option>
+                                            <option value="code_number">รหัสนักเรียน</option>
+                                            <option value="first_name">ชื่อจริงนักเรียน</option>
+                                            <option value="last_name">นามสกุลนักเรียน</option>
+                                        </select>
+                                         <input type="text" ng-model="data">
+                                         <button ng-click="selectType()">ค้นหา</button>
                                     </div>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -110,7 +102,7 @@
 
 <!--AngularJS Javascript -->
 <script src="js/lib/angular.min.js"></script>
-<script src="js/teacher/course_controller.js"></script>
+<script src="js/admin/search_student.js"></script>
 <script src="js/lib/angular-route.js"></script>
 
 <!-- Peity -->
