@@ -41,6 +41,33 @@ module Satit::Prototype::TeacherAPI::StudentAPI
         , with: Satit::StudentAPI::StudentSubjectListEntity
       end
 
+      desc 'search student by code number'
+      params do 
+        requires :code_number, type: Integer, desc: 'number identifi student'
+      end
+      get '/code_number' do
+        present :student, Student::StudentList.new(code_number: params[:code_number]).current_student_by_code_number \
+        , with: Satit::TeacherAPI::Student::StudentListEntity
+      end 
+
+      desc 'search student by first name'
+      params do 
+        requires :first_name, type: String, desc: 'first name of student'
+      end
+      get '/first_name' do
+        present :student, Student::StudentList.new(first_name: params[:first_name]).current_student_by_first_name \
+        , with: Satit::TeacherAPI::Student::StudentListEntity
+      end 
+
+      desc 'search student by last name'
+      params do 
+        requires :last_name, type: String, desc: 'last name of student'
+      end
+      get '/last_name' do
+        present :student, Student::StudentList.new(last_name: params[:last_name]).current_student_by_last_name \
+        , with: Satit::TeacherAPI::Student::StudentListEntity
+      end 
+
     end
   end
 end
