@@ -1310,11 +1310,15 @@ myApp.controller('viewStdCtrl', function ($scope, $http) {
 
 
 	$scope.getDetail = function(student) {
-		var newData = JSON.stringify(student)
-		sessionStorage.setItem('student', newData)
+		var newData = JSON.stringify(student);
+		sessionStorage.setItem('student', newData);
 
-		window.location.href = 'DashboardStudent.html' 
+		window.location.href = 'DashboardStudent.html' ;
 	}
+
+    $scope.goAddStudent = function(){
+        window.location.href = 'AddStudents.html';
+    }
 });
 
 
