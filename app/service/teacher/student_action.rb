@@ -1,16 +1,37 @@
 class Teacher::StudentAction
 
+  attr_reader :student, :student_id, :room, :code_number, :first_name, :last_name, :params, :subject, :student_room
+
+  include Teacher::Private::StudentAction
+  include Teacher::Private::StudentActionGuard
+
   def initialize(option = {})
     @student_id ||= option[:student_id]
+    @student ||= option[:student]
+    @subject ||= option[:subject]
+    @student_room ||= option[:student_room]
   end
 
-  def add_student(code_number, first_name, last_name)
-    Student.create(code_number: code_number, first_name: first_name, last_name: last_name, room_state: false)
+  def add_student(params)
+    @first_name = params[:first_name]
+    @last_name = params[:last_name]
+    @code_number = params[:code_number]
+    @params = params
+
+    can_add, message = can_add?
+    fail message unless can_add
+
+    process_add_student
   end
 
   def add_room(room)
-    room.students.create(student_id: @student.id)
-    student.update_attributes(room_state: true)
+    @room = room
+
+    can_add_room, message = can_add_room?
+    fail message unless can_add_room
+
+    process_add_room
+    # student_room.update_attributes(room_state: true)
   end
 
   def edit(params)
@@ -20,6 +41,15 @@ class Teacher::StudentAction
 
     current_student
   end
+
+  def add_subject
+
+    can_add_subject, message = can_add_subject?
+    fail message unless can_add_subject
+
+    process_add_subject
+  end
+
 
   def current_student
     Student.find_by(id: @student_id)

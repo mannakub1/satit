@@ -30,7 +30,7 @@ class Room::RoomList
   end
 
   def year_room_all
-    YearRoom.all
+    YearRoom.all.order('name DESC')
   end
 
   def current_room

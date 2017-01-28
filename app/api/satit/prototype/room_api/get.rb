@@ -11,7 +11,7 @@ module Satit::Prototype::RoomAPI
       helpers do
         
         def room_list 
-          Room.present
+          Room.present.order
         end
 
         def current_room

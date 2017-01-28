@@ -1,7 +1,7 @@
 var myApp = angular.module('myApp', ['ngRoute']);
 
 // var address = "http://172.27.170.117:3000/";
-var address = "http://172.27.225.52:3000/";
+var address = "http://172.27.225.62:3000/";
 // var address = "http://192.168.217.102:3000/";
 // var address = "http://172.27.160.166:3000/";
 
@@ -1218,8 +1218,8 @@ myApp.controller('selectRoomCtrl', function ($scope, $http) {
 
 	$scope.selectCourse = function () {
 		var index = document.getElementById("selectCourse").value;
+		sessionStorage.setItem('year_room',JSON.stringify($scope.yearRooms[index]));
 		$scope.rooms = $scope.yearRooms[index].rooms;
-
 	}
 
 

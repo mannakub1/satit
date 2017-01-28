@@ -13,6 +13,15 @@ module Satit::Prototype::TeacherAPI::StudentAPI
         end 
       end
 
+      desc 'return student list by year room '
+      params do 
+        requires :year, type: Integer, desc: 'name of  year room'
+      end
+      get '/student_year_room' do
+        present :student, Student::StudentList.new(year: params[:year]).student_year_room \
+        , with: Satit::TeacherAPI::Student::StudentListEntity
+      end
+
       desc 'return course list'
       params do 
         requires :student_id, type: Integer, desc: 'id of student'

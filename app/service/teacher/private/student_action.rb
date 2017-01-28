@@ -28,11 +28,14 @@ module Teacher::Private::StudentAction
   end
 
   def process_add_room
-    StudentRoom.create(student_id: student.id, room_id: room.id)
+    student_room = StudentRoom.create(student_id: student.id, room_id: room.id)
+    Course.find_by(year: room.year_room.name).course_lists.find_by(room_level: room.level).subjects.each do |subject|
+      Teacher::StudentAction.new(student_room: student_room, subject: subject).add_subject
+    end
   end
 
   def process_add_subject
-    StudentSubject.create(student_id: student.id, subject_id: subject.id)
+    StudentSubject.create(student_room_id: student_room.id, subject_id: subject.id)
   end
 
   def process_add_score

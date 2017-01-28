@@ -14,11 +14,13 @@ module Satit::Prototype::TeacherAPI::StudentAPI
         end
 
         def add_student
+          puts '5555'
           Teacher::StudentAction.new.add_student(params)
           student_last
         end
 
         def add_student_room
+          puts 'test call add_student_room'
           Teacher::StudentAction.new(student: current_student).add_room(current_room)          
         end
 
@@ -80,7 +82,6 @@ module Satit::Prototype::TeacherAPI::StudentAPI
         requires :id, type: Integer, desc: 'id each of student in database'
         requires :prefix, type: String, desc: 'prefix name of student'
         requires :code_number, type: String, desc: 'number card of student'
-        requires :first_name, type: String, desc: 'frist name of student'
         requires :last_name, type: String, desc: 'last name of student'
         optional :iden_number, type: String, desc: 'number card identity'
         optional :blood, type: String, desc: 'blood'
@@ -102,9 +103,10 @@ module Satit::Prototype::TeacherAPI::StudentAPI
 
       desc 'add student'
       params do
-        requires :code_number, type: String, desc: 'number card of student'
-        requires :first_name, type: String, desc: 'frist name of student'
-        requires :last_name, type: String, desc: 'last name of student'
+        optional :prefix, type: String, desc: 'prefix name of student'
+        optional :code_number, type: String, desc: 'number card of student'
+        optional :first_name, type: String, desc: 'frist name of student'
+        optional :last_name, type: String, desc: 'last name of student'
         optional :iden_number, type: String, desc: 'number card identity'
         optional :blood, type: String, desc: 'blood'
         optional :birthdate, type: DateTime, desc: 'birthdate'
@@ -119,7 +121,7 @@ module Satit::Prototype::TeacherAPI::StudentAPI
         optional :nationality, type: String, desc: 'nation'
       end 
       post '/add_student' do
-        present :student, add_student\
+        present :student, Teacher::StudentAction.new.add_student(params) \
         , with: Satit::TeacherAPI::Student::StudentListEntity
       end
 

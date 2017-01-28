@@ -2,9 +2,7 @@ module Teacher::Private::StudentActionGuard
   
   private
 
- 
-
-  def can_add_student?
+  def can_add?
     return [false, 'not have a code number'] if not_code_number?
     return [false, 'not hava a first name'] if not_first_name?
     return [false, 'not have a last_name'] if not_last_name?
@@ -22,7 +20,7 @@ module Teacher::Private::StudentActionGuard
   end
 
   def can_add_subject?
-    return [false, 'not have  a student'] if not_student?
+    return [false, 'not have  a student'] if not_student_room?
     return [false, 'not have a subject'] if not_subject?
     return [false, 'student have a subject'] if student_subject?
 
@@ -30,7 +28,7 @@ module Teacher::Private::StudentActionGuard
   end
 
   def can_add_score?
-    return [false, 'not have  a student'] if not_student?
+    return [false, 'not have a student'] if not_student?
     return [false, 'not have a subject'] if not_subject?
     return [false, 'student not have in a subject'] if not_student_subject?
     # return [false, 'student not have a score primary term'] if not_score_primary_term?
@@ -74,7 +72,7 @@ module Teacher::Private::StudentActionGuard
   end 
 
   def student_subject?
-    subject.students.find_by(id: student.id)
+    StudentSubject.find_by(student_room_id: student_room.id, subject_id: subject.id)
   end
 
   def student_room?
@@ -99,6 +97,10 @@ module Teacher::Private::StudentActionGuard
 
   def not_room?
     !room
+  end
+
+  def not_student_room?
+    !student_room
   end
 
   def not_student?
