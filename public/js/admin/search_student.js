@@ -21,9 +21,10 @@ myApp.controller('student', function($scope, $http)  {
 		$http.get(get_student , {headers: {'token': token}})
         .success(function(data, status, header, config) {
         	console.log(data)
+			$scope.searchData = data.student;
         }).error(function(data, status, headers, config) {
 	        if(data.error === 'token expired'){
-	            window.location.href = 'login.html';;
+	            window.location.href = 'login.html';
 	        }
     	});
 	}
@@ -33,9 +34,10 @@ myApp.controller('student', function($scope, $http)  {
 		$http.get(get_student , {headers: {'token': token}})
         .success(function(data, status, header, config) {
         	console.log(data)
+            $scope.searchData = data.student;
         }).error(function(data, status, headers, config) {
 	        if(data.error === 'token expired'){
-	            window.location.href = 'login.html';;
+	            window.location.href = 'login.html';
 	        }
     	});
 	}
@@ -45,10 +47,80 @@ myApp.controller('student', function($scope, $http)  {
 		$http.get(get_student , {headers: {'token': token}})
         .success(function(data, status, header, config) {
         	console.log(data)
+            $scope.searchData = data.student;
         }).error(function(data, status, headers, config) {
 	        if(data.error === 'token expired'){
-	            window.location.href = 'login.html';;
+	            window.location.href = 'login.html';
 	        }
     	});
 	}
+
+	$scope.selectStudent = function(index){
+		sessionStorage.setItem("student",JSON.stringify($scope.searchData[index]));
+		window.location.href = "SearchStudentData.html"
+	}
+});
+
+myApp.controller('student_data', function($scope, $http)  {
+	$scope.student = JSON.parse(sessionStorage.getItem("student"));
+	console.log($scope.student);
+    if($scope.student.father.length !== 0){
+        $scope.hasFather = true;
+    }
+    if($scope.student.mother.length !== 0){
+        $scope.hasMother = true;
+    }
+    if($scope.student.guardian.length !== 0){
+        $scope.hasGuardian = true;
+    }
+});
+
+myApp.controller('student_grade', function($scope, $http)  {
+    $scope.student = JSON.parse(sessionStorage.getItem("student"));
+
+    $scope.getGrade = function (stdId) {
+        path = address + "api/student/courses?student_id=" + stdId;
+        $http.get(path, {headers: {'token': token}})
+            .success(function (data) {
+                console.log(data);
+                $scope.stdRoom = data.student_room;
+                console.log($scope.stdRoom);
+            })
+            .error(function (data, status, headers, config) {
+                if (data.error === 'token expired') {
+                    window.location.href = 'login.html';
+                    ;
+                }
+            });
+    }
+    $scope.getGrade($scope.student.id);
+    $scope.Grade =  [];
+
+    $scope.collapseGrade = function () {
+        var e = document.getElementById("selectGradeLevel").value;
+        for(var i = 0; i < $scope.Grade.length; ++i){
+            $scope.Grade[i] = false;
+        }
+        $scope.Grade[e] = true;
+
+        $scope.showStdGradeBtn = true;
+
+    }
+
+    $scope.chkScore = function (score) {
+        if(score === 0){
+            return "-";
+        }
+        else{
+            return score;
+        }
+    }
+
+    $scope.changeYearPlus = function(year){
+        return parseInt(year) + 543;
+    }
+
+    $scope.changeYearMinus = function(year){
+        return parseInt(year) - 543;
+    }
 });
