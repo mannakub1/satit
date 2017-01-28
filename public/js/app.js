@@ -1,8 +1,8 @@
 var myApp = angular.module('myApp', ['ngRoute']);
 
 // var address = "http://172.27.170.117:3000/";
-// var address = "http://172.27.225.52:3000/";
-var address = "http://192.168.217.102:3000/";
+ var address = "http://172.27.225.62:3000/";
+//var address = "http://192.168.217.102:3000/";
 // var address = "http://172.27.160.166:3000/";
 
 sessionStorage.setItem('address', address);
@@ -711,7 +711,7 @@ myApp.controller('stdCtrl',  function($scope, $http, fileUpload) {
 	$scope.showHome = true;
 		$scope.student = JSON.parse(sessionStorage.getItem('stdData'));
 
-	console.log(localStorage.getItem('token'));
+	console.log($scope.student);
 	$scope.token = localStorage.getItem('token');
 
 	if($scope.student.father.length !== 0){
@@ -828,15 +828,35 @@ myApp.controller('stdCtrl',  function($scope, $http, fileUpload) {
 	}
 
 	$scope.sendEditStudent = function(){
-		path = address + "api/teacher/edit_profile";
+		path = address + "api/student/edit_profile";
 		if(document.getElementById("male").checked){
 			$scope.student.prefix = "เด็กชาย";
 		}
 		else{
 			$scope.student.prefix = "เด็กหญิง";
 		}
-		//console.log(student)
-		$http.post(path, angular.toJson($scope.student), {
+
+		$scope.std = {};
+		$scope.std.id = $scope.student.id;
+        $scope.std.ability = $scope.student.ability;
+        $scope.std.address = $scope.student.address;
+        $scope.std.birthdate = $scope.student.birthdate;
+        $scope.std.blood = $scope.student.blood;
+        $scope.std.call = $scope.student.call;
+        $scope.std.city = $scope.student.city;
+        $scope.std.code_number = $scope.student.code_number;
+        $scope.std.delete_status = $scope.student.delete_status;
+        $scope.std.district = $scope.student.district;
+        $scope.std.ethnicity = $scope.student.ethnicity;
+        $scope.std.first_name = $scope.student.first_name;
+        $scope.std.iden_number = $scope.student.iden_number;
+        $scope.std.last_name = $scope.student.last_name;
+        $scope.std.nationality = $scope.student.nationality;
+        $scope.std.parish = $scope.student.parish;
+        $scope.std.prefix = $scope.student.prefix;
+        $scope.std.zip_code = $scope.student.zip_code;
+        console.log($scope.std);
+		$http.post(path, angular.toJson($scope.std), {
             transformRequest: angular.identity,
             headers: {'token' : $scope.token, 'Content-Type': "application/json"}
 			
@@ -844,11 +864,8 @@ myApp.controller('stdCtrl',  function($scope, $http, fileUpload) {
 		.success(function(data, status, headers, config) {
 			console.log(data);
 			$scope.student = data.student;
-			sessionStorage.setItem('stdData', $scope.student);
+			sessionStorage.setItem('stdData', JSON.stringify($scope.student));
 			console.log(data.student);
-			$http.get(pathStudent, {headers: {'token': $scope.token} }).then(function(response) {
-				$scope.studentData = response.data["student_list"];			
-		});
 			$scope.showEditStudent = false;
 			$scope.showStudentData = true;
 		//	$scope.showStudent = true;
@@ -862,7 +879,7 @@ myApp.controller('stdCtrl',  function($scope, $http, fileUpload) {
 	}
 	
 	$scope.sendEditFather = function(){
-		path = address + "api/teacher/edit_adult";
+		path = address + "api/student/edit_adult";
 		//console.log(student)
 		$http.post(path, angular.toJson($scope.student.father[0]), {
             transformRequest: angular.identity,
@@ -886,7 +903,7 @@ myApp.controller('stdCtrl',  function($scope, $http, fileUpload) {
 	}
 
 	$scope.sendEditMother = function(){
-		path = address + "api/teacher/edit_adult";
+		path = address + "api/student/edit_adult";
 		//console.log(student)
 		$http.post(path, angular.toJson($scope.student.mother[0]), {
             transformRequest: angular.identity,
@@ -909,7 +926,7 @@ myApp.controller('stdCtrl',  function($scope, $http, fileUpload) {
 	}
 	
 	$scope.sendEditGuardian = function(){
-		path = address + "api/teacher/edit_adult";
+		path = address + "api/student/edit_adult";
 	
 		console.log($scope.student.guardian[0]);
 		$http.post(path, angular.toJson($scope.student.guardian[0]), {
@@ -935,7 +952,7 @@ myApp.controller('stdCtrl',  function($scope, $http, fileUpload) {
 	}
 
 	$scope.sendAddFather = function(){
-		path = address + "api/teacher/add_adult";
+		path = address + "api/student/add_adult";
 		//console.log(student)
 		$http.post(path, angular.toJson($scope.student.father[0]), {
 			transformRequest: angular.identity,
@@ -943,7 +960,7 @@ myApp.controller('stdCtrl',  function($scope, $http, fileUpload) {
 
 		})
 			.success(function(data, status, headers, config) {
-				path = address + "api/teacher/add_father";
+				path = address + "api/student/add_father";
 				$http.post(path, angular.toJson({id : $scope.student.id, adult_id : data.id} ), {
 					transformRequest: angular.identity,
 					headers: {'token' : $scope.token, 'Content-Type': "application/json"}
@@ -965,7 +982,7 @@ myApp.controller('stdCtrl',  function($scope, $http, fileUpload) {
 	}
 
 	$scope.sendAddMother = function(){
-		path = address + "api/teacher/add_adult";
+		path = address + "api/student/add_adult";
 		//console.log(student)
 		$http.post(path, angular.toJson($scope.student.mother[0]), {
 			transformRequest: angular.identity,
@@ -973,7 +990,7 @@ myApp.controller('stdCtrl',  function($scope, $http, fileUpload) {
 
 		})
 			.success(function(data, status, headers, config) {
-				path = address + "api/teacher/add_mother";
+				path = address + "api/student/add_mother";
 				$http.post(path, angular.toJson({id : $scope.student.id, adult_id : data.id} ), {
 					transformRequest: angular.identity,
 					headers: {'token' : $scope.token, 'Content-Type': "application/json"}
@@ -995,7 +1012,7 @@ myApp.controller('stdCtrl',  function($scope, $http, fileUpload) {
 	}
 
 	$scope.sendAddGuardian = function(){
-		path = address + "api/teacher/add_adult";
+		path = address + "api/student/add_adult";
 
 		//console.log(student)
 		$http.post(path, angular.toJson($scope.student.guardian[0]), {
@@ -1004,7 +1021,7 @@ myApp.controller('stdCtrl',  function($scope, $http, fileUpload) {
 
 		})
 			.success(function(data, status, headers, config) {
-				path = address + "api/teacher/add_guardian";
+				path = address + "api/student/add_guardian";
 				$http.post(path, angular.toJson({id : $scope.student.id, adult_id : data.id} ), {
 					transformRequest: angular.identity,
 					headers: {'token' : $scope.token, 'Content-Type': "application/json"}
