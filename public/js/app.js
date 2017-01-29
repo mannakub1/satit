@@ -1436,6 +1436,35 @@ myApp.controller('viewStdGradeCtrl', function ($scope, $http) {
             $scope.stdRoom[i].gpa = '0';
         }
     }
+	$scope.cr = [];
+    for(var i = 0; i < $scope.stdRoom.length; ++i){
+		var cr = 0;
+		var cp = 0;
+		var ca = 0;
+		var gp = 0;
+		for(var j = 0; j < $scope.stdRoom[i].student_subjects.length; ++j){
+			cr += $scope.stdRoom[i].student_subjects[j].subject.credit;
+			cp += $scope.stdRoom[i].student_subjects[j].subject.credit;
+			ca += $scope.stdRoom[i].student_subjects[j].subject.credit;
+			if(!$scope.stdRoom[i].student_subjects[j].grade || $scope.stdRoom[i].student_subjects[j].grade === 0 || $scope.stdRoom[i].student_subjects[j].grade === 'U'){
+                cp -= $scope.stdRoom[i].student_subjects[j].subject.credit;
+			}
+			if(!$scope.stdRoom[i].student_subjects[j].grade || $scope.stdRoom[i].student_subjects[j].grade === 'U' ||$scope.stdRoom[i].student_subjects[j].grade === 'S'){
+				ca -= $scope.stdRoom[i].student_subjects[j].subject.credit;
+			}
+			if(!(!$scope.stdRoom[i].student_subjects[j].grade)){
+				gp += $scope.stdRoom[i].student_subjects[j].subject.credit * parseFloat($scope.stdRoom[i].student_subjects[j].grade);
+            }
+		}
+		$scope.stdRoom[i].cr_cal = cr;
+        $scope.stdRoom[i].cp_cal = cp;
+        $scope.stdRoom[i].ca_cal = ca;
+        $scope.stdRoom[i].gp_cal = gp;
+        var gpa_cal = parseFloat(gp)/parseFloat(ca);
+        $scope.stdRoom[i].gpa_cal = parseFloat(Math.round(gpa_cal * 100) / 100).toFixed(2);
+        $scope.stdRoom[i].gpa = parseFloat(Math.round($scope.stdRoom[i].gpa * 100) / 100).toFixed(2);
+	}
+
     console.log($scope.stdRoom);
 	$scope.stdId = sessionStorage.getItem('student_id')
 	console.log($scope.stdRoom);
