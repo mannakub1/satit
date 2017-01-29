@@ -3,6 +3,9 @@ var address = sessionStorage.getItem('address');
 
 
 myApp.controller('teachers', function($scope, $http)  {
+    $scope.admin_first_name = sessionStorage.getItem('admin_first_name');
+    $scope.admin_last_name = sessionStorage.getItem('admin_last_name');
+    $scope.admin_prefix = sessionStorage.getItem('admin_prefix');
 	$scope.token = localStorage.getItem('token');
 	teacher_list_path = address + 'api/teacher/present'
 

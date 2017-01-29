@@ -23,8 +23,8 @@
                             <span> <img alt="image" class="img-circle" src="img/profile_small.jpg" />
                             </span>
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">Admin</strong>
-                             </span> <span class="text-muted text-xs block">JAMZ Dev <b class="caret"></b></span> </span> </a>
+                            <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">{{admin_prefix}} {{admin_first_name}} {{admin_last_name}}</strong>
+                             </span> <span class="text-muted text-xs block">ผู้ดูแลระบบ<b class="caret"></b></span> </span> </a>
                         <ul class="dropdown-menu animated fadeInRight m-t-xs">
                             <li><a href="Profile.html">Profile</a></li>
                             <li><a href="login.html">Logout</a></li>
@@ -35,7 +35,7 @@
                     </div>
                 </li>
                 <li>
-                    <a href="Dashboard.html"><i class="fa fa-backward"></i> <span class="nav-label">กลับ</span></a>
+                    <a href="Dashboard_Viewrooms_Std.html"><i class="fa fa-backward"></i> <span class="nav-label">กลับ</span></a>
 
                 </li>
 
@@ -80,9 +80,9 @@
                                                 <option disabled="disabled" value="">---Please select---</option>
                                                 <option ng-repeat="y in stdRoom" value="{{$index}}">{{y.room.level}}</option>
                                             </select>
-                                            <div class="table-responsive" ng-repeat="y in stdRoom">
-                                                <div ng-show="Grade[$index]">
-                                                    <table class="table table-bordered" style="width:58%">
+                                            <div class="table-responsive" ng-repeat="y in stdRoom" ng-show="Grade[$index]">
+
+                                                    <table class="table table-bordered" style="width:58%; margin-bottom: -0.1%">
 
                                                         <thead>
                                                         <tr style="background-color: greenyellow;">
@@ -111,10 +111,42 @@
 
                                                         </tbody>
                                                     </table>
+<<<<<<< HEAD
                                                 </div>
                                             </div>
                                             <div >
                                                 <button class="btn btn-primary m-r-sm" align = "right" ng-click="backToStdTable()">กลับ</button>
+=======
+
+                                                <table class="table table-bordered" style="width:58%; table-layout: fixed;">
+
+                                                    <thead>
+                                                    <tr style="background-color: greenyellow;">
+                                                        <th style="background-color: #f9b66d; color:black; width:50%;" colspan="5"><center>This Semester</center></th>
+                                                        <th style="background-color: #f9b66d; color:black; width:50%;" colspan="5"><center>All Semester</center></th>
+                                                    </tr>
+
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr>
+                                                        <!--This Semester-->
+                                                        <td style="background-color: #f5e79e; color:black; width:8%"><center>CR<br>{{y.cr_cal}}</center></td>
+                                                        <td style="background-color: #f5e79e; color:black; width:77%"><center>CP<br>{{y.cp_cal}}</center></td>
+                                                        <td style="background-color: #f5e79e; color:black; max-width:5%"><center>CA<br>{{y.ca_cal}}</center></td>
+                                                        <td style="background-color: #f5e79e; color:black; width:5%"><center>GP<br>{{y.gp_cal}}</center></td>
+                                                        <td style="background-color: #f5e79e; color:black; width:5%"><center>GPA<br>{{y.gpa_cal}}</center></td>
+                                                        <!--CUMULATIVE TO THIS SEMESTER-->
+                                                        <td style="background-color: #f5e79e; color:black; width:8%"><center>CR<br>{{y.cr}}</center></td>
+                                                        <td style="background-color: #f5e79e; color:black; width:77%"><center>CP<br>{{y.cp}}</center></td>
+                                                        <td style="background-color: #f5e79e; color:black; max-width:5%"><center>CA<br>{{y.ca}}</center></td>
+                                                        <td style="background-color: #f5e79e; color:black; width:5%"><center>GP<br>{{y.gp}}</center></td>
+                                                        <td style="background-color: #f5e79e; color:black; width:5%"><center>GPA<br>{{y.gpa}}</center></td>
+                                                    </tr>
+
+                                                    </tbody>
+                                                </table>
+                                               <button class="btn btn-primary m-r-sm" align = "right" ng-click="backToStdTable()">กลับ</button>
+>>>>>>> 01a28152879c2e79fe4ab0f03c8afb235c449e02
                                                 <button class="btn btn-danger m-r-sm" ng-click="sendEditScore()">แก้ไข</button>
                                             </div>
                                         </div>

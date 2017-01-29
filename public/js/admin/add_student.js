@@ -3,6 +3,9 @@ var address = sessionStorage.getItem('address');
 var token = localStorage.getItem('token');
 
 myApp.controller('add_student', function($scope, $http)  {
+    $scope.admin_first_name = sessionStorage.getItem('admin_first_name');
+    $scope.admin_last_name = sessionStorage.getItem('admin_last_name');
+    $scope.admin_prefix = sessionStorage.getItem('admin_prefix');
     $scope.student = {prefix : "", code_number : "",
         first_name : "", last_name : "", iden_number : "",
         blood : "", birthdate : "", address : "",

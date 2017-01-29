@@ -23,8 +23,8 @@
                             <span> <img alt="image" class="img-circle" src="img/profile_small.jpg" />
                             </span>
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">Admin</strong>
-                             </span> <span class="text-muted text-xs block">JAMZ Dev <b class="caret"></b></span> </span> </a>
+                            <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">{{admin_prefix}} {{admin_first_name}} {{admin_last_name}}</strong>
+                             </span> <span class="text-muted text-xs block">ผู้ดูแลระบบ<b class="caret"></b></span> </span> </a>
                         <ul class="dropdown-menu animated fadeInRight m-t-xs">
                             <li><a href="Profile.html">Profile</a></li>
                             <li><a href="login.html">Logout</a></li>
@@ -35,7 +35,7 @@
                     </div>
                 </li>
                 <li>
-                    <a href="Dashboard.html"><i class="fa fa-backward"></i> <span class="nav-label">กลับ</span></a>
+                    <a href="Dashboard_Viewrooms.html"><i class="fa fa-backward"></i> <span class="nav-label">กลับ</span></a>
 
                 </li>
 
@@ -80,7 +80,6 @@
                                                 </div>
                                                 <div class = "col-lg-4">
                                                     &nbsp &nbsp
-                                                    <button align="left" onclick="refresh()" value="back">กลับ</button>&nbsp &nbsp
                                                     <button ng-click="goAddStudent()">เพิ่มนักเรียน</button>&nbsp &nbsp
                                                     <input type="button" onclick="printDiv('print')" value="พิมพ์รายชื่อ" />
                                                 </div>

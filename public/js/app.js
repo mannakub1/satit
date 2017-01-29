@@ -80,7 +80,9 @@ myApp.controller('mainCtrl',  function($scope, $http, fileUpload) {
 	//console.log(sessionStorage.getItem('user'));
 	$scope.token = localStorage.getItem('token');
 	$scope.userType = sessionStorage.getItem('user');
-	
+	$scope.admin_first_name = sessionStorage.getItem('admin_first_name');
+	$scope.admin_last_name = sessionStorage.getItem('admin_last_name');
+	$scope.admin_prefix = sessionStorage.getItem('admin_prefix');
 
 	$scope.roomId = -1;
 
@@ -1142,10 +1144,15 @@ myApp.controller('loginCtrl',  function($scope, $http) {
 				sessionStorage.setItem('user', "teacher");
 					if(data.teacher.status === 'teacher') {
 						sessionStorage.setItem('teacher_id', data.teacher.id);
-
+						sessionStorage.setItem('teacher_prefix', data.teacher.prefix);
+						sessionStorage.setItem('teacher_first_name', data.teacher.first_name);
+						sessionStorage.setItem('teacher_last_name',data.teacher.last_name);
 						window.location.href = 'teacher/index.html'
 					}
 					else {
+                        sessionStorage.setItem('admin_prefix', data.teacher.prefix);
+                        sessionStorage.setItem('admin_first_name', data.teacher.first_name);
+                        sessionStorage.setItem('admin_last_name', data.teacher.last_name);
 						window.location.href = 'Dashboard.html';
 					}
       })
@@ -1187,6 +1194,9 @@ myApp.controller('loginCtrl',  function($scope, $http) {
 
 myApp.controller('addTeacherCtrl',  function($scope, $http) {
 	var token = localStorage.getItem("token");
+    $scope.admin_first_name = sessionStorage.getItem('admin_first_name');
+    $scope.admin_last_name = sessionStorage.getItem('admin_last_name');
+    $scope.admin_prefix = sessionStorage.getItem('admin_prefix');
 	$scope.sendAddTeacher = function() {
 		if($scope.teacher.password === $scope.teacher2.password){
 			var path = address + "api/teacher/add";
@@ -1219,6 +1229,9 @@ myApp.controller('addTeacherCtrl',  function($scope, $http) {
 });
 
 myApp.controller('selectRoomCtrl', function ($scope, $http) {
+    $scope.admin_first_name = sessionStorage.getItem('admin_first_name');
+    $scope.admin_last_name = sessionStorage.getItem('admin_last_name');
+    $scope.admin_prefix = sessionStorage.getItem('admin_prefix');
 	$scope.token = localStorage.getItem('token');
 	pathRoom = address + "api/room/year_room_all";
 	$http.get(pathRoom, {headers: {'token': $scope.token} })
@@ -1249,6 +1262,9 @@ myApp.controller('selectRoomCtrl', function ($scope, $http) {
 })
 
 myApp.controller('viewStdCtrl', function ($scope, $http) {
+    $scope.admin_first_name = sessionStorage.getItem('admin_first_name');
+    $scope.admin_last_name = sessionStorage.getItem('admin_last_name');
+    $scope.admin_prefix = sessionStorage.getItem('admin_prefix');
 	$scope.token = localStorage.getItem('token');
 	var roomId = sessionStorage.getItem('roomId');
 
@@ -1315,7 +1331,7 @@ myApp.controller('viewStdCtrl', function ($scope, $http) {
 		var newData = JSON.stringify(student);
 		sessionStorage.setItem('student', newData);
 
-		window.location.href = 'DashboardStudent.html' ;
+		window.location.href = 'Dashboard_Viewrooms_Std_Data.html' ;
 	}
 
     $scope.goAddStudent = function(){
@@ -1325,6 +1341,9 @@ myApp.controller('viewStdCtrl', function ($scope, $http) {
 
 
 myApp.controller('viewStudentDetail', function ($scope, $http) {
+    $scope.admin_first_name = sessionStorage.getItem('admin_first_name');
+    $scope.admin_last_name = sessionStorage.getItem('admin_last_name');
+    $scope.admin_prefix = sessionStorage.getItem('admin_prefix');
 
 	student = sessionStorage.getItem('student')
 
@@ -1393,9 +1412,60 @@ myApp.controller('viewStudentDetail', function ($scope, $http) {
 
 
 myApp.controller('viewStdGradeCtrl', function ($scope, $http) {
+    $scope.admin_first_name = sessionStorage.getItem('admin_first_name');
+    $scope.admin_last_name = sessionStorage.getItem('admin_last_name');
+    $scope.admin_prefix = sessionStorage.getItem('admin_prefix');
 	$scope.token = localStorage.getItem('token');
 	$scope.Grade = [];
 	$scope.stdRoom = JSON.parse(sessionStorage.getItem('stdGrade'));
+	console.log($scope.stdRoom);
+	for(var i = 0; i < $scope.stdRoom.length; ++i) {
+        if ($scope.stdRoom[i].ca === null) {
+            $scope.stdRoom[i].ca = '0';
+        }
+        if ($scope.stdRoom[i].cp === null) {
+            $scope.stdRoom[i].cp = '0';
+        }
+        if ($scope.stdRoom[i].cr === null) {
+            $scope.stdRoom[i].cr = '0';
+        }
+        if ($scope.stdRoom[i].gp === null) {
+            $scope.stdRoom[i].gp = '0';
+        }
+        if ($scope.stdRoom[i].gpa === null) {
+            $scope.stdRoom[i].gpa = '0';
+        }
+    }
+	$scope.cr = [];
+    for(var i = 0; i < $scope.stdRoom.length; ++i){
+		var cr = 0;
+		var cp = 0;
+		var ca = 0;
+		var gp = 0;
+		for(var j = 0; j < $scope.stdRoom[i].student_subjects.length; ++j){
+			cr += $scope.stdRoom[i].student_subjects[j].subject.credit;
+			cp += $scope.stdRoom[i].student_subjects[j].subject.credit;
+			ca += $scope.stdRoom[i].student_subjects[j].subject.credit;
+			if(!$scope.stdRoom[i].student_subjects[j].grade || $scope.stdRoom[i].student_subjects[j].grade === 0 || $scope.stdRoom[i].student_subjects[j].grade === 'U'){
+                cp -= $scope.stdRoom[i].student_subjects[j].subject.credit;
+			}
+			if(!$scope.stdRoom[i].student_subjects[j].grade || $scope.stdRoom[i].student_subjects[j].grade === 'U' ||$scope.stdRoom[i].student_subjects[j].grade === 'S'){
+				ca -= $scope.stdRoom[i].student_subjects[j].subject.credit;
+			}
+			if(!(!$scope.stdRoom[i].student_subjects[j].grade)){
+				gp += $scope.stdRoom[i].student_subjects[j].subject.credit * parseFloat($scope.stdRoom[i].student_subjects[j].grade);
+            }
+		}
+		$scope.stdRoom[i].cr_cal = cr;
+        $scope.stdRoom[i].cp_cal = cp;
+        $scope.stdRoom[i].ca_cal = ca;
+        $scope.stdRoom[i].gp_cal = gp;
+        var gpa_cal = parseFloat(gp)/parseFloat(ca);
+        $scope.stdRoom[i].gpa_cal = parseFloat(Math.round(gpa_cal * 100) / 100).toFixed(2);
+        $scope.stdRoom[i].gpa = parseFloat(Math.round($scope.stdRoom[i].gpa * 100) / 100).toFixed(2);
+	}
+
+    console.log($scope.stdRoom);
 	$scope.stdId = sessionStorage.getItem('student_id')
 	console.log($scope.stdRoom);
 	console.log('test log data')

@@ -3,6 +3,9 @@ var address = sessionStorage.getItem('address');
 var token = localStorage.getItem('token');
 
 myApp.controller('index', function($scope, $http)  {
+    $scope.teacher_first_name = sessionStorage.getItem('teacher_first_name');
+    $scope.teacher_last_name = sessionStorage.getItem('teacher_last_name');
+    $scope.teacher_prefix = sessionStorage.getItem('teacher_prefix');
  	var room_id = sessionStorage.getItem('room_id');
  	console.log(room_id)
  	get_student = address + 'api/teacher/students?room_id='+ room_id  
@@ -61,7 +64,9 @@ myApp.controller('index', function($scope, $http)  {
 
 
 myApp.controller('details', function($scope, $http)  {
-
+    $scope.teacher_first_name = sessionStorage.getItem('teacher_first_name');
+    $scope.teacher_last_name = sessionStorage.getItem('teacher_last_name');
+    $scope.teacher_prefix = sessionStorage.getItem('teacher_prefix');
 	student = sessionStorage.getItem('student')
 	if( student !== null) {
 		$scope.student = JSON.parse(student);
@@ -157,6 +162,9 @@ myApp.controller('details', function($scope, $http)  {
 
 
 myApp.controller('grade', function($scope, $http)  {
+    $scope.teacher_first_name = sessionStorage.getItem('teacher_first_name');
+    $scope.teacher_last_name = sessionStorage.getItem('teacher_last_name');
+    $scope.teacher_prefix = sessionStorage.getItem('teacher_prefix');
 	$scope.Grade = []
 	student_id = sessionStorage.getItem('student_id')
 
@@ -233,6 +241,9 @@ myApp.controller('grade', function($scope, $http)  {
 });
 
 myApp.controller('add_father', function($scope, $http)  {
+    $scope.teacher_first_name = sessionStorage.getItem('teacher_first_name');
+    $scope.teacher_last_name = sessionStorage.getItem('teacher_last_name');
+    $scope.teacher_prefix = sessionStorage.getItem('teacher_prefix');
 	$scope.token = localStorage.getItem("token");
     student = sessionStorage.getItem('student')
     if( student !== null) {
@@ -274,6 +285,9 @@ myApp.controller('add_father', function($scope, $http)  {
 });
 
 myApp.controller('add_mother', function($scope, $http)  {
+    $scope.teacher_first_name = sessionStorage.getItem('teacher_first_name');
+    $scope.teacher_last_name = sessionStorage.getItem('teacher_last_name');
+    $scope.teacher_prefix = sessionStorage.getItem('teacher_prefix');
     $scope.token = localStorage.getItem("token");
     student = sessionStorage.getItem('student')
     if( student !== null) {
@@ -314,7 +328,10 @@ myApp.controller('add_mother', function($scope, $http)  {
 
 });
 
-myApp.controller('add_guardian', function($scope, $http)  {
+myApp.controller('add_guardian', function($scope, $http){
+$scope.teacher_first_name = sessionStorage.getItem('teacher_first_name');
+$scope.teacher_last_name = sessionStorage.getItem('teacher_last_name');
+$scope.teacher_prefix = sessionStorage.getItem('teacher_prefix');
     $scope.token = localStorage.getItem("token");
     student = sessionStorage.getItem('student')
     if( student !== null) {
@@ -350,12 +367,15 @@ myApp.controller('add_guardian', function($scope, $http)  {
     }
 
     $scope.backToStdData = function(){
-        window.location.href = "details.html"
+        window.location.href = "details.html";
     }
 
 });
 
 myApp.controller('edit_father', function($scope, $http)  {
+    $scope.teacher_first_name = sessionStorage.getItem('teacher_first_name');
+    $scope.teacher_last_name = sessionStorage.getItem('teacher_last_name');
+    $scope.teacher_prefix = sessionStorage.getItem('teacher_prefix');
     $scope.token = localStorage.getItem("token");
     student = sessionStorage.getItem('student')
     if( student !== null) {
@@ -391,6 +411,9 @@ myApp.controller('edit_father', function($scope, $http)  {
 });
 
 myApp.controller('edit_mother', function($scope, $http)  {
+    $scope.teacher_first_name = sessionStorage.getItem('teacher_first_name');
+    $scope.teacher_last_name = sessionStorage.getItem('teacher_last_name');
+    $scope.teacher_prefix = sessionStorage.getItem('teacher_prefix');
     $scope.token = localStorage.getItem("token");
     student = sessionStorage.getItem('student')
     if( student !== null) {
@@ -426,6 +449,9 @@ myApp.controller('edit_mother', function($scope, $http)  {
 });
 
 myApp.controller('edit_guardian', function($scope, $http)  {
+    $scope.teacher_first_name = sessionStorage.getItem('teacher_first_name');
+    $scope.teacher_last_name = sessionStorage.getItem('teacher_last_name');
+    $scope.teacher_prefix = sessionStorage.getItem('teacher_prefix');
     $scope.token = localStorage.getItem("token");
     student = sessionStorage.getItem('student')
     if( student !== null) {
