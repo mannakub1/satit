@@ -1398,6 +1398,7 @@ myApp.controller('viewStdGradeCtrl', function ($scope, $http) {
 	$scope.stdRoom = JSON.parse(sessionStorage.getItem('stdGrade'));
 	$scope.stdId = sessionStorage.getItem('student_id')
 	console.log($scope.stdRoom);
+	console.log('test log data')
 
 	$scope.collapseGrade = function () {
 		var e = document.getElementById("selectGradeLevel").value;

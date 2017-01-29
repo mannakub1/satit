@@ -9,7 +9,7 @@ class Student::SubjectList
   end
 
   def subject_all
-    student.student_rooms
+    student.student_rooms.order(:level)
   end
 
   def current_student_subject

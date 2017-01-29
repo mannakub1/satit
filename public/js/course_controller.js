@@ -119,6 +119,7 @@ myJsCourse.controller('courses', function($scope, $http){
 		$scope.course_list_index = e
 		course_list_id = $scope.courses[$scope.course_index].course_lists[e].id
 		$scope.course_list_id = $scope.courses[$scope.course_index].course_lists[e].id
+		sessionStorage.setItem('course_list_id', $scope.course_list_id)
 		console.log($scope.course_list_id)
 		
 		$scope.getSubject(course_list_id)
@@ -236,7 +237,9 @@ myJsCourse.controller('courses', function($scope, $http){
 
 		var subject_action_add = address + "api/subject/add"
 		params = { course_list_id: course_list_id, name: name, code: code, hour_per_year: hour_per_year, status: status, credit: credit}
-		
+		console.log('test functuin')
+		console.log('test data course_list_id =' + course_list_id)
+		console.log(params)
 		$http.post(subject_action_add, angular.toJson(params), {
 			transformRequest: angular.identity,
 			headers: {'token': $scope.token, 'Content-Type': "application/json"}})

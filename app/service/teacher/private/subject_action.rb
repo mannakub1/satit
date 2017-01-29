@@ -41,13 +41,53 @@ module Teacher::Private::SubjectAction
     student_subject.update_attributes(score1: score1, score2: score2)
 
     if student_subject.score2.to_i > 0.0
-      student_subject.update_attributes(grade: grade, score_result: (score1 + score2) / 2.0)
+      student_subject.update_attributes(grade: grade, score_result: (score1 + score2) / 2.0, status_grade: true)
     elsif student_subject.score2.to_i == 0.0
       student_subject.update_attributes(grade: '')
     end
 
-
+    update_gpa
     student.student_rooms.order(:created_at)
+  end
+
+  def update_gpa
+    cp = 0
+    ca = 0
+    gp = 0
+    gpa = 0
+    count = 0
+    student.student_rooms.order(:level).each do |student_room|
+      if student_room.level <= current_student_room.level
+        puts 'test function'
+        count = count + 1
+        student_room.student_subjects.each do |std|
+          puts 'test std'
+          grade = std.grade
+          credit = std.subject.credit 
+          if std.score2.to_f > 0.0
+            puts 'test nil'
+            ca = ca + credit.to_f
+            gp = gp + (credit.to_f * grade.to_f)
+            if grade != 0 
+              cp = cp + credit.to_f
+            end
+          end
+        end
+      end
+    end
+    puts "count = #{count}"
+    if count > 0 
+      puts 'test update'
+      current_student_room.update_attributes(cp: cp, ca: ca, gp: gp, gpa: gp / ca)
+    end
+  end
+
+  def current_subject
+    student_subject.subject
+  end
+
+  def current_student_room
+    student_subject.student_room
   end
 
   def current_course_list
