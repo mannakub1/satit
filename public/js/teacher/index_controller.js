@@ -3,14 +3,17 @@ var address = sessionStorage.getItem('address');
 
 
 myApp.controller('teacher_controller', function($scope, $http)  {
-	
-	
+    $scope.teacher_first_name = sessionStorage.getItem('teacher_first_name');
+    $scope.teacher_last_name = sessionStorage.getItem('teacher_last_name');
+    $scope.teacher_prefix = sessionStorage.getItem('teacher_prefix');
 });
 
 myApp.controller('student_list', function($scope, $http)  {
+    $scope.teacher_first_name = sessionStorage.getItem('teacher_first_name');
+    $scope.teacher_last_name = sessionStorage.getItem('teacher_last_name');
+    $scope.teacher_prefix = sessionStorage.getItem('teacher_prefix');
 	$scope.token = localStorage.getItem('token');
 	var teacher_id = sessionStorage.getItem('teacher_id')
-
 	get_room = address + 'api/teacher/rooms?teacher_id=' + teacher_id
 
 
@@ -32,6 +35,9 @@ myApp.controller('student_list', function($scope, $http)  {
 });
 
 myApp.controller('course', function($scope, $http)  {
+    $scope.teacher_first_name = sessionStorage.getItem('teacher_first_name');
+    $scope.teacher_last_name = sessionStorage.getItem('teacher_last_name');
+    $scope.teacher_prefix = sessionStorage.getItem('teacher_prefix');
 	$scope.token = localStorage.getItem('token');
 	var teacher_id = sessionStorage.getItem('teacher_id')
 	
@@ -55,6 +61,9 @@ myApp.controller('course', function($scope, $http)  {
 });
 
 myApp.controller('changPassword', function($scope, $http)  {
+    $scope.teacher_first_name = sessionStorage.getItem('teacher_first_name');
+    $scope.teacher_last_name = sessionStorage.getItem('teacher_last_name');
+    $scope.teacher_prefix = sessionStorage.getItem('teacher_prefix');
 	$scope.token = localStorage.getItem('token');
 
 	$scope.sendDataEditPassword = function() {

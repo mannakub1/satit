@@ -2,6 +2,9 @@ var myJsCourse = angular.module('myJsCourse', ['ngRoute']);
 var address = sessionStorage.getItem('address');
 
 myJsCourse.controller('courses', function($scope, $http){
+    $scope.admin_first_name = sessionStorage.getItem('admin_first_name');
+    $scope.admin_last_name = sessionStorage.getItem('admin_last_name');
+    $scope.admin_prefix = sessionStorage.getItem('admin_prefix');
 	$scope.token = localStorage.getItem('token');
 	$scope.showButtonManageCourse = true;
 	teacher_list_path = address + 'api/subject/courses'
@@ -256,6 +259,9 @@ myJsCourse.controller('courses', function($scope, $http){
 
 
 myJsCourse.controller('students', function($scope, $http){
+    $scope.admin_first_name = sessionStorage.getItem('admin_first_name');
+    $scope.admin_last_name = sessionStorage.getItem('admin_last_name');
+    $scope.admin_prefix = sessionStorage.getItem('admin_prefix');
 	$scope.token = localStorage.getItem('token');
 	room_id = sessionStorage.getItem('room_id');
 	student = sessionStorage.getItem('student')

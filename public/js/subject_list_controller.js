@@ -4,7 +4,9 @@ var address = sessionStorage.getItem('address');
 
 mySubject.controller('subject', function($scope, $http)  {
 	$scope.token = localStorage.getItem('token');
-
+    $scope.admin_first_name = sessionStorage.getItem('admin_first_name');
+    $scope.admin_last_name = sessionStorage.getItem('admin_last_name');
+    $scope.admin_prefix = sessionStorage.getItem('admin_prefix');
 	var subject_id = sessionStorage.getItem('subject_id');
 	var get_teacher_path = address + "api/subject/teacher_courses?id=" + subject_id
 	var get_subject_path = address + "api/subject/by_ids?id=" + subject_id
@@ -61,6 +63,9 @@ mySubject.controller('subject', function($scope, $http)  {
 });
 
 mySubject.controller('subject_edit', function($scope, $http) {
+    $scope.admin_first_name = sessionStorage.getItem('admin_first_name');
+    $scope.admin_last_name = sessionStorage.getItem('admin_last_name');
+    $scope.admin_prefix = sessionStorage.getItem('admin_prefix');
 	$scope.token = localStorage.getItem('token');
 	var subject = sessionStorage.getItem('subject');
 
@@ -96,6 +101,9 @@ mySubject.controller('subject_edit', function($scope, $http) {
 
 
 mySubject.controller('teacher', function($scope, $http) {
+    $scope.admin_first_name = sessionStorage.getItem('admin_first_name');
+    $scope.admin_last_name = sessionStorage.getItem('admin_last_name');
+    $scope.admin_prefix = sessionStorage.getItem('admin_prefix');
 	$scope.token = localStorage.getItem('token');
 	teacher_list_path = address + 'api/teacher/teacher_spec'
 
@@ -141,6 +149,9 @@ mySubject.controller('teacher', function($scope, $http) {
 
 
 mySubject.controller('room', function($scope, $http) {
+    $scope.admin_first_name = sessionStorage.getItem('admin_first_name');
+    $scope.admin_last_name = sessionStorage.getItem('admin_last_name');
+    $scope.admin_prefix = sessionStorage.getItem('admin_prefix');
 	$scope.course_list_id = sessionStorage.getItem('course_list_id');
 	$scope.token = localStorage.getItem('token');
 
