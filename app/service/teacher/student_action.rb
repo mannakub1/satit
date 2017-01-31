@@ -9,6 +9,7 @@ class Teacher::StudentAction
     @student_id ||= option[:student_id]
     @student ||= option[:student]
     @subject ||= option[:subject]
+    @room ||= option[:room]
     @student_room ||= option[:student_room]
   end
 
@@ -26,7 +27,7 @@ class Teacher::StudentAction
 
   def add_room(room)
     @room = room
-
+    @student.student_rooms.last.update_attributes(status: false)
     can_add_room, message = can_add_room?
     fail message unless can_add_room
 
@@ -50,8 +51,16 @@ class Teacher::StudentAction
     process_add_subject
   end
 
-
   def current_student
     Student.find_by(id: @student_id)
   end
+
+  def student_room_delete
+
+    can_student_room_delete, message = can_student_room_delete?
+    fail message = unless can_student_room_delete
+
+    process_student_room_delete
+  end
+end
 end

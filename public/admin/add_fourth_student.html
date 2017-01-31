@@ -89,7 +89,7 @@
                                                 <td>{{y.first_name}}</td>
                                                 <td>{{y.last_name}}</td>
                                                 <td>
-                                                <button id="bt" ng-click="addStudentRoom(y.id)" class="btn btn-info btn-sm" align = "right" >เลื่อนชั้น</button>
+                                                <button ng-attr-id="{{'bt'+$index}}" ng-click="addStudentRoom(y.id, $index)" class="btn btn-info btn-sm" align = "right" >เลื่อนชั้น</button>
                                                 <td/>   
                                             </tr>
                                         </tbody>

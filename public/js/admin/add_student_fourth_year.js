@@ -71,7 +71,7 @@ myApp.controller('fourth_student', function($scope, $http)  {
 		}
 	});
 
-	$scope.addStudentRoom = function(student_id) {
+	$scope.addStudentRoom = function(student_id,id) {
 		// document.getElementById("bt").className="btn btn-default btn-sm"
 		pathAddStudentRoom = address + 'api/student/add_student_room'
 		params = { id: student_id, room_id: room_id }
@@ -81,7 +81,7 @@ myApp.controller('fourth_student', function($scope, $http)  {
 			
         })
 		.success(function(data, status, headers, config) {
-			document.getElementById("bt").className="btn btn-default btn-sm"
+			document.getElementById("bt"+id).className="btn btn-default btn-sm"
      	 })
 		.error(function(data, status, headers, config) {
 	        if(data.error === 'token expired'){

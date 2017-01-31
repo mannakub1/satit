@@ -1,3 +1,4 @@
+
 module Satit::Prototype::TeacherAPI::StudentAPI
 
   class Post < Grape::API
@@ -46,12 +47,24 @@ module Satit::Prototype::TeacherAPI::StudentAPI
           Teacher::AdultAction.new(student: current_student).add_guardian(params[:adult_id])
         end
 
+        def student_room_delete
+          Teacher::StudentAction.new(student: current_student, room: current_room, student_room: current_student_room).student_room_delete
+        end
+
         def delete_student
           Teacher::StudentAction.new(student: current_student).delete_student\
         end
 
         def student_last
           Student.last
+        end
+
+        def current_room
+          Room.find(params[:room_id])
+        end 
+
+        def current_student_room
+          StudentRoom.find(params[:student_room_id])
         end
 
         def current_student
@@ -213,8 +226,16 @@ module Satit::Prototype::TeacherAPI::StudentAPI
         present delete_student\
         , with: Satit::TeacherAPI::Student::StudentListEntity
       end
-
       
+      desc 'delete student room'
+      params do 
+        requires :student_id, type: Integer, desc: 'id student'
+        requires :room_id, type: Integer, desc: 'id of room'
+        requires :student_room_id, type: Integer, desc: 'id of student room'
+      end
+      post :delete_student_room do
+        present :delete, student_room_delete
+      end
     end
   end
 

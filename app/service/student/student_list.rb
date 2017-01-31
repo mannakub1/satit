@@ -27,10 +27,12 @@ class Student::StudentList
 
   def student_year_room
     student = []
+    
+    
     puts current_year_room.name
     current_year_room.rooms.where(level: 'ป.3').each do |room|
       room.students.each do |std|
-        if !YearRoom.find_by(name: @year).rooms.find_by(name: room.name).students.find_by(first_name: std.first_name, last_name: std.last_name)
+        if !YearRoom.find_by(name: @year).rooms.find_by(level: 'ป.4').students.find_by(first_name: std.first_name, last_name: std.last_name)
           student << std
         end
       end

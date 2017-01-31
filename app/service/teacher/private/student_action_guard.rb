@@ -59,6 +59,13 @@ module Teacher::Private::StudentActionGuard
     [true, nil]
   end
 
+  def can_student_room_delete?
+    return [false, 'student not exist'] unless not_student?
+    return [false, 'student room not exist'] unless not_student_room?
+
+    [true, nil]
+  end
+
   def student_username?
     Student.find_by(username: username)
   end

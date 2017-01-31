@@ -10,7 +10,7 @@ module Satit::Prototype::TeacherAPI
       helpers do
 
         def student_list
-          current_room.students.order(:code_number)
+          current_room.student_rooms.order(:code_number)
         end
 
         def current_room
@@ -34,7 +34,7 @@ module Satit::Prototype::TeacherAPI
       end
       get '/students' do
         present :student_list, student_list \
-        , with: Satit::TeacherAPI::Student::StudentListEntity
+        , with: Satit::RoomAPI::StudentRoomListEntity
       end
 
       desc 'return student all'

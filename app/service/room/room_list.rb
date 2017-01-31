@@ -22,7 +22,7 @@ class Room::RoomList
   end
 
   def rooms_by_year_room_ids
-    current_year_room.rooms
+    current_year_room.rooms.order(:priority)
   end
 
   def current_year_room

@@ -1251,9 +1251,29 @@ myApp.controller('selectRoomCtrl', function ($scope, $http) {
 	$scope.selectCourse = function () {
 		var index = document.getElementById("selectCourse").value;
 		sessionStorage.setItem('year_room',JSON.stringify($scope.yearRooms[index]));
+		$scope.getRooms($scope.yearRooms[index].id)
+		// console.log("id year room = "+$scope.yearRooms[index].id);
 		$scope.rooms = $scope.yearRooms[index].rooms;
 	}
 
+	$scope.getRooms = function(year_room_id) {
+		
+		pathGetRooms = address + "api/room/room_ids?id="+year_room_id;
+		$http.get(pathGetRooms, {headers: {'token': $scope.token} })
+		.success(function(data, status, headers, config) {
+			console.log(data);
+			$scope.rooms = data.rooms
+
+		})
+		.error(function(data, status, headers, config) {
+			if(data.error === 'token expired'){
+				window.location.href = 'login.html';;
+			}
+			else{
+				console.log("error");
+			}
+		});
+	}
 
 	$scope.selectRoom = function (roomId) {
 		sessionStorage.setItem('roomId',JSON.stringify(roomId));
@@ -1271,7 +1291,12 @@ myApp.controller('viewStdCtrl', function ($scope, $http) {
 	pathStudent = address + 'api/teacher/students?room_id=' + roomId;
 	$http.get(pathStudent, {headers: {'token': $scope.token} })
 		.success(function(data, status, headers, config) {
-				$scope.studentData = data["student_list"];
+				$scope.studentData = []
+				$scope.student_room = data.student_list
+				console.log($scope.student_room)
+				for( var i = 0 ; i < data.student_list.length; i++) {
+					$scope.studentData.push(data.student_list[i].student)
+				}
 				setTimeout(function(){
 					for(var i = 0; i < $scope.studentData.length; i++){
 						//console.log("stdData" + i.toString());
@@ -1294,7 +1319,6 @@ myApp.controller('viewStdCtrl', function ($scope, $http) {
 					}
 				}, 300);
 			$scope.showRoom = false;
-			console.log(data["student_list"]);
 		})
 		.error(function(data, status, headers, config) {
 			if(data.error === 'token expired'){
@@ -1336,6 +1360,30 @@ myApp.controller('viewStdCtrl', function ($scope, $http) {
 
     $scope.goAddStudent = function(){
         window.location.href = 'AddStudents.html';
+    }
+
+    $scope.deleteStudent = function(index) {
+    	
+    	$scope.room_id = sessionStorage.getItem('roomId');
+    	$scope.student_id = $scope.student_room[index].student.id
+    	$scope.student_room_id = $scope.student_room[index].id
+    	
+    	params = { student_id: $scope.student_room_id, room_id: $scope.room_id, student_room_id: $scope.student_room_id }
+    	pathSendDataStudentRoomDelete = address + 'api/student/delete_student_room'
+    	console.log(params)
+    	$http.post(pathSendDataStudentRoomDelete, angular.toJson(params), {
+            transformRequest: angular.identity,
+            headers: {'token' : $scope.token, 'Content-Type': "application/json"}
+			
+        })
+		.success(function(data, status, headers, config) {
+			
+     	 })
+		.error(function(data, status, headers, config) {
+	        if(data.error === 'token expired'){
+				window.location.href = 'login.html';;
+			}
+      	});
     }
 });
 
