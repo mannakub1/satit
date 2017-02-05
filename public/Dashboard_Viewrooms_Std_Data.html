@@ -11,10 +11,10 @@
     <!-- Morris -->
     <link href="css/plugins/morris/morris-0.4.3.min.css" rel="stylesheet">
 </head>
-<body ng-app="myApp">
+<body ng-app="edit_student">
 
 
-<div id="wrapper" ng-controller="viewStudentDetail">
+<div id="wrapper" ng-controller="details">
     <nav class="navbar-default navbar-static-side" role="navigation">
         <div class="sidebar-collapse">
             <ul class="nav" id="side-menu">
@@ -96,8 +96,7 @@
 
                                                                     </div>
                                                                     <div class = "col-lg-2">
-
-                                                                        <button class="btn btn-default m-r-sm" align = "right" ng-click="editStudent()">แก้ไข</button>
+                                                                        <a href="Dashboard_Viewrooms_Std_EditStudent.html"> <button class="btn btn-default m-r-sm" align = "right">แก้ไข</button></a>
                                                                     </div>
                                                                 </div>
                                                                 <div class = "col-lg-3">
@@ -1502,7 +1501,7 @@
 
 <!--AngularJS Javascript -->
 <script src="js/lib/angular.min.js"></script>
-<script src="js/app.js"></script>
+<script src="js/admin/edit_student.js"></script>
 <script src="js/lib/angular-route.js"></script>
 
 <!-- Peity -->

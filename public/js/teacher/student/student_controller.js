@@ -24,10 +24,14 @@ myApp.controller('index', function($scope, $http)  {
  	$http.get(get_student , {headers: {'token': token}})
 	.success(function(data, status, header, config) {
 		$scope.students = data.student_list
+        console.log($scope.students);
 	}).error(function(data, status, headers, config) {
 		if(data.error === 'token expired'){
 			window.location.href = '../../login.html';;
 		}
+		else{
+		    console.log("455");
+        }
 	});
 
 	$scope.getDetails = function(student) {
@@ -250,7 +254,7 @@ myApp.controller('add_father', function($scope, $http)  {
         $scope.student = JSON.parse(student);
     }
 
-    $scope.sendFatherData = function(){
+    $scope.sendAddFather = function(){
         path = address + "api/student/add_adult";
         console.log($scope.student.father[0])
         $http.post(path, angular.toJson($scope.student.father[0]), {
@@ -481,7 +485,7 @@ myApp.controller('edit_guardian', function($scope, $http)  {
     }
 
     $scope.backToStdData = function(){
-        window.location.href = "details.html"
     }
+    window.location.href = "details.html"
 
 });

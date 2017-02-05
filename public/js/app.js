@@ -1396,68 +1396,68 @@ myApp.controller('viewStudentDetail', function ($scope, $http) {
     $scope.admin_last_name = sessionStorage.getItem('admin_last_name');
     $scope.admin_prefix = sessionStorage.getItem('admin_prefix');
 
-	student = sessionStorage.getItem('student')
+    student = sessionStorage.getItem('student')
 
-	$scope.hasFather = false
-	$scope.hasMother = false
-	$scope.hasGuardian = false 	
-	
-	if( student !== null) {
-		$scope.student = JSON.parse(student);
-		$scope.showStudentData = true
-	}
+    $scope.hasFather = false
+    $scope.hasMother = false
+    $scope.hasGuardian = false
 
-	if($scope.student.father.length !== 0) {
-		$scope.hasFather = true 
-	}
-	if($scope.student.mother.length !== 0) {
-		$scope.hasMother = true 
-	}
-	if($scope.student.guardian.length !== 0) {
-		$scope.hasGuardian = true 
-	}
-	
-	
-	
+    if( student !== null) {
+        $scope.student = JSON.parse(student);
+        $scope.showStudentData = true
+    }
 
-	$scope.editStudent = function() {
-		window.location.href = 'edit_student.html'
-	}
+    if($scope.student.father.length !== 0) {
+        $scope.hasFather = true
+    }
+    if($scope.student.mother.length !== 0) {
+        $scope.hasMother = true
+    }
+    if($scope.student.guardian.length !== 0) {
+        $scope.hasGuardian = true
+    }
 
-	$scope.sendEditStudent = function() {
-		$scope.token = localStorage.getItem('token');
-		path = address + "api/student/edit_profile";
-		if(document.getElementById("male").checked){
-			$scope.student.prefix = "เด็กชาย";
-		}
-		else{
-			$scope.student.prefix = "เด็กหญิง";
-		}
 
-		$scope.sentStudent = {id : $scope.student.id, prefix : $scope.student.prefix, code_number : $scope.student.code_number,
-			first_name : $scope.student.first_name, last_name : $scope.student.last_name, iden_number : $scope.student.iden_number,
-			blood : $scope.student.blood, birthdate : $scope.student.birthdate, address : $scope.student.address,
-			district : $scope.student.district, parish : $scope.student.parish, city : $scope.student.city, call : $scope.student.call
-			, zip_code : $scope.student.zip_code, ability : $scope.student.ability, ethnicity : $scope.student.ethnicity,
-			nationality : $scope.student.nationality};
-		// console.log($scope.sentStudent);
-		$http.post(path, angular.toJson($scope.sentStudent), {
+
+
+    $scope.editStudent = function() {
+        window.location.href = 'edit_student.html'
+    }
+
+    $scope.sendEditStudent = function() {
+        $scope.token = localStorage.getItem('token');
+        path = address + "api/student/edit_profile";
+        if(document.getElementById("male").checked){
+            $scope.student.prefix = "เด็กชาย";
+        }
+        else{
+            $scope.student.prefix = "เด็กหญิง";
+        }
+
+        $scope.sentStudent = {id : $scope.student.id, prefix : $scope.student.prefix, code_number : $scope.student.code_number,
+            first_name : $scope.student.first_name, last_name : $scope.student.last_name, iden_number : $scope.student.iden_number,
+            blood : $scope.student.blood, birthdate : $scope.student.birthdate, address : $scope.student.address,
+            district : $scope.student.district, parish : $scope.student.parish, city : $scope.student.city, call : $scope.student.call
+            , zip_code : $scope.student.zip_code, ability : $scope.student.ability, ethnicity : $scope.student.ethnicity,
+            nationality : $scope.student.nationality};
+        // console.log($scope.sentStudent);
+        $http.post(path, angular.toJson($scope.sentStudent), {
             transformRequest: angular.identity,
             headers: {'token' : $scope.token, 'Content-Type': "application/json"}
-			
+
         })
-		.success(function(data, status, headers, config) {
-			// console.log(data.student)
-			var newData = JSON.stringify(data.student)
-			sessionStorage.setItem('student', newData)
-			window.location.href = 'details.html'
-      })
-		.error(function(data, status, headers, config) {
-        if(data.error === 'token expired'){
-			window.location.href = 'login.html';;
-		}
-      });
-	}
+            .success(function(data, status, headers, config) {
+                // console.log(data.student)
+                var newData = JSON.stringify(data.student)
+                sessionStorage.setItem('student', newData)
+                window.location.href = 'details.html'
+            })
+            .error(function(data, status, headers, config) {
+                if(data.error === 'token expired'){
+                    window.location.href = 'login.html';;
+                }
+            });
+    }
 
 });
 

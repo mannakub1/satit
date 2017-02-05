@@ -84,13 +84,13 @@
                                                         <tbody>
                                                             <tr ng-repeat="y in students">
                                                                 <td>{{$index + 1}}</td>
-                                                                <td>{{y.code_number}}</td>
-                                                                <td>{{y.prefix}}</td>
-                                                                <td>{{y.first_name}}</td>
-                                                                <td>{{y.last_name}}</td>
+                                                                <td>{{y.student.code_number}}</td>
+                                                                <td>{{y.student.prefix}}</td>
+                                                                <td>{{y.student.first_name}}</td>
+                                                                <td>{{y.student.last_name}}</td>
                                                                 <td>
-                                                                <button ng-click="getDetails(y)" class="btn btn-info btn-sm" align = "right" >ดูประวัติ</button>
-                                                                <button ng-click="getGrade(y.id)" class="btn btn-info btn-sm" align = "right" >ดูผลการศึกษา</button>
+                                                                <button ng-click="getDetails(y.student)" class="btn btn-info btn-sm" align = "right" >ดูประวัติ</button>
+                                                                <button ng-click="getGrade(y.student.id)" class="btn btn-info btn-sm" align = "right" >ดูผลการศึกษา</button>
 
                                                                 <td/>   
                                                             </tr>
