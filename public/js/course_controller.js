@@ -48,11 +48,11 @@ myJsCourse.controller('courses', function($scope, $http){
 	$scope.selectCourse = function() {
 		$scope.course_lists = $scope.courses[document.getElementById("selectCourse").value].course_lists
 		var e = document.getElementById("selectCourse").value;
-
 		$scope.showButtonManageCourse = false;
 		$scope.showInputTextAddCourse = false;
 		
 		$scope.course_index = e;
+		$scope.selectCourseList();
 		// $scope.getCourseList(e)
 		// setTimeout(function() {$scope.selectCourseList()}, 500);
 	}

@@ -1115,7 +1115,7 @@ myApp.controller('loginCtrl',  function($scope, $http) {
 	$scope.apiPass = '1234';
 	$scope.user = '';
 	$scope.pass = '';
-	
+
 
 	
 	$scope.login = function(){
@@ -1275,7 +1275,9 @@ myApp.controller('selectRoomCtrl', function ($scope, $http) {
 		});
 	}
 
-	$scope.selectRoom = function (roomId) {
+	$scope.selectRoom = function (roomId, index) {
+	    $scope.roomSelect = JSON.parse(sessionStorage.getItem('year_room'));
+	    sessionStorage.setItem('room_data', JSON.stringify($scope.rooms[index]));
 		sessionStorage.setItem('roomId',JSON.stringify(roomId));
 		window.location.href = "Dashboard_Viewrooms_Std.html";
 	}
@@ -1287,6 +1289,7 @@ myApp.controller('viewStdCtrl', function ($scope, $http) {
     $scope.admin_prefix = sessionStorage.getItem('admin_prefix');
 	$scope.token = localStorage.getItem('token');
 	var roomId = sessionStorage.getItem('roomId');
+	$scope.roomData = JSON.parse(sessionStorage.getItem('room_data'));
 
 	pathStudent = address + 'api/teacher/students?room_id=' + roomId;
 	$http.get(pathStudent, {headers: {'token': $scope.token} })

@@ -3,7 +3,9 @@ var address = sessionStorage.getItem('address');
 var token = localStorage.getItem('token');
 
 myApp.controller('rooms', function($scope, $http)  {
-
+    $scope.admin_first_name = sessionStorage.getItem('admin_first_name');
+    $scope.admin_last_name = sessionStorage.getItem('admin_last_name');
+    $scope.admin_prefix = sessionStorage.getItem('admin_prefix');
 	$scope.table = false
 	$scope.negative = false
 	pathRoom = address + "api/room/year_room_all";
