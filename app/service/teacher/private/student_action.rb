@@ -28,11 +28,12 @@ module Teacher::Private::StudentAction
   end
 
   def process_add_room
-    puts 'test before create'
     student_room = StudentRoom.create(student_id: student.id, room_id: room.id, level: room.level, code_number: student.code_number)
-    puts 'test after create'
-    Course.find_by(year: room.year_room.name).course_lists.find_by(room_level: room.level).subjects.each do |subject|
-      Teacher::StudentAction.new(student_room: student_room, subject: subject).add_subject
+    
+    if Course.find_by(year: room.year_room.name) != nil
+      Course.find_by(year: room.year_room.name).course_lists.find_by(room_level: room.level).subjects.each do |subject|
+        Teacher::StudentAction.new(student_room: student_room, subject: subject).add_subject
+      end
     end
   end
 

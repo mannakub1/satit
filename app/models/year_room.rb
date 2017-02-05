@@ -9,5 +9,5 @@
 #
 
 class YearRoom < ActiveRecord::Base
-  has_many :rooms
+  has_many :rooms, dependent: :destroy
 end

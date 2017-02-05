@@ -2,9 +2,9 @@ var myApp = angular.module('myApp', ['ngRoute']);
 
 // var address = "http://172.27.170.117:3000/";
 
- var address = "http://172.27.225.62:3000/";
+ var address = "http://172.27.225.52:3000/";
 //var address = "http://192.168.217.102:3000/";
-
+// var address = 'http://localhost:3000/'
 // var address = "http://172.27.160.166:3000/";
 
 sessionStorage.setItem('address', address);
