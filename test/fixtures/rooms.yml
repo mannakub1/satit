@@ -10,6 +10,7 @@
 #  updated_at   :datetime         not null
 #  status       :string
 #  year_room_id :integer
+#  priority     :integer
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

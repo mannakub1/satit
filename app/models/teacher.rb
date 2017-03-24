@@ -11,6 +11,7 @@
 #  password_digest :string
 #  status          :string
 #  resign          :boolean
+#  prefix          :string
 #
 
 class Teacher < ActiveRecord::Base

@@ -12,6 +12,7 @@
 #  student_room_id :integer
 #  score_result    :float
 #  status          :boolean          default(TRUE)
+#  status_grade    :boolean          default(FALSE)
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

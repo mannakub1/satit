@@ -11,6 +11,7 @@
 #  password_digest :string
 #  status          :string
 #  resign          :boolean
+#  prefix          :string
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
