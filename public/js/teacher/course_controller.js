@@ -20,9 +20,12 @@ myApp.controller('roomindex', function($scope, $http)  {
         }
     });
 
-    $scope.get = function(room_id) {
-        console.log('test function getStudentList')
-        sessionStorage.setItem('room_id', room_id);
+    $scope.get = function(index_room) {
+        console.log('test function getStudentList =' + index_room)
+
+        sessionStorage.setItem('name_room', "ชั้นประถมศึกษาชั้นปีที่ " +  $scope.room_list[index_room].level+ " ห้อง "+  $scope.room_list[index_room].name ); 
+        sessionStorage.setItem('year_room', "ปีการศึกษา" +  $scope.room_list[index_room].year);
+        sessionStorage.setItem('room_id', $scope.room_list[index_room].id);
         window.location.href = '../course/index_student.html'
     }
 
@@ -33,6 +36,8 @@ myApp.controller('students', function($scope, $http)  {
     $scope.teacher_first_name = sessionStorage.getItem('teacher_first_name');
     $scope.teacher_last_name = sessionStorage.getItem('teacher_last_name');
     $scope.teacher_prefix = sessionStorage.getItem('teacher_prefix');
+    $scope.show_name_room = sessionStorage.getItem('name_room');
+    $scope.show_year_room = sessionStorage.getItem('year_room');
     var room_id = sessionStorage.getItem('room_id');
     var subject_id = sessionStorage.getItem('subject_id')
     get_students = address + 'api/student/student_subject?room_id='+ room_id + '&subject_id=' + subject_id
