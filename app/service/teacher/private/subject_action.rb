@@ -57,24 +57,35 @@ module Teacher::Private::SubjectAction
     gpa = 0
     count = 0
     student.student_rooms.order(:level).each do |student_room|
-      if student_room.level <= current_student_room.level
-        puts 'test function'
-        count = count + 1
-        student_room.student_subjects.each do |std|
-          puts 'test std'
-          grade = std.grade
-          credit = std.subject.credit 
-          if std.score2.to_f > 0.0
-            puts 'test nil'
-            ca = ca + credit.to_f
-            gp = gp + (credit.to_f * grade.to_f)
-            if grade != 0 
-              cp = cp + credit.to_f
+        puts "test update #{student_room.level}"
+        if current_student_room.level >= 4 && student_room.level >= 4 
+            count = count + 1
+            student_room.student_subjects.each do |std|
+              grade = std.grade
+              credit = std.subject.credit 
+              if std.score2.to_f > 0.0
+                ca = ca + credit.to_f
+                gp = gp + (credit.to_f * grade.to_f)
+                if grade != 0 
+                  cp = cp + credit.to_f
+                end
+              end
             end
-          end
+        elsif current_student_room.level < 4
+           count = count + 1
+            student_room.student_subjects.each do |std|
+              grade = std.grade
+              credit = std.subject.credit 
+              if std.score2.to_f > 0.0
+                ca = ca + credit.to_f
+                gp = gp + (credit.to_f * grade.to_f)
+                if grade != 0 
+                  cp = cp + credit.to_f
+                end
+              end
+            end
         end
       end
-    end
     puts "count = #{count}"
     if count > 0 
       puts 'test update'

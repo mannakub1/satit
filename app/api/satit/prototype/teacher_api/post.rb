@@ -9,6 +9,19 @@ module Satit::Prototype::TeacherAPI
 
       helpers do
 
+        def file_add_student
+          params[:students].each do |student|
+            Teacher::StudentAction.new.add_student(student)
+            Teacher::StudentAction.new(student: Student.last).add_room(current_room)
+          end
+
+          true
+        end 
+
+        def current_room
+          Room.find(params[:room_id])
+        end
+
         def current_student
           Student.find(params[:student_id])
         end
@@ -46,6 +59,32 @@ module Satit::Prototype::TeacherAPI
         present Teacher::SubjectAction.new(student: current_student, student_subject: current_student_subject)\
         .edit_score(params[:score1], params[:score2])\
         , with: Satit::StudentAPI::StudentRoomListEntity
+      end
+
+      desc 'add student from file'
+      params do
+          requires :students, type: Array do 
+            optional :prefix, type: String, desc: 'prefix name of student'
+            optional :code_number, type: String, desc: 'number card of student'
+            optional :first_name, type: String, desc: 'frist name of student'
+            optional :last_name, type: String, desc: 'last name of student'
+            optional :iden_number, type: String, desc: 'number card identity'
+            optional :blood, type: String, desc: 'blood'
+            optional :birthdate, type: DateTime, desc: 'birthdate'
+            optional :address, type: String, desc: 'address'
+            optional :district, type: String, desc: 'district'
+            optional :parish, type: String, desc: ''
+            optional :city, type: String, desc: ''
+            optional :call, type: String, desc: 'number cell phone'
+            optional :zip_code, type: String, desc: 'zip code'
+            optional :ability, type: String, desc: 'student can it'
+            optional :ethnicity, type: String, desc: 'enthicity'
+            optional :nationality, type: String, desc: 'nation'
+          end
+          requires :room_id, type: Integer, desc: 'register student in room'
+      end 
+      post '/file_add_student' do
+        present :status_add_student, file_add_student
       end
 
       desc 'add teacher'

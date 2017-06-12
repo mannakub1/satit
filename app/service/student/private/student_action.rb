@@ -12,6 +12,10 @@ module Student::Private::StudentAction
     compare_password?
   end
 
+  def process_delete
+    student.update_attributes(delete_status: 'true')
+  end
+
   def compare_password?
     current_student_username.authenticate(password_digest)
   end

@@ -25,13 +25,18 @@ class Teacher::StudentAction
     process_add_student
   end
 
+  def delete_student
+
+  end
+
   def add_room(room)
     @room = room
-    @student.student_rooms.last.update_attributes(status: false)
+    
     can_add_room, message = can_add_room?
     fail message unless can_add_room
 
     process_add_room
+    @student.student_rooms.last.update_attributes(status: false)
     # student_room.update_attributes(room_state: true)
   end
 
@@ -62,5 +67,5 @@ class Teacher::StudentAction
 
     process_student_room_delete
   end
-end
+
 end

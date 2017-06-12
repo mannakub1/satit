@@ -52,7 +52,7 @@ module Satit::Prototype::TeacherAPI::StudentAPI
         end
 
         def delete_student
-          Teacher::StudentAction.new(student: current_student).delete_student\
+          Student::StudentAction.new(student: current_student).delete\
         end
 
         def student_last

@@ -9,6 +9,50 @@ myJsCourse.controller('courses', function($scope, $http){
 	$scope.showButtonManageCourse = true;
 	teacher_list_path = address + 'api/subject/courses'
 
+
+
+	$scope.index_current_course = sessionStorage.getItem('index_current_course');
+	$scope.index_current_course_list = sessionStorage.getItem('index_current_course_list');
+	$scope.show_course = $scope.index_current_course;
+
+	$http.get( teacher_list_path , {headers: {'token': $scope.token}})
+	.success(function(data, status, header, config) {
+		console.log("get data " + data.courses);
+		$scope.courses = data.courses;
+			
+		// console.log(data.courses);
+		// console.log('test index_current_course = ' + $scope.index_current_course);
+		// console.log('test courses = ' + $scope.courses);
+
+		console.log('test index_current_course_list = ' + $scope.index_current_course_list);
+		console.log('test courses_list  = ' + $scope.courses[$scope.index_current_course].course_lists[$scope.index_current_course_list].id);
+
+		if ($scope.show_course == null) {
+
+			$scope.show_course = "---Please select---"
+			$scope.show_course_list = "";
+
+		}else {
+
+			$scope.course_lists = $scope.courses[$scope.index_current_course].course_lists;
+			$scope.course_list_id = $scope.courses[$scope.index_current_course].course_lists[$scope.index_current_course_list].id;
+			
+			$scope.show_course = "หลักสูตรปีการศึกษา"+$scope.courses[$scope.index_current_course].year;
+			$scope.show_course_list = $scope.courses[$scope.index_current_course].course_lists[$scope.index_current_course_list].room_level;
+			
+			$scope.selectComplete();	
+		}
+	}).error(function(data, status, headers, config) {
+   		console.log("error")
+		if(data.error === 'token expired'){
+			window.location.href = 'login.html';;
+		}
+    });
+
+
+
+
+	
 	// var course_list = sessionStorage.getItem('course_lists');
 	// var course_list_id = sessionStorage.getItem('course_list_id');
 	// var subject = sessionStorage.getItem('subjects');
@@ -30,16 +74,7 @@ myJsCourse.controller('courses', function($scope, $http){
 	// }
 
 
-	$http.get( teacher_list_path , {headers: {'token': $scope.token}})
-	.success(function(data, status, header, config) {
-		console.log(data.courses);
-		$scope.courses = data.courses;
-	}).error(function(data, status, headers, config) {
-   		console.log("error")
-		if(data.error === 'token expired'){
-			window.location.href = 'login.html';;
-		}
-    });
+	
 
 	$scope.AddTextInput = function() {
 		$scope.showButtonManageCourse = false;
@@ -51,7 +86,10 @@ myJsCourse.controller('courses', function($scope, $http){
 		$scope.showButtonManageCourse = false;
 		$scope.showInputTextAddCourse = false;
 		
-		$scope.course_index = e;
+		$scope.current_course = $scope.courses[e].year;
+		console.log('test data e = ' + e);
+		sessionStorage.setItem('index_current_course', e);
+		$scope.index_current_course = e;
 		$scope.selectCourseList();
 		// $scope.getCourseList(e)
 		// setTimeout(function() {$scope.selectCourseList()}, 500);
@@ -119,14 +157,15 @@ myJsCourse.controller('courses', function($scope, $http){
 
 	$scope.selectCourseList = function() {
 		var e = document.getElementById("selectCourseList").value;
-		$scope.course_list_index = e
-		course_list_id = $scope.courses[$scope.course_index].course_lists[e].id
-		$scope.course_list_id = $scope.courses[$scope.course_index].course_lists[e].id
-		sessionStorage.setItem('course_list_id', $scope.course_list_id)
-		console.log($scope.course_list_id)
-		
-		$scope.getSubject(course_list_id)
-		$scope.getRoom(course_list_id)	
+		$scope.show_course_list = $scope.courses[$scope.index_current_course].course_lists[e].room_level;
+		$scope.index_current_course_list = e
+		$scope.course_list_id = $scope.courses[$scope.index_current_course].course_lists[e].id
+		sessionStorage.setItem('index_current_course_list', e)
+	}
+
+	$scope.selectComplete = function() {
+		$scope.getSubject($scope.course_list_id )
+		$scope.getRoom($scope.course_list_id )	
 		$scope.showButtonManageCourse = false;
 		$scope.showTable = true;	
 	}
@@ -289,6 +328,7 @@ myJsCourse.controller('students', function($scope, $http){
 	$http.get(get_student , {headers: {'token': $scope.token}})
 		.success(function(data, status, header, config) {
 			$scope.students = data.student_list
+			console.log($scope.students)
 		})
 		.error(function(data, status, headers, config) {
        		console.log("error")

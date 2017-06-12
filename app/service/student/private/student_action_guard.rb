@@ -11,6 +11,12 @@ module Student::Private::StudentActionGuard
     [true, nil]
   end
 
+  def can_delete?
+    return [false, 'not have exist student'] if not_student_exist?
+
+    [true, nil]
+  end
+
   def can_add_room?
     return [false, 'not have a student'] if not_student?
     return [false, 'not have a room'] if not_room?
@@ -61,6 +67,10 @@ module Student::Private::StudentActionGuard
 
   def student_username?
     Student.find_by(username: username)
+  end
+
+  def not_student_exist?
+    !Student.find_by(id: student.id)
   end
 
   def username?

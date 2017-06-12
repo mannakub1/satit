@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170205135835) do
+ActiveRecord::Schema.define(version: 20170508181730) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 20170205135835) do
     t.string   "prefix"
     t.string   "nationality"
     t.string   "iden_number"
+    t.string   "image"
   end
 
   create_table "api_keys", force: :cascade do |t|
@@ -173,6 +174,7 @@ ActiveRecord::Schema.define(version: 20170205135835) do
     t.string   "delete_status"
     t.string   "username"
     t.string   "password_digest"
+    t.string   "image"
   end
 
   create_table "subjects", force: :cascade do |t|
@@ -214,6 +216,7 @@ ActiveRecord::Schema.define(version: 20170205135835) do
     t.string   "status"
     t.boolean  "resign"
     t.string   "prefix"
+    t.string   "image"
   end
 
   create_table "year_rooms", force: :cascade do |t|
