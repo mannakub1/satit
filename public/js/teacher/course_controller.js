@@ -6,6 +6,8 @@ myApp.controller('roomindex', function($scope, $http)  {
     $scope.teacher_first_name = sessionStorage.getItem('teacher_first_name');
     $scope.teacher_last_name = sessionStorage.getItem('teacher_last_name');
     $scope.teacher_prefix = sessionStorage.getItem('teacher_prefix');
+    $scope.subject = JSON.parse(sessionStorage.getItem('subject'))[sessionStorage.getItem('subject_index')];
+
     var subject_id = sessionStorage.getItem('subject_id')
     get_room = address + 'api/subject/rooms_by_subject?subject_id=' + subject_id
     $http.get(get_room , {headers: {'token': token}})

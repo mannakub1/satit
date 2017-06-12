@@ -50,12 +50,13 @@ myApp.controller('course', function($scope, $http)  {
 
 	}).error(function(data, status, headers, config) {
 		if(data.error === 'token expired'){
-			window.location.href = 'login.html';;
+			window.location.href = 'login.html';
 		}
 	});
 
-	$scope.getRoom = function(subject_id){
-		sessionStorage.setItem('subject_id', subject_id)
+	$scope.getRoom = function(subject_index){
+		sessionStorage.setItem('subject_index', subject_index)
+		sessionStorage.setItem('subject', JSON.stringify($scope.subjects));
 		window.location.href = '../teacher/course/index.html'
 	}
 });
