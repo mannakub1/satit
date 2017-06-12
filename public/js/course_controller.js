@@ -160,7 +160,9 @@ myJsCourse.controller('courses', function($scope, $http){
 		$scope.show_course_list = $scope.courses[$scope.index_current_course].course_lists[e].room_level;
 		$scope.index_current_course_list = e
 		$scope.course_list_id = $scope.courses[$scope.index_current_course].course_lists[e].id
-		sessionStorage.setItem('index_current_course_list', e)
+		sessionStorage.setItem('index_current_course_list', e);
+
+		selectComplete();
 	}
 
 	$scope.selectComplete = function() {
