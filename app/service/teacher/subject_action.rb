@@ -22,8 +22,6 @@ class Teacher::SubjectAction
   end
 
   def add_room(params)
-    puts course_list_id
-    puts params
     @room_id = params
 
     can_add_room, message = can_add_room?
@@ -33,12 +31,12 @@ class Teacher::SubjectAction
   end
 
   def edit(params)
-    puts '555'
     @params = params
 
     can_edit, message = can_edit?
     fail message unless can_edit
 
+    puts params
     process_edit
   end
 

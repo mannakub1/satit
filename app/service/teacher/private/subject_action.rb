@@ -16,9 +16,10 @@ module Teacher::Private::SubjectAction
   end
 
   def process_edit
-    current_subject.update_attributes(params)
+    
+    current_subject1.update_attributes(params)
 
-    current_subject
+    current_subject1
   end
 
   def process_add_teacher
@@ -33,8 +34,8 @@ module Teacher::Private::SubjectAction
     TeacherCourse.find_by(subject_id: subject_id, teacher_id: params)
   end
 
-  def current_subject
-    Subject.find_by(id: subject_id)
+  def current_subject1
+    Subject.find(subject_id)
   end
 
   def process_edit_score

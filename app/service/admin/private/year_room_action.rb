@@ -33,6 +33,8 @@ module Admin::Private::YearRoomAction
       process_add_student(year_room_old, 'มหานที', room_11)
       process_add_student(year_room_old, 'ปถวีธร', room_12)
     end
+
+    year_room_new.rooms
   end
 
 

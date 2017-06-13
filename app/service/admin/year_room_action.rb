@@ -10,12 +10,14 @@ class Admin::YearRoomAction
   end
 
   def add(params)
+    puts 'in fuction add'
     @params = params
     @name = params[:name]
 
     can_add, message = can_add?
     fail message unless can_add
 
+    puts 'in complete guard'
     process_add
     process_add_rooms
   end

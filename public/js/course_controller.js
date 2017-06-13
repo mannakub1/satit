@@ -43,7 +43,7 @@ myJsCourse.controller('courses', function($scope, $http){
 			$scope.selectComplete();	
 		}
 	}).error(function(data, status, headers, config) {
-   		console.log("error")
+   		console.log("error");
 		if(data.error === 'token expired'){
 			window.location.href = 'login.html';;
 		}
@@ -168,6 +168,7 @@ myJsCourse.controller('courses', function($scope, $http){
 	}
 
 	$scope.selectComplete = function() {
+		sessionStorage.setItem('course_list_id', $scope.course_list_id);
 		$scope.getSubject($scope.course_list_id )
 		$scope.getRoom($scope.course_list_id )	
 		$scope.showButtonManageCourse = false;

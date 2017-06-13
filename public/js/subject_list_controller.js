@@ -92,6 +92,7 @@ mySubject.controller('subject_edit', function($scope, $http) {
 			window.location.href = 'SubjectList.html'
 		})
 		.error(function(data, status, headers, config) {
+			
        		if(data.error === 'token expired'){
 				window.location.href = 'login.html';;
 			}
