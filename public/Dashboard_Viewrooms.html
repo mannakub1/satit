@@ -79,7 +79,21 @@
                                         <option ng-repeat="y in yearRooms" value="{{$index}}">หลักสูตรปีการศึกษา{{y.name}}</option>
                                     </select>
                                     <br>
-                                    <div class="table-responsive">
+                                    <div align="left" ng-show="showButtonManageYearRoom" >
+
+                                        <button  class="btn btn-default btn-sm" ng-click="AddTextInput()" >เพิ่มห้องเรียน</button></a>
+                                    </div>
+                                    <div class="row" align="left" ng-show="showInputTextAddYearRoom">
+                                        <div class="col-lg-6">
+                                            เพิ่มห้องเรียนปีการศึกษา
+                                            <input type="number" align="left"  ng-model="addRoom.name"  required="">
+                                            <button ng-click="sendDataAddYearRoom()" class="btn btn-info btn-sm" align = "right" >เพิ่ม</button>
+                                            <br>
+                                        </div>
+                                        <br>
+                                        <br>
+                                    </div>
+                                    <div class="table-responsive" ng-show="showTable">
                                         <table class="table table-hover" >
                                             <thead>
                                             <tr>

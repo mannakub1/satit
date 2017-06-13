@@ -5,7 +5,7 @@ var myApp = angular.module('myApp', ['ngRoute']);
  // var address = "http://172.27.225.52:3000/";
 //var address = "http://192.168.217.102:3000/";
 // var address = 'http://localhost:3000/'
-// var address = 'http://202.28.73.138:3000/'
+//var address = 'http://202.28.73.138:3000/'
 var address = 'http://172.27.225.177:3000/'
 //var address = 'http://172.27.160.80:3000/'
 // var address = "http://172.27.160.166:3000/";
@@ -1161,6 +1161,7 @@ myApp.controller('loginCtrl',  function($scope, $http) {
 					}
       })
 		.error(function(data, status, headers, config) {
+			console.log(data.error);
 			if(data.error === "not teacher"){
 				path = address + "api/teacher/student/login";
 					$http.post(path, angular.toJson(authen), {
@@ -1205,6 +1206,7 @@ myApp.controller('addTeacherCtrl',  function($scope, $http) {
 		if($scope.teacher.password === $scope.teacher2.password){
 			var path = address + "api/teacher/add";
 			$scope.teacher.status = document.getElementById("status").value;
+			$scope.teacher.resign = true;
 			console.log($scope.teacher);
 			$http.post(path, angular.toJson($scope.teacher), {
 				transformRequest: angular.identity,
@@ -1237,6 +1239,7 @@ myApp.controller('selectRoomCtrl', function ($scope, $http) {
     $scope.admin_last_name = sessionStorage.getItem('admin_last_name');
     $scope.admin_prefix = sessionStorage.getItem('admin_prefix');
 	$scope.token = localStorage.getItem('token');
+	$scope.showButtonManageYearRoom = true;
 	pathRoom = address + "api/room/year_room_all";
 	$http.get(pathRoom, {headers: {'token': $scope.token} })
 		.success(function(data, status, headers, config) {
@@ -1258,7 +1261,34 @@ myApp.controller('selectRoomCtrl', function ($scope, $http) {
 		$scope.getRooms($scope.yearRooms[index].id)
 		// console.log("id year room = "+$scope.yearRooms[index].id);
 		$scope.rooms = $scope.yearRooms[index].rooms;
+		$scope.showTable = true;
+        $scope.showButtonManageYearRoom = false;
 	}
+
+	$scope.AddTextInput = function () {
+		$scope.addRoom = {};
+        $scope.showButtonManageYearRoom = false;
+        $scope.showInputTextAddYearRoom = true;
+    }
+    
+    $scope.sendDataAddYearRoom = function () {
+		console.log($scope.addRoom);
+        $http.post(address + "api/room/create_year_room", angular.toJson($scope.addRoom), {
+            transformRequest: angular.identity,
+            headers: {'token' : $scope.token, 'Content-Type': "application/json"}
+
+        })
+            .success(function(data, status, headers, config) {
+            	alert("เพิ่มห้องเรียนสำเร็จ");
+				refresh();
+            })
+            .error(function(data, status, headers, config) {
+            	console.log(data.error);
+                if(data.error === 'token expired'){
+                    window.location.href = 'login.html';;
+                }
+            });
+    }
 
 	$scope.getRooms = function(year_room_id) {
 		

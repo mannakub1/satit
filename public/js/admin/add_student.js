@@ -2,7 +2,7 @@ var myApp = angular.module('addStd', ['ngRoute']);
 var address = sessionStorage.getItem('address');
 var token = localStorage.getItem('token');
 
-myApp.directive('uploader', function() {
+myApp.directive('uploader', function($http) {
     return {
         restrict: 'E',
         template: '<input type="file"><br><br>' +
@@ -18,7 +18,7 @@ myApp.directive('uploader', function() {
                 console.log(dataStudent.data[0].ชื่อ);
                 var student = [];
                 for(var i = 0; i < dataStudent.data.length; ++i){
-                    if(dataStudent.data[i].ชื่อ == ""){
+                    if(dataStudent.data[i].ชื่อ == "" || dataStudent.data[i].ลำดับที่ == ""){
                         break;
                     }
                     student[i] = {
@@ -35,18 +35,19 @@ myApp.directive('uploader', function() {
                     "room_id" : sessionStorage.getItem('roomId'),
                 }
                  console.log(studentJson);
-                $http.post(address + "api/file_add_student", studentJson, {
+                $http.post(address + "api/teacher/file_add_student", angular.toJson(studentJson), {
                     transformRequest: angular.identity,
                     headers: {'token' : token, 'Content-Type': "application/json"}
 
                 })
                     .success(function(data, status, headers, config) {
-                        window.location.href = "Dashboard_Viewrooms_Std";
+                        window.location.href = "Dashboard_Viewrooms_Std.html";
                     })
                     .error(function(data, status, headers, config) {
                         if(data.error === 'token expired'){
-                            window.location.href = 'login.html';
+                            //window.location.href = 'login.html';
                         }
+                        console.log(data.error);
                     });
             });
             file.bind('change', function(ev) {
