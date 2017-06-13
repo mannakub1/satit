@@ -39,7 +39,7 @@ myJsCourse.controller('courses', function($scope, $http){
 			
 			$scope.show_course = "หลักสูตรปีการศึกษา"+$scope.courses[$scope.index_current_course].year;
 			$scope.show_course_list = $scope.courses[$scope.index_current_course].course_lists[$scope.index_current_course_list].room_level;
-			
+			// console.log("progress on if else");
 			$scope.selectComplete();	
 		}
 	}).error(function(data, status, headers, config) {
@@ -161,6 +161,8 @@ myJsCourse.controller('courses', function($scope, $http){
 		$scope.index_current_course_list = e
 		$scope.course_list_id = $scope.courses[$scope.index_current_course].course_lists[e].id
 		sessionStorage.setItem('index_current_course_list', e);
+
+		// console.log("progress on selectCourseList");
 
 		$scope.selectComplete();
 	}
