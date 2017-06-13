@@ -16,6 +16,8 @@ class Teacher::TeacherAction
     @username = @params[:username].downcase
     @password_digest = @params[:password]
 
+    puts 'test called function authenication success'
+
     can_authenication, message = can_authenication?
     fail message unless can_authenication
 

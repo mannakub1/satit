@@ -65,9 +65,9 @@ module Satit::Prototype::TeacherAPI
       params do
           requires :students, type: Array do 
             optional :prefix, type: String, desc: 'prefix name of student'
-            optional :code_number, type: String, desc: 'number card of student'
-            optional :first_name, type: String, desc: 'frist name of student'
-            optional :last_name, type: String, desc: 'last name of student'
+            requires :code_number, type: String, desc: 'number card of student'
+            requires :first_name, type: String, desc: 'frist name of student'
+            requires :last_name, type: String, desc: 'last name of student'
             optional :iden_number, type: String, desc: 'number card identity'
             optional :blood, type: String, desc: 'blood'
             optional :birthdate, type: DateTime, desc: 'birthdate'
@@ -94,6 +94,7 @@ module Satit::Prototype::TeacherAPI
         requires :username, type: String, desc: 'usernaem of teacher for login'
         requires :password, type: String, desc: 'password of teacher for login'
         requires :status, type: String, desc: 'type for permisstion'
+        requires :resign, type: Boolean, desc: 'resign of teacher on progress'
       end
       post :add do
         present Teacher::TeacherAction.new.add(params)\

@@ -3,8 +3,10 @@ module Admin::Private::AdminAction
   private
 
   def process_authenication
+    puts 'test called fuction process_authenication'
+    puts current_admin
     return [false, 'Invalid email or password.'] if valid_password?
-    
+    puts 'username password of api correct'
     key = ApiKey.create(admin_id: current_admin.id)
     { status: true, token: key.access_token }
   end

@@ -162,7 +162,7 @@ myJsCourse.controller('courses', function($scope, $http){
 		$scope.course_list_id = $scope.courses[$scope.index_current_course].course_lists[e].id
 		sessionStorage.setItem('index_current_course_list', e);
 
-		selectComplete();
+		$scope.selectComplete();
 	}
 
 	$scope.selectComplete = function() {

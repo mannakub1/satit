@@ -12,7 +12,7 @@ class Admin::AdminAction
   def authenication
     @username = @params[:username].downcase
     @password_digest = @params[:password]
-
+    puts '5555'
     can_authenication, message = can_authenication?
     fail message unless can_authenication
 

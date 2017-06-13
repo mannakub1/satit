@@ -1,6 +1,6 @@
 class Teacher::StudentAction
 
-  attr_reader :student, :student_id, :room, :code_number, :first_name, :last_name, :params, :subject, :student_room
+attr_reader :student, :student_id, :room, :code_number, :first_name, :last_name, :params, :subject, :student_room
 
   include Teacher::Private::StudentAction
   include Teacher::Private::StudentActionGuard
@@ -23,10 +23,6 @@ class Teacher::StudentAction
     fail message unless can_add
 
     process_add_student
-  end
-
-  def delete_student
-
   end
 
   def add_room(room)
@@ -66,6 +62,7 @@ class Teacher::StudentAction
     fail message = unless can_student_room_delete
 
     process_student_room_delete
-  end
+  end  
 
+end
 end
