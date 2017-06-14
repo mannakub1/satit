@@ -6,6 +6,7 @@ var myApp = angular.module('myApp', ['ngRoute']);
 //var address = "http://192.168.217.102:3000/";
 // var address = 'http://localhost:3000/'
 var address = 'http://202.28.73.138:3000/'
+// var address = 'http://172.27.187.7:3000/'
 // var address = 'http://172.27.225.177:3000/'
 //var address = 'http://172.27.160.80:3000/'
 // var address = "http://172.27.160.166:3000/";
