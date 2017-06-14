@@ -8,7 +8,7 @@ myApp.controller('roomindex', function($scope, $http)  {
     $scope.teacher_prefix = sessionStorage.getItem('teacher_prefix');
     $scope.subject = JSON.parse(sessionStorage.getItem('subject'))[sessionStorage.getItem('subject_index')];
 
-    var subject_id = sessionStorage.getItem('subject_id')
+    var subject_id = $scope.subject.id;
     get_room = address + 'api/subject/rooms_by_subject?subject_id=' + subject_id
     $http.get(get_room , {headers: {'token': token}})
         .success(function(data, status, header, config) {
@@ -40,8 +40,9 @@ myApp.controller('students', function($scope, $http)  {
     $scope.teacher_prefix = sessionStorage.getItem('teacher_prefix');
     $scope.show_name_room = sessionStorage.getItem('name_room');
     $scope.show_year_room = sessionStorage.getItem('year_room');
+    $scope.subject = JSON.parse(sessionStorage.getItem('subject'))[sessionStorage.getItem('subject_index')];
     var room_id = sessionStorage.getItem('room_id');
-    var subject_id = sessionStorage.getItem('subject_id')
+    var subject_id = $scope.subject.id;
     get_students = address + 'api/student/student_subject?room_id='+ room_id + '&subject_id=' + subject_id
 
     $http.get(get_students , {headers: {'token': token}})
