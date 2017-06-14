@@ -1116,7 +1116,7 @@ myApp.controller('stdCtrl',  function($scope, $http, fileUpload) {
 
 myApp.controller('loginCtrl',  function($scope, $http) {
 	$scope.apiUser = 'canet';
-	$scope.apiPass = 'CanetM2017';
+	$scope.apiPass = '1234';
 	$scope.user = '';
 	$scope.pass = '';
 
