@@ -75,6 +75,13 @@ myApp.directive('uploader', function($http) {
 
 
 myApp.controller('add_student', function($scope, $http)  {
+    $scope.room_data = JSON.parse(sessionStorage.getItem('room_data'));
+    if($scope.room_data.level == "ป.4") {
+        $scope.level4 = true;
+    }else {
+        console.log($scope.room_data);
+        $scope.level4 = false;
+    }
     $scope.admin_first_name = sessionStorage.getItem('admin_first_name');
     $scope.admin_last_name = sessionStorage.getItem('admin_last_name');
     $scope.admin_prefix = sessionStorage.getItem('admin_prefix');

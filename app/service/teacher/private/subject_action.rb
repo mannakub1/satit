@@ -38,16 +38,31 @@ module Teacher::Private::SubjectAction
     Subject.find(subject_id)
   end
 
-  def process_edit_score
-    student_subject.update_attributes(score1: score1, score2: score2)
+  def teacher_grade
+    TeacherGrade.where(teacher_id: teacher.id, student_subject_id: student_subject.id).last
+  end
 
-    if student_subject.score2.to_i > 0.0
-      student_subject.update_attributes(grade: grade, score_result: (score1 + score2) / 2.0, status_grade: true)
-    elsif student_subject.score2.to_i == 0.0
-      student_subject.update_attributes(grade: '')
+  def add_teacher_grade
+    TeacherGrade.create(teacher_id: teacher.id, student_subject_id: student_subject.id, score1: score1, score2: score2)
+  end
+
+  def process_edit_score
+
+    add_teacher_grade
+
+    if teacher_grade.score2.to_i > 0.0 && teacher_grade.score1.to_i > 0.0
+      puts '5555'
+      teacher_grade.update_attributes(grade: c_grade, score_result: result_score, status_grade: true)
+    elsif teacher_grade.score2.to_i > 0.0
+      teacher_grade.update_attributes(grade: grade2, score_result: result_score2 , status_grade: true)
+    elsif teacher_grade.score2.to_i == 0
+      teacher_grade.update_attributes(grade: grade)
     end
 
+    student_subject.update_attributes(score1: teacher_grade.score1, score2: teacher_grade.score2, grade: teacher_grade.grade\
+    , score_result: teacher_grade.score_result, status_grade: true)
     update_gpa
+
     student.student_rooms.order(:created_at)
   end
 
@@ -59,7 +74,7 @@ module Teacher::Private::SubjectAction
     count = 0
     student.student_rooms.order(:level).each do |student_room|
         puts "test update #{student_room.level}"
-        if current_student_room.level >= 4 && student_room.level >= 4 
+        if current_student_room_level? && student_room_level(student_room)
             count = count + 1
             student_room.student_subjects.each do |std|
               grade = std.grade
@@ -72,7 +87,7 @@ module Teacher::Private::SubjectAction
                 end
               end
             end
-        elsif current_student_room.level < 4
+        elsif not_current_student_room_level?
            count = count + 1
             student_room.student_subjects.each do |std|
               grade = std.grade
@@ -88,10 +103,22 @@ module Teacher::Private::SubjectAction
         end
       end
     puts "count = #{count}"
-    if count > 0 
+    if count > 0 && ca != 0
       puts 'test update'
       current_student_room.update_attributes(cp: cp, ca: ca, gp: gp, gpa: gp / ca)
     end
+  end
+
+  def not_current_student_room_level?
+    !current_student_room_level? 
+  end
+
+  def current_student_room_level? 
+    current_student_room.level == "ป.4" || current_student_room.level == "ป.5" || current_student_room.level == "ป.6"
+  end
+
+  def student_room_level(student_room)
+    student_room.level == "ป.4" || student_room.level == "ป.5" || student_room.level == "ป.6" 
   end
 
   def current_subject
@@ -106,8 +133,9 @@ module Teacher::Private::SubjectAction
     CourseList.find_by(id: course_list_id)
   end
 
-  def grade
-    return '4' if result_score >= 80
+  def c_grade
+    puts '6666'
+    return "4" if result_score >= 80
     return '3.5' if result_score >= 75
     return '3' if result_score >= 70
     return '2.5' if result_score >= 65
@@ -117,7 +145,22 @@ module Teacher::Private::SubjectAction
     return '0' if result_score < 50
   end
 
+   def grade2
+    return "4" if result_score2 >= 80
+    return '3.5' if result_score2 >= 75
+    return '3' if result_score2 >= 70
+    return '2.5' if result_score2 >= 65
+    return '2' if result_score2 >= 60
+    return '1.5' if result_score2 >= 55
+    return '1' if result_score2 >= 50
+    return '0' if result_score2 < 50
+  end
+
   def result_score
-    (student_subject.score1.to_i + student_subject.score2.to_i) / 2.0 
+    (teacher_grade.score1.to_i + teacher_grade.score2.to_i) / 2.0 
+  end
+
+  def result_score2
+     teacher_grade.score2.to_i
   end
 end

@@ -49,6 +49,15 @@ module Satit::Prototype::TeacherAPI
         , with: Satit::TeacherAPI::Student::StudentListEntity
       end
 
+      desc 'return teacher room'
+      params do
+        requires :room_id, type: Integer, desc: 'id of room, teacher class this room'
+      end
+      get '/teacher_room' do 
+        present :teacher, Teacher::RoomList.new(room_id: params[:room_id]).teacher_class
+      end
+
+
       desc 'return teacher all'
       get '/present' do
         present :teacher, Teacher::TeacherList.new.present \

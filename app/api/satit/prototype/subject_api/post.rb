@@ -33,10 +33,10 @@ module Satit::Prototype::SubjectAPI
       params do 
         requires :course_list_id, type: Integer, desc: 'id of course_list'
         requires :name, type: String, desc: 'name of subject'
-        requires :code, type: String, desc: 'code of subject'
+        optional :code, type: String, desc: 'code of subject'
         requires :hour_per_year, type: String, desc: 'time of teaching'
         requires :status, type: String, desc: 'type of subject'
-        requires :credit, type: Float, desc: 'number credit of subject'
+        optional :credit, type: Float, desc: 'number credit of subject'
       end
       post :add do
         present :subject, Teacher::SubjectAction.new(course_list_id: params[:course_list_id]).add(new_params)\

@@ -12,6 +12,7 @@
 #  status          :string
 #  resign          :boolean
 #  prefix          :string
+#  image           :string
 #
 
 class Teacher < ActiveRecord::Base
@@ -19,6 +20,8 @@ class Teacher < ActiveRecord::Base
 
   has_many :teacher_rooms, dependent: :destroy
   has_many :rooms, through: :teacher_rooms, source: :room
+
+  has_many :teacher_grades, dependent: :destroy
   
   has_many :teacher_course, dependent: :destroy
   has_many :subject, through: :teacher_course, source: :subject

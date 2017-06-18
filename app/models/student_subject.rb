@@ -19,5 +19,7 @@ class StudentSubject < ActiveRecord::Base
   belongs_to :student_room
   belongs_to :subject
 
+  has_many :teacher_grades, dependent: :destroy
+
   scope :present, -> { where(status: true) }
 end

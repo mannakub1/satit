@@ -1,9 +1,11 @@
 module Teacher::Private::RoomAction
 
   def process_add
+    current_room.teachers.destroy_all
     process_finish if current_year && YearRoom.all.map(&:name).max != current_year.name
 
     TeacherRoom.create(teacher_id: teacher_id, room_id: room_id, status: true)
+    current_teacher
   end
 
   def process_edit
@@ -16,6 +18,10 @@ module Teacher::Private::RoomAction
 
   def process_finish
     current_teacher_room_by_teacher.update_attributes(status: false)
+  end
+
+  def current_teacher
+    Teacher.find(teacher_id)
   end
 
   def current_teacher_room

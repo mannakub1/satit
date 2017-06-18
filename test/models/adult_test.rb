@@ -17,6 +17,7 @@
 #  prefix      :string
 #  nationality :string
 #  iden_number :string
+#  image       :string
 #
 
 require 'test_helper'

@@ -12,6 +12,7 @@
 #  status          :string
 #  resign          :boolean
 #  prefix          :string
+#  image           :string
 #
 
 require 'test_helper'

@@ -26,6 +26,10 @@ module Satit::Prototype::TeacherAPI
           Student.find(params[:student_id])
         end
 
+        def current_teacher
+          Teacher.find(params[:teacher_id])
+        end
+
         def current_student_subject
           StudentSubject.find(params[:student_subject_id])
         end
@@ -47,17 +51,28 @@ module Satit::Prototype::TeacherAPI
         , with: Satit::TeacherAPI::TeacherActionEntity
       end
 
+
+      desc 'add teacher_room'
+      params do
+        requires :teacher_id, type: String, desc: 'id of teacher'
+        requires :room_id, type: String, desc: 'id of room'
+      end
+      post '/add_teacher_room' do
+        present :teacher, Teacher::RoomAction.new(teacher_id: params[:teacher_id], room_id: params[:room_id]).add
+      end
+
       desc 'edit score student'
       params do 
         requires :student_id, type: Integer, desc: 'id of student'
         requires :student_subject_id, type: Integer, desc: 'id of student subject'
+        requires :teacher_id, type: Integer, desc: 'id of teacher, can know teacher do it'
         requires :score1, type: Integer, desc: 'number is change score1'
         requires :score2, type: Integer, desc: 'number is change scroe2'
         optional :grade, type: String, desc: ''
       end
       post :edit_score do
-        present Teacher::SubjectAction.new(student: current_student, student_subject: current_student_subject)\
-        .edit_score(params[:score1], params[:score2])\
+        present Teacher::SubjectAction.new(student: current_student, student_subject: current_student_subject, teacher: current_teacher)\
+        .edit_score(params)\
         , with: Satit::StudentAPI::StudentRoomListEntity
       end
 

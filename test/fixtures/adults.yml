@@ -17,6 +17,7 @@
 #  prefix      :string
 #  nationality :string
 #  iden_number :string
+#  image       :string
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

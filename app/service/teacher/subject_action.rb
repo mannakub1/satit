@@ -1,6 +1,6 @@
 class Teacher::SubjectAction
 
-  attr_reader :score1, :score2, :student_subject, :student, :params, :course_list_id, :subject_id, :room_id
+  attr_reader :score1, :score2, :student_subject, :student, :params, :course_list_id, :subject_id, :room_id, :teacher, :grade
 
   include Teacher::Private::SubjectAction
   include Teacher::Private::SubjectActionGuard
@@ -9,6 +9,7 @@ class Teacher::SubjectAction
     @subject_id = option[:subject_id]
     @student = option[:student]
     @student_subject = option[:student_subject]
+    @teacher = option[:teacher]
     @course_list_id = option[:course_list_id]
   end
 
@@ -41,10 +42,15 @@ class Teacher::SubjectAction
   end
 
 
-  def edit_score(score1, score2)
-    @score1 = score1
-    @score2 = score2
-    puts '55555'
+  def edit_score(params)
+    @score1 = params[:score1]
+    @score2 = params[:score2]
+    @grade ||= params[:grade]
+
+    puts @score1
+    puts @score1
+    puts @grade
+
     # can_edit, message = can_edit?
     # fail message unless can_edit
     

@@ -26,6 +26,7 @@
 #  delete_status   :string
 #  username        :string
 #  password_digest :string
+#  image           :string
 #
 
 require 'test_helper'
