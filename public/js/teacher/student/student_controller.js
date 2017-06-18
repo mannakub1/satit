@@ -205,12 +205,13 @@ myApp.controller('grade', function($scope, $http)  {
 		var isError = false;
 		for(var i = 0; i < $scope.stdRoom.length; ++i) {
 			for(var j = 0; j < $scope.stdRoom[i].student_subjects.length; ++j) {
-				$scope.sentData = {student_id: "", student_subject_id: "", score1: "", score2: ""};
+				$scope.sentData = {teacher_id : "",student_id: "", student_subject_id: "", score1: "", score2: ""};
 				$scope.sentData.student_id = $scope.student_id;
 				$scope.sentData.student_subject_id = $scope.stdRoom[i].student_subjects[j].id;
 				$scope.sentData.score1 = $scope.stdRoom[i].student_subjects[j].score1;
 				$scope.sentData.score2 = $scope.stdRoom[i].student_subjects[j].score2;
 				$scope.sentDataArr[count] = $scope.sentData;
+				$scope.sentData.teacher_id = sessionStorage.getItem('teacher_id');
 				console.log($scope.sentData);
 				$http.post(path, angular.toJson($scope.sentData), {
 					transformRequest: angular.identity,
@@ -233,16 +234,140 @@ myApp.controller('grade', function($scope, $http)  {
 				count++;
 			}
 		}
-		if(isError !== true){
-			alert("Sucess!");
-			window.location.href = 'grade.html'
+		/*if(isError !== true){
+			alert("Success!");
 		}
 		else{
 			alert("Error! Please Try Again");
-		}
+		}*/
 	}
 
 });
+
+myApp.controller('grade_no_credit', function ($scope, $http) {
+    $scope.teacher_first_name = sessionStorage.getItem('teacher_first_name');
+    $scope.teacher_last_name = sessionStorage.getItem('teacher_last_name');
+    $scope.teacher_prefix = sessionStorage.getItem('teacher_prefix');
+    var room_id = sessionStorage.getItem('room_id');
+
+    var get_student = address + 'api/teacher/students?room_id='+ room_id
+    var get_room = address + 'api/room/?id=' + room_id
+
+    $http.get(get_room , {headers: {'token': token}})
+        .success(function(data, status, header, config) {
+            console.log(data)
+            $scope.room = data.rooms
+        }).error(function(data, status, headers, config) {
+        if(data.error === 'token expired'){
+            window.location.href = '../../login.html';;
+        }
+    });
+
+    $http.get(get_student , {headers: {'token': token}})
+        .success(function(data, status, header, config) {
+            $scope.student_list = data.student_list
+            $scope.students = [];
+            for(var i = 0; i < $scope.student_list.length; ++i){
+                $scope.students[i] = {
+                    'student_room' : $scope.student_list[i],
+                };
+            }
+            $scope.student_id = $scope.student_list[0].student.id;
+            console.log($scope.students);
+            $http.get(address + "api/student/courses?student_id=" + $scope.student_id , {headers: {'token': token} })
+                .success(function(data, status, headers, config){
+                    $scope.stdRoom = data.student_room;
+                    console.log($scope.stdRoom);
+                    var subjects = $scope.stdRoom[0].student_subjects;
+                    var j = 0;
+                    $scope.subject_no_credit = [];
+                    for(var i = 0; i < subjects.length; ++i){
+                        if(subjects[i].subject.status === "พัฒนาผู้เรียน"){
+                            $scope.subject_no_credit[j] = subjects[i];
+                            j++;
+                        }
+                    }
+                })
+                .error(function(data, status, headers, config) {
+                    if(data.error === 'token expired'){
+                        window.location.href = 'login.html';
+                    }
+                });
+
+
+        }).error(function(data, status, headers, config) {
+        if(data.error === 'token expired'){
+            window.location.href = '../../login.html';;
+        }
+        else{
+            console.log("455");
+        }
+    });
+
+
+    $scope.selectSubject = function () {
+        var index = document.getElementById('select_subject').value;
+        var subject_id = $scope.subject_no_credit[index].subject.id;
+        get_students = address + 'api/student/student_subject?room_id='+ room_id + '&subject_id=' + subject_id
+        $http.get(get_students , {headers: {'token': token}})
+            .success(function(data, status, header, config) {
+                console.log(data.student_list)
+                $scope.students = data.student_list;
+
+            }).error(function(data, status, headers, config) {
+            if(data.error === 'token expired'){
+                window.location.href = '../../login.html';;
+            }
+        });
+    }
+
+
+    $scope.changeSubject = function () {
+        get_students = address + 'api/student/student_subject?room_id='+ room_id + '&subject_id=' + subject_id
+
+        $http.get(get_students , {headers: {'token': token}})
+            .success(function(data, status, header, config) {
+                //console.log(data.student_list)
+                $scope.students = data.student_list
+            }).error(function(data, status, headers, config) {
+            if(data.error === 'token expired'){
+                window.location.href = '../../login.html';;
+            }
+        });
+    }
+    
+    $scope.sendEditGrade = function () {
+        $scope.sentDataArr = [];
+        var count = 0;
+        var isError = false;
+            for(var j = 0; j < $scope.students.length; ++j) {
+                $scope.sentData = {teacher_id: "", student_id: "",score1: 0, score2: 0, student_subject_id: "", grade: ""};
+                $scope.sentData.student_id = $scope.students[j].student_room.student.id;
+                var index = document.getElementById('select_subject').value;
+                $scope.sentData.student_subject_id = $scope.students[j].id;
+                $scope.sentData.grade = $scope.students[j].grade;
+                $scope.sentData.teacher_id = sessionStorage.getItem('teacher_id');
+                console.log($scope.sentData);
+                $http.post(address + "api/teacher/edit_score", angular.toJson($scope.sentData), {
+                    transformRequest: angular.identity,
+                    headers: {'token': token, 'Content-Type': "application/json"}
+                })
+                    .success(function (data, status, headers, config) {
+                        console.log(data);
+                    })
+                    .error(function (data, status, headers, config) {
+                        console.log(data);
+                        if (data.error === 'token expired') {
+                            window.location.href = 'login.html';
+                        }
+                        else{
+                            isError = true;
+                        }
+                    });
+            }
+    }
+
+})
 
 myApp.controller('add_father', function($scope, $http)  {
     $scope.teacher_first_name = sessionStorage.getItem('teacher_first_name');
