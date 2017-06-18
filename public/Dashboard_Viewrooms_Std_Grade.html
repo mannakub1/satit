@@ -130,7 +130,7 @@
                                                         </tr>
                                                         </thead>
                                                         <tbody>
-                                                        <tr ng-repeat="x in y.student_subjects" ng-show="x.status" >
+                                                        <tr ng-repeat="x in y.student_subjects" ng-show="x.status && x.subject.status !== 'พัฒนาผู้เรียน'" >
                                                             <td style="background-color: #ffe680; color:black; width:8%"><center>{{x.subject.code}}</center></td>
                                                             <td style="background-color: #ffe680; color:black; width:77%"><center>{{x.subject.name}}</center></td>
 
@@ -168,6 +168,29 @@
                                                         <td style="background-color: #f5e79e; color:black; max-width:5%"><center>CA<br>{{y.ca}}</center></td>
                                                         <td style="background-color: #f5e79e; color:black; width:5%"><center>GP<br>{{y.gp}}</center></td>
                                                         <td style="background-color: #f5e79e; color:black; width:5%"><center>GPA<br>{{y.gpa}}</center></td>
+                                                    </tr>
+
+                                                    </tbody>
+                                                </table>
+                                                <table class="table table-bordered" style="width:58%">
+                                                    <thead>
+                                                    <tr style="background-color: greenyellow;">
+                                                        <th style="background-color: #ffa31a; color:black;" colspan="2"><center>รายวิชาพัฒนาผู้เรียน</center></th>
+                                                    </tr>
+                                                    <tr style="background-color: grey;">
+                                                        <th style="background-color: #ffd11a; color:black; width:77%"><center>ชื่อรายวิชา</center></th>
+                                                        <th style="background-color: #ffd11a; color:black; width:5%"><center>เกรด</center></th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr ng-repeat="x in y.student_subjects" ng-show="x.status && x.subject.status == 'พัฒนาผู้เรียน'" >
+                                                        <td style="background-color: #ffe680; color:black;"><center>{{x.subject.name}}</center></td>
+                                                        <td style="background-color: #ffe680; color:black;"><center><select ng-attr-id="{{'select_grade_' + $index}}" ng-model="x.grade"  style="margin-bottom: 3%">
+                                                            <option value="">---Please select---</option>
+                                                            <option value="S">ผ่าน</option>
+                                                            <option value="U">ไม่ผ่าน</option>
+                                                        </select></center></td>
+
                                                     </tr>
 
                                                     </tbody>

@@ -190,9 +190,20 @@ myApp.controller('grade', function($scope, $http)  {
 		var e = document.getElementById("selectGradeLevel").value;
 		for(var i = 0; i < $scope.Grade.length; ++i){
 			$scope.Grade[i] = false;
+
 		}
 		$scope.Grade[e] = true;
 
+        for(var i = 0; i <$scope.stdRoom[0].student_subjects.length; ++i){
+            if($scope.stdRoom[0].student_subjects[i].subject.status === "พัฒนาผู้เรียน"){
+                if($scope.stdRoom[0].student_subjects[i].grade === "S"){
+                    $scope.stdRoom[0].student_subjects[i].grade = "ผ่าน";
+                }
+                else if($scope.stdRoom[0].student_subjects[i].grade === "U"){
+                    $scope.stdRoom[0].student_subjects[i].grade = "ไม่ผ่าน";
+                }
+            }
+        }
 
 	}
 

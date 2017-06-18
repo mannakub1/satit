@@ -1,18 +1,13 @@
 var myApp = angular.module('myApp', ['ngRoute']);
-
+var token = localStorage.getItem('token');
 // var address = "http://172.27.170.117:3000/";
 
  // var address = "http://172.27.225.52:3000/";
 //var address = "http://192.168.217.102:3000/";
 // var address = 'http://localhost:3000/'
 //var address = 'http://202.28.73.138:3000/'
-<<<<<<< HEAD
 var address = 'http://172.27.169.121:3000/'
 // var address = 'http://172.27.225.177:3000/'
-=======
-// var address = 'http://172.27.169.121:3000/'
- var address = 'http://172.27.225.177:3000/'
->>>>>>> 0e0f8f66a2564a28753409da97682c6d7b78539a
 //var address = 'http://172.27.160.80:3000/'
 // var address = "http://172.27.160.166:3000/";
 // var address = "http://202.28.73.138:3000/";
@@ -1160,6 +1155,7 @@ myApp.controller('loginCtrl',  function($scope, $http) {
 						window.location.href = 'teacher/index.html'
 					}
 					else {
+						sessionStorage.setItem('admin_id', data.teacher.id);
                         sessionStorage.setItem('admin_prefix', data.teacher.prefix);
                         sessionStorage.setItem('admin_first_name', data.teacher.first_name);
                         sessionStorage.setItem('admin_last_name', data.teacher.last_name);
@@ -1534,18 +1530,20 @@ myApp.controller('viewStdGradeCtrl', function ($scope, $http) {
 		var ca = 0;
 		var gp = 0;
 		for(var j = 0; j < $scope.stdRoom[i].student_subjects.length; ++j){
-			cr += $scope.stdRoom[i].student_subjects[j].subject.credit;
-			cp += $scope.stdRoom[i].student_subjects[j].subject.credit;
-			ca += $scope.stdRoom[i].student_subjects[j].subject.credit;
-			if(!$scope.stdRoom[i].student_subjects[j].grade || $scope.stdRoom[i].student_subjects[j].grade === 0 || $scope.stdRoom[i].student_subjects[j].grade === 'U'){
-                cp -= $scope.stdRoom[i].student_subjects[j].subject.credit;
+            if($scope.stdRoom[i].student_subjects[j].subject.status !== "พัฒนาผู้เรียน"){
+                cr += $scope.stdRoom[i].student_subjects[j].subject.credit;
+                cp += $scope.stdRoom[i].student_subjects[j].subject.credit;
+                ca += $scope.stdRoom[i].student_subjects[j].subject.credit;
+                if(!$scope.stdRoom[i].student_subjects[j].grade || $scope.stdRoom[i].student_subjects[j].grade === 0 || $scope.stdRoom[i].student_subjects[j].grade === 'U'){
+                    cp -= $scope.stdRoom[i].student_subjects[j].subject.credit;
+                }
+                if(!$scope.stdRoom[i].student_subjects[j].grade || $scope.stdRoom[i].student_subjects[j].grade === 'U' ||$scope.stdRoom[i].student_subjects[j].grade === 'S'){
+                    ca -= $scope.stdRoom[i].student_subjects[j].subject.credit;
+                }
+                if(!(!$scope.stdRoom[i].student_subjects[j].grade)){
+                    gp += $scope.stdRoom[i].student_subjects[j].subject.credit * parseFloat($scope.stdRoom[i].student_subjects[j].grade);
+                }
 			}
-			if(!$scope.stdRoom[i].student_subjects[j].grade || $scope.stdRoom[i].student_subjects[j].grade === 'U' ||$scope.stdRoom[i].student_subjects[j].grade === 'S'){
-				ca -= $scope.stdRoom[i].student_subjects[j].subject.credit;
-			}
-			if(!(!$scope.stdRoom[i].student_subjects[j].grade)){
-				gp += $scope.stdRoom[i].student_subjects[j].subject.credit * parseFloat($scope.stdRoom[i].student_subjects[j].grade);
-            }
 		}
 		$scope.stdRoom[i].cr_cal = cr;
         $scope.stdRoom[i].cp_cal = cp;
@@ -1580,43 +1578,61 @@ myApp.controller('viewStdGradeCtrl', function ($scope, $http) {
 		var isError = false;
 		for(var i = 0; i < $scope.stdRoom.length; ++i) {
 			for(var j = 0; j < $scope.stdRoom[i].student_subjects.length; ++j) {
-				$scope.sentData = {student_id: "", student_subject_id: "", score1: "", score2: ""};
-				$scope.sentData.student_id = $scope.stdId;
-				$scope.sentData.student_subject_id = $scope.stdRoom[i].student_subjects[j].id;
-				$scope.sentData.score1 = $scope.stdRoom[i].student_subjects[j].score1;
-				$scope.sentData.score2 = $scope.stdRoom[i].student_subjects[j].score2;
-				$scope.sentDataArr[count] = $scope.sentData;
-				console.log($scope.sentData);
-				$http.post(path, angular.toJson($scope.sentData), {
-					transformRequest: angular.identity,
-					headers: {'token': $scope.token, 'Content-Type': "application/json"}
+				if($scope.stdRoom[i].student_subjects[j].subject.status !== "พัฒนาผู้เรียน"){
+                    $scope.sentData = {teacher_id: "", student_id: "", student_subject_id: "", score1: "", score2: ""};
+                    $scope.sentData.teacher_id = sessionStorage.getItem('admin_id');
+                    $scope.sentData.student_id = $scope.stdId;
+                    $scope.sentData.student_subject_id = $scope.stdRoom[i].student_subjects[j].id;
+                    $scope.sentData.score1 = $scope.stdRoom[i].student_subjects[j].score1;
+                    $scope.sentData.score2 = $scope.stdRoom[i].student_subjects[j].score2;
+                    $scope.sentDataArr[count] = $scope.sentData;
+                    console.log($scope.sentData);
+                    $http.post(path, angular.toJson($scope.sentData), {
+                        transformRequest: angular.identity,
+                        headers: {'token': $scope.token, 'Content-Type': "application/json"}
 
-				})
-					.success(function (data, status, headers, config) {
-						console.log(data);
-						$scope.stdRoom = data.stdRoom;
-
-					})
-					.error(function (data, status, headers, config) {
-						console.log("error");
-						if (data.error === 'token expired') {
-							window.location.href = 'login.html';
-						}
-						else{
-							isError = true;
-						}
-					});
-				count++;
+                    })
+                        .success(function (data, status, headers, config) {
+                            console.log(data);
+                            $scope.stdRoom = data;
+                            sessionStorage.setItem('stdGrade', JSON.stringify(data));
+                        })
+                        .error(function (data, status, headers, config) {
+                            console.log("error");
+                            if (data.error === 'token expired') {
+                                window.location.href = 'login.html';
+                            }
+                        });
+                    count++;
+				}
+				else {
+                    $scope.sentData = {teacher_id: "", student_id: "",score1: 0, score2: 0, student_subject_id: "", grade: ""};
+                    $scope.sentData.teacher_id = sessionStorage.getItem('admin_id');
+                    $scope.sentData.student_id = $scope.stdId;
+                    $scope.sentData.student_subject_id = $scope.stdRoom[i].student_subjects[j].id;
+                    $scope.sentData.grade = $scope.stdRoom[i].student_subjects[j].grade;
+                    console.log($scope.sentData);
+                    $http.post(address + "api/teacher/edit_score", angular.toJson($scope.sentData), {
+                        transformRequest: angular.identity,
+                        headers: {'token': token, 'Content-Type': "application/json"}
+                    })
+                        .success(function (data, status, headers, config) {
+                            console.log(data);
+                            $scope.stdRoom = data;
+                            sessionStorage.setItem('stdGrade', JSON.stringify(data));
+                        })
+                        .error(function (data, status, headers, config) {
+                            console.log(data);
+                            if (data.error === 'token expired') {
+                                window.location.href = 'login.html';
+                            }
+                            else{
+                                isError = true;
+                            }
+                        });
+				}
 			}
 		}
-		if(isError !== true){
-			alert("Sucess!");
-			$scope.viewGradeStudent($scope.stdId);
-		}
-		else{
-			alert("Error! Please Try Again");
-		}
-		//console.log($scope.sentDataArr);
 	}
 
 	$scope.viewGradeStudent = function(stdId){
