@@ -1,4 +1,49 @@
-var myApp = angular.module('myApp', ['ngRoute']);
+var myApp = angular.module('myApp', ['ngRoute', "ngStorage", "ngFileUpload"]);
+myApp.config(function($routeProvider){
+	$routeProvider.when("/login", {
+
+	})
+		.otherwise({
+			redirectTo: '/login',
+			templateUrl: 'js/views/login.html',
+			controller: ''
+		});
+});
+
+app.factory('Path_Api', function() {
+    return {
+        //image
+        path_image : "/CodeRoomService/public/index.php/image/show/",
+
+        //model
+        path_html_model_tokenExpired : "../Coderoom/js/views/model/tokenExpired.html",
+        path_html_model_checkUser : "../Coderoom/js/views/model/checkUser.html",
+        //admin
+        path_html_model_admin_disbleCourse : "../Coderoom/js/views/admin/model/disableCourse.html",
+        path_html_model_admin_inActiveTeacher : "../Coderoom/js/views/admin/model/inActiveTeacher.html",
+        //student
+        path_html_model_student_joinCourse : "../Coderoom/js/views/student/model/joinCourse.html",
+        path_html_model_student_modeTest : "../Coderoom/js/views/student/model/ModelTest.html",
+        //teacher
+        path_html_model_teacher_deleteAnnouncement : "../Coderoom/js/views/teacher/model/deleteAnnouncement.html",
+
+        //all_api
+        api_login: "/CodeRoomService/public/index.php/login",
+        api_logout: "/CodeRoomService/public/index.php/logout",
+        //student
+        api_get_student_announcement: "/CodeRoomService/public/index.php/api/student/announcement/",
+
+        //teacher
+        api_get_teacher_addStudent : "/CodeRoomService/public/index.php/api/teacher/student/all/",
+
+        //dowload excel
+        api_dowload_excel_teacher : '/CodeRoomService/public/index.php/api/teacher/lesson/export/score/',
+
+        //admin
+        api_get_admin_disableEnableCourse : "/CodeRoomService/public/index.php/api/admin/course/status/",
+    };
+});
+
 var token = localStorage.getItem('token');
 // var address = "http://172.27.170.117:3000/";
 
@@ -6,7 +51,7 @@ var token = localStorage.getItem('token');
 //var address = "http://192.168.217.102:3000/";
 // var address = 'http://localhost:3000/'
 //var address = 'http://202.28.73.138:3000/'
-var address = 'http://172.27.169.121:3000/'
+var address = 'http://172.27.161.104:3000/'
 // var address = 'http://172.27.225.177:3000/'
 //var address = 'http://172.27.160.80:3000/'
 // var address = "http://172.27.160.166:3000/";
