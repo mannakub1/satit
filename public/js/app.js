@@ -1,61 +1,52 @@
-var myApp = angular.module('myApp', ['ngRoute', "ngStorage", "ngFileUpload"]);
-myApp.config(function($routeProvider){
-	$routeProvider.when("/login", {
+var token = localStorage.getItem('token');
+// var address = "http://172.27.170.117:3000/";
 
+// var address = "http://172.27.225.52:3000/";
+//var address = "http://192.168.217.102:3000/";
+// var address = 'http://localhost:3000/'
+//var address = 'http://202.28.73.138:3000/'
+var address = 'http://172.27.228.22:3000/'
+// var address = 'http://172.27.225.177:3000/'
+//var address = 'http://172.27.160.80:3000/'
+// var address = "http://172.27.160.166:3000/";
+// var address = "http://202.28.73.138:3000/";
+
+var myApp = angular.module('myApp', ['ngRoute']);
+myApp.config(function($routeProvider){
+	$routeProvider.when("/admin", {
+		templateUrl: 'public/js/views/admin/Dashboard.html',
+		controller: 'adminDashboardController'
 	})
+		.when("/viewroom", {
+			templateUrl: 'public/js/views/admin/Dashboard_Viewrooms.html',
+			controller: 'selectRoomController'
+		})
 		.otherwise({
 			redirectTo: '/login',
-			templateUrl: 'js/views/login.html',
-			controller: ''
+			templateUrl: 'public/js/views/login.html',
+			controller: 'loginController'
 		});
 });
 
-app.factory('Path_Api', function() {
+myApp.factory('pathApi', function() {
     return {
-        //image
-        path_image : "/CodeRoomService/public/index.php/image/show/",
-
-        //model
-        path_html_model_tokenExpired : "../Coderoom/js/views/model/tokenExpired.html",
-        path_html_model_checkUser : "../Coderoom/js/views/model/checkUser.html",
-        //admin
-        path_html_model_admin_disbleCourse : "../Coderoom/js/views/admin/model/disableCourse.html",
-        path_html_model_admin_inActiveTeacher : "../Coderoom/js/views/admin/model/inActiveTeacher.html",
-        //student
-        path_html_model_student_joinCourse : "../Coderoom/js/views/student/model/joinCourse.html",
-        path_html_model_student_modeTest : "../Coderoom/js/views/student/model/ModelTest.html",
-        //teacher
-        path_html_model_teacher_deleteAnnouncement : "../Coderoom/js/views/teacher/model/deleteAnnouncement.html",
 
         //all_api
         api_login: "/CodeRoomService/public/index.php/login",
         api_logout: "/CodeRoomService/public/index.php/logout",
+		api_add_room: address + "api_controller/student/add_room",
         //student
         api_get_student_announcement: "/CodeRoomService/public/index.php/api/student/announcement/",
 
         //teacher
         api_get_teacher_addStudent : "/CodeRoomService/public/index.php/api/teacher/student/all/",
 
-        //dowload excel
-        api_dowload_excel_teacher : '/CodeRoomService/public/index.php/api/teacher/lesson/export/score/',
-
         //admin
         api_get_admin_disableEnableCourse : "/CodeRoomService/public/index.php/api/admin/course/status/",
     };
 });
 
-var token = localStorage.getItem('token');
-// var address = "http://172.27.170.117:3000/";
 
- // var address = "http://172.27.225.52:3000/";
-//var address = "http://192.168.217.102:3000/";
-// var address = 'http://localhost:3000/'
-//var address = 'http://202.28.73.138:3000/'
-var address = 'http://172.27.161.104:3000/'
-// var address = 'http://172.27.225.177:3000/'
-//var address = 'http://172.27.160.80:3000/'
-// var address = "http://172.27.160.166:3000/";
-// var address = "http://202.28.73.138:3000/";
 
 sessionStorage.setItem('address', address);
 var path;
@@ -89,18 +80,18 @@ myApp.directive('navIndex', function () {
 	};
 });
 
-myApp.service('fileUpload', ['$http', function ($http) {
+myApp.service('fileUpload', ['$http', function ($http,pathApi) {
     this.uploadFileToUrl = function(roomId,file, uploadUrl){
 		//path ที่จะส่งเลขห้องรอบ 2
 		console.log(file);
-		var roomPath = address + "api_controller/student/add_room";
+		var roomPath = pathApi.api_add_room;
 		var room = angular.toJson({room_id:"14"});
 		console.log(room);
         var fd = new FormData();
         fd.append('csv', file);
         $http.post(uploadUrl, fd, {
             transformRequest: angular.identity,
-            headers: {'Content-Type': undefined}
+            headers: {'token' : token, 'Content-Type': undefined}
 			
         })
         .success(function(){
