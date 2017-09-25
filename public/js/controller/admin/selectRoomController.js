@@ -1,4 +1,4 @@
-myApp.controller('selectRoomController', function ($scope, $http) {
+myApp.controller('selectRoomController', function ($scope, $http, $location) {
     $scope.admin_first_name = sessionStorage.getItem('admin_first_name');
     $scope.admin_last_name = sessionStorage.getItem('admin_last_name');
     $scope.admin_prefix = sessionStorage.getItem('admin_prefix');
@@ -77,6 +77,6 @@ myApp.controller('selectRoomController', function ($scope, $http) {
         $scope.roomSelect = JSON.parse(sessionStorage.getItem('year_room'));
         sessionStorage.setItem('room_data', JSON.stringify($scope.rooms[index]));
         sessionStorage.setItem('roomId',JSON.stringify(roomId));
-        window.location.href = "Dashboard_Viewrooms_Std.html";
+        $location.path("viewroom/student");
     }
 })

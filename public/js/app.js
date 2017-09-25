@@ -5,13 +5,7 @@ var token = localStorage.getItem('token');
 //var address = "http://192.168.217.102:3000/";
 // var address = 'http://localhost:3000/'
 //var address = 'http://202.28.73.138:3000/'
-<<<<<<< HEAD
-// var address = 'http://172.27.169.121:3000/'
-// var address = 'http://172.27.225.177:4000/'
-var address = 'http://localhost:3000/'
-=======
-var address = 'http://172.27.228.22:3000/'
->>>>>>> d1ca03922cf7e13bfad7b027babb85c366b2f463
+var address = 'http://172.27.228.245:3000/'
 // var address = 'http://172.27.225.177:3000/'
 //var address = 'http://172.27.160.80:3000/'
 // var address = "http://172.27.160.166:3000/";
@@ -26,6 +20,13 @@ myApp.config(function($routeProvider){
 		.when("/viewroom", {
 			templateUrl: 'public/js/views/admin/Dashboard_Viewrooms.html',
 			controller: 'selectRoomController'
+		})
+		.when("/viewroom/student", {
+			templateUrl: 'public/js/views/admin/Dashboard_Viewrooms_Std.html',
+			controller: 'viewStudentController'
+		})
+		.when("", {
+
 		})
 		.otherwise({
 			redirectTo: '/login',
@@ -758,46 +759,9 @@ myApp.controller('mainCtrl',  function($scope, $http, fileUpload) {
 
 });
 
-myApp.controller('stdGrade', function($scope, $http, fileUpload) {
-	$scope.token = localStorage.getItem('token');
-	$scope.student = JSON.parse(sessionStorage.getItem('stdData'));
-	$scope.Grade =  [];
-	
-
-	$scope.getGrade = function () {
-		path = address + "api/student/courses?student_id=" + $scope.student.id;
-		$http.get(path , {headers: {'token': $scope.token} })
-			.success(function(data){
-				console.log(data);
-				console.log("5555");
-				$scope.stdRoom = data.student_room;
-				console.log($scope.stdRoom);
-			})
-			.error(function(data, status, headers, config) {
-				if(data.error === 'token expired'){
-					window.location.href = 'login.html';;
-				}
-			});
-	}
-
-	$scope.collapseGrade = function () {
-		var e = document.getElementById("selectGradeLevel").value;
-		for(var i = 0; i < $scope.Grade.length; ++i){
-			$scope.Grade[i] = false;
-		}
-		$scope.Grade[e] = true;
-
-	}
-
-	$scope.getGrade();
-
-	
-
-});
-
 myApp.controller('stdCtrl',  function($scope, $http, fileUpload) {
 	$scope.showHome = true;
-	$scope.student = JSON.parse(sessionStorage.getItem('stdData'));
+		$scope.student = JSON.parse(sessionStorage.getItem('stdData'));
 
 	console.log($scope.student);
 	$scope.token = localStorage.getItem('token');
@@ -820,7 +784,7 @@ myApp.controller('stdCtrl',  function($scope, $http, fileUpload) {
 	$scope.showEditGuardian = false;
 	$scope.showStudentData = false;
 	$scope.showAddStudent = false;
-	
+	//console.log($scope.userType);
 
 	$scope.showStudentDataBtn = function() {
 		$scope.student = JSON.parse(sessionStorage.getItem('stdData'));
