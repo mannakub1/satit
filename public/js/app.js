@@ -1,18 +1,58 @@
-var myApp = angular.module('myApp', ['ngRoute']);
 var token = localStorage.getItem('token');
 // var address = "http://172.27.170.117:3000/";
 
- // var address = "http://172.27.225.52:3000/";
+// var address = "http://172.27.225.52:3000/";
 //var address = "http://192.168.217.102:3000/";
 // var address = 'http://localhost:3000/'
 //var address = 'http://202.28.73.138:3000/'
+<<<<<<< HEAD
 // var address = 'http://172.27.169.121:3000/'
 // var address = 'http://172.27.225.177:4000/'
 var address = 'http://localhost:3000/'
+=======
+var address = 'http://172.27.228.22:3000/'
+>>>>>>> d1ca03922cf7e13bfad7b027babb85c366b2f463
 // var address = 'http://172.27.225.177:3000/'
 //var address = 'http://172.27.160.80:3000/'
 // var address = "http://172.27.160.166:3000/";
 // var address = "http://202.28.73.138:3000/";
+
+var myApp = angular.module('myApp', ['ngRoute']);
+myApp.config(function($routeProvider){
+	$routeProvider.when("/admin", {
+		templateUrl: 'public/js/views/admin/Dashboard.html',
+		controller: 'adminDashboardController'
+	})
+		.when("/viewroom", {
+			templateUrl: 'public/js/views/admin/Dashboard_Viewrooms.html',
+			controller: 'selectRoomController'
+		})
+		.otherwise({
+			redirectTo: '/login',
+			templateUrl: 'public/js/views/login.html',
+			controller: 'loginController'
+		});
+});
+
+myApp.factory('pathApi', function() {
+    return {
+
+        //all_api
+        api_login: "/CodeRoomService/public/index.php/login",
+        api_logout: "/CodeRoomService/public/index.php/logout",
+		api_add_room: address + "api_controller/student/add_room",
+        //student
+        api_get_student_announcement: "/CodeRoomService/public/index.php/api/student/announcement/",
+
+        //teacher
+        api_get_teacher_addStudent : "/CodeRoomService/public/index.php/api/teacher/student/all/",
+
+        //admin
+        api_get_admin_disableEnableCourse : "/CodeRoomService/public/index.php/api/admin/course/status/",
+    };
+});
+
+
 
 sessionStorage.setItem('address', address);
 var path;
@@ -46,18 +86,18 @@ myApp.directive('navIndex', function () {
 	};
 });
 
-myApp.service('fileUpload', ['$http', function ($http) {
+myApp.service('fileUpload', ['$http', function ($http,pathApi) {
     this.uploadFileToUrl = function(roomId,file, uploadUrl){
 		//path ที่จะส่งเลขห้องรอบ 2
 		console.log(file);
-		var roomPath = address + "api_controller/student/add_room";
+		var roomPath = pathApi.api_add_room;
 		var room = angular.toJson({room_id:"14"});
 		console.log(room);
         var fd = new FormData();
         fd.append('csv', file);
         $http.post(uploadUrl, fd, {
             transformRequest: angular.identity,
-            headers: {'Content-Type': undefined}
+            headers: {'token' : token, 'Content-Type': undefined}
 			
         })
         .success(function(){
