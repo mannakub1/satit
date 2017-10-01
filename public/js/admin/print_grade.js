@@ -116,4 +116,6 @@ myApp.controller('printStudentGradeController', function ($scope, $http) {
                 }
             });
     }
+
+    window.print();
 });
