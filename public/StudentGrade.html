@@ -141,7 +141,7 @@
 													</tr>
 												</thead>
 												<tbody>
-													<tr ng-repeat="x in y.student_subjects" ng-show="x.status">
+													<tr ng-repeat="x in y.student_subjects" ng-show="x.status && x.subject.status != 'พัฒนาผู้เรียน' ">
 														<td style="background-color: #ededed; color:black; width:8%"><center>{{x.subject.code}}</center></td>
 														<td style="background-color: #ededed; color:black; width:20%">{{x.subject.name}}</td>
 														<td style="background-color: #ededed; color:black; width:5%"><center>{{x.score1}}</center></td>
@@ -151,6 +151,31 @@
 													</tr>
 												</tbody>
 											</table>
+
+											<table class="table table-bordered" style="width:60%; table-layout: fixed;">
+
+                                                 
+                                                <table class="table table-bordered" style="width:60%">
+                                                    <thead>
+                                                    <tr style="background-color: greenyellow;">
+                                                        <th style="background-color: #909070; color:black;" colspan="2"><center>รายวิชาพัฒนาผู้เรียน</center></th>
+                                                    </tr>
+                                                    <tr style="background-color: grey;">
+                                                        <th style="background-color: #E0E0FF; color:black; width:77%"><center>ชื่อรายวิชา</center></th>
+                                                        <th style="background-color: #E0E0FF; color:black; width:5%"><center>เกรด</center></th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr ng-repeat="x in y.student_subjects" ng-show="x.status && x.subject.status == 'พัฒนาผู้เรียน' && x.grade != ''" >
+                                                        <td style="background-color: #ededed; color:black;"><center>{{x.subject.name}}</center></td>
+                                                      	<td style="background-color: #ededed; color:black; width:5%"><center>{{x.grade}}</center></td>
+                                                    </tr>
+													 <tr ng-repeat="x in y.student_subjects" ng-show="x.status && x.subject.status == 'พัฒนาผู้เรียน'  && x.grade == '' " >
+                                                        <td style="background-color: #ededed; color:black;"><center>{{x.subject.name}}</center></td>
+                                                      	<td style="background-color: #ededed; color:black; width:5%"><center>{{x.grade}}</center></td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
 										</div>
 									</div>
 								</div>

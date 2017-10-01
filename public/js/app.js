@@ -115,7 +115,7 @@ myApp.service('fileUpload', ['$http', function ($http,pathApi) {
       });
         })
         .error(function(){
-		console.log("error");
+			console.log("error");
         });
 		
     }
@@ -758,6 +758,58 @@ myApp.controller('mainCtrl',  function($scope, $http, fileUpload) {
 
 
 });
+
+
+myApp.controller('stdGrade',  function($scope, $http, fileUpload) {
+	$scope.token = localStorage.getItem('token');
+	$scope.student = JSON.parse(sessionStorage.getItem('stdData'));
+	
+
+	$scope.getGrade = function () {
+		path = address + "api/student/courses?student_id=" + $scope.student.id;
+		$http.get(path , {headers: {'token': $scope.token} })
+			.success(function(data){
+				console.log(data);
+				$scope.stdRoom = data.student_room;
+				console.log($scope.stdRoom);
+			})
+			.error(function(data, status, headers, config) {
+				if(data.error === 'token expired'){
+					window.location.href = 'login.html';;
+				}
+			});
+	}
+
+	$scope.Grade =  [];
+
+	$scope.collapseGrade = function () {
+		var e = document.getElementById("selectGradeLevel").value;
+		for(var i = 0; i < $scope.Grade.length; ++i){
+			$scope.Grade[i] = false;
+		}
+		$scope.Grade[e] = true;
+
+	}
+
+	$scope.logout = function(){
+		path = address + "api/logout";
+		$http.post(path, angular.toJson($scope.student), {
+            transformRequest: angular.identity,
+            headers: {'token' : $scope.token, 'Content-Type': "application/json"}
+			
+        })
+		.success(function(data, status, headers, config) {
+			console.log(data);
+			window.location.href = 'login.html';
+			
+      })
+		.error(function(data, status, headers, config) {
+      });
+	}
+	
+	$scope.getGrade();
+});
+
 
 myApp.controller('stdCtrl',  function($scope, $http, fileUpload) {
 	$scope.showHome = true;
