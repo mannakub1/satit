@@ -8,6 +8,10 @@ module Student::Private::StudentAction
     current_student_username
   end
 
+  def process_add_picture
+    student.update_attributes(params)
+  end
+
   def valid_password?
     compare_password?
   end

@@ -3,6 +3,7 @@ module Satit::TeacherAPI::Student
   class StudentListEntity < Grape::Entity
     expose :id
     expose :prefix
+    expose :thumb
     expose :image
     expose :code_number
     expose :first_name

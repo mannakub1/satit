@@ -5,13 +5,11 @@ var token = localStorage.getItem('token');
 //var address = "http://192.168.217.102:3000/";
 // var address = 'http://localhost:3000/'
 //var address = 'http://202.28.73.138:3000/'
-<<<<<<< HEAD
 // var address = 'http://172.27.169.121:3000/'
 // var address = 'http://172.27.225.177:4000/'
-var address = 'http://localhost:3000/'
-=======
-var address = 'http://172.27.228.22:3000/'
->>>>>>> d1ca03922cf7e13bfad7b027babb85c366b2f463
+// var address = 'http://localhost:3000/'
+var address = 'http://172.27.228.210:3000/'
+// var address = 'http://172.27.228.22:3000/'
 // var address = 'http://172.27.225.177:3000/'
 //var address = 'http://172.27.160.80:3000/'
 // var address = "http://172.27.160.166:3000/";
@@ -812,13 +810,13 @@ myApp.controller('stdCtrl',  function($scope, $http, fileUpload) {
 		$scope.hasGuardian = true;
 	}
 
+	$scope.showStudentData = true;
 	$scope.showFile = false;
 	$scope.showStudent = false;
 	$scope.showEditStudent = false;
 	$scope.showEditFather = false;
 	$scope.showEditMother = false;
 	$scope.showEditGuardian = false;
-	$scope.showStudentData = false;
 	$scope.showAddStudent = false;
 	
 
@@ -1048,11 +1046,11 @@ myApp.controller('stdCtrl',  function($scope, $http, fileUpload) {
 
 		})
 			.success(function(data, status, headers, config) {
+				
 				path = address + "api/student/add_father";
 				$http.post(path, angular.toJson({id : $scope.student.id, adult_id : data.id} ), {
 					transformRequest: angular.identity,
 					headers: {'token' : $scope.token, 'Content-Type': "application/json"}
-
 				})
 				$scope.student.father[0] = data;
 				sessionStorage.setItem('stdData', JSON.stringify($scope.student));
@@ -1063,6 +1061,8 @@ myApp.controller('stdCtrl',  function($scope, $http, fileUpload) {
 
 			})
 			.error(function(data, status, headers, config) {
+				// console.log("error")
+				// console.log($scope.student.father[0])
 				if(data.error === 'token expired'){
 					window.location.href = 'login.html';;
 				}

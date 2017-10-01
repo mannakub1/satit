@@ -114,30 +114,33 @@
                                             </select>
                                             <div class="table-responsive" ng-repeat="y in stdRoom" ng-show="Grade[$index]">
 
-                                                    <table class="table table-bordered" style="width:58%; margin-bottom: -0.1%">
+                                                    <table class="table table-bordered" style="width:60%; margin-bottom: -0.1%">
 
                                                         <thead>
-                                                        <tr style="background-color: greenyellow;">
-                                                            <th style="background-color: #ffa31a; color:black;" colspan="6"><center>ชั้น {{y.room.level}} ห้อง {{y.room.name}} ปี {{changeYearPlus(y.room.year)}}</center></th>
-                                                        </tr>
-                                                        <tr style="background-color: grey;">
-                                                            <th style="background-color: #ffd11a; color:black; width:8%"><center>รหัสวิชา</center></th>
-                                                            <th style="background-color: #ffd11a; color:black; width:77%"><center>ชื่อรายวิชา</center></th>
-                                                            <th style="background-color: #ffd11a; color:black; max-width:5%"><center>คะแนนเทอม1</center></th>
-                                                            <th style="background-color: #ffd11a; color:black; width:5%"><center>คะแนนเทอม2</center></th>
-                                                            <th style="background-color: #ffd11a; color:black; width:5%"><center>เกรด</center></th>
+                                                            <tr style="background-color: greenyellow;">
+                                                                <th style="background-color: #909070; color:black;" colspan="7" %><center>ชั้น {{y.room.level}} ห้อง {{y.room.name}} ปี {{changeYearPlus(y.room.year)}}</center></th>
+                                                            </tr>
+                                                            <tr style="background-color: grey;">
+                                                                <th style="background-color: #E0E0FF; color:black; width:8%"><center>รหัสวิชา</center></th>
+                                                                <th style="background-color: #E0E0FF; color:black; width:40%"><center>ชื่อรายวิชา</center></th>
+                                                                <th style="background-color: #E0E0FF; color:black; width:5%"><center>คะแนนเทอม1</center></th>
+                                                                <th style="background-color: #E0E0FF; color:black; width:5%"><center>คะแนนเทอม2</center></th>
+                                                                <th style="background-color: #E0E0FF; color:black; width:5%"><center>คะแนนรวม</center></th>
+                                                                <th style="background-color: #E0E0FF; color:black; width:5%"><center>ร้อยละ</center></th>
+                                                                <th style="background-color: #E0E0FF; color:black; width:5%"><center>เกรด</center></th>
 
-                                                        </tr>
+                                                            </tr>
                                                         </thead>
                                                         <tbody>
-                                                        <tr ng-repeat="x in y.student_subjects" ng-show="x.status && x.subject.status !== 'พัฒนาผู้เรียน'" >
-                                                            <td style="background-color: #ffe680; color:black; width:8%"><center>{{x.subject.code}}</center></td>
-                                                            <td style="background-color: #ffe680; color:black; width:77%"><center>{{x.subject.name}}</center></td>
-
-                                                            <td style="background-color: #ffe680; color:black; max-width:5%"><center><input style="max-width: 25%; text-align: center" type="text" name="score1" ng-model="x.score1">
-                                                            </center></td>
-                                                            <td style="background-color: #ffe680; color:black; width:5%"><center><input style="max-width: 25%; text-align: center" type="text" name="score2" ng-model="x.score2"></center></td>
-                                                            <td style="background-color: #ffe680; color:black; width:5%"><center>{{x.grade}}</center></td>
+                                                            <tr ng-repeat="x in y.student_subjects" ng-show="x.status && x.subject.status !== 'พัฒนาผู้เรียน'" >
+                                                                <td style="background-color: #ededed; color:black; width:8%"><center>{{x.subject.code}}</center></td>
+                                                                <td style="background-color: #ededed; color:black; width:20%"><center>{{x.subject.name}}</center></td>
+                                                                <td style="background-color: #ededed; color:black; width:5%"><center><input style="width: 85%; text-align: center" type="text" name="score1" ng-model="x.score1">
+                                                                </center></td>
+                                                                <td style="background-color: #ededed; color:black; width:5%"><center><input style="width: 85%; text-align: center" type="text" name="score2" ng-model="x.score2"></center></td>
+                                                                <td style="background-color: #ededed; color:black; width:5%"><center>{{x.total_score}}</center></td>
+                                                                <td style="background-color: #ededed; color:black; width:5%"><center>{{x.score_result}}</center></td>
+                                                                <td style="background-color: #ededed; color:black; width:5%"><center>{{x.grade}}</center></td>
 
                                                         </tr>
 
@@ -145,29 +148,29 @@
                                                     </table>
 
 
-                                                <table class="table table-bordered" style="width:58%; table-layout: fixed;">
+                                                <table class="table table-bordered" style="width:60%; table-layout: fixed;">
 
                                                     <thead>
                                                     <tr style="background-color: greenyellow;">
-                                                        <th style="background-color: #f9b66d; color:black; width:50%;" colspan="5"><center>This Semester</center></th>
-                                                        <th style="background-color: #f9b66d; color:black; width:50%;" colspan="5"><center>All Semester</center></th>
+                                                        <th style="background-color: #909070; color:black; width:50%;" colspan="5"><center>This Semester</center></th>
+                                                        <th style="background-color:#909070; color:black; width:50%;" colspan="5"><center>All Semester</center></th>
                                                     </tr>
 
                                                     </thead>
                                                     <tbody>
                                                     <tr>
                                                         <!--This Semester-->
-                                                        <td style="background-color: #f5e79e; color:black; width:8%"><center>CR<br>{{y.cr_cal}}</center></td>
-                                                        <td style="background-color: #f5e79e; color:black; width:77%"><center>CP<br>{{y.cp_cal}}</center></td>
-                                                        <td style="background-color: #f5e79e; color:black; max-width:5%"><center>CA<br>{{y.ca_cal}}</center></td>
-                                                        <td style="background-color: #f5e79e; color:black; width:5%"><center>GP<br>{{y.gp_cal}}</center></td>
-                                                        <td style="background-color: #f5e79e; color:black; width:5%"><center>GPA<br>{{y.gpa_cal}}</center></td>
+                                                        <td style="background-color: #ededed; color:black; width:8%"><center>CR<br>{{y.cr_cal}}</center></td>
+                                                        <td style="background-color: #ededed; color:black; width:77%"><center>CP<br>{{y.cp_cal}}</center></td>
+                                                        <td style="background-color: #ededed; color:black; max-width:5%"><center>CA<br>{{y.ca_cal}}</center></td>
+                                                        <td style="background-color: #ededed; color:black; width:5%"><center>GP<br>{{y.gp_cal}}</center></td>
+                                                        <td style="background-color: #ededed; color:black; width:5%"><center>GPA<br>{{y.gpa_cal}}</center></td>
                                                         <!--CUMULATIVE TO THIS SEMESTER-->
-                                                        <td style="background-color: #f5e79e; color:black; width:8%"><center>CR<br>{{y.cr}}</center></td>
-                                                        <td style="background-color: #f5e79e; color:black; width:77%"><center>CP<br>{{y.cp}}</center></td>
-                                                        <td style="background-color: #f5e79e; color:black; max-width:5%"><center>CA<br>{{y.ca}}</center></td>
-                                                        <td style="background-color: #f5e79e; color:black; width:5%"><center>GP<br>{{y.gp}}</center></td>
-                                                        <td style="background-color: #f5e79e; color:black; width:5%"><center>GPA<br>{{y.gpa}}</center></td>
+                                                        <td style="background-color: #ededed; color:black; width:8%"><center>CR<br>{{y.cr}}</center></td>
+                                                        <td style="background-color: #ededed; color:black; width:77%"><center>CP<br>{{y.cp}}</center></td>
+                                                        <td style="background-color: #ededed; color:black; max-width:5%"><center>CA<br>{{y.ca}}</center></td>
+                                                        <td style="background-color: #ededed; color:black; width:5%"><center>GP<br>{{y.gp}}</center></td>
+                                                        <td style="background-color: #ededed; color:black; width:5%"><center>GPA<br>{{y.gpa}}</center></td>
                                                     </tr>
 
                                                     </tbody>
@@ -175,17 +178,17 @@
                                                 <table class="table table-bordered" style="width:58%">
                                                     <thead>
                                                     <tr style="background-color: greenyellow;">
-                                                        <th style="background-color: #ffa31a; color:black;" colspan="2"><center>รายวิชาพัฒนาผู้เรียน</center></th>
+                                                        <th style="background-color: #909070; color:black;" colspan="2"><center>รายวิชาพัฒนาผู้เรียน</center></th>
                                                     </tr>
                                                     <tr style="background-color: grey;">
-                                                        <th style="background-color: #ffd11a; color:black; width:77%"><center>ชื่อรายวิชา</center></th>
-                                                        <th style="background-color: #ffd11a; color:black; width:5%"><center>เกรด</center></th>
+                                                        <th style="background-color: #E0E0FF; color:black; width:77%"><center>ชื่อรายวิชา</center></th>
+                                                        <th style="background-color: #E0E0FF; color:black; width:5%"><center>เกรด</center></th>
                                                     </tr>
                                                     </thead>
                                                     <tbody>
                                                     <tr ng-repeat="x in y.student_subjects" ng-show="x.status && x.subject.status == 'พัฒนาผู้เรียน'" >
-                                                        <td style="background-color: #ffe680; color:black;"><center>{{x.subject.name}}</center></td>
-                                                        <td style="background-color: #ffe680; color:black;"><center><select ng-attr-id="{{'select_grade_' + $index}}" ng-model="x.grade"  style="margin-bottom: 3%">
+                                                        <td style="background-color: #ededed; color:black;"><center>{{x.subject.name}}</center></td>
+                                                        <td style="background-color: #ededed; color:black;"><center><select ng-attr-id="{{'select_grade_' + $index}}" ng-model="x.grade"  style="margin-bottom: 3%">
                                                             <option value="">---Please select---</option>
                                                             <option value="S">ผ่าน</option>
                                                             <option value="U">ไม่ผ่าน</option>

@@ -11,6 +11,10 @@ module Student::Private::StudentActionGuard
     [true, nil]
   end
 
+  def can_add_picture?
+    return [false, 'have a student'] if student? 
+  end
+
   def can_delete?
     return [false, 'not have exist student'] if not_student_exist?
 

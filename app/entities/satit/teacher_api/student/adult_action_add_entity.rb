@@ -5,6 +5,7 @@ module Satit::TeacherAPI::Student
     expose :prefix
     expose :first_name
     expose :last_name
+    expose :image
     expose :address
     expose :call
     expose :zip_code

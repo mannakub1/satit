@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170616092206) do
+ActiveRecord::Schema.define(version: 20171001143518) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,12 +36,13 @@ ActiveRecord::Schema.define(version: 20170616092206) do
     t.string   "district"
     t.string   "parish"
     t.string   "city"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                                     null: false
+    t.datetime "updated_at",                                     null: false
     t.string   "prefix"
     t.string   "nationality"
     t.string   "iden_number"
     t.string   "image"
+    t.string   "thumb",       default: "img/student/avatar.png"
   end
 
   create_table "api_keys", force: :cascade do |t|
@@ -148,14 +149,15 @@ ActiveRecord::Schema.define(version: 20170616092206) do
     t.float    "score_result"
     t.boolean  "status",          default: true
     t.boolean  "status_grade",    default: false
+    t.float    "total_score"
   end
 
   create_table "students", force: :cascade do |t|
     t.string   "first_name"
     t.string   "last_name"
     t.float    "gpa"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
     t.string   "iden_number"
     t.string   "code_number"
     t.boolean  "room_state"
@@ -175,6 +177,7 @@ ActiveRecord::Schema.define(version: 20170616092206) do
     t.string   "username"
     t.string   "password_digest"
     t.string   "image"
+    t.string   "thumb",           default: ""
   end
 
   create_table "subjects", force: :cascade do |t|

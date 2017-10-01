@@ -17,6 +17,13 @@ class Student::StudentAction
     process_add
   end
 
+  def add_picuture
+    can_add_picture, message = can_add_picture?
+    fail message unless can_add_picture
+
+    process_add_picture
+  end
+
   def edit
     can_edit, message = can_edit?
     fail message unless can_edit

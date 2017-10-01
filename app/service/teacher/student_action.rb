@@ -1,7 +1,9 @@
 class Teacher::StudentAction
+  
+  
+  attr_reader :student, :student_id, :room, :code_number, :first_name, :last_name, :params, :subject, :student_room
 
-attr_reader :student, :student_id, :room, :code_number, :first_name, :last_name, :params, :subject, :student_room
-
+  require 'rmagick'
   include Teacher::Private::StudentAction
   include Teacher::Private::StudentActionGuard
 
@@ -36,10 +38,23 @@ attr_reader :student, :student_id, :room, :code_number, :first_name, :last_name,
     # student_room.update_attributes(room_state: true)
   end
 
+
   def edit(params)
+    
+    if params[:image] != nil
+      img = Magick::Image.read("/Users/manny/Documents/Work/ruby/satit/public/#{params[:image]}").first
+      img = img.resize(1920, 1080)
+      thumb = img.resize(48, 48)
+
+      # img.write("/Users/manny/Documents/Work/ruby/satit/public/img/student/#{params[:id]}_image.png")
+      thumb.write("/Users/manny/Documents/Work/ruby/satit/public/img/student/#{params[:id]}_thumb.png")
+      
+      
+      params[:thumb] = "img/student/#{params[:id]}_thumb.png"
+    end
     params.except!(:id)
-    puts params
     current_student.update_attributes(params)
+
 
     current_student
   end

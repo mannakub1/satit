@@ -15,7 +15,6 @@ module Satit::Prototype::TeacherAPI::StudentAPI
         end
 
         def add_student
-          puts '5555'
           Teacher::StudentAction.new.add_student(params)
           student_last
         end
@@ -30,8 +29,6 @@ module Satit::Prototype::TeacherAPI::StudentAPI
         end
 
         def edit_adult
-          puts params
-
           Teacher::AdultAction.new.edit(params)
         end 
 
@@ -69,13 +66,13 @@ module Satit::Prototype::TeacherAPI::StudentAPI
 
         def current_student
           id = params[:id]
-          params.delete!(:id)
+          params.delete(:id)
           Student.find(id)
         end
 
         def student_id
           id = params[:id]
-          params.delete!(:id)
+          params.delete(:id)
 
           id
         end
@@ -90,11 +87,12 @@ module Satit::Prototype::TeacherAPI::StudentAPI
 
       end
 
+
       desc 'edit profile studetn'
       params do 
         requires :id, type: Integer, desc: 'id each of student in database'
-        requires :prefix, type: String, desc: 'prefix name of student'
         requires :code_number, type: String, desc: 'number card of student'
+        requires :first_name, type: String, desc: 'last name of student'
         requires :last_name, type: String, desc: 'last name of student'
         optional :iden_number, type: String, desc: 'number card identity'
         optional :blood, type: String, desc: 'blood'
@@ -108,6 +106,7 @@ module Satit::Prototype::TeacherAPI::StudentAPI
         optional :ability, type: String, desc: 'student can it'
         optional :ethnicity, type: String, desc: 'enthicity'
         optional :nationality, type: String, desc: 'nation'
+        optional :image, type: String, desc: 'image for profile'
       end 
       post '/edit_profile' do
         present :student, Teacher::StudentAction.new(student_id: params[:id]).edit(params)\
@@ -132,6 +131,7 @@ module Satit::Prototype::TeacherAPI::StudentAPI
         optional :ability, type: String, desc: 'student can it'
         optional :ethnicity, type: String, desc: 'enthicity'
         optional :nationality, type: String, desc: 'nation'
+        optional :image, type: String, desc: ''
       end 
       post '/add_student' do
         present :student, Teacher::StudentAction.new.add_student(params) \
@@ -152,6 +152,7 @@ module Satit::Prototype::TeacherAPI::StudentAPI
         optional :zip_code, type: String, desc: 'zip code'
         optional :enthicity, type: String, desc: 'enthicity'
         optional :nationality, type: String, desc: 'nation'
+        optional :image, type: String, desc: ''
       end
       post :add_adult do
         present add_adult\
@@ -161,9 +162,9 @@ module Satit::Prototype::TeacherAPI::StudentAPI
       desc 'edit adult'
       params do
         requires :id, type: Integer, desc: 'id each of adult'
-        requires :prefix, type: String, desc: 'prefix name of student'
-        requires :first_name, type: String, desc: 'frist name of student'
-        requires :last_name, type: String, desc: 'last name of student'
+        optional :prefix, type: String, desc: 'prefix name of student'
+        optional :first_name, type: String, desc: 'frist name of student'
+        optional :last_name, type: String, desc: 'last name of student'
         optional :iden_number, type: String, desc: 'number card identity'
         optional :address, type: String, desc: 'address'
         optional :district, type: String, desc: 'district'
@@ -173,6 +174,7 @@ module Satit::Prototype::TeacherAPI::StudentAPI
         optional :zip_code, type: String, desc: 'zip code'
         optional :enthicity, type: String, desc: 'enthicity'
         optional :nationality, type: String, desc: 'nation'
+        optional :image, type: String, desc: ''
       end
       post :edit_adult do
         present edit_adult\
