@@ -25,63 +25,63 @@
             ชั้นประถมศึกษาปีที่ {{stdRoom[0].room.level.charAt(2)}} ปีการศึกษา {{stdRoom[0].room.year}}</center>
         <table>
             <tr>
-                <th rowspan="3"><center>รหัส</center></th>
-                <th rowspan="3"><center>รายวิชา</center></th>
-                <th rowspan="3"><center>น้ำหนัก</center></th>
-                <th colspan="4"><span style="display:block; width: 100%; text-align: center">ผลการเรียนรู้</span></th>
-                <th colspan="3"><span style="display:block; width: 100%; text-align: center">ผลการประเมิน</span></th>
+                <td rowspan="3"><center><span style="font-size: 0.4cm">รหัส</span></center></td>
+                <td rowspan="3"><center><span style="font-size: 0.4cm">รายวิชา</span></center></td>
+                <td rowspan="3"><center><span style="font-size: 0.4cm">น้ำหนัก</span></center></td>
+                <td colspan="4"><span style="display:block; text-align: center; font-size: 0.4cm">ผลการเรียนรู้</span></td>
+                <td colspan="3"><span style="display:block; ; text-align: center; font-size: 0.4cm">ผลการประเมิน</span></td>
             </tr>
             <tr>
-                <td><center>ภาคเรียนที่ 1</center></td>
-                <td><center>ภาคเรียนที่ 2</center></td>
-                <td><center>รวม</center></td>
-                <td rowspan="2"><center>ร้อยละ</center></td>
-                <td rowspan="2"><center>สอบปกติ</center></td>
-                <td rowspan="2"><center>สอบแก้ตัว</center></td>
-                <td rowspan="2"><center>เรียนซ้ำ</center></td>
+                <td><center><span style="font-size: 0.4cm">ภาคเรียนที่ 1</span></center></td>
+                <td><center><span style="font-size: 0.4cm">ภาคเรียนที่ 2</span></center></td>
+                <td><center><span style="font-size: 0.4cm">รวม</span></center></td>
+                <td rowspan="2"><center><span style="font-size: 0.4cm">ร้อยละ</span></center></td>
+                <td rowspan="2"><center><span style="font-size: 0.4cm">สอบปกติ</span></center></td>
+                <td rowspan="2"><center><span style="font-size: 0.4cm">สอบแก้ตัว</span></center></td>
+                <td rowspan="2"><center><span style="font-size: 0.4cm">เรียนซ้ำ</span></center></td>
             </tr>
             <tr>
-                <td><span style="display:block; width: 100%; text-align: center">100</span></td>
-                <td><span style="display:block; width: 100%; text-align: center">100</span></td>
-                <td><span style="display:block; width: 100%; text-align: center">200</span></td>
+                <td><span style="display:block; text-align: center; font-size: 0.4cm">100</span></td>
+                <td><span style="display:block; text-align: center; font-size: 0.4cm">100</span></td>
+                <td><span style="display:block; text-align: center; font-size: 0.4cm">200</span></td>
 
             </tr>
             <tr>
-                <th style="background-color: #E6E1DC" colspan="10">รายวิชาพื้นฐาน</th>
+                <td style="background-color: #E6E1DC" colspan="10"><span style="font-size: 0.4cm">รายวิชาพื้นฐาน</span></td>
             </tr>
             <tr ng-repeat="x in stdRoom[0].student_subjects" ng-show="x.status && x.subject.status === 'วิชาหลัก'" >
-                <td><center>{{x.subject.code}}</center></td>
-                <td>{{x.subject.name}}</td>
-                <td><center>{{x.subject.credit}}</center></td>
-                <td><center>{{x.score1}}</center></td>
-                <td><center>{{x.score2}}</center></td>
-                <td><center>{{x.score1 + x.score2}}</center></td>
-                <td><center>{{x.score_result}}</center></td>
-                <td><center>{{x.grade}}</center></td>
-                <td></td>
-                <td></td>
+                <td style="width: 1cm"><center><span style="font-size: 0.35cm">{{x.subject.code}}</span></center></td>
+                <td style="width: 6cm"><span style="font-size: 0.35cm">{{x.subject.name}}</span></td>
+                <td style="width: 1cm"><center><span style="font-size: 0.35cm">{{x.subject.credit}}</span></center></td>
+                <td style="width: 1.7cm"><center><span style="font-size: 0.35cm">{{x.score1}}</span></center></td>
+                <td style="width: 1.7cm"><center><span style="font-size: 0.35cm">{{x.score2}}</span></center></td>
+                <td style="width: 1.7cm"><center><span style="font-size: 0.35cm">{{x.score1 + x.score2}}</span></center></td>
+                <td style="width: 1.2cm"><center><span style="font-size: 0.35cm">{{x.score_result}}</span></center></td>
+                <td style="width: 0.6cm"><center><span style="font-size: 0.35cm">{{x.grade}}</span></center></td>
+                <td style="width: 0.6cm"></td>
+                <td style="width: 0.6cm"></td>
             </tr>
             <tr>
-                <th style="background-color: #E6E1DC" colspan="10">ราววิชาเพิ่มเติม</th>
+                <td style="background-color: #E6E1DC" colspan="10"><span style="font-size: 0.4cm">ราววิชาเพิ่มเติม</span></td>
             </tr>
             <tr ng-repeat="x in stdRoom[0].student_subjects" ng-show="x.status && x.subject.status === 'วิชาเพิ่มเติม'" >
-                <td><center>{{x.subject.code}}</center></td>
-                <td>{{x.subject.name}}</td>
-                <td><center>{{x.subject.credit}}</center></td>
-                <td><center>{{x.score1}}</center></td>
-                <td><center>{{x.score2}}</center></td>
-                <td><center>{{x.score1 + x.score2}}</center></td>
-                <td><center>{{x.score_result}}</center></td>
-                <td><center>{{x.grade}}</center></td>
-                <td></td>
-                <td></td>
+                <td style="width: 1cm"><center><span style="font-size: 0.35cm">{{x.subject.code}}</span></center></td>
+                <td style="width: 6cm"><span style="font-size: 0.35cm">{{x.subject.name}}</span></td>
+                <td style="width: 1cm"><center><span style="font-size: 0.35cm">{{x.subject.credit}}</span></center></td>
+                <td style="width: 1.7cm"><center><span style="font-size: 0.35cm">{{x.score1}}</span></center></td>
+                <td style="width: 1.7cm"><center><span style="font-size: 0.35cm">{{x.score2}}</span></center></td>
+                <td style="width: 1.7cm"><center><span style="font-size: 0.35cm">{{x.score1 + x.score2}}</span></center></td>
+                <td style="width: 1.2cm"><center><span style="font-size: 0.35cm">{{x.score_result}}</span></center></td>
+                <td style="width: 0.6cm"><center><span style="font-size: 0.35cm">{{x.grade}}</span></center></td>
+                <td style="width: 0.6cm"></td>
+                <td style="width: 0.6cm"></td>
             </tr>
         </table>
-        <br><br>
+        <br>
         <table>
             <tr>
-                <th rowspan="3"><center>กิจกรรมพัฒนาผู้เรียน</center></th>
-                <th colspan="4"><center>ผลการประเมินกิจกรรมพัฒนาผู้เรียนรายปี</center></th>
+                <td rowspan="3" style="width: 10cm"><center>กิจกรรมพัฒนาผู้เรียน</center></td>
+                <td colspan="4" style="width: 10cm"><center>ผลการประเมินกิจกรรมพัฒนาผู้เรียนรายปี</center></td>
             </tr>
             <tr>
                 <td colspan="2"><center>ภาคเรียนที่ 1</center></td>
@@ -102,67 +102,66 @@
                 <td></td>
             </tr>
         </table>
-        <br><br>
+        <br>
         <table>
             <tr>
-                <th rowspan="2">รายการ</th>
-                <th colspan="5">สรุปผลการประเมินรายปี</th>
+                <td rowspan="2" style="width: 6cm"><center>รายการ</center></td>
+                <td colspan="5" style="width: 10cm"><center>สรุปผลการประเมินรายปี</center></td>
             </tr>
             <tr>
-                <td>ทั้งหมด</td>
-                <td>สอบปกติ</td>
-                <td>สอบแก้ตัว/เรียนซ้ำ</td>
-                <td>รวม</td>
-                <td>หมายเหตุ</td>
+                <td style="width: 1cm"><center>ทั้งหมด</center></td>
+                <td style="width: 1cm"><center>สอบปกติ</center></td>
+                <td style="width: 2cm"><center>สอบแก้ตัว/เรียนซ้ำ</center></td>
+                <td style="width: 1cm"><center>รวม</center></td>
+                <td style="width: 1cm"><center>หมายเหตุ</center></td>
             </tr>
             <tr>
                 <td>จำนวนน้ำหนักรายวิชาพื้นฐาน</td>
-                <td>23</td>
-                <td>23</td>
-                <td>-</td>
-                <td>23</td>
-                <td></td>
+                <td><center>{{stdRoom[0].ca - stdRoom[0].ca_temp_cal}}</center></td>
+                <td><center>{{stdRoom[0].cp - stdRoom[0].cp_temp_cal}}</center></td>
+                <td><center></center></td>
+                <td><center>{{stdRoom[0].cp - stdRoom[0].cp_temp_cal}}</center></td>
+                <td><center></center></td>
             </tr>
 
             <tr>
                 <td>จำนวนน้ำหนักรายวิชาเพิ่มเติม</td>
-                <td>2</td>
-                <td>2</td>
-                <td>-</td>
-                <td>2</td>
-                <td></td>
+                <td><center>{{stdRoom[0].cr_temp_cal}}</center></td>
+                <td><center>{{stdRoom[0].cp_temp_cal}}</center></td>
+                <td><center></center></td>
+                <td><center>{{stdRoom[0].cp_temp_cal}}</center></td>
+                <td><center></center></td>
             </tr>
             <tr>
                 <td>รวมจำนวนน้ำหนัก</td>
-                <td>25</td>
-                <td>25</td>
-                <td>-</td>
-                <td>25</td>
-                <td></td>
+                <td><center>{{stdRoom[0].ca}}</center></td>
+                <td><center>{{stdRoom[0].cp}}</center></td>
+                <td><center></center></td>
+                <td><center>{{stdRoom[0].cp}}</center></td>
+                <td><center></center></td>
             </tr>
             <tr>
                 <td>ระดับผลการประเมินเฉลี่ยสอบปกติ</td>
                 <td style="background-color: #8c8c8c"></td>
-                <td>2.92</td>
+                <td><center>{{stdRoom[0].gpa}}</center></td>
                 <td style="background-color: #8c8c8c"></td>
                 <td style="background-color: #8c8c8c"></td>
-                <td></td>
+                <td><center></center></td>
             </tr>
             <tr>
-                <td>ระดับผลการประเมินเฉลี่ยหละงการสอบแก้ตัว</td>
+                <td>ระดับผลการประเมินเฉลี่ยหลังการสอบแก้ตัว</td>
                 <td style="background-color: #8c8c8c"></td>
-                <td>-</td>
-                <td>-</td>
+                <td><center></center></td>
+                <td><center></center></td>
                 <td style="background-color: #8c8c8c"></td>
-                <td></td>
+                <td><center></center></td>
             </tr>
             <tr>
-                <td colspan="2">ระดับการประเมินเฉลี่ยสะสม</td>
-                <td colspan="4">2.92</td>
+                <td colspan="2" style="width: 60%">ระดับการประเมินเฉลี่ยสะสม</td>
+                <td colspan="4" style="width: 40%"><center>{{stdRoom[0].gpa}}</center></td>
             </tr>
         </table>
-        <br><br>
-        <table style="float:left">
+        <!--<table style="float:left">
             <tr>
                 <td style="height: 1.5cm">ลายเซ็นหัวหน้าสถานศึกษา ............................................ <br> ลายเซ็นผู้ปกครอง ...........................................................</td>
             </tr>
@@ -171,7 +170,7 @@
             <tr>
                 <td style="height: 1.5cm">ลายเซ็นครูประจำชั้น ............................................ </td>
             </tr>
-        </table>
+        </table> -->
     </div>
 
 

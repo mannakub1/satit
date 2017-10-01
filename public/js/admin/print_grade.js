@@ -25,10 +25,10 @@ myApp.controller('printStudentGradeController', function ($scope, $http) {
     }
     $scope.cr = [];
     for(var i = 0; i < $scope.stdRoom.length; ++i){
-        var cr = 0;
-        var cp = 0;
-        var ca = 0;
-        var gp = 0;
+        var cr, cr_temp = 0;
+        var cp, cp_temp = 0;
+        var ca, ca_temp = 0;
+        var gp, gp_temp = 0;
         for(var j = 0; j < $scope.stdRoom[i].student_subjects.length; ++j){
             if($scope.stdRoom[i].student_subjects[j].subject.status !== "พัฒนาผู้เรียน"){
                 cr += $scope.stdRoom[i].student_subjects[j].subject.credit;
@@ -44,6 +44,23 @@ myApp.controller('printStudentGradeController', function ($scope, $http) {
                     gp += $scope.stdRoom[i].student_subjects[j].subject.credit * parseFloat($scope.stdRoom[i].student_subjects[j].grade);
                 }
             }
+            if($scope.stdRoom[i].student_subjects[j].subject.status === "วิชาเพิ่มเติม"){
+                cr_temp += $scope.stdRoom[i].student_subjects[j].subject.credit;
+                cp_temp += $scope.stdRoom[i].student_subjects[j].subject.credit;
+                ca_temp += $scope.stdRoom[i].student_subjects[j].subject.credit;
+                if(!$scope.stdRoom[i].student_subjects[j].grade || $scope.stdRoom[i].student_subjects[j].grade === 0 || $scope.stdRoom[i].student_subjects[j].grade === 'U'){
+                    cp_temp -= $scope.stdRoom[i].student_subjects[j].subject.credit;
+                }
+                if(!$scope.stdRoom[i].student_subjects[j].grade || $scope.stdRoom[i].student_subjects[j].grade === 'U' ||$scope.stdRoom[i].student_subjects[j].grade === 'S'){
+                    ca_temp -= $scope.stdRoom[i].student_subjects[j].subject.credit;
+                }
+                if(!(!$scope.stdRoom[i].student_subjects[j].grade)){
+                    gp_temp += $scope.stdRoom[i].student_subjects[j].subject.credit * parseFloat($scope.stdRoom[i].student_subjects[j].grade);
+                }
+            }
+            if($scope.stdRoom[i].student_subjects[j].subject.name === "ชมรม"){
+                $scope.stdRoom[i].student_subjects[j].subject.name = "ชมรม........................................................"
+            }
         }
         $scope.stdRoom[i].cr_cal = cr;
         $scope.stdRoom[i].cp_cal = cp;
@@ -52,6 +69,14 @@ myApp.controller('printStudentGradeController', function ($scope, $http) {
         var gpa_cal = parseFloat(gp)/parseFloat(ca);
         $scope.stdRoom[i].gpa_cal = parseFloat(Math.round(gpa_cal * 100) / 100).toFixed(2);
         $scope.stdRoom[i].gpa = parseFloat(Math.round($scope.stdRoom[i].gpa * 100) / 100).toFixed(2);
+
+        $scope.stdRoom[i].cr_temp_cal = cr_temp;
+        $scope.stdRoom[i].cp_temp_cal = cp_temp;
+        $scope.stdRoom[i].ca_temp_cal = ca_temp;
+        $scope.stdRoom[i].gp_temp_cal = gp_temp;
+        var gpa_temp_cal = parseFloat(gp_temp)/parseFloat(ca_temp);
+        $scope.stdRoom[i].gpa_temp_cal = parseFloat(Math.round(gpa_temp_cal * 100) / 100).toFixed(2);
+        $scope.stdRoom[i].gpa_temp = parseFloat(Math.round($scope.stdRoom[i].gpa_temp * 100) / 100).toFixed(2);
     }
 
     console.log($scope.stdRoom);
