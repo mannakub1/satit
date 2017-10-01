@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Satit</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 5px;
+            text-align: left;
+        }
+    </style>
+
+    <script src="../../lib/angular.min.js"></script>
+    <script src="../../admin/print_grade.js"></script>
+    <script src="../../lib/angular-route.js"></script>
+</head>
+<body ng-app="myApp">
+    <div ng-controller="printStudentGradeController">
+        <center>รายงานผลพัฒนาคุณภาพผู้เรียนตามกลุ่มสาระการเรียนรู้ และกิจกรรมพัฒนาผู้เรียน<br>
+            ชั้นประถมศึกษาปีที่ {{stdRoom[0].room.level.charAt(2)}} ปีการศึกษา {{stdRoom[0].room.year}}</center>
+        <table>
+            <tr>
+                <th rowspan="3"><center>รหัส</center></th>
+                <th rowspan="3"><center>รายวิชา</center></th>
+                <th rowspan="3"><center>น้ำหนัก</center></th>
+                <th colspan="4"><span style="display:block; width: 100%; text-align: center">ผลการเรียนรู้</span></th>
+                <th colspan="3"><span style="display:block; width: 100%; text-align: center">ผลการประเมิน</span></th>
+            </tr>
+            <tr>
+                <td><center>ภาคเรียนที่ 1</center></td>
+                <td><center>ภาคเรียนที่ 2</center></td>
+                <td><center>รวม</center></td>
+                <td rowspan="2"><center>ร้อยละ</center></td>
+                <td rowspan="2"><center>สอบปกติ</center></td>
+                <td rowspan="2"><center>สอบแก้ตัว</center></td>
+                <td rowspan="2"><center>เรียนซ้ำ</center></td>
+            </tr>
+            <tr>
+                <td><span style="display:block; width: 100%; text-align: center">100</span></td>
+                <td><span style="display:block; width: 100%; text-align: center">100</span></td>
+                <td><span style="display:block; width: 100%; text-align: center">200</span></td>
+
+            </tr>
+            <tr>
+                <th style="background-color: #E6E1DC" colspan="10">รายวิชาพื้นฐาน</th>
+            </tr>
+            <tr ng-repeat="x in stdRoom[0].student_subjects" ng-show="x.status && x.subject.status === 'วิชาหลัก'" >
+                <td><center>{{x.subject.code}}</center></td>
+                <td>{{x.subject.name}}</td>
+                <td><center>{{x.subject.credit}}</center></td>
+                <td><center>{{x.score1}}</center></td>
+                <td><center>{{x.score2}}</center></td>
+                <td><center>{{x.score1 + x.score2}}</center></td>
+                <td><center>{{x.score_result}}</center></td>
+                <td><center>{{x.grade}}</center></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th style="background-color: #E6E1DC" colspan="10">ราววิชาเพิ่มเติม</th>
+            </tr>
+            <tr ng-repeat="x in stdRoom[0].student_subjects" ng-show="x.status && x.subject.status === 'วิชาเพิ่มเติม'" >
+                <td><center>{{x.subject.code}}</center></td>
+                <td>{{x.subject.name}}</td>
+                <td><center>{{x.subject.credit}}</center></td>
+                <td><center>{{x.score1}}</center></td>
+                <td><center>{{x.score2}}</center></td>
+                <td><center>{{x.score1 + x.score2}}</center></td>
+                <td><center>{{x.score_result}}</center></td>
+                <td><center>{{x.grade}}</center></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+        <br><br>
+        <table>
+            <tr>
+                <th rowspan="3"><center>กิจกรรมพัฒนาผู้เรียน</center></th>
+                <th colspan="4"><center>ผลการประเมินกิจกรรมพัฒนาผู้เรียนรายปี</center></th>
+            </tr>
+            <tr>
+                <td colspan="2"><center>ภาคเรียนที่ 1</center></td>
+                <td colspan="2"><center>ภาคเรียนที่ 2</center></td>
+            </tr>
+            <tr>
+                <td><span style="display:block; width: 100%; text-align: center">ปกติ</span></td>
+                <td><span style="display:block; width: 100%; text-align: center">แก้ไข</span></td>
+                <td><span style="display:block; width: 100%; text-align: center">ปกติ</span></td>
+                <td><span style="display:block; width: 100%; text-align: center">แก้ไข</span></td>
+
+            </tr>
+            <tr ng-repeat="x in stdRoom[0].student_subjects" ng-show="x.status && x.subject.status === 'พัฒนาผู้เรียน'" >
+                <td>{{x.subject.name}}</td>
+                <td><center>{{x.grade}}</center></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+        <br><br>
+        <table>
+            <tr>
+                <th rowspan="2">รายการ</th>
+                <th colspan="5">สรุปผลการประเมินรายปี</th>
+            </tr>
+            <tr>
+                <td>ทั้งหมด</td>
+                <td>สอบปกติ</td>
+                <td>สอบแก้ตัว/เรียนซ้ำ</td>
+                <td>รวม</td>
+                <td>หมายเหตุ</td>
+            </tr>
+            <tr>
+                <td>จำนวนน้ำหนักรายวิชาพื้นฐาน</td>
+                <td>23</td>
+                <td>23</td>
+                <td>-</td>
+                <td>23</td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>จำนวนน้ำหนักรายวิชาเพิ่มเติม</td>
+                <td>2</td>
+                <td>2</td>
+                <td>-</td>
+                <td>2</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>รวมจำนวนน้ำหนัก</td>
+                <td>25</td>
+                <td>25</td>
+                <td>-</td>
+                <td>25</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>ระดับผลการประเมินเฉลี่ยสอบปกติ</td>
+                <td style="background-color: #8c8c8c"></td>
+                <td>2.92</td>
+                <td style="background-color: #8c8c8c"></td>
+                <td style="background-color: #8c8c8c"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>ระดับผลการประเมินเฉลี่ยหละงการสอบแก้ตัว</td>
+                <td style="background-color: #8c8c8c"></td>
+                <td>-</td>
+                <td>-</td>
+                <td style="background-color: #8c8c8c"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td colspan="2">ระดับการประเมินเฉลี่ยสะสม</td>
+                <td colspan="4">2.92</td>
+            </tr>
+        </table>
+        <br><br>
+        <table style="float:left">
+            <tr>
+                <td style="height: 1.5cm">ลายเซ็นหัวหน้าสถานศึกษา ............................................ <br> ลายเซ็นผู้ปกครอง ...........................................................</td>
+            </tr>
+        </table>
+        <table style="float:right">
+            <tr>
+                <td style="height: 1.5cm">ลายเซ็นครูประจำชั้น ............................................ </td>
+            </tr>
+        </table>
+    </div>
+
+
+</body>
+</html>
