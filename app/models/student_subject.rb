@@ -19,6 +19,9 @@ class StudentSubject < ActiveRecord::Base
   belongs_to :student_room
   belongs_to :subject
 
+  default_scope { order('id') }
+  default_scope { where(status: true) }
+
   has_many :teacher_grades, dependent: :destroy
 
   scope :present, -> { where(status: true) }

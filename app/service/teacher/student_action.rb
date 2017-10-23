@@ -40,17 +40,23 @@ class Teacher::StudentAction
 
 
   def edit(params)
-    
+    puts params[:image]
+    puts 'after puts image'
     if params[:image] != nil
-      img = Magick::Image.read("/Users/manny/Documents/Work/ruby/satit/public/#{params[:image]}").first
+      puts "5555"
+      base = Base64.decode64(params[:image])
+      img = Magick::Image.read(base).first
+      puts "6666"
       img = img.resize(1920, 1080)
       thumb = img.resize(48, 48)
-
-      # img.write("/Users/manny/Documents/Work/ruby/satit/public/img/student/#{params[:id]}_image.png")
-      thumb.write("/Users/manny/Documents/Work/ruby/satit/public/img/student/#{params[:id]}_thumb.png")
+      year = Student.find(params[:id]).student_rooms.first.room.year
+      puts year
+      `mkdir /Users/manny/Documents/_Satit/picture/#{year}`
+      img.write("/Users/manny/Documents/_Satit/picture/#{year}/#{params[:id]}_image.png")
+      thumb.write("/Users/manny/Documents/_Satit/picture/#{year}/#{params[:id]}_thumb.png")
       
-      
-      params[:thumb] = "img/student/#{params[:id]}_thumb.png"
+      params[:image] = "/Users/manny/Documents/_Satit/picture/#{year}/#{params[:id]}_image.png"
+      params[:thumb] = "/Users/manny/Documents/_Satit/picture/#{year}/#{params[:id]}_thumb.png"
     end
     params.except!(:id)
     current_student.update_attributes(params)

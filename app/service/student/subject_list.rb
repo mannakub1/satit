@@ -10,6 +10,18 @@ class Student::SubjectList
 
   def subject_all
     student.student_rooms.order(:level)
+
+    # arr = []
+    # student.student_rooms.order(:level).each do |std_room|
+    #   arr << std_room.as_json  
+    #   arr.last[:room] = std_room.room.as_json
+    #   arr.last[:student_subjects] = []
+    #   std_room.student_subjects.order(:id).each do |std_subject|
+    #     arr.last[:student_subjects] << std_subject.as_json
+    #     arr.last[:student_subjects].last[:subject] =  std_subject.subject.as_json
+    #   end  
+    # end  
+    
   end
 
   def current_student_subject

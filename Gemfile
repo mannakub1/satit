@@ -26,6 +26,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.11'
 # gem 'json', '~> 1.8', '=> 1.8.3'
+gem 'faker', github: 'stympy/faker'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
@@ -45,6 +46,10 @@ gem 'carrierwave'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+
+  gem 'factory_girl_rails'
+  gem "factory_girl", "~> 4.0"
+  gem 'rspec-rails', '~> 3.4'
 end
 
 

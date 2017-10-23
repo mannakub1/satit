@@ -3,6 +3,9 @@ module Satit
     format :json
     prefix :api
 
+    before do
+      origin
+    end
     rescue_from :all do |e|
       error!(e.message, 422)
     end
@@ -11,6 +14,14 @@ module Satit
 
       def check_token?  
         Admin::AdminAction.new.check_token(headers['Token'])
+      end
+
+      def origin
+        
+        headers['Access-Control-Allow-Origin'] = '*'
+        headers['Access-Control-Allow-Methods'] = 'POST, PUT, DELETE, GET, OPTIONS'
+        headers['Access-Control-Request-Method'] = '*'
+        headers['Access-Control-Allow-Headers'] = 'Origin, X-Requested-With, Content-Type, Accept, Authorization'
       end
 
       def token

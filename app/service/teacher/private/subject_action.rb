@@ -63,7 +63,7 @@ module Teacher::Private::SubjectAction
     , score_result: teacher_grade.score_result, status_grade: true)
     update_gpa
 
-    student.student_rooms.order(:created_at)
+    student.student_rooms.order(:level)
   end
 
   def update_gpa
@@ -105,7 +105,7 @@ module Teacher::Private::SubjectAction
     puts "count = #{count}"
     if count > 0 && ca != 0
       puts 'test update'
-      current_student_room.update_attributes(cp: cp, ca: ca, gp: gp, gpa: gp / ca)
+      current_student_room.update_attributes(cp: cp, ca: ca, gp: gp, gpa: (gp / ca).round(2))
     end
   end
 
