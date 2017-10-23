@@ -2,6 +2,25 @@ var myApp = angular.module('edit_student', ['ngRoute']);
 var address = sessionStorage.getItem('address');
 var token = localStorage.getItem('token');
 
+myApp.directive("fileread", [function () {
+    return {
+        scope: {
+            fileread: "="
+        },
+        link: function (scope, element, attributes) {
+            element.bind("change", function (changeEvent) {
+                var reader = new FileReader();
+                reader.onload = function (loadEvent) {
+                    scope.$apply(function () {
+                        scope.fileread = loadEvent.target.result;
+                        console.log(scope.fileread);
+                    });
+                }
+                reader.readAsDataURL(changeEvent.target.files[0]);
+            });
+        }
+    }
+}]);
 
 
 myApp.controller('details', function($scope, $http)  {
@@ -72,12 +91,13 @@ myApp.controller('details', function($scope, $http)  {
             $scope.student.prefix = "เด็กหญิง";
         }
 
+
         $scope.sentStudent = {id : $scope.student.id, prefix : $scope.student.prefix, code_number : $scope.student.code_number,
             first_name : $scope.student.first_name, last_name : $scope.student.last_name, iden_number : $scope.student.iden_number,
             blood : $scope.student.blood, birthdate : $scope.student.birthdate, address : $scope.student.address,
             district : $scope.student.district, parish : $scope.student.parish, city : $scope.student.city, call : $scope.student.call
             , zip_code : $scope.student.zip_code, ability : $scope.student.ability, ethnicity : $scope.student.ethnicity,
-            nationality : $scope.student.nationality};
+            nationality : $scope.student.nationality, image : btoa($scope.student.image)};
         // console.log($scope.sentStudent);
         $http.post(path, angular.toJson($scope.sentStudent), {
             transformRequest: angular.identity,
@@ -85,19 +105,41 @@ myApp.controller('details', function($scope, $http)  {
 
         })
             .success(function(data, status, headers, config) {
-                // console.log(data.student)
+                 console.log(data.student)
                 var newData = JSON.stringify(data.student)
                 sessionStorage.setItem('student', newData)
                 setTimeout(function(){
-                    window.location.href = "Dashboard_Viewrooms_Std_Data.html"
+                    //window.location.href = "Dashboard_Viewrooms_Std_Data.html"
                 }, 300);
             })
             .error(function(data, status, headers, config) {
                 if(data.error === 'token expired'){
                     window.location.href = 'login.html';;
                 }
+                console.log($scope.sentStudent);
             });
     }
+
+    $('input[type=file]').change(function () {
+        console.log(document.getElementById("imgInp").value);
+    });
+
+    function readURL(input) {
+
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function(e) {
+                $('#blah').attr('src', e.target.result);
+            }
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    $("#imgInp").change(function() {
+        readURL(this);
+    });
 
 
 });

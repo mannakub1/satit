@@ -61,6 +61,12 @@ myApp.controller('printStudentGradeController', function ($scope, $http) {
             if($scope.stdRoom[i].student_subjects[j].subject.name === "ชมรม"){
                 $scope.stdRoom[i].student_subjects[j].subject.name = "ชมรม........................................................"
             }
+            if($scope.stdRoom[i].student_subjects[j].grade === "U"){
+                $scope.stdRoom[i].student_subjects[j].grade = "มผ";
+            }
+            else if($scope.stdRoom[i].student_subjects[j].grade === "S"){
+                $scope.stdRoom[i].student_subjects[j].grade = "ผ";
+            }
         }
         $scope.stdRoom[i].cr_cal = cr;
         $scope.stdRoom[i].cp_cal = cp;

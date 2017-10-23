@@ -4,11 +4,8 @@ var token = localStorage.getItem('token');
 // var address = "http://172.27.225.52:3000/";
 //var address = "http://192.168.217.102:3000/";
 // var address = 'http://localhost:3000/'
-var address = 'http://172.27.228.159:3000/'
 //var address = 'http://202.28.73.138:3000/'
-// var address = 'http://172.27.228.210:3000/'
-// var address = 'http://172.27.160.27:3000/'
-// var address = 'http://172.27.170.99:3000/'
+var address = 'http://172.27.228.159:3000/'
 // var address = 'http://172.27.225.177:3000/'
 //var address = 'http://172.27.160.80:3000/'
 // var address = "http://172.27.160.166:3000/";
@@ -809,7 +806,7 @@ myApp.controller('stdGrade',  function($scope, $http, fileUpload) {
 		.error(function(data, status, headers, config) {
       });
 	}
-
+	
 	$scope.getGrade();
 });
 
