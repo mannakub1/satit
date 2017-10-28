@@ -1,4 +1,4 @@
-var myApp = angular.module('edit_student', ['ngRoute']);
+var myApp = angular.module('edit_student', ['ngRoute', 'ngFileUpload']);
 var address = sessionStorage.getItem('address');
 var token = localStorage.getItem('token');
 
@@ -13,7 +13,6 @@ myApp.directive("fileread", [function () {
                 reader.onload = function (loadEvent) {
                     scope.$apply(function () {
                         scope.fileread = loadEvent.target.result;
-                        console.log(scope.fileread);
                     });
                 }
                 reader.readAsDataURL(changeEvent.target.files[0]);
@@ -23,7 +22,7 @@ myApp.directive("fileread", [function () {
 }]);
 
 
-myApp.controller('details', function($scope, $http)  {
+myApp.controller('details', ['$scope', '$http', 'Upload', function($scope, $http, Upload)  {
     $scope.admin_first_name = sessionStorage.getItem('admin_first_name');
     $scope.admin_last_name = sessionStorage.getItem('admin_last_name');
     $scope.admin_prefix = sessionStorage.getItem('admin_prefix');
@@ -81,7 +80,7 @@ myApp.controller('details', function($scope, $http)  {
         window.location.href = 'Dashboard_Viewrooms_Std_EditGuardian.html'
     }
 
-    $scope.sendEditStudent = function() {
+    $scope.sendEditStudent = function(file) {
         $scope.token = localStorage.getItem('token');
         path = address + "api/student/edit_profile";
         if(document.getElementById("male").checked){
@@ -90,6 +89,19 @@ myApp.controller('details', function($scope, $http)  {
         else{
             $scope.student.prefix = "เด็กหญิง";
         }
+        Upload.upload({
+            url: address + "api/student/update_image",
+            method: 'POST',
+            data: {image: btoa(file)},
+            headers: {'token' : $scope.token, 'id': $scope.student.id},
+        });
+
+        /*var blob = dataURItoBlob($scope.student.image);
+        var file = new File([blob], 'fileName.jpeg', {type: "'image/jpeg"});
+        var fd = new FormData();
+        fd.append('file', file);
+        $scope.student.image2 = file;*/
+
 
 
         $scope.sentStudent = {id : $scope.student.id, prefix : $scope.student.prefix, code_number : $scope.student.code_number,
@@ -97,9 +109,9 @@ myApp.controller('details', function($scope, $http)  {
             blood : $scope.student.blood, birthdate : $scope.student.birthdate, address : $scope.student.address,
             district : $scope.student.district, parish : $scope.student.parish, city : $scope.student.city, call : $scope.student.call
             , zip_code : $scope.student.zip_code, ability : $scope.student.ability, ethnicity : $scope.student.ethnicity,
-            nationality : $scope.student.nationality, image : btoa($scope.student.image)};
-        // console.log($scope.sentStudent);
-        $http.post(path, angular.toJson($scope.sentStudent), {
+            nationality : $scope.student.nationality};
+
+        /*$http.post(path, angular.toJson($scope.sentStudent), {
             transformRequest: angular.identity,
             headers: {'token' : $scope.token, 'Content-Type': "application/json"}
 
@@ -117,7 +129,7 @@ myApp.controller('details', function($scope, $http)  {
                     window.location.href = 'login.html';;
                 }
                 console.log($scope.sentStudent);
-            });
+            });*/
     }
 
     $('input[type=file]').change(function () {
@@ -141,8 +153,29 @@ myApp.controller('details', function($scope, $http)  {
         readURL(this);
     });
 
+    function dataURItoBlob(dataURI) {
 
-});
+        // convert base64/URLEncoded data component to raw binary data held in a string
+        var byteString;
+        if (dataURI.split(',')[0].indexOf('base64') >= 0)
+            byteString = atob(dataURI.split(',')[1]);
+        else
+            byteString = unescape(dataURI.split(',')[1]);
+
+        // separate out the mime component
+        var mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0];
+
+        // write the bytes of the string to a typed array
+        var ia = new Uint8Array(byteString.length);
+        for (var i = 0; i < byteString.length; i++) {
+            ia[i] = byteString.charCodeAt(i);
+        }
+
+        return new Blob([ia], {type:mimeString});
+    }
+
+
+}]);
 
 
 
