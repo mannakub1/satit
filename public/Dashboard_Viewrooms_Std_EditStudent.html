@@ -242,14 +242,14 @@
 
                                                 </form>
                                                 <br><br><br><br>
-                                                <button ng-click="sendEditStudent()">แก้ไข</button>
+                                                <button ng-click="sendEditStudent(file)">แก้ไข</button>
                                             </div>
                                         </div>
                                         <div class="col-lg-6" style="margin-top: 10%">
                                             <div style="float: right; margin-right: 70%">
                                                 <img style="width: 100%; height: 100%" id="blah" ng-src={{student.image}} alt="preview image"/>
                                             </div>
-                                            <input type="file" ngf-select fileread="student.image" ngf-accept="'image/*'" accept="image/*" id="imgInp" style="float:right; margin-right: 40%">
+                                            <input type="file" ngf-select ng-model="file" name="file" accept="image/*" id="imgInp" style="float:right; margin-right: 40%">
                                             <br>
                                             <span style="float:right; margin-right: 60%">คลิกที่นี่เพื่ออัพโหลดรูปภาพ</span>
                                         </div>
