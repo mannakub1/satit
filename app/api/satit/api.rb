@@ -25,7 +25,7 @@ module Satit
       end
 
       def token
-       puts  headers['Token']
+        puts  headers['Token']
         headers['Token']
       end
 

@@ -11,6 +11,7 @@ Satit::Application.routes.draw do
     get 'room', to: 'students#choice_room'
     get 'room/student_all', to: 'students#student_all'
     post 'student/add_room', to: 'students#add_room'
+    # post 'test', to: 'rooms#test'
     post 'add_student', to: 'students#json_add_student'
 
   end

@@ -5,6 +5,10 @@ module ApiController
     # before_filter: cors_set_access_control_headers
     skip_before_filter :verify_authenticity_token
 
+    def test
+      puts "55555"
+    end
+
     def choice_room
       room_id(params[:room_id])
     end 

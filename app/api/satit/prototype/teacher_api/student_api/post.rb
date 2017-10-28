@@ -87,6 +87,13 @@ module Satit::Prototype::TeacherAPI::StudentAPI
 
       end
 
+      desc 'image'
+      params do
+        requires :image, type: String, desc: 'image of profile'
+      end
+      post '/update_image' do
+        Teacher::StudentAction.new.update_image(params, headers)
+      end
 
       desc 'edit profile studetn'
       params do 
@@ -106,7 +113,7 @@ module Satit::Prototype::TeacherAPI::StudentAPI
         optional :ability, type: String, desc: 'student can it'
         optional :ethnicity, type: String, desc: 'enthicity'
         optional :nationality, type: String, desc: 'nation'
-        optional :image, type: String, desc: 'image for profile'
+        optional :image, type: File, desc: 'image for profile'
       end 
       post '/edit_profile' do
         present :student, Teacher::StudentAction.new(student_id: params[:id]).edit(params)\

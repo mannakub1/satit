@@ -52,7 +52,6 @@ module Satit::Prototype::TeacherAPI
         , with: Satit::TeacherAPI::TeacherActionEntity
       end
 
-
       desc 'add teacher_room'
       params do
         requires :teacher_id, type: String, desc: 'id of teacher'

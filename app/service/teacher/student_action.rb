@@ -4,6 +4,7 @@ class Teacher::StudentAction
   attr_reader :student, :student_id, :room, :code_number, :first_name, :last_name, :params, :subject, :student_room
 
   require 'rmagick'
+  require 'base64'
   include Teacher::Private::StudentAction
   include Teacher::Private::StudentActionGuard
 
@@ -39,8 +40,33 @@ class Teacher::StudentAction
   end
 
 
-  def edit(params)
+  def update_image(params,headers)
+    puts headers['Id']
+    id = headers['Id']
     puts params[:image]
+    base = Base64.decode64(params[:image])
+    puts 'after encoder'
+    puts 'before image'
+    img = Magick::Image.from_blob(params[:iamge].read)
+    puts 'after read imgae'
+    
+    # img = img.resize(1920, 1080)
+    thumb = img
+    year = Student.find(id).student_rooms.first.room.year
+    puts year
+    `mkdir public/picture/#{year}`
+    img.write("public/picture/#{year}/#{id}_image.png")
+    puts "after write image"
+    thumb.write("public/picture/#{year}/#{id}_thumb.png")
+
+    image = "public/picture/#{year}/#{id}_image.png"
+    th = "public/picture/#{year}/#{id}_thumb.png"
+
+    current_student.update_attributes(image: image, thumb: th)
+  end
+
+  def edit(params)
+    puts params[:image].size
     puts 'after puts image'
     if params[:image] != nil
       puts "5555"
@@ -51,13 +77,18 @@ class Teacher::StudentAction
       thumb = img.resize(48, 48)
       year = Student.find(params[:id]).student_rooms.first.room.year
       puts year
-      `mkdir /Users/manny/Documents/_Satit/picture/#{year}`
-      img.write("/Users/manny/Documents/_Satit/picture/#{year}/#{params[:id]}_image.png")
-      thumb.write("/Users/manny/Documents/_Satit/picture/#{year}/#{params[:id]}_thumb.png")
+      `mkdir public/picture/#{year}`
+      img.write("public/picture/#{year}/#{params[:id]}_image.png")
+      thumb.write("public/picture/#{year}/#{params[:id]}_thumb.png")
       
-      params[:image] = "/Users/manny/Documents/_Satit/picture/#{year}/#{params[:id]}_image.png"
-      params[:thumb] = "/Users/manny/Documents/_Satit/picture/#{year}/#{params[:id]}_thumb.png"
+      # params[:image] = img
+      # params[:thumb] = thumb
+
+      params[:image] = img.display
+      puts "7777"
+      params[:thumb] = thumb.display
     end
+    # params[:thumb] = params[:image]
     params.except!(:id)
     current_student.update_attributes(params)
 

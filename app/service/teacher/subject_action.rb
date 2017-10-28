@@ -41,7 +41,6 @@ class Teacher::SubjectAction
     process_edit
   end
 
-
   def edit_score(params)
     @score1 = params[:score1]
     @score2 = params[:score2]
