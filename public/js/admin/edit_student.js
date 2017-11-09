@@ -92,7 +92,7 @@ myApp.controller('details', ['$scope', '$http', 'Upload', function($scope, $http
         Upload.upload({
             url: address + "api/student/update_image",
             method: 'POST',
-            data: {image: btoa(file)},
+            data: {image: file},
             headers: {'token' : $scope.token, 'id': $scope.student.id},
         });
 

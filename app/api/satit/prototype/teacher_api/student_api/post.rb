@@ -77,6 +77,12 @@ module Satit::Prototype::TeacherAPI::StudentAPI
           id
         end
 
+        def current_params_without_ids
+          params.delete(:id)
+
+          params
+        end
+
         def current_adult
           Adult.find_by(id: params[:adult_id])
         end
@@ -89,10 +95,11 @@ module Satit::Prototype::TeacherAPI::StudentAPI
 
       desc 'image'
       params do
-        requires :image, type: String, desc: 'image of profile'
+        requires :id, type: Integer, desc: 'student id for input image'
+        requires :image, type: File, desc: 'image of profile'
       end
       post '/update_image' do
-        Teacher::StudentAction.new.update_image(params, headers)
+        present :status, Teacher::StudentAction.new(student_id: params[:id]).edit_image(params: current_params_without_ids)
       end
 
       desc 'edit profile studetn'
@@ -116,7 +123,7 @@ module Satit::Prototype::TeacherAPI::StudentAPI
         optional :image, type: File, desc: 'image for profile'
       end 
       post '/edit_profile' do
-        present :student, Teacher::StudentAction.new(student_id: params[:id]).edit(params)\
+        present :student, Teacher::StudentAction.new(student_id: params[:id]).edit(current_params_without_ids)\
         , with: Satit::TeacherAPI::Student::StudentListEntity
       end
 

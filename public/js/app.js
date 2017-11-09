@@ -3,7 +3,8 @@ var token = localStorage.getItem('token');
 
 // var address = "http://172.27.225.52:3000/";
 //var address = "http://192.168.217.102:3000/";
-var address = 'http://172.27.110.246:3000/'
+// var address = 'http://172.27.110.246:3000/'
+var address = 'http://172.27.160.231:3000/'
 //var address = 'http://202.28.73.138:3000/'
 // var address = 'http://172.27.228.159:3000/'
 // var address = 'http://172.27.225.177:3000/'

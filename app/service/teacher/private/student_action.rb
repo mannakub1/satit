@@ -8,6 +8,35 @@ module Teacher::Private::StudentAction
     current_student_username
   end
 
+  def process_edit_image
+    image = params[:params][:image][:tempfile]
+
+    
+    create_directory_store
+    create_image(image)
+    
+
+    student_image = "public/picture/#{year}/#{student_id}_image.png"
+    student_thumb = "public/picture/#{year}/#{student_id}_image.png"
+
+    student_id.update_attributes(image: student_image, thumb: student_thumb)
+  end
+
+  def create_image(image)
+    f = File.open("/Users/manny/Documents/_Work/ruby/satit/public/picture/#{year}/#{student_id}_image.png", 'w')
+      f.write(image.read.to_s.force_encoding("UTF-8"))
+    f.close
+  end 
+
+  def create_directory_store
+    `mkdir public/picture/#{year}`
+  end
+
+  def year
+    year = Student.find(student_id).student_rooms.first.room.year
+  end
+
+
   def valid_password?
     compare_password?
   end

@@ -1,7 +1,7 @@
 class Teacher::StudentAction
   
   
-  attr_reader :student, :student_id, :room, :code_number, :first_name, :last_name, :params, :subject, :student_room
+  attr_reader :student, :student_id, :room, :code_number, :first_name, :last_name, :params, :subject, :student_room, :id
 
   require 'rmagick'
   require 'base64'
@@ -39,61 +39,22 @@ class Teacher::StudentAction
     # student_room.update_attributes(room_state: true)
   end
 
+  def edit_image(params)
+    @params = params
 
-  def update_image(params,headers)
-    puts headers['Id']
-    id = headers['Id']
-    puts params[:image]
-    base = Base64.decode64(params[:image])
-    puts 'after encoder'
-    puts 'before image'
-    img = Magick::Image.from_blob(params[:iamge].read)
-    puts 'after read imgae'
-    
-    # img = img.resize(1920, 1080)
-    thumb = img
-    year = Student.find(id).student_rooms.first.room.year
-    puts year
-    `mkdir public/picture/#{year}`
-    img.write("public/picture/#{year}/#{id}_image.png")
-    puts "after write image"
-    thumb.write("public/picture/#{year}/#{id}_thumb.png")
+    can_edit_image, message = can_edit_image?
+    fail message unless can_edit_image
 
-    image = "public/picture/#{year}/#{id}_image.png"
-    th = "public/picture/#{year}/#{id}_thumb.png"
-
-    current_student.update_attributes(image: image, thumb: th)
+    process_edit_image
   end
 
   def edit(params)
-    puts params[:image].size
-    puts 'after puts image'
-    if params[:image] != nil
-      puts "5555"
-      base = Base64.decode64(params[:image])
-      img = Magick::Image.read(base).first
-      puts "6666"
-      img = img.resize(1920, 1080)
-      thumb = img.resize(48, 48)
-      year = Student.find(params[:id]).student_rooms.first.room.year
-      puts year
-      `mkdir public/picture/#{year}`
-      img.write("public/picture/#{year}/#{params[:id]}_image.png")
-      thumb.write("public/picture/#{year}/#{params[:id]}_thumb.png")
-      
-      # params[:image] = img
-      # params[:thumb] = thumb
+    @params = params
 
-      params[:image] = img.display
-      puts "7777"
-      params[:thumb] = thumb.display
-    end
-    # params[:thumb] = params[:image]
-    params.except!(:id)
-    current_student.update_attributes(params)
+    can_edit, message = can_edit?
+    fail message unless can_edit
 
-
-    current_student
+    process_edit
   end
 
   def add_subject

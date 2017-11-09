@@ -36,7 +36,7 @@ module Teacher::Private::StudentActionGuard
 
     [true, nil]
   end 
-  
+
   def can_add_grade?
     return [false, 'student not have a score primary term'] if not_score_primary_term?
     return [false, 'student not have a score secondary term'] if not_score_secondary_term?
@@ -44,7 +44,13 @@ module Teacher::Private::StudentActionGuard
     [true, nil]
   end
 
-  def can_edit
+  def can_edit_image?
+    return [false, 'not have  a student'] if not_student_by_ids?
+   
+    [true, nil]
+  end
+
+  def can_edit?
     return [false, 'not have  a student'] if not_student_by_ids?
 
     [true, nil]
@@ -91,7 +97,8 @@ module Teacher::Private::StudentActionGuard
   end
 
   def student_ids?
-    Student.find_by(id: id)
+    puts student_id
+    Student.find_by(id: student_id)
   end
 
   def not_student_subject?
@@ -135,7 +142,7 @@ module Teacher::Private::StudentActionGuard
   end
 
   def not_student_by_ids?
-    !student_ids
+    !student_ids?
   end
 
 end
