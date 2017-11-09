@@ -30,6 +30,9 @@ myApp.controller('details', ['$scope', '$http', 'Upload', function($scope, $http
     if( student !== null) {
         $scope.student = JSON.parse(student);
         $scope.showStudentData = true;
+        if($scope.student.prefix === "เด็กชาย"){
+            document.getElementById("male").checked = true;
+        }
     }
 
     console.log($scope.showStudentData)
@@ -80,6 +83,31 @@ myApp.controller('details', ['$scope', '$http', 'Upload', function($scope, $http
         window.location.href = 'Dashboard_Viewrooms_Std_EditGuardian.html'
     }
 
+    $scope.uploadImage = function(file){
+        $scope.token = localStorage.getItem('token');
+        Upload.upload({
+            url: address + "api/student/update_image",
+            method: 'POST',
+            data: {image: file, id : $scope.student.id},
+            headers: {'token' : $scope.token},
+        }).then(function (resp) {
+            console.log('Success ' + resp.config.data.file.name + 'uploaded. Response: ' + resp.data);
+            console.log(resp);
+            /*var newData = JSON.stringify(resp.data.student)
+            sessionStorage.setItem('student', newData)
+            setTimeout(function(){
+                window.location.href = "Dashboard_Viewrooms_Std_Data.html"
+            }, 300);*/
+
+        }, function (resp) {
+            console.log('Error status: ' + resp.status);
+            if(resp.data.error === 'token expired'){
+                window.location.href = 'login.html';;
+            }
+        }, function (evt) {
+        });
+    }
+
     $scope.sendEditStudent = function(file) {
         $scope.token = localStorage.getItem('token');
         path = address + "api/student/edit_profile";
@@ -89,20 +117,6 @@ myApp.controller('details', ['$scope', '$http', 'Upload', function($scope, $http
         else{
             $scope.student.prefix = "เด็กหญิง";
         }
-        Upload.upload({
-            url: address + "api/student/update_image",
-            method: 'POST',
-            data: {image: file},
-            headers: {'token' : $scope.token, 'id': $scope.student.id},
-        });
-
-        /*var blob = dataURItoBlob($scope.student.image);
-        var file = new File([blob], 'fileName.jpeg', {type: "'image/jpeg"});
-        var fd = new FormData();
-        fd.append('file', file);
-        $scope.student.image2 = file;*/
-
-
 
         $scope.sentStudent = {id : $scope.student.id, prefix : $scope.student.prefix, code_number : $scope.student.code_number,
             first_name : $scope.student.first_name, last_name : $scope.student.last_name, iden_number : $scope.student.iden_number,
@@ -111,7 +125,7 @@ myApp.controller('details', ['$scope', '$http', 'Upload', function($scope, $http
             , zip_code : $scope.student.zip_code, ability : $scope.student.ability, ethnicity : $scope.student.ethnicity,
             nationality : $scope.student.nationality};
 
-        /*$http.post(path, angular.toJson($scope.sentStudent), {
+        $http.post(path, angular.toJson($scope.sentStudent), {
             transformRequest: angular.identity,
             headers: {'token' : $scope.token, 'Content-Type': "application/json"}
 
@@ -129,7 +143,7 @@ myApp.controller('details', ['$scope', '$http', 'Upload', function($scope, $http
                     window.location.href = 'login.html';;
                 }
                 console.log($scope.sentStudent);
-            });*/
+            });
     }
 
     $('input[type=file]').change(function () {

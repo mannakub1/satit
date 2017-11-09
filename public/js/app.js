@@ -3,10 +3,9 @@ var token = localStorage.getItem('token');
 
 // var address = "http://172.27.225.52:3000/";
 //var address = "http://192.168.217.102:3000/";
-// var address = 'http://172.27.110.246:3000/'
-var address = 'http://172.27.160.231:3000/'
+// var address = 'http://localhost:3000/'
 //var address = 'http://202.28.73.138:3000/'
-// var address = 'http://172.27.228.159:3000/'
+var address = 'http://172.27.110.246:3000/'
 // var address = 'http://172.27.225.177:3000/'
 //var address = 'http://172.27.160.80:3000/'
 // var address = "http://172.27.160.166:3000/";
@@ -18,17 +17,159 @@ myApp.config(function($routeProvider){
 		templateUrl: 'public/js/views/admin/Dashboard.html',
 		controller: 'adminDashboardController'
 	})
-		.when("/viewroom", {
+		.when("/admin/viewroom", {
 			templateUrl: 'public/js/views/admin/Dashboard_Viewrooms.html',
 			controller: 'selectRoomController'
 		})
-		.when("/viewroom/student", {
+		.when("/admin/viewroom/student", {
 			templateUrl: 'public/js/views/admin/Dashboard_Viewrooms_Std.html',
 			controller: 'viewStudentController'
 		})
-		.when("", {
-
+		.when("/admin/viewroom/student/data", {
+			templateUrl: 'public/js/views/admin/Dashboard_Viewrooms_Std_Data.html'
 		})
+		.when("/admin/viewroom/student/data/edit", {
+			templateUrl: 'public/js/views/admin/Dashboard_Viewrooms_Std_EditStudent.html'
+		})
+		.when("/admin/viewroom/student/data/father/add", {
+			templateUrl: 'public/js/4views/admin/Dashboard_Viewrooms_Std_AddFather.html'
+		})
+		.when("/adminviewroom/student/data/mother/add", {
+            templateUrl: 'public/js/views/admin/Dashboard_Viewrooms_Std_AddMother.html'
+		})
+        .when("/admin/viewroom/student/data/guardian/add", {
+            templateUrl: 'public/js/views/admin/Dashboard_Viewrooms_Std_AddGuardian.html'
+        })
+        .when("/admin/viewroom/student/data/father/edit", {
+            templateUrl: 'public/js/views/admin/Dashboard_Viewrooms_Std_EditFather.html'
+        })
+        .when("/admin/viewroom/student/data/mother/edit", {
+            templateUrl: 'public/js/views/admin/Dashboard_Viewrooms_Std_EditMother.html'
+        })
+        .when("/admin/viewroom/student/data/guardian/edit", {
+            templateUrl: 'public/js/views/admin/Dashboard_Viewrooms_Std_EditGuardian.html'
+        })
+        .when("/admin/viewroom/student/grade", {
+            templateUrl: 'public/js/views/admin/Dashboard_Viewrooms_Std_Grade.html'
+        })
+        .when("/admin/viewroom/student/grade/print", {
+            templateUrl: 'public/js/views/admin/Print_Grade.html',
+			controller: 'printGradeController'
+        })
+        .when("/admin/viewroom/student/add", {
+            templateUrl: 'public/js/views/admin/AddStudents.html',
+        })
+        .when("/admin/viewroom/student/add/file", {
+            templateUrl: 'public/js/views/admin/AddStudentCSV.html',
+        })
+        .when("/admin/viewroom/class_teacher", {
+            templateUrl: 'public/js/views/admin/Dashboard_Viewrooms_Std_Teacher.html',
+        })
+        .when("/admin/viewroom/class_teacher/change", {
+            templateUrl: 'public/js/views/admin/Dashboard_Viewrooms_Std_AddTeacher.html',
+        })
+        .when("/admin/teacher", {
+            templateUrl: 'public/js/views/admin/Dashboard_Teacher.html',
+        })
+		.when("/admin/teacher/add", {
+            templateUrl: 'public/js/views/admin/Dashboard_AddTeacher.html',
+        })
+		.when("/admin/teacher/change_password", {
+            templateUrl: 'public/js/views/admin/re_password_teacher.html',
+        })
+		.when("/admin/course", {
+            templateUrl: 'public/js/views/admin/Course_Dashboard.html',
+        })
+		.when("/admin/course/add_subject", {
+            templateUrl: 'public/js/views/admin/SubjectAdd.html',
+        })
+		.when("/admin/course/subject", {
+            templateUrl: 'public/js/views/admin/SubjectList.html',
+        })
+		.when("/admin/course/subject/edit", {
+            templateUrl: 'public/js/views/admin/SubjectEdit.html',
+        })
+		.when("/admin/course/subject/add_teacher", {
+            templateUrl: 'public/js/views/admin/SubjectAddTeacher.html',
+        })
+		.when("/admin/course/add_room", {
+            templateUrl: 'public/js/views/admin/SubjectRoomAdd.html',
+        })
+        .when("/admin/course/room", {
+            templateUrl: 'public/js/views/admin/RoomList.html',
+        })
+        .when("/admin/search_student", {
+            templateUrl: 'public/js/views/admin/SearchStudent.html',
+        })
+        .when("/admin/add_grade4_student", {
+            templateUrl: 'public/js/views/admin/room_index.html',
+        })
+        .when("/admin/add_grade4_student", {
+            templateUrl: 'public/js/views/admin/room_index.html',
+        })
+        .when("/teacher", {
+            templateUrl: 'public/js/views/teacher/index.html',
+        })
+        .when("/teacher/room", {
+            templateUrl: 'public/js/views/teacher/student_list.html',
+        })
+        .when("/teacher/room/student", {
+            templateUrl: 'public/js/views/teacher/student/index.html',
+        })
+        .when("/teacher/room/elective_subject_score", {
+            templateUrl: 'public/js/views/teacher/student/grade_no_credit.html',
+        })
+        .when("/teacher/room/student/data", {
+            templateUrl: 'public/js/views/teacher/student/details.html',
+        })
+        .when("/teacher/room/student/data/edit", {
+            templateUrl: 'public/js/views/teacher/student/edit_student.html',
+        })
+        .when("/teacher/room/student/data/father/add", {
+            templateUrl: 'public/js/views/teacher/student/add_father.html',
+        })
+        .when("/teacher/room/student/data/mother/add", {
+            templateUrl: 'public/js/views/teacher/student/add_mother.html',
+        })
+        .when("/teacher/room/student/data/guardian/add", {
+            templateUrl: 'public/js/views/teacher/student/add_guardian.html',
+        })
+        .when("/teacher/room/student/data/father/edit", {
+            templateUrl: 'public/js/views/teacher/student/edit_father.html',
+        })
+        .when("/teacher/room/student/data/mother/edit", {
+            templateUrl: 'public/js/views/teacher/student/edit_mother.html',
+        })
+        .when("/teacher/room/student/data/guardian/edit", {
+            templateUrl: 'public/js/views/teacher/student/edit_guardian.html',
+        })
+        .when("/teacher/room/student/grade", {
+            templateUrl: 'public/js/views/teacher/student/grade.html',
+        })
+        .when("/teacher/subject", {
+            templateUrl: 'public/js/views/teacher/index_subject.html',
+        })
+        .when("/teacher/subject", {
+            templateUrl: 'public/js/views/teacher/index_subject.html',
+        })
+        .when("/teacher/subject/room", {
+            templateUrl: 'public/js/views/teacher/course/index.html',
+        })
+        .when("/teacher/subject/room/student/score", {
+            templateUrl: 'public/js/views/teacher/course/index_student.html',
+        })
+        .when("/teacher/change_password", {
+            templateUrl: 'public/js/views/teacher/change_password.html',
+        })
+        .when("/student", {
+            templateUrl: 'public/js/views/student/DashboardStudent.html',
+        })
+        .when("/student/data", {
+            templateUrl: 'public/js/views/student/StudentProfile.html',
+        })
+        .when("/student/grade", {
+            templateUrl: 'public/js/views/student/StudentGrade.html',
+        })
 		.otherwise({
 			redirectTo: '/login',
 			templateUrl: 'public/js/views/login.html',
@@ -54,6 +195,27 @@ myApp.factory('pathApi', function() {
     };
 });
 
+myApp.factory('logout', function() {
+    return {
+        logout: function() {
+        	var token = localStorage.getItem('token');
+            path = address + "api/logout";
+            $http.post(path, angular.toJson($scope.student), {
+                transformRequest: angular.identity,
+                headers: {'token' : token, 'Content-Type': "application/json"}
+
+            })
+                .success(function(data, status, headers, config) {
+                    console.log(data);
+                    window.location.href = 'login.html';
+
+                })
+                .error(function(data, status, headers, config) {
+                	console.log(data);
+                });
+        }
+    };
+});
 
 
 sessionStorage.setItem('address', address);
@@ -121,6 +283,7 @@ myApp.service('fileUpload', ['$http', function ($http,pathApi) {
 		
     }
 }]);
+
 
 
 
