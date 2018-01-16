@@ -4,6 +4,7 @@ module Satit::Prototype::SubjectAPI
 
     resource :subject do
       before do
+        origin
         return error!('token expired', 500) unless check_token?
       end
 

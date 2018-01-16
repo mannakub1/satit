@@ -25,5 +25,6 @@ class StudentRoom < ActiveRecord::Base
   has_many :student_subjects, dependent: :destroy
   has_many :subjects, through: :student_subjects, source: :subject
 
+  default_scope { order('id') }
   scope :present, -> { where(student_status: true) }
 end

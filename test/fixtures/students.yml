@@ -27,6 +27,7 @@
 #  username        :string
 #  password_digest :string
 #  image           :string
+#  thumb           :string           default("")
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

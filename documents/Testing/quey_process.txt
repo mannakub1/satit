@@ -1,0 +1,75 @@
+Subject.create(name: "test t2", credit: 3, status: "วิชาหลัก")
+Subject.create(name: "test m2", credit: 3, status: "วิชาหลัก")
+Subject.create(name: "test e2", credit: 3, status: "วิชาหลัก")
+Subject.create(name: "test a2", credit: 3, status: "วิชาหลัก")
+Subject.create(name: "test s2", credit: 2, status: "วิชาหลัก")
+Subject.create(name: "test r2", credit: 3, status: "วิชาหลัก")
+Subject.create(name: "test e22", credit: 2, status: "วิชาเพิ่มเติม")
+Subject.create(name: "test m21", status: "พัฒนาผู้เรียน")
+
+
+Subject.create(name: "test m3", credit: 3, status: "วิชาหลัก")
+Subject.create(name: "test e3", credit: 3, status: "วิชาหลัก")
+Subject.create(name: "test a3", credit: 4, status: "วิชาหลัก")
+Subject.create(name: "test s3", credit: 4, status: "วิชาหลัก")
+Subject.create(name: "test r3", credit: 3, status: "วิชาหลัก")
+Subject.create(name: "test e33", credit: 3, status: "วิชาเพิ่มเติม")
+
+StudentSubject.create(student_room_id: student_room_first.id, subject_id: 21)
+StudentSubject.create(student_room_id: student_room_first.id, subject_id: 22)
+StudentSubject.create(student_room_id: student_room_first.id, subject_id: 23)
+StudentSubject.create(student_room_id: student_room_first.id, subject_id: 24)
+StudentSubject.create(student_room_id: student_room_first.id, subject_id: 25)
+StudentSubject.create(student_room_id: student_room_first.id, subject_id: 26)
+StudentSubject.create(student_room_id: student_room_first.id, subject_id: 27)
+StudentSubject.create(student_room_id: student_room_first.id, subject_id: 28)
+
+StudentSubject.create(student_room_id: student_room_second.id, subject_id: 29)
+StudentSubject.create(student_room_id: student_room_second.id, subject_id: 30)
+StudentSubject.create(student_room_id: student_room_second.id, subject_id: 31)
+StudentSubject.create(student_room_id: student_room_second.id, subject_id: 32)
+StudentSubject.create(student_room_id: student_room_second.id, subject_id: 33)
+StudentSubject.create(student_room_id: student_room_second.id, subject_id: 34)
+StudentSubject.create(student_room_id: student_room_second.id, subject_id: 35)
+StudentSubject.create(student_room_id: student_room_second.id, subject_id: 36)
+
+StudentSubject.create(student_room_id: student_room_third.id, subject_id: 37)
+StudentSubject.create(student_room_id: student_room_third.id, subject_id: 38)
+StudentSubject.create(student_room_id: student_room_third.id, subject_id: 39)
+StudentSubject.create(student_room_id: student_room_third.id, subject_id: 40)
+StudentSubject.create(student_room_id: student_room_third.id, subject_id: 41)
+StudentSubject.create(student_room_id: student_room_third.id, subject_id: 42)
+
+
+current_student_room = student_room_third
+sum grade
+StudentSubject.where(student_room_id: current_student_room.id).select{|x| x.subject.status == 'วิชาหลัก'|| x.subject.status=='วิชาเพิ่มเติม'}.map{|x| x.grade.to_f * x.subject.credit}.sum
+
+ca เครดิตทั้งหมดที่เอามาหาร
+StudentSubject.where(student_room_id: current_student_room.id).select{|x| x.subject.status == 'วิชาหลัก'|| x.subject.status=='วิชาเพิ่มเติม'}.collect(&:subject).map(&:credit).sum
+
+cp เครตดิที่ผ่าน
+StudentSubject.where(student_room_id: current_student_room.id).select{|x| x.grade != nil && (x.grade.to_f > 0 || x.grade == "s") && x.subject.credit.to_i > 0}.map{|x| x.subject.credit}.sum
+
+cr
+StudentSubject.where(student_room_id: student_room_second.id).select{|x| x.subject.credit.to_i > 0}.map{|x| x.subject.credit}.sum
+
+id, credit = [36, 4]
+Subject.find(id).update_attributes(credit: "")
+id, credit = [35, 3]
+Subject.find(id).update_attributes(credit: credit)
+
+id, grade = [631, "4.0"]
+StudentSubject.find(id).update_attributes(grade: grade)
+id, grade = [632, "2.5"]
+StudentSubject.find(id).update_attributes(grade: grade)
+id, grade = [633, "4.0"]
+StudentSubject.find(id).update_attributes(grade: grade)
+id, grade = [634, "4.0"]
+StudentSubject.find(id).update_attributes(grade: grade)
+id, grade = [635, "2.5"]
+StudentSubject.find(id).update_attributes(grade: grade)
+id, grade = [636, "4.0"]
+StudentSubject.find(id).update_attributes(grade: grade)
+
+

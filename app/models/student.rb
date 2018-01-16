@@ -27,6 +27,7 @@
 #  username        :string
 #  password_digest :string
 #  image           :string
+#  thumb           :string           default("")
 #
 
 class Student < ActiveRecord::Base

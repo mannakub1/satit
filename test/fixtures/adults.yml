@@ -18,6 +18,7 @@
 #  nationality :string
 #  iden_number :string
 #  image       :string
+#  thumb       :string           default("img/student/avatar.png")
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

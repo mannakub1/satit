@@ -1,11 +1,13 @@
 class Teacher::SubjectAction
 
-  attr_reader :score1, :score2, :student_subject, :student, :params, :course_list_id, :subject_id, :room_id, :teacher, :grade
+  attr_reader :score1, :score2, :student_subject, :student, :params, :course_list_id, :subject_id, :room_id, :teacher, :grade, :student_rooms
 
   include Teacher::Private::SubjectAction
   include Teacher::Private::SubjectActionGuard
 
   def initialize(option = {})
+    @student_rooms = option[:student_rooms]
+    # @current_student_room = option[:current_student_room]
     @subject_id = option[:subject_id]
     @student = option[:student]
     @student_subject = option[:student_subject]
@@ -39,6 +41,25 @@ class Teacher::SubjectAction
 
     puts params
     process_edit
+  end
+
+  # def test_process_update_gpa
+
+  #   student_rooms.each{ |x| x.update_attributes(gp: calculate_gp(x), ca: calculate_ca(x), cp: calculate_cp(x), cr: calculate_cr(x), gpa:  calculate_gp(x) / process_ca(x))}
+  # end
+
+  def update_gpa
+    process_update_gpa
+  end
+
+  def update_gpax
+    process_update_gpax
+  end
+
+  def update_score
+    # process_update_score
+    process_update_gpa
+    process_update_gpax
   end
 
   def edit_score(params)

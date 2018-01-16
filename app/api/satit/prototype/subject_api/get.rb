@@ -3,6 +3,7 @@ module Satit::Prototype::SubjectAPI
   class Get < Grape::API
     resource :subject do 
       before do
+        origin
         return error!('token expired', 500) unless check_token?
       end
 

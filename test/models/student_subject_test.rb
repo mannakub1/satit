@@ -13,6 +13,7 @@
 #  score_result    :float
 #  status          :boolean          default(TRUE)
 #  status_grade    :boolean          default(FALSE)
+#  total_score     :float
 #
 
 require 'test_helper'

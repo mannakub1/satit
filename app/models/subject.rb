@@ -22,6 +22,7 @@ class Subject < ActiveRecord::Base
   has_many :teacher_courses
   has_many :teachers, through: :teacher_courses, source: :teacher
 
+  scope :calculated, -> { where(status: "วิชาหลัก")}
   # has_many :course_mains
   # has_many :subject_mains, through: :course_mains, source: :course_list
   

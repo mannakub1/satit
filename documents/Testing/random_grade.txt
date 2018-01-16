@@ -1,0 +1,51 @@
+def random_grade(student_subjects)student_subjects.each do |student_subject|
+    score1 = Random.rand(70..100)
+	score2 = Random.rand(70..100)
+	student_subject.update_attributes(score1: score1, score2: score2, score_result: (score1+score2)/2, total_score: score1+score2, grade: get_grade((score1+score2)/2))
+  end  
+end  
+
+def get_grade(number)
+	if(number >= 80)
+		return "4"
+	elsif (number >=75)
+		return "3.5"
+	elsif (number >= 70)
+		return "3.0"
+	elsif (number >= 65)
+		return "2.5"
+	elsif (number >= 60)
+		return "2.0"
+	elsif (number >= 55)
+		return "1.5"
+	elsif (number >= 50)
+		return "1.0"
+	else
+		return "0.0"
+end
+
+def calculate_gpa(current_student_room)
+	gp = StudentSubject.where(student_room_id: current_student_room.id).select{|x| x.subject.status == 'วิชาหลัก'|| x.subject.status=='วิชาเพิ่มเติม'}.map{|x| x.grade.to_f * x.subject.credit}.sum
+	ca = StudentSubject.where(student_room_id: current_student_room.id).select{|x| x.subject.status == 'วิชาหลัก'|| x.subject.status=='วิชาเพิ่มเติม'}.collect(&:subject).map(&:credit).sum
+	cp = StudentSubject.where(student_room_id: current_student_room.id).select{|x| x.grade != nil && (x.grade.to_f > 0 || x.grade == "s") && x.subject.credit.to_i > 0}.map{|x| x.subject.credit}.sum
+	cr = StudentSubject.where(student_room_id: current_student_room.id).select{|x| x.subject.credit.to_i > 0}.map{|x| x.subject.credit}.sum
+	return gp, ca, cp, cr, gp / ca
+end
+
+def calculate_gpax_primary(student_room)
+	 gpax = student_room.select{|x| (x.room.level == 'ป.1' || x.room.level == 'ป.2'|| x.room.level == 'ป.3')&& x.gp != nil}.map(&:gp).sum
+	cax =  student_room.select{|x| (x.room.level == 'ป.1' || x.room.level == 'ป.2'|| x.room.level == 'ป.3')&& x.gp != nil}.map(&:ca).sum
+	if cax == 0
+		return 0
+	end
+	return (gpax/cax).round(2)
+end
+
+def calculate_gpax_secondary(student_room)
+	gpax = student_room.select{|x| (x.room.level == 'ป.4' || x.room.level == 'ป.5'|| x.room.level == 'ป.6')&& x.gp != nil}.map(&:gp).sum
+	cax =  student_room.select{|x| (x.room.level == 'ป.4' || x.room.level == 'ป.5'|| x.room.level == 'ป.6')&& x.gp != nil}.map(&:ca).sum
+	if cax == 0
+		return 0
+	end
+	return (gpax/cax).round(2)
+end

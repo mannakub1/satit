@@ -24,7 +24,7 @@ module Satit
     config.cache_store = :memory_store, { size: 64.megabytes }
 
 
-    config.middleware.insert_before 0, Rack::Cors do
+    config.middleware.insert_before 0, "Rack::Cors" do
       allow do
         origins '*'
         resource '*', :headers => :any, :methods => [:get, :post, :options]
@@ -35,10 +35,13 @@ module Satit
       'Access-Control-Allow-Origin' => '*',
       'Access-Control-Allow-Methods' => 'POST, PUT, DELETE, GET, OPTIONS',
       'Access-Control-Request-Method' => '*',
-      'Access-Control-Allow-Headers' => 'Origin, X-Requested-With, Content-Type, Accept, Authorization'
+      'Access-Control-Allow-Headers' => '*',
+      'Access-Control-Request-Headers' => '*',
     })
 
     config.active_record.raise_in_transactional_callbacks = true
     config.autoload_paths += %W(#{config.root}/lib #{config.root})
+
+    
   end
 end

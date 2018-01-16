@@ -7,10 +7,11 @@
 #  teacher_id         :integer
 #  score1             :integer
 #  score2             :integer
-#  grader             :string
-#  score_reuslt       :float
 #  created_at         :datetime         not null
 #  updated_at         :datetime         not null
+#  status_grade       :boolean
+#  grade              :string           default("")
+#  score_result       :string           default("0.0")
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

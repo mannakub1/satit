@@ -2,7 +2,7 @@ module Satit
   class API < Grape::API
     format :json
     prefix :api
-
+    
     before do
       origin
     end
@@ -17,11 +17,12 @@ module Satit
       end
 
       def origin
-        
         headers['Access-Control-Allow-Origin'] = '*'
         headers['Access-Control-Allow-Methods'] = 'POST, PUT, DELETE, GET, OPTIONS'
         headers['Access-Control-Request-Method'] = '*'
-        headers['Access-Control-Allow-Headers'] = 'Origin, X-Requested-With, Content-Type, Accept, Authorization'
+        headers['Access-Control-Allow-Headers'] = '*'
+        headers['Access-Control-Request-Headers'] = '*'
+        puts 'test origin'
       end
 
       def token

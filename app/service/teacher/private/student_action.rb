@@ -10,7 +10,6 @@ module Teacher::Private::StudentAction
 
   def process_edit_image
     image = params[:params][:image][:tempfile]
-
     
     create_directory_store
     create_image(image)

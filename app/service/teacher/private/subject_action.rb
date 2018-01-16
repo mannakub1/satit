@@ -2,6 +2,73 @@ module Teacher::Private::SubjectAction
 
   private 
 
+  def process_update_gpa
+    student_rooms.each{ |x| x.update_attributes(gp: calculate_gp(x), ca: calculate_ca(x), cp: calculate_cp(x), cr: calculate_cr(x), gpa:  calculate_gp(x) / process_ca(x))}
+  end
+
+  def process_update_gpax_primary
+    gpax = student_room.select{|x| (x.room.level == 'ป.1' || x.room.level == 'ป.2'|| x.room.level == 'ป.3')&& x.gp != nil}.map(&:gp).sum
+    cax =  student_room.select{|x| (x.room.level == 'ป.1' || x.room.level == 'ป.2'|| x.room.level == 'ป.3')&& x.gp != nil}.map(&:ca).sum
+    if cax == 0
+      return 0
+    end
+    (gpax/cax).round(2)
+  end
+
+  def calculate_gpax_secondary
+    gpax = student_room.select{|x| (x.room.level == 'ป.4' || x.room.level == 'ป.5'|| x.room.level == 'ป.6')&& x.gp != nil}.map(&:gp).sum
+    cax =  student_room.select{|x| (x.room.level == 'ป.4' || x.room.level == 'ป.5'|| x.room.level == 'ป.6')&& x.gp != nil}.map(&:ca).sum
+    if cax == 0
+      return 0
+    end
+    (gpax/cax).round(2)
+  end
+
+  def process_update_gpax
+    student_rooms.each do |student_room|
+      @current_student_room = student_room
+      student_room.update_attributes()
+    end
+  end   
+
+  def calculate_gpa
+    return calculate_gp, calculate_ca, calculate_cp, calculate_cr, calculate_gp / process_ca
+  end
+
+  def calculate_gp(current_student_room = @current_student_room)
+    StudentSubject.where(student_room_id: current_student_room.id).select{ |x| \
+    x.subject.status == 'วิชาหลัก' || \
+    x.subject.status == 'วิชาเพิ่มเติม' }.\
+    map{|x| x.grade.to_f * x.subject.credit}.sum
+  end
+
+  def process_ca(current_student_room = @current_student_room)
+    return 1 if calculate_ca == 0
+
+    calculate_ca
+  end
+
+  def calculate_ca(current_student_room = @current_student_room)
+    StudentSubject.where(student_room_id: current_student_room.id).select{ |x| \
+    x.subject.status == 'วิชาหลัก'|| \
+    x.subject.status=='วิชาเพิ่มเติม' } \
+    .collect(&:subject)\
+    .map(&:credit).sum
+  end
+
+  def calculate_cp(current_student_room = @current_student_room)
+    StudentSubject.where(student_room_id: current_student_room.id).select{ |x| \
+    x.grade != nil && (x.grade.to_f > 0 || x.grade == "s") && \
+    x.subject.credit.to_i > 0}\
+    .map{|x| x.subject.credit}.sum
+  end
+
+  def calculate_cr(current_student_room = @current_student_room)
+    StudentSubject.where(student_room_id: current_student_room.id).select{ |x| \
+    x.subject.credit.to_i > 0 }\
+    .map{|x| x.subject.credit}.sum
+  end
+
   def process_add
     subject = current_course_list.subjects.create(params)
     Student::SubjectAction.new(course_list_id: course_list_id).add

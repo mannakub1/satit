@@ -18,6 +18,7 @@
 #  nationality :string
 #  iden_number :string
 #  image       :string
+#  thumb       :string           default("img/student/avatar.png")
 #
 
 class Adult < ActiveRecord::Base

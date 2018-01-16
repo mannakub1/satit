@@ -1,6 +1,12 @@
 module Satit::Prototype
+
  
   class API < Grape::API
+    before do
+      origin
+    end
+    
+    
     mount TeacherAPI::Post
     mount TeacherAPI::Get
     mount TeacherAPI::API
