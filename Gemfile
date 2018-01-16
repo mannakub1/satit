@@ -30,7 +30,8 @@ gem 'faker', github: 'stympy/faker'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
-
+gem 'execjs'
+gem 'therubyracer'
 gem 'rack-cors', :require => 'rack/cors'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
