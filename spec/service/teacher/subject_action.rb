@@ -23,7 +23,7 @@ RSpec.describe "[Service: #{pathname.dirname.basename}/#{pathname.basename}]\n\n
     # end
 
     it '- Called a method update gpax' do 
-
+      expect(5).to be(@teacher_subject.update_gpax)
     end
 
   end

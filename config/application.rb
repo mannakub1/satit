@@ -31,13 +31,13 @@ module Satit
       end
     end
 
-    config.action_dispatch.default_headers.merge!({
-      'Access-Control-Allow-Origin' => '*',
-      'Access-Control-Allow-Methods' => 'POST, PUT, DELETE, GET, OPTIONS',
-      'Access-Control-Request-Method' => '*',
-      'Access-Control-Allow-Headers' => '*',
-      'Access-Control-Request-Headers' => '*',
-    })
+    # config.action_dispatch.default_headers.merge!({
+    #   'Access-Control-Allow-Origin' => '*',
+    #   'Access-Control-Allow-Methods' => 'POST, PUT, DELETE, GET, OPTIONS',
+    #   'Access-Control-Request-Method' => '*',
+    #   'Access-Control-Allow-Headers' => '*',
+    #   'Access-Control-Request-Headers' => '*',
+    # })
 
     config.active_record.raise_in_transactional_callbacks = true
     config.autoload_paths += %W(#{config.root}/lib #{config.root})

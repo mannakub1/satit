@@ -7,28 +7,39 @@ module Teacher::Private::SubjectAction
   end
 
   def process_update_gpax_primary
-    gpax = student_room.select{|x| (x.room.level == 'ป.1' || x.room.level == 'ป.2'|| x.room.level == 'ป.3')&& x.gp != nil}.map(&:gp).sum
-    cax =  student_room.select{|x| (x.room.level == 'ป.1' || x.room.level == 'ป.2'|| x.room.level == 'ป.3')&& x.gp != nil}.map(&:ca).sum
+    gpax = student_rooms.select{|x| (x.room.level == 'ป.1' || x.room.level == 'ป.2'|| x.room.level == 'ป.3')&& x.gp != nil}.map(&:gp).sum
+    cax =  student_rooms.select{|x| (x.room.level == 'ป.1' || x.room.level == 'ป.2'|| x.room.level == 'ป.3')&& x.gp != nil}.map(&:ca).sum
+    cpx = student_rooms.select{|x| (x.room.level == 'ป.1' || x.room.level == 'ป.2'|| x.room.level == 'ป.3')&& x.gp != nil}.map(&:cp).sum
+    crx = student_rooms.select{|x| (x.room.level == 'ป.1' || x.room.level == 'ป.2'|| x.room.level == 'ป.3')&& x.gp != nil}.map(&:cr).sum
+    
     if cax == 0
       return 0
     end
-    (gpax/cax).round(2)
+
+    return (gpax/cax).round(2), cax, cpx, crx
   end
 
-  def calculate_gpax_secondary
-    gpax = student_room.select{|x| (x.room.level == 'ป.4' || x.room.level == 'ป.5'|| x.room.level == 'ป.6')&& x.gp != nil}.map(&:gp).sum
-    cax =  student_room.select{|x| (x.room.level == 'ป.4' || x.room.level == 'ป.5'|| x.room.level == 'ป.6')&& x.gp != nil}.map(&:ca).sum
+  def process_update_gpax_secondary
+    gpax = student_rooms.select{|x| (x.room.level == 'ป.4' || x.room.level == 'ป.5'|| x.room.level == 'ป.6')&& x.gp != nil}.map(&:gp).sum
+    cax =  student_rooms.select{|x| (x.room.level == 'ป.4' || x.room.level == 'ป.5'|| x.room.level == 'ป.6')&& x.gp != nil}.map(&:ca).sum
+    cpx = student_rooms.select{|x| (x.room.level == 'ป.4' || x.room.level == 'ป.5'|| x.room.level == 'ป.6')&& x.gp != nil}.map(&:cp).sum
+    crx = student_rooms.select{|x| (x.room.level == 'ป.4' || x.room.level == 'ป.5'|| x.room.level == 'ป.6')&& x.gp != nil}.map(&:cr).sum  
+    
     if cax == 0
       return 0
     end
-    (gpax/cax).round(2)
+
+    return (gpax/cax).round(2), cax, cpx, crx
   end
 
   def process_update_gpax
-    student_rooms.each do |student_room|
-      @current_student_room = student_room
-      student_room.update_attributes()
-    end
+    gpax, ca, cp, cr = process_update_gpax_primary
+    student.grades.primary.update_attributes(gpax: gpax, ca: ca, cp: cp ,cr: cr)
+
+    gpax, ca, cp, cr = process_update_gpax_secondary
+    student.grades.secondary.update_attributes(gpax: gpax, ca: ca, cp: cp ,cr: cr)
+
+    return student.grades.primary, student.grades.secondary
   end   
 
   def calculate_gpa
@@ -43,9 +54,9 @@ module Teacher::Private::SubjectAction
   end
 
   def process_ca(current_student_room = @current_student_room)
-    return 1 if calculate_ca == 0
+    return 1 if calculate_ca(current_student_room) == 0
 
-    calculate_ca
+    calculate_ca(current_student_room)
   end
 
   def calculate_ca(current_student_room = @current_student_room)

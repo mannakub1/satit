@@ -48,6 +48,8 @@ class Student < ActiveRecord::Base
   has_many :student_course_lists, dependent: :destroy
   has_many :courses, through: :student_course_lists, source: :course_list
 
+  has_many :grades, dependent: :destroy
+
   
   require 'csv' 
 

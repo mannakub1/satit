@@ -58,8 +58,7 @@ class Teacher::SubjectAction
 
   def update_score
     # process_update_score
-    process_update_gpa
-    process_update_gpax
+    { grades: update_gpax, student_rooms: update_gpa}
   end
 
   def edit_score(params)

@@ -53,6 +53,14 @@ module Teacher::Private::StudentAction
     params[:password] = params[:code_number]
 
     student = Student.create(params)
+    process_create_grade(student)
+
+    student
+  end
+
+  def process_create_grade(student)
+    student.grades.create(status: 'primary')
+    student.grades.create(status: 'secondary')
   end
 
   def process_add_room
