@@ -71,7 +71,7 @@ module Satit::Prototype::TeacherAPI
         optional :grade, type: String, desc: ''
       end
       post :edit_score do
-        present Teacher::SubjectAction.new(student: current_student, student_subject: current_student_subject, teacher: current_teacher)\
+        present Teacher::SubjectAction.new(student: current_student, student_subject: current_student_subject, teacher: current_teacher, student_rooms: current_student.student_rooms)\
         .edit_score(params)\
         , with: Satit::StudentAPI::StudentRoomListEntity
       end

@@ -29,7 +29,7 @@ module Satit
         origins '*'
         resource '*', :headers => :any, :methods => [:get, :post, :options]
       end
-    end
+  end
 
     # config.action_dispatch.default_headers.merge!({
     #   'Access-Control-Allow-Origin' => '*',

@@ -9,7 +9,7 @@ RSpec.describe "[Service: #{pathname.dirname.basename}/#{pathname.basename}]\n\n
     before(:context) do
       @student_id = 72
       @student_rooms = StudentRoom.where(student_id: @student_id)
-      @teacher_subject = Teacher::SubjectAction.new(student_rooms: @student_rooms)
+      @teacher_subject = Teacher::SubjectAction.new(student: Student.last, student_rooms: @student_rooms)
       # @teacher_subject_update_gpa = Teacher::SubjectAction.new(student_rooms: @student_rooms).update_gpa
       # @teacher_subject_update_gpax 
     end
@@ -23,7 +23,7 @@ RSpec.describe "[Service: #{pathname.dirname.basename}/#{pathname.basename}]\n\n
     # end
 
     it '- Called a method update gpax' do 
-      expect(5).to be(@teacher_subject.update_gpax)
+      expect(@student_rooms).to eq(@teacher_subject.update_gpax)
     end
 
   end

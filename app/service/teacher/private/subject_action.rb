@@ -3,11 +3,12 @@ module Teacher::Private::SubjectAction
   private 
 
   def process_update_gpa
-    student_rooms.each{ |x| x.update_attributes(gp: calculate_gp(x), ca: calculate_ca(x), cp: calculate_cp(x), cr: calculate_cr(x), gpa:  calculate_gp(x) / process_ca(x))}
+    student_rooms.each{ |x| x.update_attributes(gp: calculate_gp(x), ca: calculate_ca(x), cp: calculate_cp(x), cr: calculate_cr(x), gpa:  (calculate_gp(x) / process_ca(x)).round(2))}
   end
 
   def process_update_gpax_primary
     gpax = student_rooms.select{|x| (x.room.level == 'ป.1' || x.room.level == 'ป.2'|| x.room.level == 'ป.3')&& x.gp != nil}.map(&:gp).sum
+    gpx = student_rooms.select{ |x| (x.room.level == 'ป.1' || x.room.level == 'ป.2'|| x.room.level == 'ป.3')&& x.gp != nil}.map(&:gp).sum
     cax =  student_rooms.select{|x| (x.room.level == 'ป.1' || x.room.level == 'ป.2'|| x.room.level == 'ป.3')&& x.gp != nil}.map(&:ca).sum
     cpx = student_rooms.select{|x| (x.room.level == 'ป.1' || x.room.level == 'ป.2'|| x.room.level == 'ป.3')&& x.gp != nil}.map(&:cp).sum
     crx = student_rooms.select{|x| (x.room.level == 'ป.1' || x.room.level == 'ป.2'|| x.room.level == 'ป.3')&& x.gp != nil}.map(&:cr).sum
@@ -16,11 +17,12 @@ module Teacher::Private::SubjectAction
       return 0
     end
 
-    return (gpax/cax).round(2), cax, cpx, crx
+    return (gpax/cax).round(2), gpx, cax, cpx, crx
   end
 
   def process_update_gpax_secondary
     gpax = student_rooms.select{|x| (x.room.level == 'ป.4' || x.room.level == 'ป.5'|| x.room.level == 'ป.6')&& x.gp != nil}.map(&:gp).sum
+    gpx = student_rooms.select{ |x| (x.room.level == 'ป.4' || x.room.level == 'ป.5'|| x.room.level == 'ป.6')&& x.gp != nil}.map(&:gp).sum
     cax =  student_rooms.select{|x| (x.room.level == 'ป.4' || x.room.level == 'ป.5'|| x.room.level == 'ป.6')&& x.gp != nil}.map(&:ca).sum
     cpx = student_rooms.select{|x| (x.room.level == 'ป.4' || x.room.level == 'ป.5'|| x.room.level == 'ป.6')&& x.gp != nil}.map(&:cp).sum
     crx = student_rooms.select{|x| (x.room.level == 'ป.4' || x.room.level == 'ป.5'|| x.room.level == 'ป.6')&& x.gp != nil}.map(&:cr).sum  
@@ -29,15 +31,19 @@ module Teacher::Private::SubjectAction
       return 0
     end
 
-    return (gpax/cax).round(2), cax, cpx, crx
+    return (gpax/cax).round(2), gpx, cax, cpx, crx
   end
 
   def process_update_gpax
-    gpax, ca, cp, cr = process_update_gpax_primary
+    gpax, gpx, ca, cp, cr = process_update_gpax_primary
     student.grades.primary.update_attributes(gpax: gpax, ca: ca, cp: cp ,cr: cr)
+    student_rooms.select{|x| (x.room.level == 'ป.1' || x.room.level == 'ป.2'|| x.room.level == 'ป.3')&& x.gp != nil}.each{ |x| x.update_attributes(gpax: gpax, gpx: gpx, cax: ca, cpx: cp ,crx: cr)}
+    puts "555555"
+    puts gpx
 
-    gpax, ca, cp, cr = process_update_gpax_secondary
+    gpax, gpx, ca, cp, cr = process_update_gpax_secondary
     student.grades.secondary.update_attributes(gpax: gpax, ca: ca, cp: cp ,cr: cr)
+    student_rooms.select{|x| (x.room.level == 'ป.4' || x.room.level == 'ป.5'|| x.room.level == 'ป.6')&& x.gp != nil}.each{ |x| x.update_attributes(gpax: gpax, gpx: gpx, cax: ca, cpx: cp ,crx: cr)}
 
     return student.grades.primary, student.grades.secondary
   end   
@@ -94,7 +100,6 @@ module Teacher::Private::SubjectAction
   end
 
   def process_edit
-    
     current_subject1.update_attributes(params)
 
     current_subject1
@@ -124,12 +129,11 @@ module Teacher::Private::SubjectAction
     TeacherGrade.create(teacher_id: teacher.id, student_subject_id: student_subject.id, score1: score1, score2: score2)
   end
 
-  def process_edit_score
 
+  def process_edit_score
     add_teacher_grade
 
     if teacher_grade.score2.to_i > 0.0 && teacher_grade.score1.to_i > 0.0
-      puts '5555'
       teacher_grade.update_attributes(grade: c_grade, score_result: result_score, status_grade: true)
     elsif teacher_grade.score2.to_i > 0.0
       teacher_grade.update_attributes(grade: grade2, score_result: result_score2 , status_grade: true)
@@ -139,9 +143,6 @@ module Teacher::Private::SubjectAction
 
     student_subject.update_attributes(score1: teacher_grade.score1, score2: teacher_grade.score2, grade: teacher_grade.grade\
     , score_result: teacher_grade.score_result, status_grade: true)
-    update_gpa
-
-    student.student_rooms.order(:level)
   end
 
   def update_gpa
@@ -212,7 +213,6 @@ module Teacher::Private::SubjectAction
   end
 
   def c_grade
-    puts '6666'
     return "4" if result_score >= 80
     return '3.5' if result_score >= 75
     return '3' if result_score >= 70

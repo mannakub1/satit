@@ -47,6 +47,8 @@ module Satit
       , with: Satit::AdminAPI::AdminActionLogoutEntity
     end
 
+   
+
     mount Prototype::API
 
   end

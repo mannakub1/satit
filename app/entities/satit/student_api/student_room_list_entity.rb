@@ -8,5 +8,10 @@ module Satit::StudentAPI
     expose :ca
     expose :gp
     expose :gpa
+    expose :crx
+    expose :cpx
+    expose :cax
+    expose :gpx
+    expose :gpax
   end
 end

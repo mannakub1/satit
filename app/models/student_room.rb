@@ -16,6 +16,11 @@
 #  status         :boolean          default(TRUE)
 #  student_status :boolean          default(TRUE)
 #  code_number    :string
+#  gpax           :float
+#  crx            :float
+#  cpx            :float
+#  cax            :float
+#  gpx            :float
 #
 
 class StudentRoom < ActiveRecord::Base

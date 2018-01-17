@@ -7,9 +7,9 @@ class Teacher::SubjectAction
 
   def initialize(option = {})
     @student_rooms = option[:student_rooms]
+    @student = option[:student]
     # @current_student_room = option[:current_student_room]
     @subject_id = option[:subject_id]
-    @student = option[:student]
     @student_subject = option[:student_subject]
     @teacher = option[:teacher]
     @course_list_id = option[:course_list_id]
@@ -58,7 +58,8 @@ class Teacher::SubjectAction
 
   def update_score
     # process_update_score
-    { grades: update_gpax, student_rooms: update_gpa}
+    { student_rooms: update_gpa, grades: update_gpax }
+    student_rooms
   end
 
   def edit_score(params)
@@ -66,14 +67,15 @@ class Teacher::SubjectAction
     @score2 = params[:score2]
     @grade ||= params[:grade]
 
-    puts @score1
-    puts @score1
-    puts @grade
+    # puts @score1
+    # puts @score1
+    # puts @grade
 
     # can_edit, message = can_edit?
     # fail message unless can_edit
     
     process_edit_score
+    update_score
   end
 
   def add_teacher(params)

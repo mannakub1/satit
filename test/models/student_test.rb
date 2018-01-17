@@ -5,7 +5,6 @@
 #  id              :integer          not null, primary key
 #  first_name      :string
 #  last_name       :string
-#  gpa             :float
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #  iden_number     :string
@@ -28,6 +27,8 @@
 #  password_digest :string
 #  image           :string
 #  thumb           :string           default("")
+#  gpax_primary    :float
+#  gpax_secondary  :float
 #
 
 require 'test_helper'

@@ -120,7 +120,7 @@
 
                                                         <thead>
                                                             <tr style="background-color: greenyellow;">
-                                                                <th style="background-color: #909070; color:black;" colspan="7" %><center>ชั้น {{y.room.level}} ห้อง {{y.room.name}} ปี {{changeYearPlus(y.room.year)}}</center></th>
+                                                                <th style="background-color: #909070; color:black;" colspan="7" %><center>ชั้น {{y.room.level}} ห้อง {{y.room.name}} ปี {{y.room.year}}</center></th>
                                                             </tr>
                                                             <tr style="background-color: grey;">
                                                                 <th style="background-color: #E0E0FF; color:black; width:8%"><center>รหัสวิชา</center></th>
@@ -161,18 +161,20 @@
                                                     </thead>
                                                     <tbody>
                                                     <tr>
-                                                        <!--This Semester-->
-                                                        <td style="background-color: #ededed; color:black; width:8%"><center>CR<br>{{y.cr_cal}}</center></td>
-                                                        <td style="background-color: #ededed; color:black; width:77%"><center>CP<br>{{y.cp_cal}}</center></td>
-                                                        <td style="background-color: #ededed; color:black; max-width:5%"><center>CA<br>{{y.ca_cal}}</center></td>
-                                                        <td style="background-color: #ededed; color:black; width:5%"><center>GP<br>{{y.gp_cal}}</center></td>
-                                                        <td style="background-color: #ededed; color:black; width:5%"><center>GPA<br>{{y.gpa_cal}}</center></td>
-                                                        <!--CUMULATIVE TO THIS SEMESTER-->
-                                                        <td style="background-color: #ededed; color:black; width:8%"><center>CR<br>{{y.cr}}</center></td>
-                                                        <td style="background-color: #ededed; color:black; width:77%"><center>CP<br>{{y.cp}}</center></td>
+                                                    <!--This Semester-->
+                                                        <td style="background-color: #ededed; color:black; width:13%"><center>CR<br>{{y.cr}}</center></td>
+                                                        <td style="background-color: #ededed; color:black; width:82%"><center>CP<br>{{y.cp}}</center></td>
                                                         <td style="background-color: #ededed; color:black; max-width:5%"><center>CA<br>{{y.ca}}</center></td>
-                                                        <td style="background-color: #ededed; color:black; width:5%"><center>GP<br>{{y.gp}}</center></td>
-                                                        <td style="background-color: #ededed; color:black; width:5%"><center>GPA<br>{{y.gpa}}</center></td>
+                                                        <td style="background-color: #ededed; color:black; width:10%"><center>GP<br>{{y.gp}}</center></td>
+                                                        <td style="background-color: #ededed; color:black; width:10%"><center>GPA<br>{{y.gpa}}</center></td>
+                                                        <!--CUMULATIVE TO THIS SEMESTER-->
+                                                        <td style="background-color: #ededed; color:black; width:13%"><center>CR<br>{{y.crx}}</center></td>
+                                                        <td style="background-color: #ededed; color:black; width:82%"><center>CP<br>{{y.cpx}}</center></td>
+                                                        <td style="background-color: #ededed; color:black; max-width:10%"><center>GP<br>{{y.cax}}</center></td>
+                                                        <td style="background-color: #ededed; color:black; width:10%"><center>GP<br>{{y.gpx}}</center></td>
+                                                        <td style="background-color: #ededed; color:black; width:10%"><center>GPA<br>{{y.gpax}}</center></td>
+                                                        
+                                                       
                                                     </tr>
 
                                                     </tbody>
