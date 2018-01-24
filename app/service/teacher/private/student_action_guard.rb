@@ -97,7 +97,6 @@ module Teacher::Private::StudentActionGuard
   end
 
   def student_ids?
-    puts student_id
     Student.find_by(id: student_id)
   end
 

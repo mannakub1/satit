@@ -50,6 +50,7 @@ class Teacher::StudentAction
 
   def edit(params)
     @params = params
+    puts params
 
     can_edit, message = can_edit?
     fail message unless can_edit

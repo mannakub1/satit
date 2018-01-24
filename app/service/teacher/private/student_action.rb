@@ -90,7 +90,9 @@ module Teacher::Private::StudentAction
   end
 
   def process_edit
-    student.update_attributes(params)
+    current_student.update_attributes(params)
+
+    current_student
   end
 
   def change_room_state
@@ -102,7 +104,7 @@ module Teacher::Private::StudentAction
   end
 
   def current_student
-    Student.find(student.id)
+    Student.find(student_id)
   end
 
   def calculate_grade
