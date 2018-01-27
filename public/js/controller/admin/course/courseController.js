@@ -18,7 +18,6 @@ myApp.controller('courseController', function($scope, $http, static_function, $l
 		// console.log('test courses = ' + $scope.courses);
 
 		if ($scope.show_course == 'null') {
-
 			$scope.show_course = "---Please select---"
 			$scope.show_course_list = "";
 
@@ -33,15 +32,8 @@ myApp.controller('courseController', function($scope, $http, static_function, $l
 			$scope.selectComplete();	
 		}
 	}).error(function(data, status, headers, config) {
-   		console.log("error");
-		if(data.error === 'token expired'){
-			window.location.href = 'login.html';;
-		}
+   		static_function.token_expired_check(data.error);
     });
-
-
-
-
 	
 	// var course_list = sessionStorage.getItem('course_lists');
 	// var course_list_id = sessionStorage.getItem('course_list_id');
@@ -87,42 +79,43 @@ myApp.controller('courseController', function($scope, $http, static_function, $l
 	$scope.deleteSubject = function(data) {
 		subject_id = data
 		course_list_id = $scope.course_list_id
-
 		subject_delete_action = address + "api/subject/delete"
 		params = { course_list_id: course_list_id, subject_id: subject_id }
-
-		$http.post(subject_delete_action, angular.toJson(params), {
+		var con = confirm("Do you want to delete this Subject?");
+		if(con){
+			$http.post(subject_delete_action, angular.toJson(params), {
 			transformRequest: angular.identity,
 			headers: {'token': $scope.token, 'Content-Type': "application/json"}
 		})
 		.success(function(data, status, header, config){
-			window.location.href = 'Course_Dashboard.html'
+			location.reload();
 		})
 		.error(function(data, status, headers, config) {
-    		if(data.error === 'token expired'){
-				window.location.href = 'login.html';;
-			}
+    		static_function.token_expired_check(data.error);
 		});
+		}
+		
 	}
 
 	$scope.deleteRoom = function(data) {
-		room_id = data
-		course_list_id = $scope.course_list_id
-
-		room_delete_action = address + "api/subject/delete_room"
-		params = { course_list_id: course_list_id, room_id: room_id }
-
-		$http.post(room_delete_action, angular.toJson(params), {
+		room_id = data;
+		course_list_id = $scope.course_list_id;
+		room_delete_action = address + "api/subject/delete_room";
+		params = { course_list_id: course_list_id, room_id: room_id };
+		var con = confirm("Do you want to delete this room?");
+		if(con){
+			$http.post(room_delete_action, angular.toJson(params), {
 			transformRequest: angular.identity,
 			headers: {'token': $scope.token, 'Content-Type': "application/json"}})
 			.success(function(data, status, header, config){
-				window.location.href = 'Course_Dashboard.html'
+				location.reload();
 			})
 			.error(function(data, status, headers, config) {
-        		if(data.error === 'token expired'){
-					window.location.href = 'login.html';;
-				}
+        		static_function.token_expired_check(data.error);
 		});
+		}
+
+		
 	}
 
 	$scope.sendDataAddCourse = function() {
@@ -173,52 +166,42 @@ myApp.controller('courseController', function($scope, $http, static_function, $l
 			$scope.course_lists = data.course_list
 			// window.location.href = 'Course_Dashboard.html'
 		}).error(function(data, status, headers, config) {
-       		console.log("error")
-			if(data.error === 'token expired'){
-				window.location.href = 'login.html';;
-			}
+       		static_function.token_expired_check(data.error);
     	});
 
 	}
 
 	$scope.getSubjectList = function(data) {
-		sessionStorage.setItem('subject_id', data)
-		window.location.href = 'SubjectList.html'
+		sessionStorage.setItem('subject_id', data);
+		$location.path('admin/course/subject');
 	}
 
 	$scope.getSubject = function(data) {
-		var get_subject_path = address + "api/subject/list?id=" + data
+		var get_subject_path = address + "api/subject/list?id=" + data;
 
 		$http.get(get_subject_path , {headers: {'token': $scope.token}})
 		.success(function(data, status, header, config) {
-			var newData = JSON.stringify(data.subjects)
-			sessionStorage.setItem('subjects', newData)
-			$scope.subjects = data.subjects
+			var newData = JSON.stringify(data.subjects);
+			sessionStorage.setItem('subjects', newData);
+			$scope.subjects = data.subjects;
 
 			// window.location.href = 'SubjectDashboard.html'
 		}).error(function(data, status, headers, config) {
-       		console.log("error")
-			if(data.error === 'token expired'){
-				window.location.href = 'login.html';;
-			}
+       		static_function.token_expired_check(data.error);
     	});
 
 	}
 
 	$scope.getRoom = function(data) {
-		var get_room_path = address + "api/subject/rooms?id=" + data
+		var get_room_path = address + "api/subject/rooms?id=" + data;
 
 		$http.get(get_room_path , {headers: {'token': $scope.token}})
 		.success(function(data, status, header, config) {
-			var newData = JSON.stringify(data.rooms)
-			sessionStorage.setItem('rooms', newData)
-
-			$scope.rooms = data.rooms
+			var newData = JSON.stringify(data.rooms);
+			sessionStorage.setItem('rooms', newData);
+			$scope.rooms = data.rooms;
 		}).error(function(data, status, headers, config) {
-       		console.log("error")
-			if(data.error === 'token expired'){
-				window.location.href = 'login.html';;
-			}
+       		static_function.token_expired_check(data.error);
     	});
 	}
 
@@ -232,10 +215,9 @@ myApp.controller('courseController', function($scope, $http, static_function, $l
 		// 	console.log(data.room)
 		// 	$scope.room = data.room
 			
-			sessionStorage.setItem('room_id', room_id)
+			sessionStorage.setItem('room_id', room_id);
 		// 	// $scope.getStudentList(data.room.id)
-
-			window.location.href = 'RoomList.html'
+			$location.path('admin/course/room');
 		// }).error(function(data, status, headers, config) {
   //      		console.log("error")
 		// 	if(data.error === 'token expired'){
@@ -245,44 +227,36 @@ myApp.controller('courseController', function($scope, $http, static_function, $l
 	}
 
 	$scope.getStudentList = function(data) {
-		var get_student_path = address + "api/subject/students?id=" + data
-		
+		var get_student_path = address + "api/subject/students?id=" + data;
 		$http.get(get_student_path , {headers: {'token': $scope.token}})
 		.success(function(data, status, header, config) {
-			var newData = JSON.stringify(data.students)
-			sessionStorage.setItem('students', newData)
-
-			$scope.students = data.students
+			var newData = JSON.stringify(data.students);
+			sessionStorage.setItem('students', newData);
+			$scope.students = data.students;
 		}).error(function(data, status, headers, config) {
-       		console.log("error")
-			if(data.error === 'token expired'){
-				window.location.href = 'login.html';;
-			}
+       		static_function.token_expired_check(data.error);
     	});
 	}
 
 	$scope.sendDataAddSubject = function() {
-		var code = $scope.subject.code
-		var name = $scope.subject.name
-		var credit = $scope.subject.credit
-		var hour_per_year = $scope.subject.hour_per_year
-		var course_list_id = sessionStorage.getItem('course_list_id')
+		var code = $scope.subject.code;
+		var name = $scope.subject.name;
+		var credit = $scope.subject.credit;
+		var hour_per_year = $scope.subject.hour_per_year;
+		var course_list_id = sessionStorage.getItem('course_list_id');
 		var status = document.getElementById("status").value;
 
-		var subject_action_add = address + "api/subject/add"
-		params = { course_list_id: course_list_id, name: name, code: code, hour_per_year: hour_per_year, status: status, credit: credit}
+		var subject_action_add = address + "api/subject/add";
+		params = { course_list_id: course_list_id, name: name, code: code, hour_per_year: hour_per_year, status: status, credit: credit};
 		$http.post(subject_action_add, angular.toJson(params), {
 			transformRequest: angular.identity,
 			headers: {'token': $scope.token, 'Content-Type': "application/json"}})
 			.success(function(data, status, header, config){
-				sessionStorage.setItem('subject_id', data.subject.id)
-
-				window.location.href = 'SubjectList.html'
+				sessionStorage.setItem('subject_id', data.subject.id);
+				$location.path('admin/course/subject')
 			})
 			.error(function(data, status, headers, config) {
-        		if(data.error === 'token expired'){
-					window.location.href = 'login.html';;
-				}
+        		static_function.token_expired_check(data.error);
 		});
 	}
 });

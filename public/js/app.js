@@ -11,7 +11,7 @@ var address = 'http://172.20.40.109:3000/';
 // var address = "http://172.27.160.166:3000/";
 // var address = "http://202.28.73.138:3000/";
 
-var myApp = angular.module('myApp', ['ngRoute','ngFileUpload']);
+var myApp = angular.module('myApp', ['ngRoute']);
 myApp.config(function($routeProvider){
 	$routeProvider.when("/admin", {
 		templateUrl: 'public/js/views/admin/Dashboard.html',
@@ -98,10 +98,11 @@ myApp.config(function($routeProvider){
             controller: 'courseController'
         })
 		.when("/admin/course/add_subject", {
-            templateUrl: 'public/js/views/admin/SubjectAdd.html',
+            templateUrl: 'public/js/views/admin/course/SubjectAdd.html',
+            controller: 'courseController'
         })
 		.when("/admin/course/subject", {
-            templateUrl: 'public/js/views/admin/SubjectList.html',
+            templateUrl: 'public/js/views/admin/course/SubjectList.html',
         })
 		.when("/admin/course/subject/edit", {
             templateUrl: 'public/js/views/admin/SubjectEdit.html',
@@ -110,7 +111,8 @@ myApp.config(function($routeProvider){
             templateUrl: 'public/js/views/admin/SubjectAddTeacher.html',
         })
 		.when("/admin/course/add_room", {
-            templateUrl: 'public/js/views/admin/SubjectRoomAdd.html',
+            templateUrl: 'public/js/views/admin/course/SubjectRoomAdd.html',
+            controller: 'addRoomController'
         })
         .when("/admin/course/room", {
             templateUrl: 'public/js/views/admin/RoomList.html',

@@ -1,0 +1,149 @@
+<div id="wrapper">
+    <nav class="navbar-default navbar-static-side" role="navigation">
+        <div class="sidebar-collapse">
+            <ul class="nav" id="side-menu">
+                <li class="nav-header">
+                    <div class="dropdown profile-element">
+                            <span> <img alt="image" class="img-circle" src="img/profile_small.jpg" />
+                            </span>
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">{{admin_prefix}} {{admin_first_name}} {{admin_last_name}}</strong>
+                             </span> <span class="text-muted text-xs block">ผู้ดูแลระบบ<b class="caret"></b></span> </span> </a>
+                        <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                            <li><a href="Profile.html">Profile</a></li>
+                            <li><a href="login.html">Logout</a></li>
+                        </ul>
+                    </div>
+                    <div class="logo-element">
+                        IN+
+                    </div>
+                </li>
+                <li>
+                    <a href="#/admin/course"><i class="fa fa-backward"></i> <span class="nav-label">กลับ</span></a>
+
+                </li>
+
+
+
+            </ul>
+
+        </div>
+    </nav>
+
+    <div id="page-wrapper" class="gray-bg" >
+        <div class="row border-bottom">
+            <nav class="navbar navbar-static-top white-bg" role="navigation" style="margin-bottom: 0">
+                <div class="navbar-header">
+                    <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
+                </div>
+                <ul class="nav navbar-top-links navbar-right">
+                    <li>
+                        <a ng-click="logout()">
+                            <i class="fa fa-sign-out"></i> Log out
+                        </a>
+                    </li>
+                </ul>
+
+            </nav>
+        </div>
+    <center>
+        <div class="wrapper wrapper-content ">
+            <!-- <div class="wrapper wrapper-content animated fadeInRight"> -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ibox float-e-margins">
+                        
+                        <div class="ibox-content" style="width: 75%" >
+                            <div class="row">
+                              <!-- body chang -->
+                              <h2 align="left"> เพิ่มวิชา</h2>
+                                <div class="col-lg-12">
+                                    <form>
+                                     <div class="row">
+                                            <div class="col-lg-2">
+                                                รหัสวิชา :
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <input type="text"  ng-model="subject.code"  required="">
+                                                <br>
+                                            </div>
+                                            <br>
+                                            <br>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-2">
+                                                ชื่อวิชา :
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <input type="text"  ng-model="subject.name"  required="">
+                                                <br>
+                                            </div>
+                                            <br>
+                                            <br>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-2">
+                                                หน่วยกิจ :
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <input type="number"  ng-model="subject.credit"  required="">
+                                                <br>
+                                            </div>
+                                            <br>
+                                            <br>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-2">
+                                                ชั่วโมงเรียนต่อปี :
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <input type="number"  ng-model="subject.hour_per_year"  required="">
+                                                <br>
+                                            </div>
+                                            <br>
+                                            <br>
+                                        </div>
+                                         <div class="row">
+                                            <div class="col-lg-2">
+                                                หมวดหมู่ :
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <select id="status" name="Status">
+                                                <option value="วิชาหลัก">วิชาหลัก</option>
+                                                <option value="วิชาเพิ่มเติม">วิชาเพิ่มเติม</option>
+                                                <option value="พัฒนาผู้เรียน">พัฒนาผู้เรียน</option>
+                                            </select>
+                                            </div>
+                                            <br>
+                                            <br>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-2">
+
+                                            </div>
+                                            <div class="col-lg-1">
+                                                <button class="btn btn-info m-r-sm" ng-click="sendDataAddSubject()">ยืนยัน</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+    </center>
+            <div class="footer">
+                <div class="pull-right">
+                    ....... <strong>.......</strong> .......
+                </div>
+                <div>
+                    <strong>.......</strong> ....................
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
