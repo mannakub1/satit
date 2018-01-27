@@ -1,158 +1,21 @@
-/**
- * Created by Deklnwzaza on 22/9/2560.
- */
 myApp.controller('adminDashboardController',  function($scope, $http, fileUpload, pathApi, $location) {
-    console.log(localStorage.getItem('token'));
-    //console.log(sessionStorage.getItem('user'));
     $scope.token = localStorage.getItem('token');
     $scope.userType = sessionStorage.getItem('user');
     $scope.admin_first_name = sessionStorage.getItem('admin_first_name');
     $scope.admin_last_name = sessionStorage.getItem('admin_last_name');
     $scope.admin_prefix = sessionStorage.getItem('admin_prefix');
-
     $scope.roomId = -1;
+    sessionStorage.setItem('index_current_course',null);
+    sessionStorage.setItem('index_current_course_list', null);
 
-
-    $scope.showRoom = true;
-    $scope.showFile = false;
-    $scope.showStudent = false;
-    $scope.showEditStudent = false;
-    $scope.showEditFather = false;
-    $scope.showEditMother = false;
-    $scope.showEditGuardian = false;
-    $scope.showStudentData = false;
-    $scope.showAddStudent = false;
-    $scope.showHome = true;
     //console.log($scope.userType);
     if($scope.userType === "teacher"){
-
         $scope.userTeacher = true;
     }
     else if($scope.userType === "student"){
         console.log($scope.userType);
         $scope.userStudent = true;
         $scope.userTeacher = false;
-    }
-
-    $scope.addStudent = {code_number : '', first_name : '', last_name : '', iden_number : '', blood : '', birthdate : '', address : ''
-        , district : '', parish : '', city : '', call : '', zip_code : '', ability : '', ethnicity : '', nationality : ''};
-    pathRoom = address + "api/room/present";
-    //path ข้อมูลห้อง
-    $http.get(pathRoom, {headers: {'token': $scope.token} })
-        .success(function(data, status, headers, config) {
-            $scope.roomData = data.room_list;
-            console.log(data);
-        })
-        .error(function(data, status, headers, config) {
-            if(data.error === 'token expired'){
-                window.location.href = 'login.html';;
-            }
-            else{
-
-            }
-        });
-
-
-    $scope.sendStudentData = function(stdCode, stdPrefix, stdFirstName, stdLastName, stdId, stdIden, stdBlood, stdBirth, stdAddr, stdDistrict, stdParish, stdCity, stdCall, stdZip, stdAbility, stdEthnicity, stdNationality, stdIndex){
-        $scope.student = $scope.studentData[stdIndex];
-        $scope.stdIndex = stdIndex;
-        if($scope.student.father.length !== 0){
-            $scope.hasFather = true;
-        }
-        if($scope.student.mother.length !== 0){
-            $scope.hasMother = true;
-        }
-        if($scope.student.guardian.length !== 0){
-            $scope.hasGuardian = true;
-        }
-        console.log($scope.student.father.first_name);
-        $scope.showStudent = false;
-        $scope.showStudentData = true;
-        if(stdBirth !== null){
-            var year = new Date(stdBirth);
-            $scope.stdYear = year.getFullYear() + 543 ;
-            $scope.nowDate = new Date();
-            var timeDiff = Math.abs($scope.nowDate.getTime() - year.getTime());
-            var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
-            $scope.age = Math.trunc((diffDays)/365);
-        }
-    }
-
-
-    $scope.editStudent = function(){
-
-        $scope.showEditStudent = true;
-        $scope.showStudentData = false;
-        if($scope.student.prefix === "เด็กชาย"){
-            document.getElementById("male").checked = true;
-        }
-        else if($scope.student.prefix === "เด็กหญิง"){
-            document.getElementById("female").checked = true;
-        }
-        else{
-            document.getElementById("male").checked = false;
-            document.getElementById("female").checked = false;
-        }
-
-
-    }
-
-    $scope.editFather = function(){
-        $scope.showEditFather = true;
-        $scope.showStudentData = false;
-
-    }
-
-    $scope.editMother = function(){
-        $scope.showEditMother = true;
-        $scope.showStudentData = false;
-    }
-
-    $scope.editGuardian = function(){
-        $scope.showEditGuardian = true;
-        $scope.showStudentData = false;
-
-
-    }
-
-    $scope.addFather = function(){
-        $scope.showAddFather = true;
-        $scope.showStudentData = false;
-
-    }
-
-    $scope.addMother = function(){
-        $scope.showAddMother = true;
-        $scope.showStudentData = false;
-    }
-
-    $scope.addGuardian = function(){
-        $scope.showAddGuardian = true;
-        $scope.showStudentData = false;
-    }
-
-    $scope.backEditStudent = function(){
-        $scope.showStudentData = false;
-        $scope.showStudent = true;
-    }
-
-    $scope.backToStdTable = function () {
-        $scope.showStdGrade = false;
-        $scope.sendRoom($scope.roomId, $scope.roomName, $scope.roomLevel, (parseInt($scope.year) - 543));
-
-        $scope.showStudent = true;
-    }
-
-    $scope.backToStdData = function () {
-        $scope.student = $scope.studentData[$scope.stdIndex];
-        $scope.showStudentData = true;
-        $scope.showEditMother = false;
-        $scope.showEditGuardian = false;
-        $scope.showEditFather = false;
-        $scope.showEditStudent = false;
-        $scope.showAddFather = false;
-        $scope.showAddGuardian = false;
-        $scope.showAddMother = false;
     }
 
     $scope.sendAddStudent = function(){

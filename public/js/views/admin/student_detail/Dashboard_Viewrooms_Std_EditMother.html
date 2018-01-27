@@ -1,0 +1,229 @@
+<div id="wrapper" >
+    <nav class="navbar-default navbar-static-side" role="navigation">
+        <div class="sidebar-collapse">
+            <ul class="nav" id="side-menu">
+                <li class="nav-header">
+                    <div class="dropdown profile-element">
+                        <span> <img alt="image" class="img-circle" src="img/profile_small.jpg" /></span>
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                                        <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">{{admin_prefix}} {{admin_first_name}} {{admin_last_name}}</strong>
+                                         </span> <span class="text-muted text-xs block">ผู้ดูแลระบบ<b class="caret"></b></span> </span> </a>
+                        <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                            <li><a href="Profile.html">Profile</a></li>
+                            <li><a href="login.html">Logout</a></li>
+                        </ul>
+                    </div>
+                    <div class="logo-element">
+                        IN+
+                    </div>
+                </li>
+                <li>
+                    <a href="#/admin/viewroom/student/data"><i class="fa fa-backward"></i><span class="nav-label">กลับ</span></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+<div id="wrapper">
+    <div id="page-wrapper" class="gray-bg" >
+        <div class="row border-bottom">
+            <nav class="navbar navbar-static-top white-bg" role="navigation" style="margin-bottom: 0">
+                <div class="navbar-header">
+                    <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
+                </div>
+                <ul class="nav navbar-top-links navbar-right">
+                    <li>
+                        <a ng-click="logout()">
+                            <i class="fa fa-sign-out"></i> Log out
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="wrapper wrapper-content ">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ibox float-e-margins">
+                        <div >
+                            <div class="ibox-content">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div >
+                                            <form>
+                                                <div class="row">
+                                                    <div class="col-lg-2">
+                                                        คำนำหน้าชื่อ :
+                                                    </div>
+                                                    <div class="col-lg-3">
+                                                        <form>
+                                                            <input type="text" title="prefix" name="prefix" ng-model="student.mother[0].prefix">
+
+                                                        </form>
+                                                    </div>
+                                                    <br>
+                                                    <br>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-2">
+                                                        ชื่อ :
+                                                    </div>
+                                                    <div class="col-lg-3">
+                                                        <input type="text" title="firstName" name="firstName" ng-model="student.mother[0].first_name"><br>
+                                                    </div>
+                                                    <br>
+                                                    <br>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-2">
+                                                        นามสกุล :
+                                                    </div>
+                                                    <div class="col-lg-3">
+                                                        <input type="text" title="lastName" name="lastName" ng-model="student.mother[0].last_name"><br>
+                                                    </div>
+                                                    <br>
+                                                    <br>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-2">
+                                                        รหัสประชาชน :
+                                                    </div>
+                                                    <div class="col-lg-3">
+                                                        <input type="text" title="citizenId" name="citizenId" ng-model="student.mother[0].iden_number"><br>
+                                                    </div>
+                                                    <br>
+                                                    <br>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-2">
+                                                        กรุ๊ปเลือด :
+                                                    </div>
+                                                    <div class="col-lg-3">
+                                                        <input type="text" title="blood" name="blood" ng-model="student.mother[0].blood"><br>
+                                                    </div>
+                                                    <br>
+                                                    <br>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-2">
+                                                        วัน/เดือน/ปีเกิด :
+                                                    </div>
+                                                    <div class="col-lg-3">
+                                                        <input type="date" title="birthDate" name="birthDate" ng-model="student.mother[0].birthdate"><br>
+                                                    </div>
+                                                    <br>
+                                                    <br>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-2">
+                                                        ที่อยู่ :
+                                                    </div>
+                                                    <div class="col-lg-3">
+                                                        <input type="text" title="address" name="address" ng-model="student.mother[0].address"><br>
+                                                    </div>
+                                                    <br>
+                                                    <br>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-lg-2">
+                                                        ตำบล :
+                                                    </div>
+                                                    <div class="col-lg-3">
+                                                        <input type="text" title="district" name="district" ng-model="student.mother[0].district"><br>
+                                                    </div>
+                                                    <br>
+                                                    <br>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-lg-2">
+                                                        อำเภอ :
+                                                    </div>
+                                                    <div class="col-lg-3">
+                                                        <input type="text" title="parish" name="parish" ng-model="student.mother[0].parish"><br>
+                                                    </div>
+                                                    <br>
+                                                    <br>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-lg-2">
+                                                        จังหวัด :
+                                                    </div>
+                                                    <div class="col-lg-3">
+                                                        <input type="text" title="city" name="city" ng-model="student.mother[0].city"><br>
+                                                    </div>
+                                                    <br>
+                                                    <br>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-lg-2">
+                                                        โทรศัพท์ :
+                                                    </div>
+                                                    <div class="col-lg-3">
+                                                        <input type="text" title="city" name="call" ng-model="student.mother[0].call"><br>
+                                                    </div>
+                                                    <br>
+                                                    <br>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-2">
+                                                        รหัสไปรษณีย์ :
+                                                    </div>
+                                                    <div class="col-lg-3">
+                                                        <input type="text" title="zipCode" name="zipCode" ng-model="student.mother[0].zip_code"><br>
+                                                    </div>
+                                                    <br>
+                                                    <br>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-lg-2">
+                                                        ความสามารถพิเศษ :
+                                                    </div>
+                                                    <div class="col-lg-2">
+                                                        <input type="text" title="ability" name="ability" ng-model="student.mother[0].ability"><br>
+                                                    </div>
+                                                    <br>
+                                                    <br>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-lg-2">
+                                                        เชื้อชาติ :
+                                                    </div>
+                                                    <div class="col-lg-2">
+                                                        <input type="text" title="ethnicity" name="ethnicity" ng-model="student.mother[0].ethnicity"><br>
+                                                    </div>
+                                                    <br>
+                                                    <br>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-lg-2">
+                                                        สัญชาติ :
+                                                    </div>
+                                                    <div class="col-lg-2">
+                                                        <input type="text" title="nationality" name="nationality" ng-model="student.mother[0].nationality"><br>
+                                                    </div>
+                                                    <br>
+                                                    <br>
+                                                </div>
+
+                                            </form>
+                                            <br><br><br><br>
+
+                                            <button class="btn btn-danger m-r-sm" ng-click="sendEditMother()">ยืนยัน</button>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

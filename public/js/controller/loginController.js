@@ -1,13 +1,8 @@
-/**
- * Created by Deklnwzaza on 22/9/2560.
- */
 myApp.controller('loginController',  function($scope, $http, $location) {
     $scope.apiUser = 'canet';
     $scope.apiPass = 'CanetM2017';
     $scope.user = '';
     $scope.pass = '';
-
-
 
     $scope.login = function(){
         path = address + "api/login";
@@ -15,7 +10,6 @@ myApp.controller('loginController',  function($scope, $http, $location) {
         $http.post(path, angular.toJson(authen), {
             transformRequest: angular.identity,
             headers: {'Content-Type': "application/json"}
-
         })
             .success(function(data, status, headers, config) {
                 console.log(data);
@@ -29,7 +23,6 @@ myApp.controller('loginController',  function($scope, $http, $location) {
                     $http.post(path, angular.toJson(authen), {
                         transformRequest: angular.identity,
                         headers: {'token' : $scope.token, 'Content-Type': "application/json"}
-
                     })
                         .success(function(data, status, headers, config) {
                             sessionStorage.setItem('user', "teacher");
@@ -55,7 +48,6 @@ myApp.controller('loginController',  function($scope, $http, $location) {
                                 $http.post(path, angular.toJson(authen), {
                                     transformRequest: angular.identity,
                                     headers: {'token' : $scope.token, 'Content-Type': "application/json"}
-
                                 })
                                     .success(function(data, status, headers, config) {
                                         console.log(data);
@@ -72,15 +64,12 @@ myApp.controller('loginController',  function($scope, $http, $location) {
                             }
                         });
                 }
-                //console.log(authen);
                 else{
                     alert("Username or Password is invalid");
                 }
             })
             .error(function(data, status, headers, config) {
-                console.log(data)
                 alert("Connection Error")
             });
-
     }
 });

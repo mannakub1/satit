@@ -1,0 +1,153 @@
+<div id="wrapper">
+    <nav class="navbar-default navbar-static-side" role="navigation">
+        <div class="sidebar-collapse">
+            <ul class="nav" id="side-menu">
+                <li class="nav-header">
+                    <div class="dropdown profile-element">
+                            <span> <img alt="image" class="img-circle" src="img/profile_small.jpg" />
+                            </span>
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">{{admin_prefix}} {{admin_first_name}} {{admin_last_name}}</strong>
+                             </span> <span class="text-muted text-xs block">ผู้ดูแลระบบ<b class="caret"></b></span> </span> </a>
+                        <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                            <li><a href="Profile.html">Profile</a></li>
+                            <li><a href="login.html">Logout</a></li>
+                        </ul>
+                    </div>
+                    <div class="logo-element">
+                        IN+
+                    </div>
+                </li>
+                <li>
+                    <a href="Dashboard_Teacher.html"><i class="fa fa-backward"></i> <span class="nav-label">กลับ</span></a>
+
+                </li>
+
+            </ul>
+
+        </div>
+    </nav>
+
+    <div id="page-wrapper" class="gray-bg" >
+        <div class="row border-bottom">
+            <nav class="navbar navbar-static-top white-bg" role="navigation" style="margin-bottom: 0">
+                <div class="navbar-header">
+                    <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
+                </div>
+                <ul class="nav navbar-top-links navbar-right">
+                    <li>
+                        <a ng-click="logout()">
+                            <i class="fa fa-sign-out"></i> Log out
+                        </a>
+                    </li>
+                </ul>
+
+            </nav>
+        </div>
+
+        <center>
+            <div class="wrapper wrapper-content ">
+                <!-- <div class="wrapper wrapper-content animated fadeInRight"> -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="ibox float-e-margins">
+
+                            <div class="ibox-content" style="width: 75%" >
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div >
+                                            <form>
+                                                <div class="row">
+                                                    <div class="col-lg-2">
+                                                        ชื่อ-สกุล :
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <input type="text" name="firstName" ng-model="teacher.first_name" required=""> -
+                                                        <input type="text" name="lastName" ng-model="teacher.last_name" required="">
+                                                    </div>
+                                                    <br><br>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-2">
+                                                        ตำแหน่ง :
+                                                    </div>
+                                                    <div class="col-lg-3">
+                                                        <select id="status" name="Status">
+                                                        <option value="teacher">อาจารย์ทั่วไป</option>
+                                                        <option value="ceo">ผู้บริหาร</option>
+                                                        <option value="admin">แอดมิน</option>
+                                                    </select>
+                                                    </div>
+                                                    <br>
+                                                    <br>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-2">
+                                                        username :
+                                                    </div>
+                                                    <div class="col-lg-3">
+                                                        <input type="text" name="userName" ng-model="teacher.username" required=""><br>
+                                                    </div>
+                                                    <br>
+                                                    <br>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-2">
+                                                        password :
+                                                    </div>
+                                                    <div class="col-lg-3">
+                                                        <input type="password"  name="lastName" ng-model="teacher.password" required=""><br>
+                                                    </div>
+                                                    <br>
+                                                    <br>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-2">
+                                                        Re-password :
+                                                    </div>
+                                                    <div class="col-lg-3">
+                                                        <input type="password"  name="lastName" ng-model="teacher2.password" required=""><br>
+                                                    </div>
+                                                    <br>
+                                                    <br>
+                                                </div>
+                                                <left>
+                                                <div class="row">
+                                                    <div class="col-lg-2">
+
+                                                    </div>
+                                                    <div class="col-lg-1">
+                                                        <button class="btn btn-info m-r-sm" ng-click="sendAddTeacher()">เพิ่ม</button>
+                                                    </div>
+                                                    <!-- <div class="col-lg-1">
+                                                        <a href="Dashboard_Teacher.html"><button class="btn btn-danger m-r-sm">ยกเลิก</button> </a>
+                                                    </div> -->
+                                                </div>
+                                                
+                                                </left>
+                                            </form>
+
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </center>
+            <div class="footer">
+                <div class="pull-right">
+                    ....... <strong>.......</strong> .......
+                </div>
+                <div>
+                    <strong>.......</strong> ....................
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

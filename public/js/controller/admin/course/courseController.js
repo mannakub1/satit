@@ -1,33 +1,23 @@
-var myJsCourse = angular.module('myJsCourse', ['ngRoute']);
-var address = sessionStorage.getItem('address');
-
-myJsCourse.controller('courses', function($scope, $http){
+myApp.controller('courseController', function($scope, $http, static_function, $location){
+    var address = sessionStorage.getItem('address');
     $scope.admin_first_name = sessionStorage.getItem('admin_first_name');
     $scope.admin_last_name = sessionStorage.getItem('admin_last_name');
     $scope.admin_prefix = sessionStorage.getItem('admin_prefix');
 	$scope.token = localStorage.getItem('token');
 	$scope.showButtonManageCourse = true;
-	teacher_list_path = address + 'api/subject/courses'
-
-
-
+	var teacher_list_path = address + 'api/subject/courses';
 	$scope.index_current_course = sessionStorage.getItem('index_current_course');
 	$scope.index_current_course_list = sessionStorage.getItem('index_current_course_list');
 	$scope.show_course = $scope.index_current_course;
 
 	$http.get( teacher_list_path , {headers: {'token': $scope.token}})
 	.success(function(data, status, header, config) {
-		console.log("get data " + data.courses);
 		$scope.courses = data.courses;
-			
 		// console.log(data.courses);
 		// console.log('test index_current_course = ' + $scope.index_current_course);
 		// console.log('test courses = ' + $scope.courses);
 
-		console.log('test index_current_course_list = ' + $scope.index_current_course_list);
-		console.log('test courses_list  = ' + $scope.courses[$scope.index_current_course].course_lists[$scope.index_current_course_list].id);
-
-		if ($scope.show_course == null) {
+		if ($scope.show_course == 'null') {
 
 			$scope.show_course = "---Please select---"
 			$scope.show_course_list = "";
@@ -87,7 +77,6 @@ myJsCourse.controller('courses', function($scope, $http){
 		$scope.showInputTextAddCourse = false;
 		
 		$scope.current_course = $scope.courses[e].year;
-		console.log('test data e = ' + e);
 		sessionStorage.setItem('index_current_course', e);
 		$scope.index_current_course = e;
 		$scope.selectCourseList();
@@ -137,21 +126,19 @@ myJsCourse.controller('courses', function($scope, $http){
 	}
 
 	$scope.sendDataAddCourse = function() {
-		var year = $scope.course.year
+		var year = $scope.course.year;
 
 		var course_action_add = address + "api/subject/add_course"
-		params = { year: year }
+		var params = { year: year };
 		
 		$http.post(course_action_add, angular.toJson(params), {
 			transformRequest: angular.identity,
 			headers: {'token': $scope.token, 'Content-Type': "application/json"}})
 			.success(function(data, status, header, config){
-				window.location.href = 'Course_Dashboard.html'
+				location.reload();
 			})
 			.error(function(data, status, headers, config) {
-        		if(data.error === 'token expired'){
-					window.location.href = 'login.html';;
-				}
+        		static_function.token_expired_check(data.error);
 		});
 	}
 
@@ -284,9 +271,6 @@ myJsCourse.controller('courses', function($scope, $http){
 
 		var subject_action_add = address + "api/subject/add"
 		params = { course_list_id: course_list_id, name: name, code: code, hour_per_year: hour_per_year, status: status, credit: credit}
-		console.log('test functuin')
-		console.log('test data course_list_id =' + course_list_id)
-		console.log(params)
 		$http.post(subject_action_add, angular.toJson(params), {
 			transformRequest: angular.identity,
 			headers: {'token': $scope.token, 'Content-Type': "application/json"}})
@@ -305,52 +289,4 @@ myJsCourse.controller('courses', function($scope, $http){
 
 
 
-myJsCourse.controller('students', function($scope, $http){
-    $scope.admin_first_name = sessionStorage.getItem('admin_first_name');
-    $scope.admin_last_name = sessionStorage.getItem('admin_last_name');
-    $scope.admin_prefix = sessionStorage.getItem('admin_prefix');
-	$scope.token = localStorage.getItem('token');
-	room_id = sessionStorage.getItem('room_id');
-	student = sessionStorage.getItem('student')
-	console.log(room_id)
-	if( student !== null) {
-		$scope.student = JSON.parse(student);
-	
-		if($scope.student.father.id !== null) {
-			$scope.hasFather = true 
-		}
-		if($scope.student.mother.id !== null) {
-			$scope.hasMother = true 
-		}
-		if($scope.student.guardian.id !== null) {
-			$scope.hasGuardian = true 
-		}
-
-	}
-
-	get_student = address + 'api/teacher/students?room_id='+ room_id  
-
-	$http.get(get_student , {headers: {'token': $scope.token}})
-		.success(function(data, status, header, config) {
-			$scope.students = data.student_list
-			console.log($scope.students)
-		})
-		.error(function(data, status, headers, config) {
-       		console.log("error")
-			if(data.error === 'token expired'){
-				window.location.href = 'login.html';
-			}
-    	}
-    );
-
-	$scope.getStudent = function(data) {
-		var newData = JSON.stringify(data)
-		sessionStorage.setItem('student', newData)
-
-
-		window.location.href = 'StudentList.html';
-	}
-
-
-});
 

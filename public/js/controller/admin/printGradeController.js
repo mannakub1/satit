@@ -1,8 +1,12 @@
-myApp.controller('printStudentGradeController', function ($scope, $http, pathApi) {
+myApp.controller('printGradeController', function ($scope, $http, pathApi) {
     $scope.token = localStorage.getItem('token');
     $scope.Grade = [];
     $scope.stdRoom = JSON.parse(sessionStorage.getItem('stdGrade'));
-    console.log($scope.stdRoom);
+    $scope.grade_index = sessionStorage.getItem('grade_index');
+    if($scope.grade_index === null || $scope.grade_index === ''){
+        $scope.grade_index = 0;
+    }
+    //document.body.style.backgroundColor = "White";
     for(var i = 0; i < $scope.stdRoom.length; ++i) {
         if ($scope.stdRoom[i].ca === null) {
             $scope.stdRoom[i].ca = '0';
@@ -82,21 +86,7 @@ myApp.controller('printStudentGradeController', function ($scope, $http, pathApi
         $scope.stdRoom[i].gpa_temp = parseFloat(Math.round($scope.stdRoom[i].gpa_temp * 100) / 100).toFixed(2);
     }
 
-    console.log($scope.stdRoom);
     $scope.stdId = sessionStorage.getItem('student_id')
-    console.log($scope.stdRoom);
-    console.log('test log data')
-
-    $scope.collapseGrade = function () {
-        var e = document.getElementById("selectGradeLevel").value;
-        for(var i = 0; i < $scope.Grade.length; ++i){
-            $scope.Grade[i] = false;
-        }
-        $scope.Grade[e] = true;
-
-
-    }
-
 
     $scope.viewGradeStudent = function(stdId){
         $scope.showStdGrade = true;
@@ -109,9 +99,7 @@ myApp.controller('printStudentGradeController', function ($scope, $http, pathApi
         $scope.stdId = stdId;
         $http.get(path , {headers: {'token': $scope.token} })
             .success(function(data){
-                console.log(data);
                 $scope.stdRoom = data.student_room;
-                console.log($scope.stdRoom);
             })
             .error(function(data, status, headers, config) {
                 if(data.error === 'token expired'){
@@ -119,6 +107,8 @@ myApp.controller('printStudentGradeController', function ($scope, $http, pathApi
                 }
             });
     }
+    setTimeout(function () {
+        window.print();
+    }, 100)
 
-    window.print();
 });

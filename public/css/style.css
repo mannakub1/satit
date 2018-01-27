@@ -2841,8 +2841,18 @@ video {
   min-height: 568px;
   position: relative !important;
 }
+#page-wrapper-login {
+  padding: 0 15px;
+  min-height: 568px;
+  position: relative !important;
+}
 @media (min-width: 768px) {
   #page-wrapper {
+    position: inherit;
+    margin: 0 0 0 240px;
+    min-height: 1000px;
+  }
+  #page-wrapper-login {
     position: inherit;
     margin: 0 0 0 240px;
     min-height: 1000px;

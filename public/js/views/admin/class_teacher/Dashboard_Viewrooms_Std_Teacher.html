@@ -1,0 +1,101 @@
+<div id="wrapper">
+    <nav class="navbar-default navbar-static-side" role="navigation">
+        <div class="sidebar-collapse">
+            <ul class="nav" id="side-menu">
+                <li class="nav-header">
+                    <div class="dropdown profile-element">
+                            <span> <img alt="image" class="img-circle" src="img/profile_small.jpg" />
+                            </span>
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">{{admin_prefix}} {{admin_first_name}} {{admin_last_name}}</strong>
+                             </span> <span class="text-muted text-xs block">ผู้ดูแลระบบ<b class="caret"></b></span> </span> </a>
+                        <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                            <li><a href="#">Profile</a></li>
+                            <li><a href="login.html">Logout</a></li>
+                        </ul>
+                    </div>
+                    <div class="logo-element">
+                        IN+
+                    </div>
+                </li>
+                <li>
+                    <a href="#/admin"><i class="fa fa-backward"></i> <span class="nav-label">หน้าหลัก</span></a>
+                </li>
+                <li>
+                    <a href="#/admin/viewroom/student"><i class="fa fa-backward"></i> <span class="nav-label">กลับ</span></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div id="page-wrapper" class="gray-bg" >
+        <div class="row border-bottom">
+            <nav class="navbar navbar-static-top white-bg" role="navigation" style="margin-bottom: 0">
+                <div class="navbar-header">
+                    <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
+                </div>
+                <ul class="nav navbar-top-links navbar-right">
+                    <li>
+                        <a ng-click="logout()">
+                            <i class="fa fa-sign-out"></i> Log out
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="wrapper wrapper-content ">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ibox float-e-margins">
+                        <div ng-show="have_teacher">
+                            <div class='row' style="margin-bottom: 2%">
+                             <div class="col-lg-10">
+                             </div>
+                             <div class="col-lg-2">
+                                    <a href="#/admin/viewroom/class_teacher/change"><button class="btn btn-default m-r-sm" style="margin-top: 15px"><i class="glyphicon glyphicon-user"></i> เปลี่ยนครูประจำชั้น</button></a>
+                             </div>
+                        </div>
+                            <div class="ibox-content">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                        <center><h1>ครูประจำชั้น  {{room.level}} ห้อง {{room.name}}</h1></center>
+                                            <center>
+                                                <div class="table-responsive">
+                                                    <table class="table table-hover" >
+                                                        <thead>
+                                                        <tr>
+                                                            <th>#</th>
+                                                            <th>ชื่อ</th>
+                                                            <th>นามสกุล</th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                        <tr>
+                                                            <td>{{$index + 1}}</td>
+                                                            <td>{{teacher_room.first_name}}</td>
+                                                            <td>{{teacher_room.last_name}}</td>
+                                                            <td>
+                                                                <button ng-click="editPasswordPage(y.id)" class="btn btn-default m-r-sm" align = "right" >เปลี่ยนพาสเวิด</button>
+                                                            <td/>
+                                                        </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </center>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="ibox-content" ng-show="!have_teacher">
+                            <div class = "row">
+                                <div class = "col-lg-12">
+                                    <center><a href="#/admin/viewroom/class_teacher/change"> <button style="width: 30%" class="btn btn-sm btn-primary">เพิ่มข้อมูลครูประจำชั้น</button></a></center>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

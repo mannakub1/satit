@@ -2,14 +2,59 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="be14c865-6577-4d71-9a9c-a1b6a68d7424" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/js.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/controller/admin/printGradeController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/satit.iml" afterPath="$PROJECT_DIR$/.idea/satit.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/ng-file-upload-all.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/ng-file-upload-shim.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/ng-file-upload.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/controller/admin/addStudentController.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/controller/admin/class_teacher/classTeacherController.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/controller/admin/course/courseController.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/controller/admin/studentGradeController.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/controller/admin/student_detail/addFatherController.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/controller/admin/student_detail/editFatherController.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/controller/admin/student_detail/editStudentController.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/controller/admin/student_detail/guardianController.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/controller/admin/student_detail/motherController.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/controller/admin/student_detail/studentDetailController.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/controller/admin/teacher/addTeacherController.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/controller/admin/teacher/teacherController.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/controller/admin/teacher/teacherPasswordController.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/admin/Dashboard_Viewrooms_Std_Grade.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/admin/class_teacher/Dashboard_Viewrooms_Std_AddTeacher.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/admin/class_teacher/Dashboard_Viewrooms_Std_Teacher.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/admin/course/Course_Dashboard.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/admin/search/Search_Student.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/admin/student_detail/Dashboard_Viewrooms_Std_AddFather.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/admin/student_detail/Dashboard_Viewrooms_Std_AddGuardian.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/admin/student_detail/Dashboard_Viewrooms_Std_AddMother.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/admin/student_detail/Dashboard_Viewrooms_Std_Data.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/admin/student_detail/Dashboard_Viewrooms_Std_EditFather.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/admin/student_detail/Dashboard_Viewrooms_Std_EditGuardian.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/admin/student_detail/Dashboard_Viewrooms_Std_EditMother.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/admin/student_detail/Dashboard_Viewrooms_Std_EditStudent.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/admin/teacher/Dashboard_AddTeacher.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/admin/teacher/Dashboard_Teacher.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/admin/teacher/re_password_teacher.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/Dashboard_Viewrooms_Std_Data.html" afterPath="$PROJECT_DIR$/public/Dashboard_Viewrooms_Std_Data.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/Dashboard_Viewrooms_Std_EditStudent.html" afterPath="$PROJECT_DIR$/public/Dashboard_Viewrooms_Std_EditStudent.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/admin/edit_student.js" afterPath="$PROJECT_DIR$/public/js/admin/edit_student.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/Dashboard_Viewrooms_Std_Grade.html" afterPath="$PROJECT_DIR$/public/Dashboard_Viewrooms_Std_Grade.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/style.css" afterPath="$PROJECT_DIR$/public/css/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app.js" afterPath="$PROJECT_DIR$/public/js/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/controller/admin/adminDashboardController.js" afterPath="$PROJECT_DIR$/public/js/controller/admin/adminDashboardController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/controller/admin/printGradeController.js" afterPath="$PROJECT_DIR$/public/js/controller/admin/printGradeController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/controller/admin/selectRoomController.js" afterPath="$PROJECT_DIR$/public/js/controller/admin/selectRoomController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/controller/admin/viewStudentController.js" afterPath="$PROJECT_DIR$/public/js/controller/admin/viewStudentController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/controller/loginController.js" afterPath="$PROJECT_DIR$/public/js/controller/loginController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/course_controller.js" afterPath="$PROJECT_DIR$/public/js/course_controller.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/views/admin/Dashboard.html" afterPath="$PROJECT_DIR$/public/js/views/admin/Dashboard.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/views/admin/Dashboard_Viewrooms.html" afterPath="$PROJECT_DIR$/public/js/views/admin/Dashboard_Viewrooms.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/views/admin/Dashboard_Viewrooms_Std.html" afterPath="$PROJECT_DIR$/public/js/views/admin/Dashboard_Viewrooms_Std.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/views/admin/Print_Grade.html" afterPath="$PROJECT_DIR$/public/js/views/admin/Print_Grade.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/views/login.html" afterPath="$PROJECT_DIR$/public/js/views/login.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/AddStudentCSV.html" afterPath="$PROJECT_DIR$/public/js/views/admin/AddStudentCSV.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/AddStudents.html" afterPath="$PROJECT_DIR$/public/js/views/admin/AddStudents.html" />
     </list>
     <ignored path="satit.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -35,377 +80,56 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/js/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="27" column="19" lean-forward="false" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
+            <state relative-caret-position="191">
+              <caret line="97" column="42" lean-forward="false" selection-start-line="97" selection-start-column="42" selection-end-line="97" selection-end-column="42" />
               <folding>
-                <marker date="1510205035805" expanded="true" signature="10648:29933" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="11437:11471" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="11511:11606" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="11630:11861" ph="{&quot;code_number&quot;: ''...}" />
-                <marker date="1510205035805" expanded="true" signature="12035:12096" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="12146:12255" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="12190:12236" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="12243:12249" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="12489:13222" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="12610:12643" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="12684:12717" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="12760:12795" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="12931:13219" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="13259:13661" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="13372:13428" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="13476:13534" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="13541:13652" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="13695:13769" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="13803:13875" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="13911:13991" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="14023:14093" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="14125:14194" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="14228:14299" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="14338:14405" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="14444:14609" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="14647:14973" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="15010:16530" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="15103:15149" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="15156:15203" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="15284:15429" ph="{&quot;transformRequest&quot;: angular.identity...}" />
-                <marker date="1510205035805" expanded="true" signature="15482:16353" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="15663:15802" ph="{&quot;transformRequest&quot;: angular.identity...}" />
-                <marker date="1510205035805" expanded="true" signature="15856:16023" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="15946:16010" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="16113:16344" ph="{&quot;code_number&quot;: ''...}" />
-                <marker date="1510205035805" expanded="true" signature="16404:16525" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="16471:16517" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="16569:18188" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="16663:16706" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="16713:16757" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="16782:17392" ph="{&quot;id&quot;: $scope.student.id...}" />
-                <marker date="1510205035805" expanded="true" signature="17484:17629" ph="{&quot;transformRequest&quot;: angular.identity...}" />
-                <marker date="1510205035805" expanded="true" signature="17682:18034" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="18085:18183" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="18129:18175" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="18226:18883" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="18359:18504" ph="{&quot;transformRequest&quot;: angular.identity...}" />
-                <marker date="1510205035805" expanded="true" signature="18557:18729" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="18780:18878" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="18824:18870" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="18920:19544" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="19053:19198" ph="{&quot;transformRequest&quot;: angular.identity...}" />
-                <marker date="1510205035805" expanded="true" signature="19251:19391" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="19442:19539" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="19486:19531" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="19584:20288" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="19762:19907" ph="{&quot;transformRequest&quot;: angular.identity...}" />
-                <marker date="1510205035805" expanded="true" signature="19960:20134" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="20185:20283" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="20229:20275" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="20324:21213" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="20456:20574" ph="{&quot;transformRequest&quot;: angular.identity...}" />
-                <marker date="1510205035805" expanded="true" signature="20628:21061" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="20761:20885" ph="{&quot;transformRequest&quot;: angular.identity...}" />
-                <marker date="1510205035805" expanded="true" signature="21113:21208" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="21153:21203" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="21249:22105" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="21381:21499" ph="{&quot;transformRequest&quot;: angular.identity...}" />
-                <marker date="1510205035805" expanded="true" signature="21553:21953" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="21686:21810" ph="{&quot;transformRequest&quot;: angular.identity...}" />
-                <marker date="1510205035805" expanded="true" signature="22005:22100" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="22045:22095" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="22143:23043" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="22278:22396" ph="{&quot;transformRequest&quot;: angular.identity...}" />
-                <marker date="1510205035805" expanded="true" signature="22450:22891" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="22585:22709" ph="{&quot;transformRequest&quot;: angular.identity...}" />
-                <marker date="1510205035805" expanded="true" signature="22943:23038" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="22983:23033" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="23108:25306" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="23556:25148" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="23592:23627" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="23635:25077" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="24075:25065" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="24133:25059" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="24140:24237" ph="//..." />
-                <marker date="1510205035805" expanded="true" signature="24290:25053" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="25200:25295" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="25240:25290" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="25339:25602" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="25401:25450" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="25503:25598" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="25543:25593" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="25636:25942" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="25979:26045" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="26087:26739" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="26241:26386" ph="{&quot;transformRequest&quot;: angular.identity...}" />
-                <marker date="1510205035805" expanded="true" signature="26439:26562" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="26613:26734" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="26681:26726" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="26783:26874" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="26917:28364" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="27113:28199" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="27185:28195" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="27694:27817" ph="{&quot;transformRequest&quot;: angular.identity...}" />
-                <marker date="1510205035805" expanded="true" signature="27874:27945" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="28000:28175" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="28072:28125" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="28136:28168" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="28214:28275" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="28282:28324" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="28394:28818" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="28480:28625" ph="{&quot;transformRequest&quot;: angular.identity...}" />
-                <marker date="1510205035805" expanded="true" signature="28678:28753" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="28855:28939" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="28882:28936" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="28977:29401" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="29147:29249" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="29301:29396" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="29341:29391" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="29460:29667" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="29569:29602" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="29705:29776" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="29724:29744" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="29751:29773" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="29817:29852" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="30004:31273" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="30152:30564" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="30310:30412" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="30464:30559" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="30504:30554" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="30624:30796" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="30733:30766" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="30825:31249" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="30911:31056" ph="{&quot;transformRequest&quot;: angular.identity...}" />
-                <marker date="1510205035805" expanded="true" signature="31109:31184" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="31235:31244" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="31343:42991" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="31554:31585" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="31625:31656" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="31698:31731" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="32058:32577" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="32619:33059" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="33094:33496" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="33207:33263" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="33311:33369" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="33376:33487" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="33530:33604" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="33638:33710" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="33746:33826" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="33858:33928" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="33960:34029" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="34063:34134" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="34173:34240" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="34278:36162" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="34372:34415" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="34422:34466" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="35543:35688" ph="{&quot;transformRequest&quot;: angular.identity...}" />
-                <marker date="1510205035805" expanded="true" signature="35741:36008" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="36059:36157" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="36103:36149" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="36200:36923" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="36333:36478" ph="{&quot;transformRequest&quot;: angular.identity...}" />
-                <marker date="1510205035805" expanded="true" signature="36531:36769" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="36820:36918" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="36864:36910" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="36960:37651" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="37093:37238" ph="{&quot;transformRequest&quot;: angular.identity...}" />
-                <marker date="1510205035805" expanded="true" signature="37291:37497" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="37548:37646" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="37592:37638" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="37691:38441" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="37846:37991" ph="{&quot;transformRequest&quot;: angular.identity...}" />
-                <marker date="1510205035805" expanded="true" signature="38044:38287" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="38338:38436" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="38382:38428" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="38477:39437" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="38609:38727" ph="{&quot;transformRequest&quot;: angular.identity...}" />
-                <marker date="1510205035805" expanded="true" signature="38781:39285" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="38914:39038" ph="{&quot;transformRequest&quot;: angular.identity...}" />
-                <marker date="1510205035805" expanded="true" signature="39337:39432" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="39338:39432" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="39377:39427" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="39473:40400" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="39605:39723" ph="{&quot;transformRequest&quot;: angular.identity...}" />
-                <marker date="1510205035805" expanded="true" signature="39777:40248" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="39910:40034" ph="{&quot;transformRequest&quot;: angular.identity...}" />
-                <marker date="1510205035805" expanded="true" signature="40300:40395" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="40340:40390" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="40438:41409" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="40573:40691" ph="{&quot;transformRequest&quot;: angular.identity...}" />
-                <marker date="1510205035805" expanded="true" signature="40745:41257" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="40880:41004" ph="{&quot;transformRequest&quot;: angular.identity...}" />
-                <marker date="1510205035805" expanded="true" signature="41309:41404" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="41349:41399" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="41442:41854" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="41600:41702" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="41754:41849" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="41794:41844" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="41914:42086" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="42117:42380" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="42179:42228" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="42281:42376" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="42321:42371" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="42422:42457" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="42499:42534" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="42564:42988" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="42650:42795" ph="{&quot;transformRequest&quot;: angular.identity...}" />
-                <marker date="1510205035805" expanded="true" signature="42848:42923" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="43050:45843" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="43179:45841" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="43327:43448" ph="{&quot;transformRequest&quot;: angular.identity...}" />
-                <marker date="1510205035805" expanded="true" signature="43501:45719" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="43545:45621" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="43830:43975" ph="{&quot;transformRequest&quot;: angular.identity...}" />
-                <marker date="1510205035805" expanded="true" signature="44028:44861" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="44120:44459" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="44470:44853" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="44912:45613" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="44977:45545" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="45075:45205" ph="{&quot;transformRequest&quot;: angular.identity...}" />
-                <marker date="1510205035805" expanded="true" signature="45261:45419" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="45473:45538" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="45553:45605" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="45657:45711" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="45770:45833" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="45907:47159" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="46201:47157" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="46261:47044" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="46491:46605" ph="{&quot;transformRequest&quot;: angular.identity...}" />
-                <marker date="1510205035805" expanded="true" signature="46660:46744" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="46797:47038" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="46871:46923" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="46979:47032" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="47108:47154" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="47223:50009" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="47682:47748" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="47799:47930" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="47838:47886" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="47894:47926" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="47969:48347" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="48384:48511" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="48562:49214" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="48685:48827" ph="{&quot;transformRequest&quot;: angular.identity...}" />
-                <marker date="1510205035805" expanded="true" signature="48890:48964" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="49025:49206" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="49115:49192" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="49258:49686" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="49442:49499" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="49550:49681" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="49589:49637" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="49645:49677" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="49734:50007" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="50069:54004" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="50626:51924" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="50793:50859" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="50885:51885" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="50942:51879" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="50950:51048" ph="//..." />
-                <marker date="1510205035805" expanded="true" signature="51102:51872" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="51975:52066" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="52014:52062" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="52112:52206" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="52244:52803" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="52414:52652" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="52704:52798" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="52744:52793" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="52844:52999" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="53037:53095" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="53140:54002" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="53629:53774" ph="{&quot;transformRequest&quot;: angular.identity...}" />
-                <marker date="1510205035805" expanded="true" signature="53827:53841" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="53892:53994" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="53937:53985" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="54072:56673" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="54452:54543" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="54588:54627" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="54671:54710" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="54756:54797" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="54838:54896" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="54938:56670" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="55098:55156" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="55169:55228" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="55259:55914" ph="{&quot;id&quot;: $scope.student.id...}" />
-                <marker date="1510205035805" expanded="true" signature="56021:56163" ph="{&quot;transformRequest&quot;: angular.identity...}" />
-                <marker date="1510205035805" expanded="true" signature="56226:56458" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="56519:56662" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="56571:56648" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="56740:63766" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="57165:57649" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="57210:57261" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="57305:57356" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="57400:57451" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="57495:57546" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="57591:57643" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="57717:59341" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="57843:58941" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="57933:58937" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="58775:58932" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="59526:59699" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="59635:59668" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="59737:63168" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="59934:63165" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="60006:63161" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="60088:61641" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="60824:61001" ph="{&quot;transformRequest&quot;: angular.identity...}" />
-                <marker date="1510205035805" expanded="true" signature="61077:61288" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="61362:61604" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="61478:61578" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="61651:63156" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="62267:62436" ph="{&quot;transformRequest&quot;: angular.identity...}" />
-                <marker date="1510205035805" expanded="true" signature="62512:62723" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="62797:63148" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="62910:63010" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="63043:63122" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="63212:63302" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="63340:63764" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="63510:63612" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="63664:63759" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="63704:63754" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="63797:64041" ph="{...}" />
-                <marker date="1510205035805" expanded="true" signature="64062:64089" ph="{...}" />
+                <marker date="1517041186935" expanded="true" signature="12496:12506" ph="..." />
+                <marker date="1517041186935" expanded="true" signature="43743:43837" ph="{...}" />
+                <marker date="1517041186935" expanded="false" signature="50312:51564" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Dashboard.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/Dashboard.html">
+      <file leaf-file-name="Course_Dashboard.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/js/views/admin/course/Course_Dashboard.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1275">
-              <caret line="122" column="18" lean-forward="false" selection-start-line="122" selection-start-column="18" selection-end-line="122" selection-end-column="18" />
-              <folding>
-                <element signature="n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#style#0;n#nav#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#0;n#form#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#1;n#form#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#2;n#form#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#3;n#form#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#4;n#form#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#5;n#form#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#0;n#form#0;n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#1;n#form#0;n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#2;n#form#0;n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#3;n#form#0;n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#button#0;n#center#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#div#1;n#div#0;n#div#4;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#0;n#form#0;n#div#2;n#div#0;n#div#4;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#1;n#form#0;n#div#2;n#div#0;n#div#4;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#2;n#form#0;n#div#2;n#div#0;n#div#4;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#3;n#form#0;n#div#2;n#div#0;n#div#4;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#button#0;n#center#0;n#div#0;n#div#0;n#div#5;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#div#1;n#div#0;n#div#6;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#0;n#form#0;n#div#2;n#div#0;n#div#6;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#1;n#form#0;n#div#2;n#div#0;n#div#6;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#2;n#form#0;n#div#2;n#div#0;n#div#6;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#3;n#form#0;n#div#2;n#div#0;n#div#6;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#button#0;n#center#0;n#div#0;n#div#0;n#div#7;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#button#0;n#center#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#4;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#5;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#th#1;n#tr#0;n#thead#0;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#5;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#th#2;n#tr#0;n#thead#0;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#5;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#th#3;n#tr#0;n#thead#0;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#5;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="147">
+              <caret line="67" column="109" lean-forward="true" selection-start-line="67" selection-start-column="109" selection-end-line="67" selection-end-column="109" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="courseController.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/js/controller/admin/course/courseController.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="adminDashboardController.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/js/controller/admin/adminDashboardController.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="62" lean-forward="false" selection-start-line="8" selection-start-column="62" selection-end-line="8" selection-end-column="62" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="re_password_teacher.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/js/views/admin/teacher/re_password_teacher.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="21" column="44" lean-forward="false" selection-start-line="21" selection-start-column="44" selection-end-line="21" selection-end-column="44" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -413,18 +137,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/login.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="26" column="18" lean-forward="false" selection-start-line="26" selection-start-column="18" selection-end-line="26" selection-end-column="18" />
+            <state relative-caret-position="333">
+              <caret line="55" column="72" lean-forward="false" selection-start-line="55" selection-start-column="72" selection-end-line="55" selection-end-column="72" />
               <folding />
             </state>
           </provider>
@@ -442,36 +156,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>loginC</find>
-      <find>Dashboard_View</find>
-      <find>get</find>
-      <find>loginctr</find>
-      <find>$scope.subj</find>
-      <find>viewstudent</find>
-      <find>file</find>
-      <find>filereader</find>
-      <find>goadd</find>
-      <find>กลับ</find>
-      <find>AddSt</find>
-      <find>loginc</find>
-      <find>addt</find>
-      <find>login</find>
-      <find>addtea</find>
       <find>select</find>
-      <find>คุณ</find>
-      <find>student_subj</find>
-      <find>$scope.stude</find>
+      <find>sendstu</find>
+      <find>getgrade</find>
+      <find>ครู</find>
+      <find>goadd</find>
+      <find>search</find>
+      <find>upload</find>
+      <find>แก้ไข</find>
+      <find>location</find>
+      <find>locat</find>
+      <find>$scope.tok</find>
+      <find>console.</find>
+      <find>c</find>
       <find>viewstdGr</find>
-      <find>loginct</find>
-      <find>Grade</find>
-      <find>post</find>
-      <find>css</find>
-      <find>selectRoom</find>
-      <find>viewstd</find>
-      <find>stdgrade</find>
-      <find>controller</find>
+      <find>viewstdgrade</find>
+      <find>gpa</find>
+      <find>viewstdGrade</find>
+      <find>viewStdG</find>
+      <find>papa</find>
+      <find>deleteSt</find>
+      <find>token</find>
+      <find>addT</find>
       <find>button</find>
-      <find>directive</find>
+      <find>room_inde</find>
+      <find>console</find>
+      <find>addteacher</find>
+      <find>test data</find>
+      <find>add</find>
+      <find>senddata</find>
+      <find>เพิ่ม</find>
     </findStrings>
     <replaceStrings>
       <replace>guardian</replace>
@@ -483,57 +197,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/public/js/course_controller.js" />
-        <option value="$PROJECT_DIR$/public/js/admin/add_student_fourth_year.js" />
-        <option value="$PROJECT_DIR$/public/admin/room_index.html" />
-        <option value="$PROJECT_DIR$/public/teacher/student/edit_student.html" />
-        <option value="$PROJECT_DIR$/public/Dashboard_Viewrooms_Std_EditFather.html" />
-        <option value="$PROJECT_DIR$/public/Dashboard_Viewrooms_Std_EditMother.html" />
-        <option value="$PROJECT_DIR$/public/Dashboard_Viewrooms_Std_EditGuardian.html" />
-        <option value="$PROJECT_DIR$/public/Dashboard_Viewrooms_Std_AddFather.html" />
-        <option value="$PROJECT_DIR$/public/Dashboard_Viewrooms_Std_AddMother.html" />
-        <option value="$PROJECT_DIR$/public/Dashboard_Viewrooms_Std_AddGuardian.html" />
-        <option value="$PROJECT_DIR$/public/js/teacher/index_controller.js" />
-        <option value="$PROJECT_DIR$/public/AddStudentCSV.html" />
-        <option value="$PROJECT_DIR$/public/AddStudents.html" />
-        <option value="$PROJECT_DIR$/public/js/admin/add_student.js" />
-        <option value="$PROJECT_DIR$/public/teacher/course/index.html" />
-        <option value="$PROJECT_DIR$/public/teacher/index.html" />
-        <option value="$PROJECT_DIR$/public/CourseDashboard.html" />
-        <option value="$PROJECT_DIR$/public/js/admin/add_teacher_room.js" />
-        <option value="$PROJECT_DIR$/public/Dashboard_Teacher.html" />
-        <option value="$PROJECT_DIR$/public/Dashboard_Viewrooms_Std.html" />
-        <option value="$PROJECT_DIR$/public/js/admin/teacher_room.js" />
-        <option value="$PROJECT_DIR$/public/Dashboard_Viewrooms_Std_AddTeacher.html" />
-        <option value="$PROJECT_DIR$/public/Dashboard_Viewrooms_Std_Teacher.html" />
-        <option value="$PROJECT_DIR$/public/teacher/course/index_student.html" />
-        <option value="$PROJECT_DIR$/public/teacher/student/index.html" />
-        <option value="$PROJECT_DIR$/public/js/teacher/course_controller.js" />
-        <option value="$PROJECT_DIR$/public/teacher/index_subject.html" />
-        <option value="$PROJECT_DIR$/public/teacher/student/grade.html" />
-        <option value="$PROJECT_DIR$/public/teacher/student/grade_no_credit.html" />
-        <option value="$PROJECT_DIR$/public/js/teacher/student/student_controller.js" />
-        <option value="$PROJECT_DIR$/public/js/controller/admin/homeController.js" />
-        <option value="$PROJECT_DIR$/public/login.html" />
-        <option value="$PROJECT_DIR$/public/js/controller/loginController.js" />
-        <option value="$PROJECT_DIR$/public/Dashboard.html" />
-        <option value="$PROJECT_DIR$/public/js/views/login.html" />
-        <option value="$PROJECT_DIR$/public/js/controller/admin/adminDashboardController.js" />
+        <option value="$PROJECT_DIR$/app/api/satit/api.rb" />
         <option value="$PROJECT_DIR$/public/js/views/admin/Dashboard.html" />
-        <option value="$PROJECT_DIR$/public/Dashboard_Viewrooms.html" />
+        <option value="$PROJECT_DIR$/public/css/style.css" />
         <option value="$PROJECT_DIR$/public/js/views/admin/Dashboard_Viewrooms.html" />
-        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/public/js/controller/loginController.js" />
         <option value="$PROJECT_DIR$/public/js/controller/admin/selectRoomController.js" />
-        <option value="$PROJECT_DIR$/public/js/controller/admin/viewStudentController.js" />
+        <option value="$PROJECT_DIR$/public/js/controller/admin/edit_student.js" />
+        <option value="$PROJECT_DIR$/public/js/controller/admin/addFatherController.js" />
+        <option value="$PROJECT_DIR$/public/js/controller/admin/editStudentController.js" />
+        <option value="$PROJECT_DIR$/public/js/controller/admin/editFatherController.js" />
+        <option value="$PROJECT_DIR$/public/js/controller/admin/studentDetailController.js" />
+        <option value="$PROJECT_DIR$/public/js/views/admin/Dashboard_Viewrooms_Std_EditFather.html" />
+        <option value="$PROJECT_DIR$/public/js/views/admin/Dashboard_Viewrooms_Std_EditStudent.html" />
+        <option value="$PROJECT_DIR$/public/js/views/admin/Dashboard_Viewrooms_Std_AddFather.html" />
+        <option value="$PROJECT_DIR$/public/js/views/admin/Dashboard_Viewrooms_Std_Data.html" />
         <option value="$PROJECT_DIR$/public/js/views/admin/Dashboard_Viewrooms_Std.html" />
+        <option value="$PROJECT_DIR$/public/js/controller/admin/addMotherController.js" />
+        <option value="$PROJECT_DIR$/public/js/views/admin/Dashboard_Viewrooms_Std_AddMother.html" />
+        <option value="$PROJECT_DIR$/public/js/views/admin/Dashboard_Viewrooms_Std_EditMother.html" />
+        <option value="$PROJECT_DIR$/public/js/controller/admin/motherController.js" />
+        <option value="$PROJECT_DIR$/public/js/views/admin/Dashboard_Viewrooms_Std_EditGuardian.html" />
+        <option value="$PROJECT_DIR$/public/js/views/admin/Dashboard_Viewrooms_Std_AddGuardian.html" />
+        <option value="$PROJECT_DIR$/public/js/controller/admin/guardianController.js" />
         <option value="$PROJECT_DIR$/public/Dashboard_Viewrooms_Std_Grade.html" />
-        <option value="$PROJECT_DIR$/public/js/admin/print_grade.js" />
-        <option value="$PROJECT_DIR$/public/js/views/admin/Print_Grade.html" />
-        <option value="$PROJECT_DIR$/public/Dashboard_Viewrooms_Std_Data.html" />
-        <option value="$PROJECT_DIR$/public/js/admin/edit_student.js" />
-        <option value="$PROJECT_DIR$/public/Dashboard_Viewrooms_Std_EditStudent.html" />
+        <option value="$PROJECT_DIR$/public/js/controller/admin/StudentGradeController.js" />
+        <option value="$PROJECT_DIR$/public/js/views/admin/Dashboard_Viewrooms_Std_Grade.html" />
+        <option value="$PROJECT_DIR$/public/js/controller/admin/studentGradeController.js" />
         <option value="$PROJECT_DIR$/public/js/controller/admin/printGradeController.js" />
+        <option value="$PROJECT_DIR$/public/js/views/admin/Print_Grade.html" />
+        <option value="$PROJECT_DIR$/public/js/views/login.html" />
+        <option value="$PROJECT_DIR$/public/js/controller/admin/addStudentController.js" />
+        <option value="$PROJECT_DIR$/public/js/views/admin/AddStudents.html" />
+        <option value="$PROJECT_DIR$/public/js/views/admin/AddStudentCSV.html" />
+        <option value="$PROJECT_DIR$/public/js/controller/admin/class_teacher/teacher_room.js" />
+        <option value="$PROJECT_DIR$/public/js/views/admin/Dashboard_Viewrooms_Std_Teacher.html" />
+        <option value="$PROJECT_DIR$/public/js/controller/admin/class_teacher/classTeacherController.js" />
+        <option value="$PROJECT_DIR$/public/js/views/admin/class_teacher/Dashboard_Viewrooms_Std_AddTeacher.html" />
+        <option value="$PROJECT_DIR$/public/js/views/admin/teacher/Dashboard_Teacher.html" />
+        <option value="$PROJECT_DIR$/public/js/controller/admin/teacher/addTeacherController.js" />
+        <option value="$PROJECT_DIR$/public/js/controller/admin/viewStudentController.js" />
+        <option value="$PROJECT_DIR$/public/js/controller/admin/teacher/teacherPasswordController.js" />
+        <option value="$PROJECT_DIR$/public/js/views/admin/teacher/re_password_teacher.html" />
+        <option value="$PROJECT_DIR$/public/js/controller/admin/teacher/teacherController.js" />
+        <option value="$PROJECT_DIR$/public/js/views/admin/teacher/Dashboard_AddTeacher.html" />
+        <option value="$PROJECT_DIR$/public/js/course_controller.js" />
+        <option value="$PROJECT_DIR$/public/js/controller/course/courseController.js" />
         <option value="$PROJECT_DIR$/public/js/app.js" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/public/js/views/admin/course/Course_Dashboard.html" />
+        <option value="$PROJECT_DIR$/public/js/controller/admin/adminDashboardController.js" />
+        <option value="$PROJECT_DIR$/public/js/controller/admin/course/courseController.js" />
       </list>
     </option>
   </component>
@@ -596,6 +310,354 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="satit2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="satit2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="satit2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="satit2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="satit2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="satit2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="satit2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="satit2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="teacher" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="satit2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="satit2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="search" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="satit2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="satit2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="course" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="satit2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="satit2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="class_teacher" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="satit2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="satit2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controller" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="satit2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="satit2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controller" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="satit2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="satit2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controller" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="teacher" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="satit2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="satit2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controller" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="class_teacher" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="satit2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="satit2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="satit2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="satit2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="satit2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="satit2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -604,7 +666,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/angular.min.js" />
+    <property name="last_opened_file_path" value="$USER_HOME$/NodeJs/TopGunRecruit" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
@@ -612,14 +674,22 @@
     <property name="js.eslint.eslintPackage" value="" />
     <property name="jsx.switch.disabled" value="true" />
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
-    <property name="settings.editor.selected.configurable" value="JavaScript.Libraries" />
+    <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\Satit2\satit2\public\js\views\admin" />
+      <recent name="E:\Satit2\satit2\public\js\controller\course" />
+      <recent name="E:\Satit2\satit2\public\js\controller\admin\teacher" />
+      <recent name="E:\Satit2\satit2\public\js\views\admin\teacher" />
+      <recent name="E:\Satit2\satit2\public\js\views\admin\class_teacher" />
+      <recent name="E:\Satit2\satit2\public\js\controller\admin\class_teacher" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\Satit\satit\public" />
+      <recent name="E:\Satit2\satit2\public\js\controller\admin" />
+      <recent name="E:\Satit2\satit2\public\js\views\admin\course" />
+      <recent name="E:\Satit2\satit2\public\js\views\admin\teacher" />
+      <recent name="E:\Satit2\satit2\public\js\views\admin\class_teacher" />
+      <recent name="E:\Satit2\satit2\public\js\views\admin\student_detail" />
     </key>
   </component>
   <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
@@ -636,17 +706,8 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/api/satit/api.rb</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/api/satit/prototype/teacher_api/post.rb</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/app/api/satit/prototype/teacher_api/student_api/post.rb</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/controllers/api_controller/rooms_controller.rb</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/service/teacher/private/student_action.rb</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/service/teacher/private/student_action_guard.rb</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/app/service/teacher/student_action.rb</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/service/teacher/subject_action.rb</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/config/routes.rb</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/Dashboard_Viewrooms_Std_EditStudent.html</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/js/admin/edit_student.js</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/public/js/app.js</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
@@ -655,9 +716,6 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="CREATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/views/api_controller/test/test.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/picture/2559/1_image.png</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/picture/2559/test.txt</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Deleted" />
@@ -922,7 +980,20 @@
       <workItem from="1509951623772" duration="4520000" />
       <workItem from="1509967328825" duration="23000" />
       <workItem from="1510036699284" duration="6263000" />
-      <workItem from="1510204992843" duration="134000" />
+      <workItem from="1510204992843" duration="788000" />
+      <workItem from="1513149329737" duration="2435000" />
+      <workItem from="1513240204236" duration="2682000" />
+      <workItem from="1513328619434" duration="597000" />
+      <workItem from="1514208142818" duration="307000" />
+      <workItem from="1514963290622" duration="848000" />
+      <workItem from="1516097439782" duration="4714000" />
+      <workItem from="1516171659388" duration="2609000" />
+      <workItem from="1516248599609" duration="14178000" />
+      <workItem from="1516599149873" duration="15767000" />
+      <workItem from="1516693777645" duration="2139000" />
+      <workItem from="1516784647527" duration="2842000" />
+      <workItem from="1516856454643" duration="13227000" />
+      <workItem from="1517035899402" duration="6135000" />
     </task>
     <task id="LOCAL-00001" summary="Fix some error in StdTableGrade">
       <created>1475933218620</created>
@@ -1232,11 +1303,18 @@
       <option name="project" value="LOCAL" />
       <updated>1509263123081</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="add upload profile image">
+      <created>1510205155679</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1510205155679</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="352782000" />
+    <option name="totallyTimeSpent" value="421916000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1249,16 +1327,17 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17113096" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32569557" sideWeight="0.5029762" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31096563" sideWeight="0.49702382" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31096563" sideWeight="0.49702382" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24925596" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.11456628" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1277,10 +1356,10 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32569557" sideWeight="0.5029762" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31096563" sideWeight="0.49702382" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31096563" sideWeight="0.49702382" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.11456628" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17261904" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17113096" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1331,7 +1410,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add dropdown-roomLevel" />
     <MESSAGE value="Add some content" />
     <MESSAGE value="Fix some link&#10;" />
     <MESSAGE value="Add Father,Mother,Guardian  Page" />
@@ -1356,19 +1434,20 @@
     <MESSAGE value="Add Page for Print Grade" />
     <MESSAGE value="update upload profile" />
     <MESSAGE value="update lib" />
-    <option name="LAST_COMMIT_MESSAGE" value="update lib" />
+    <MESSAGE value="add upload profile image" />
+    <option name="LAST_COMMIT_MESSAGE" value="add upload profile image" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/public/js/app.js</url>
-          <line>771</line>
+          <line>875</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/public/js/app.js</url>
-          <line>1363</line>
+          <line>1467</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -1378,7 +1457,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/public/js/app.js</url>
-          <line>1369</line>
+          <line>1473</line>
           <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -1407,737 +1486,348 @@
           <option name="timeStamp" value="21" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="22" />
+      <option name="time" value="23" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/teacher/student/edit_guardian.html">
+    <entry file="file://$PROJECT_DIR$/public/js/views/admin/Dashboard.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="952">
+          <caret line="56" column="58" lean-forward="false" selection-start-line="56" selection-start-column="58" selection-end-line="56" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/Dashboard_Viewrooms_Std_Data.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="1505" column="0" lean-forward="false" selection-start-line="1505" selection-start-column="0" selection-end-line="1507" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/views/admin/Dashboard_Viewrooms.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-170">
+          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/Dashboard_Viewrooms_Std_EditStudent.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="286" selection-end-column="7" />
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/Dashboard_Viewrooms_Std_EditGuardian.html">
+    <entry file="file://$PROJECT_DIR$/public/js/admin/edit_student.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="239" column="60" lean-forward="false" selection-start-line="239" selection-start-column="60" selection-end-line="239" selection-end-column="60" />
+        <state relative-caret-position="68">
+          <caret line="21" column="4" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/Dashboard_Viewrooms_Std_AddFather.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3151">
-          <caret line="34" column="62" lean-forward="false" selection-start-line="34" selection-start-column="62" selection-end-line="34" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/teacher/student/add_father.html">
+    <entry file="file://$PROJECT_DIR$/public/js/controller/loginController.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="286" selection-end-column="7" />
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/teacher/student/add_mother.html">
+    <entry file="file://$PROJECT_DIR$/public/js/controller/admin/selectRoomController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="286" selection-end-column="7" />
+        <state relative-caret-position="-174">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/Dashboard_Viewrooms_Std_AddMother.html">
+    <entry file="file://$PROJECT_DIR$/public/js/controller/admin/addFatherController.js" />
+    <entry file="file://$PROJECT_DIR$/public/js/controller/admin/editFatherController.js" />
+    <entry file="file://$PROJECT_DIR$/public/js/controller/admin/editStudentController.js" />
+    <entry file="file://$PROJECT_DIR$/public/js/views/admin/student_detail/Dashboard_Viewrooms_Std_EditFather.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="261" column="41" lean-forward="false" selection-start-line="261" selection-start-column="41" selection-end-line="261" selection-end-column="41" />
+        <state relative-caret-position="238">
+          <caret line="14" column="26" lean-forward="true" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/teacher/student/add_guardian.html">
+    <entry file="file://$PROJECT_DIR$/public/js/controller/admin/studentDetailController.js" />
+    <entry file="file://$PROJECT_DIR$/public/js/views/admin/student_detail/Dashboard_Viewrooms_Std_EditStudent.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="286" selection-end-column="7" />
+        <state relative-caret-position="340">
+          <caret line="20" column="29" lean-forward="true" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="58" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/Dashboard_Viewrooms_Std_AddGuardian.html">
+    <entry file="file://$PROJECT_DIR$/public/js/views/admin/student_detail/Dashboard_Viewrooms_Std_AddFather.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="262" column="41" lean-forward="false" selection-start-line="262" selection-start-column="41" selection-end-line="262" selection-end-column="41" />
+        <state relative-caret-position="340">
+          <caret line="20" column="58" lean-forward="false" selection-start-line="20" selection-start-column="58" selection-end-line="20" selection-end-column="58" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/AddStudents.html">
+    <entry file="file://$PROJECT_DIR$/public/js/views/admin/student_detail/Dashboard_Viewrooms_Std_AddMother.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="44" lean-forward="false" selection-start-line="22" selection-start-column="44" selection-end-line="22" selection-end-column="44" />
+        <state relative-caret-position="119">
+          <caret line="17" column="26" lean-forward="true" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/teacher/index.html">
+    <entry file="file://$PROJECT_DIR$/public/js/views/admin/student_detail/Dashboard_Viewrooms_Std_EditMother.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-561">
-          <caret line="15" column="35" lean-forward="true" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
+        <state relative-caret-position="-71">
+          <caret line="31" column="80" lean-forward="false" selection-start-line="31" selection-start-column="80" selection-end-line="31" selection-end-column="80" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/Dashboard_AddTeacher.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="91" column="74" lean-forward="false" selection-start-line="91" selection-start-column="74" selection-end-line="91" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/CourseDashboard.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="356">
-          <caret line="129" column="96" lean-forward="true" selection-start-line="129" selection-start-column="96" selection-end-line="129" selection-end-column="96" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/teacher/course/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1540">
-          <caret line="22" column="119" lean-forward="false" selection-start-line="22" selection-start-column="119" selection-end-line="22" selection-end-column="119" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/teacher/index_controller.js">
+    <entry file="file://$PROJECT_DIR$/public/js/controller/admin/motherController.js" />
+    <entry file="file://$PROJECT_DIR$/public/js/views/admin/student_detail/Dashboard_Viewrooms_Std_Data.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
-          <caret line="59" column="61" lean-forward="false" selection-start-line="59" selection-start-column="61" selection-end-line="59" selection-end-column="61" />
-          <folding>
-            <element signature="e#167#394#0" expanded="false" />
-            <element signature="e#456#1290#0" expanded="false" />
-            <element signature="e#2360#3467#0" expanded="false" />
-          </folding>
+          <caret line="21" column="54" lean-forward="false" selection-start-line="21" selection-start-column="54" selection-end-line="21" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/views/admin/student_detail/Dashboard_Viewrooms_Std_EditGuardian.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3825">
+          <caret line="225" column="10" lean-forward="false" selection-start-line="225" selection-start-column="10" selection-end-line="225" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/controller/admin/guardianController.js" />
+    <entry file="file://$PROJECT_DIR$/public/js/views/admin/student_detail/Dashboard_Viewrooms_Std_AddGuardian.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="214" column="0" lean-forward="false" selection-start-line="214" selection-start-column="0" selection-end-line="214" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/controller/admin/student_detail/guardianController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/Dashboard_Viewrooms_Std_Grade.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="546">
+          <caret line="147" column="0" lean-forward="true" selection-start-line="147" selection-start-column="0" selection-end-line="147" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/StudentGrade.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2775">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/views/admin/Print_Grade.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="36" column="52" lean-forward="false" selection-start-line="36" selection-start-column="52" selection-end-line="36" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/controller/admin/studentGradeController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="59" column="49" lean-forward="false" selection-start-line="59" selection-start-column="49" selection-end-line="59" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/views/admin/Dashboard_Viewrooms_Std_Grade.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="73" column="197" lean-forward="false" selection-start-line="73" selection-start-column="197" selection-end-line="73" selection-end-column="197" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/controller/admin/printGradeController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="6" lean-forward="false" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/views/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="44" lean-forward="true" selection-start-line="3" selection-start-column="44" selection-end-line="3" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/views/admin/AddStudents.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="32" column="53" lean-forward="false" selection-start-line="32" selection-start-column="53" selection-end-line="32" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/views/admin/AddStudentCSV.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-612">
+          <caret line="19" column="21" lean-forward="true" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/controller/admin/addStudentController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="94" lean-forward="false" selection-start-line="0" selection-start-column="94" selection-end-line="0" selection-end-column="94" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/views/admin/Dashboard_Viewrooms_Std.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-531">
+          <caret line="47" column="56" lean-forward="true" selection-start-line="47" selection-start-column="56" selection-end-line="47" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/Dashboard_Viewrooms_Std_Teacher.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="48" column="0" lean-forward="false" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/controller/admin/class_teacher/classTeacherController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-901">
+          <caret line="7" column="24" lean-forward="false" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/views/admin/class_teacher/Dashboard_Viewrooms_Std_Teacher.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="69" column="60" lean-forward="true" selection-start-line="69" selection-start-column="60" selection-end-line="69" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/views/admin/class_teacher/Dashboard_Viewrooms_Std_AddTeacher.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="15" column="26" lean-forward="true" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/teacher_controller.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="87" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/teacher/chang_password.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/Dashboard_Viewrooms_Std_AddTeacher.html">
+    <entry file="file://$PROJECT_DIR$/public/js/views/admin/teacher/Dashboard_Teacher.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1819">
-          <caret line="107" column="71" lean-forward="false" selection-start-line="107" selection-start-column="71" selection-end-line="107" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/Dashboard_Teacher.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="106" column="36" lean-forward="false" selection-start-line="106" selection-start-column="36" selection-end-line="106" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/teacher/course/index_student.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="22" column="39" lean-forward="false" selection-start-line="22" selection-start-column="39" selection-end-line="22" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/teacher/course_controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1360">
-          <caret line="100" column="14" lean-forward="false" selection-start-line="100" selection-start-column="14" selection-end-line="100" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/teacher/index_subject.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1003">
-          <caret line="22" column="119" lean-forward="true" selection-start-line="22" selection-start-column="119" selection-end-line="22" selection-end-column="119" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/teacher/student/grade.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1598">
-          <caret line="94" column="169" lean-forward="false" selection-start-line="94" selection-start-column="169" selection-end-line="94" selection-end-column="169" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/teacher/student/student_controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3417">
-          <caret line="201" column="74" lean-forward="false" selection-start-line="201" selection-start-column="74" selection-end-line="201" selection-end-column="74" />
+        <state relative-caret-position="98">
+          <caret line="91" column="80" lean-forward="false" selection-start-line="91" selection-start-column="80" selection-end-line="91" selection-end-column="80" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/teacher/student/grade_no_credit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2159">
-          <caret line="127" column="69" lean-forward="false" selection-start-line="127" selection-start-column="69" selection-end-line="127" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/teacher/student/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="34" column="90" lean-forward="false" selection-start-line="34" selection-start-column="90" selection-end-line="34" selection-end-column="90" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/controller/loginController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="47" column="56" lean-forward="false" selection-start-line="47" selection-start-column="56" selection-end-line="47" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/views/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/views/admin/Dashboard_Viewrooms.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="12" column="71" lean-forward="true" selection-start-line="12" selection-start-column="71" selection-end-line="12" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/Dashboard_Viewrooms.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="37" column="43" lean-forward="false" selection-start-line="37" selection-start-column="43" selection-end-line="37" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/views/admin/Dashboard.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="46" lean-forward="false" selection-start-line="23" selection-start-column="46" selection-end-line="23" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/controller/admin/selectRoomController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="430">
-          <caret line="79" column="33" lean-forward="false" selection-start-line="79" selection-start-column="33" selection-end-line="79" selection-end-column="33" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/controller/admin/viewStudentController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="42" column="43" lean-forward="false" selection-start-line="42" selection-start-column="43" selection-end-line="42" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/subject_list_controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/views/admin/Dashboard_Viewrooms_Std.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="9" column="44" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/Dashboard_Viewrooms_Std.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="43" column="29" lean-forward="false" selection-start-line="43" selection-start-column="29" selection-end-line="43" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/Dashboard_Viewrooms_Std_Grade.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
-          <caret line="202" column="84" lean-forward="false" selection-start-line="202" selection-start-column="62" selection-end-line="202" selection-end-column="84" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/views/admin/Print_Grade.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="14" column="9" lean-forward="false" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/AddStudentCSV.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2261">
-          <caret line="133" column="0" lean-forward="false" selection-start-line="133" selection-start-column="0" selection-end-line="133" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/Dashboard_Viewrooms_Std_Data.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25602">
-          <caret line="1506" column="52" lean-forward="false" selection-start-line="1506" selection-start-column="52" selection-end-line="1506" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/Dashboard_Viewrooms_Std_EditStudent.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="255" column="88" lean-forward="false" selection-start-line="255" selection-start-column="88" selection-end-line="255" selection-end-column="88" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/admin/edit_student.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="94" column="30" lean-forward="false" selection-start-line="94" selection-start-column="30" selection-end-line="94" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/admin/add_student.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="119" column="18" lean-forward="false" selection-start-line="119" selection-start-column="18" selection-end-line="119" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/controller/admin/adminDashboardController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10897">
-          <caret line="641" column="3" lean-forward="false" selection-start-line="641" selection-start-column="3" selection-end-line="641" selection-end-column="3" />
+        <state relative-caret-position="71">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/controller/admin/printGradeController.js">
+    <entry file="file://$PROJECT_DIR$/public/js/controller/admin/teacher/teacherPasswordController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="22" lean-forward="false" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/admin/teacher_room.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1479">
-          <caret line="87" column="42" lean-forward="false" selection-start-line="87" selection-start-column="42" selection-end-line="87" selection-end-column="42" />
+        <state relative-caret-position="332">
+          <caret line="47" column="40" lean-forward="false" selection-start-line="47" selection-start-column="40" selection-end-line="47" selection-end-column="40" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/login.html">
+    <entry file="file://$PROJECT_DIR$/public/js/controller/admin/teacher/teacherController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="18" lean-forward="false" selection-start-line="26" selection-start-column="18" selection-end-line="26" selection-end-column="18" />
+        <state relative-caret-position="187">
+          <caret line="11" column="7" lean-forward="false" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/admin/print_grade.js">
+    <entry file="file://$PROJECT_DIR$/public/js/controller/admin/teacher/addTeacherController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="126" column="3" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="126" selection-end-column="3" />
+        <state relative-caret-position="136">
+          <caret line="8" column="42" lean-forward="false" selection-start-line="8" selection-start-column="42" selection-end-line="8" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/views/admin/teacher/Dashboard_AddTeacher.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="78" column="61" lean-forward="true" selection-start-line="78" selection-start-column="61" selection-end-line="78" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/course_controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="308" column="6" lean-forward="false" selection-start-line="308" selection-start-column="6" selection-end-line="308" selection-end-column="6" />
           <folding>
-            <element signature="e#5009#5218#0" expanded="false" />
-            <element signature="e#5266#5377#0" expanded="false" />
-            <element signature="e#5418#5974#0" expanded="false" />
+            <element signature="e#166#10326#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/Dashboard_Viewrooms_Std_Teacher.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="48" column="0" lean-forward="false" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+        <state relative-caret-position="333">
+          <caret line="55" column="72" lean-forward="false" selection-start-line="55" selection-start-column="72" selection-end-line="55" selection-end-column="72" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/Dashboard.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1275">
-          <caret line="122" column="18" lean-forward="false" selection-start-line="122" selection-start-column="18" selection-end-line="122" selection-end-column="18" />
-          <folding>
-            <element signature="n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#nav#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#form#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#1;n#form#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#2;n#form#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#3;n#form#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#4;n#form#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#5;n#form#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#form#0;n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#1;n#form#0;n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#2;n#form#0;n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#3;n#form#0;n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#center#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#1;n#div#0;n#div#4;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#form#0;n#div#2;n#div#0;n#div#4;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#1;n#form#0;n#div#2;n#div#0;n#div#4;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#2;n#form#0;n#div#2;n#div#0;n#div#4;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#3;n#form#0;n#div#2;n#div#0;n#div#4;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#center#0;n#div#0;n#div#0;n#div#5;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#1;n#div#0;n#div#6;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#form#0;n#div#2;n#div#0;n#div#6;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#1;n#form#0;n#div#2;n#div#0;n#div#6;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#2;n#form#0;n#div#2;n#div#0;n#div#6;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#3;n#form#0;n#div#2;n#div#0;n#div#6;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#center#0;n#div#0;n#div#0;n#div#7;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#center#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#4;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#5;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#th#1;n#tr#0;n#thead#0;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#5;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#th#2;n#tr#0;n#thead#0;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#5;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#th#3;n#tr#0;n#thead#0;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#5;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="27" column="19" lean-forward="false" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
+        <state relative-caret-position="191">
+          <caret line="97" column="42" lean-forward="false" selection-start-line="97" selection-start-column="42" selection-end-line="97" selection-end-column="42" />
           <folding>
-            <marker date="1510205035805" expanded="true" signature="10648:29933" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="11437:11471" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="11511:11606" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="11630:11861" ph="{&quot;code_number&quot;: ''...}" />
-            <marker date="1510205035805" expanded="true" signature="12035:12096" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="12146:12255" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="12190:12236" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="12243:12249" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="12489:13222" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="12610:12643" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="12684:12717" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="12760:12795" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="12931:13219" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="13259:13661" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="13372:13428" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="13476:13534" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="13541:13652" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="13695:13769" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="13803:13875" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="13911:13991" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="14023:14093" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="14125:14194" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="14228:14299" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="14338:14405" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="14444:14609" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="14647:14973" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="15010:16530" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="15103:15149" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="15156:15203" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="15284:15429" ph="{&quot;transformRequest&quot;: angular.identity...}" />
-            <marker date="1510205035805" expanded="true" signature="15482:16353" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="15663:15802" ph="{&quot;transformRequest&quot;: angular.identity...}" />
-            <marker date="1510205035805" expanded="true" signature="15856:16023" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="15946:16010" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="16113:16344" ph="{&quot;code_number&quot;: ''...}" />
-            <marker date="1510205035805" expanded="true" signature="16404:16525" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="16471:16517" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="16569:18188" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="16663:16706" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="16713:16757" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="16782:17392" ph="{&quot;id&quot;: $scope.student.id...}" />
-            <marker date="1510205035805" expanded="true" signature="17484:17629" ph="{&quot;transformRequest&quot;: angular.identity...}" />
-            <marker date="1510205035805" expanded="true" signature="17682:18034" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="18085:18183" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="18129:18175" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="18226:18883" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="18359:18504" ph="{&quot;transformRequest&quot;: angular.identity...}" />
-            <marker date="1510205035805" expanded="true" signature="18557:18729" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="18780:18878" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="18824:18870" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="18920:19544" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="19053:19198" ph="{&quot;transformRequest&quot;: angular.identity...}" />
-            <marker date="1510205035805" expanded="true" signature="19251:19391" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="19442:19539" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="19486:19531" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="19584:20288" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="19762:19907" ph="{&quot;transformRequest&quot;: angular.identity...}" />
-            <marker date="1510205035805" expanded="true" signature="19960:20134" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="20185:20283" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="20229:20275" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="20324:21213" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="20456:20574" ph="{&quot;transformRequest&quot;: angular.identity...}" />
-            <marker date="1510205035805" expanded="true" signature="20628:21061" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="20761:20885" ph="{&quot;transformRequest&quot;: angular.identity...}" />
-            <marker date="1510205035805" expanded="true" signature="21113:21208" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="21153:21203" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="21249:22105" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="21381:21499" ph="{&quot;transformRequest&quot;: angular.identity...}" />
-            <marker date="1510205035805" expanded="true" signature="21553:21953" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="21686:21810" ph="{&quot;transformRequest&quot;: angular.identity...}" />
-            <marker date="1510205035805" expanded="true" signature="22005:22100" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="22045:22095" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="22143:23043" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="22278:22396" ph="{&quot;transformRequest&quot;: angular.identity...}" />
-            <marker date="1510205035805" expanded="true" signature="22450:22891" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="22585:22709" ph="{&quot;transformRequest&quot;: angular.identity...}" />
-            <marker date="1510205035805" expanded="true" signature="22943:23038" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="22983:23033" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="23108:25306" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="23556:25148" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="23592:23627" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="23635:25077" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="24075:25065" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="24133:25059" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="24140:24237" ph="//..." />
-            <marker date="1510205035805" expanded="true" signature="24290:25053" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="25200:25295" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="25240:25290" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="25339:25602" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="25401:25450" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="25503:25598" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="25543:25593" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="25636:25942" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="25979:26045" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="26087:26739" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="26241:26386" ph="{&quot;transformRequest&quot;: angular.identity...}" />
-            <marker date="1510205035805" expanded="true" signature="26439:26562" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="26613:26734" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="26681:26726" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="26783:26874" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="26917:28364" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="27113:28199" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="27185:28195" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="27694:27817" ph="{&quot;transformRequest&quot;: angular.identity...}" />
-            <marker date="1510205035805" expanded="true" signature="27874:27945" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="28000:28175" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="28072:28125" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="28136:28168" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="28214:28275" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="28282:28324" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="28394:28818" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="28480:28625" ph="{&quot;transformRequest&quot;: angular.identity...}" />
-            <marker date="1510205035805" expanded="true" signature="28678:28753" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="28855:28939" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="28882:28936" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="28977:29401" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="29147:29249" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="29301:29396" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="29341:29391" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="29460:29667" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="29569:29602" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="29705:29776" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="29724:29744" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="29751:29773" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="29817:29852" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="30004:31273" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="30152:30564" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="30310:30412" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="30464:30559" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="30504:30554" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="30624:30796" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="30733:30766" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="30825:31249" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="30911:31056" ph="{&quot;transformRequest&quot;: angular.identity...}" />
-            <marker date="1510205035805" expanded="true" signature="31109:31184" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="31235:31244" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="31343:42991" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="31554:31585" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="31625:31656" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="31698:31731" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="32058:32577" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="32619:33059" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="33094:33496" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="33207:33263" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="33311:33369" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="33376:33487" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="33530:33604" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="33638:33710" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="33746:33826" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="33858:33928" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="33960:34029" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="34063:34134" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="34173:34240" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="34278:36162" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="34372:34415" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="34422:34466" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="35543:35688" ph="{&quot;transformRequest&quot;: angular.identity...}" />
-            <marker date="1510205035805" expanded="true" signature="35741:36008" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="36059:36157" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="36103:36149" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="36200:36923" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="36333:36478" ph="{&quot;transformRequest&quot;: angular.identity...}" />
-            <marker date="1510205035805" expanded="true" signature="36531:36769" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="36820:36918" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="36864:36910" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="36960:37651" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="37093:37238" ph="{&quot;transformRequest&quot;: angular.identity...}" />
-            <marker date="1510205035805" expanded="true" signature="37291:37497" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="37548:37646" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="37592:37638" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="37691:38441" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="37846:37991" ph="{&quot;transformRequest&quot;: angular.identity...}" />
-            <marker date="1510205035805" expanded="true" signature="38044:38287" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="38338:38436" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="38382:38428" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="38477:39437" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="38609:38727" ph="{&quot;transformRequest&quot;: angular.identity...}" />
-            <marker date="1510205035805" expanded="true" signature="38781:39285" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="38914:39038" ph="{&quot;transformRequest&quot;: angular.identity...}" />
-            <marker date="1510205035805" expanded="true" signature="39337:39432" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="39338:39432" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="39377:39427" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="39473:40400" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="39605:39723" ph="{&quot;transformRequest&quot;: angular.identity...}" />
-            <marker date="1510205035805" expanded="true" signature="39777:40248" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="39910:40034" ph="{&quot;transformRequest&quot;: angular.identity...}" />
-            <marker date="1510205035805" expanded="true" signature="40300:40395" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="40340:40390" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="40438:41409" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="40573:40691" ph="{&quot;transformRequest&quot;: angular.identity...}" />
-            <marker date="1510205035805" expanded="true" signature="40745:41257" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="40880:41004" ph="{&quot;transformRequest&quot;: angular.identity...}" />
-            <marker date="1510205035805" expanded="true" signature="41309:41404" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="41349:41399" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="41442:41854" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="41600:41702" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="41754:41849" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="41794:41844" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="41914:42086" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="42117:42380" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="42179:42228" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="42281:42376" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="42321:42371" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="42422:42457" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="42499:42534" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="42564:42988" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="42650:42795" ph="{&quot;transformRequest&quot;: angular.identity...}" />
-            <marker date="1510205035805" expanded="true" signature="42848:42923" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="43050:45843" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="43179:45841" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="43327:43448" ph="{&quot;transformRequest&quot;: angular.identity...}" />
-            <marker date="1510205035805" expanded="true" signature="43501:45719" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="43545:45621" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="43830:43975" ph="{&quot;transformRequest&quot;: angular.identity...}" />
-            <marker date="1510205035805" expanded="true" signature="44028:44861" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="44120:44459" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="44470:44853" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="44912:45613" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="44977:45545" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="45075:45205" ph="{&quot;transformRequest&quot;: angular.identity...}" />
-            <marker date="1510205035805" expanded="true" signature="45261:45419" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="45473:45538" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="45553:45605" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="45657:45711" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="45770:45833" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="45907:47159" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="46201:47157" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="46261:47044" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="46491:46605" ph="{&quot;transformRequest&quot;: angular.identity...}" />
-            <marker date="1510205035805" expanded="true" signature="46660:46744" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="46797:47038" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="46871:46923" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="46979:47032" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="47108:47154" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="47223:50009" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="47682:47748" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="47799:47930" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="47838:47886" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="47894:47926" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="47969:48347" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="48384:48511" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="48562:49214" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="48685:48827" ph="{&quot;transformRequest&quot;: angular.identity...}" />
-            <marker date="1510205035805" expanded="true" signature="48890:48964" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="49025:49206" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="49115:49192" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="49258:49686" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="49442:49499" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="49550:49681" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="49589:49637" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="49645:49677" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="49734:50007" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="50069:54004" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="50626:51924" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="50793:50859" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="50885:51885" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="50942:51879" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="50950:51048" ph="//..." />
-            <marker date="1510205035805" expanded="true" signature="51102:51872" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="51975:52066" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="52014:52062" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="52112:52206" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="52244:52803" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="52414:52652" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="52704:52798" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="52744:52793" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="52844:52999" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="53037:53095" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="53140:54002" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="53629:53774" ph="{&quot;transformRequest&quot;: angular.identity...}" />
-            <marker date="1510205035805" expanded="true" signature="53827:53841" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="53892:53994" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="53937:53985" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="54072:56673" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="54452:54543" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="54588:54627" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="54671:54710" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="54756:54797" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="54838:54896" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="54938:56670" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="55098:55156" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="55169:55228" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="55259:55914" ph="{&quot;id&quot;: $scope.student.id...}" />
-            <marker date="1510205035805" expanded="true" signature="56021:56163" ph="{&quot;transformRequest&quot;: angular.identity...}" />
-            <marker date="1510205035805" expanded="true" signature="56226:56458" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="56519:56662" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="56571:56648" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="56740:63766" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="57165:57649" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="57210:57261" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="57305:57356" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="57400:57451" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="57495:57546" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="57591:57643" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="57717:59341" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="57843:58941" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="57933:58937" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="58775:58932" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="59526:59699" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="59635:59668" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="59737:63168" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="59934:63165" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="60006:63161" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="60088:61641" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="60824:61001" ph="{&quot;transformRequest&quot;: angular.identity...}" />
-            <marker date="1510205035805" expanded="true" signature="61077:61288" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="61362:61604" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="61478:61578" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="61651:63156" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="62267:62436" ph="{&quot;transformRequest&quot;: angular.identity...}" />
-            <marker date="1510205035805" expanded="true" signature="62512:62723" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="62797:63148" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="62910:63010" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="63043:63122" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="63212:63302" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="63340:63764" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="63510:63612" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="63664:63759" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="63704:63754" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="63797:64041" ph="{...}" />
-            <marker date="1510205035805" expanded="true" signature="64062:64089" ph="{...}" />
+            <marker date="1517041186935" expanded="true" signature="12496:12506" ph="..." />
+            <marker date="1517041186935" expanded="true" signature="43743:43837" ph="{...}" />
+            <marker date="1517041186935" expanded="false" signature="50312:51564" ph="{...}" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/views/admin/teacher/re_password_teacher.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="21" column="44" lean-forward="false" selection-start-line="21" selection-start-column="44" selection-end-line="21" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/controller/admin/adminDashboardController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="62" lean-forward="false" selection-start-line="8" selection-start-column="62" selection-end-line="8" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/views/admin/course/Course_Dashboard.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="67" column="109" lean-forward="true" selection-start-line="67" selection-start-column="109" selection-end-line="67" selection-end-column="109" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/controller/admin/course/courseController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

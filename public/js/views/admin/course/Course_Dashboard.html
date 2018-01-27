@@ -1,0 +1,174 @@
+<div id="wrapper">
+    <nav class="navbar-default navbar-static-side" role="navigation">
+        <div class="sidebar-collapse">
+            <ul class="nav" id="side-menu">
+                <li class="nav-header">
+                    <div class="dropdown profile-element">
+                            <span> <img alt="image" class="img-circle" src="public/img/profile_small.jpg" />
+                            </span>
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">{{admin_prefix}} {{admin_first_name}} {{admin_last_name}}</strong>
+                             </span> <span class="text-muted text-xs block">ผู้ดูแลระบบ<b class="caret"></b></span> </span> </a>
+                        <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                            <li><a href="Profile.html">Profile</a></li>
+                            <li><a href="login.html">Logout</a></li>
+                        </ul>
+                    </div>
+                    <div class="logo-element">
+                        IN+
+                    </div>
+                </li>
+                <li>
+                    <a href="#/admin"><i class="fa fa-backward"></i> <span class="nav-label">กลับ</span></a>
+
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="page-wrapper" class="gray-bg" >
+        <div class="row border-bottom">
+            <nav class="navbar navbar-static-top white-bg" role="navigation" style="margin-bottom: 0">
+                <div class="navbar-header">
+                    <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
+                </div>
+                <ul class="nav navbar-top-links navbar-right">
+                    <li>
+                        <a ng-click="logout()">
+                            <i class="fa fa-sign-out"></i> Log out
+                        </a>
+                    </li>
+                </ul>
+
+            </nav>
+        </div>
+
+        <center>
+        <div class="wrapper wrapper-content ">
+            <!-- <div class="wrapper wrapper-content animated fadeInRight"> -->
+            <div class="row">
+              <div class="col-lg-12">
+                    <div class="ibox float-e-margins">
+
+                        <div class="ibox-content " style="width: 100%">
+                            <div class="row" align="left">
+                              <!-- body chang -->
+                                <div class="col-lg-12">
+                                    เลือกหลักสูตร : 
+                                    <select id="selectCourse" ng-model="selectCourse1"  ng-change="selectCourse()" style="margin-bottom: 3%">
+                                        <option selected="true" disabled="disabled" value="">{{show_course}}</option>
+                                        <option ng-repeat="y in courses" value="{{$index}}">หลักสูตรปีการศึกษา{{y.year}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                             <div class="row" align="left">
+                                <div class="col-lg-12">
+                                    เลือกระดับ : 
+                                    <select id="selectCourseList" ng-model="selectCourseList1"  ng-change="selectCourseList()" style="margin-bottom: 3%">
+                                        <option selected="true" disabled="disabled" value="">{{show_course_list}}</option>
+                                        <option ng-repeat="y in course_lists " value="{{$index}}">{{y.room_level}}</option>               
+                                    </select>
+                                </div>
+                            </div>
+                            <div>
+                                <div align="left" ng-show="showButtonManageCourse" >
+
+                                    <button  class="btn btn-default btn-sm" ng-click="AddTextInput()" >เพิ่มหลักสูตร</button></a>
+                                </div>
+                                 <div class="row" align="left" ng-show="showInputTextAddCourse">
+                                    <div class="col-lg-6">
+                                        เพิ่มหลักสูตรปีการศึกษา
+                                        <input type="number" align="left"  ng-model="course.year"  required="">
+                                        <button ng-click="sendDataAddCourse()" class="btn btn-info btn-sm" align = "right" >เพิ่ม</button>
+                                        <br>
+                                    </div>
+                                    <br>
+                                    <br>
+                                </div>
+
+                            </div>
+                            <div ng-show="showTable">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <h1>หลักสูตรปีการศึกษา {{courses[index_current_course].year }}</h1>
+                                        <h2>ระดับ{{courses[index_current_course].course_lists[index_current_course_list].full_name}}</h2>
+                                         <h3 align="left">รายชื่อวิชา <a href="SubjectAdd.html"><button  class="btn btn-default btn-sm"  >เพิ่มวิชา</button></a></h3>
+                                        
+                                    </div>
+                                </div>
+                                <div class="table-responsive">
+                                    <table class="table table-hover" >
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>รหัสวิชา</th>
+                                                <th>ชื่อวิชา</th>
+                                                <th>หน่วยกิต</th>
+                                                <th>ช่วงโมงเรียนต่อปี</th>
+                                                <th>ประเภท</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr ng-repeat="y in subjects">
+                                                <td>{{$index + 1}}</td>
+                                                <td>{{y.code}}</td>
+                                                <td>{{y.name}}</td>
+                                                <td>{{y.credit}}</td>
+                                                <td>{{y.hour_per_year}}</td>
+                                                <td>{{y.status}}</td>
+                                                <td>
+                                                <button ng-click="getSubjectList(y.id)" class="btn btn-info btn-sm" align = "right" >ดูรายละเอียด</button>
+                                                    <!-- <button ng-click="editPasswordPage(y.id)" class="btn btn-default m-r-sm" align = "right" >เปลี่ยนพาสเวิด</button> -->
+                                                     <button ng-click="deleteSubject(y.id)" class="btn btn-danger btn-sm" ng-click=""><i class="fa fa-trash-o"></i> ลบ</button>
+                                                <td/>   
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                    <h3 align="left">รายชื่อห้องที่เรียน <a href="SubjectRoomAdd.html"><button  class="btn btn-default btn-sm"  > เพิ่มห้องที่เรียน</button></a></h3>
+                                    <div class="table-responsive">
+                                        <table class="table table-hover" >
+                                            <thead>
+                                                <tr>
+                                                    <th>#</th>
+                                                    <th>ชื่อห้อง</th>
+                                                    <th>ชั้น</th>
+                                                    <th>ปีการศึกษา</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr ng-repeat="y in rooms">
+                                                    <td>{{$index + 1}}</td>
+                                                    <td>{{y.name}}</td>
+                                                    <td>{{y.level}}</td>
+                                                    <td>{{y.year}}</td>
+                                                    <td>
+                                                    <button ng-click="getRoomList(y.id)" class="btn btn-info btn-sm" align = "right" >ดูรายละเอียด</button>
+                                                        <!-- <button ng-click="editPasswordPage(y.id)" class="btn btn-default m-r-sm" align = "right" >เปลี่ยนพาสเวิด</button> -->
+                                                         <button class="btn btn-danger btn-sm" ng-click="deleteRoom(y.id)"><i class="fa fa-trash-o"></i> ลบ</button>
+                                                    <td/>   
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer">
+                <div class="pull-right">
+                    ....... <strong>.......</strong> .......
+                </div>
+                <div>
+                    <strong>.......</strong> ....................
+                </div>
+            </div>
+
+        </div>
+    </div>
+        </center>
+</div>
+</div>

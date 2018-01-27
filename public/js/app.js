@@ -4,14 +4,14 @@ var token = localStorage.getItem('token');
 // var address = "http://172.27.225.52:3000/";
 //var address = "http://192.168.217.102:3000/";
 // var address = 'http://localhost:3000/'
-var address = 'http://172.20.40.109:3000/'
-// var address = 'http://52.187.67.10:3000/'
+//var address = 'http://202.28.73.138:3000/'
+var address = 'http://172.20.40.109:3000/';
 // var address = 'http://172.27.225.177:3000/'
 //var address = 'http://172.27.160.80:3000/'
 // var address = "http://172.27.160.166:3000/";
 // var address = "http://202.28.73.138:3000/";
 
-var myApp = angular.module('myApp', ['ngRoute']);
+var myApp = angular.module('myApp', ['ngRoute','ngFileUpload']);
 myApp.config(function($routeProvider){
 	$routeProvider.when("/admin", {
 		templateUrl: 'public/js/views/admin/Dashboard.html',
@@ -26,31 +26,40 @@ myApp.config(function($routeProvider){
 			controller: 'viewStudentController'
 		})
 		.when("/admin/viewroom/student/data", {
-			templateUrl: 'public/js/views/admin/Dashboard_Viewrooms_Std_Data.html'
+			templateUrl: 'public/js/views/admin/student_detail/Dashboard_Viewrooms_Std_Data.html',
+			controller: 'studentDetailController'
 		})
 		.when("/admin/viewroom/student/data/edit", {
-			templateUrl: 'public/js/views/admin/Dashboard_Viewrooms_Std_EditStudent.html'
+			templateUrl: 'public/js/views/admin/student_detail/Dashboard_Viewrooms_Std_EditStudent.html',
+			controller: 'adminEditStudentController'
 		})
 		.when("/admin/viewroom/student/data/father/add", {
-			templateUrl: 'public/js/4views/admin/Dashboard_Viewrooms_Std_AddFather.html'
+			templateUrl: 'public/js/views/admin/student_detail/Dashboard_Viewrooms_Std_AddFather.html',
+			controller: 'adminAddFatherController'
 		})
-		.when("/adminviewroom/student/data/mother/add", {
-            templateUrl: 'public/js/views/admin/Dashboard_Viewrooms_Std_AddMother.html'
+		.when("/admin/viewroom/student/data/mother/add", {
+            templateUrl: 'public/js/views/admin/student_detail/Dashboard_Viewrooms_Std_AddMother.html',
+			controller: 'adminAddMotherController'
 		})
         .when("/admin/viewroom/student/data/guardian/add", {
-            templateUrl: 'public/js/views/admin/Dashboard_Viewrooms_Std_AddGuardian.html'
+            templateUrl: 'public/js/views/admin/student_detail/Dashboard_Viewrooms_Std_AddGuardian.html',
+			controller: 'adminAddGuardianController'
         })
         .when("/admin/viewroom/student/data/father/edit", {
-            templateUrl: 'public/js/views/admin/Dashboard_Viewrooms_Std_EditFather.html'
+            templateUrl: 'public/js/views/admin/student_detail/Dashboard_Viewrooms_Std_EditFather.html',
+			controller: 'adminEditFatherController'
         })
         .when("/admin/viewroom/student/data/mother/edit", {
-            templateUrl: 'public/js/views/admin/Dashboard_Viewrooms_Std_EditMother.html'
+            templateUrl: 'public/js/views/admin/student_detail/Dashboard_Viewrooms_Std_EditMother.html',
+			controller: 'adminEditMotherController'
         })
         .when("/admin/viewroom/student/data/guardian/edit", {
-            templateUrl: 'public/js/views/admin/Dashboard_Viewrooms_Std_EditGuardian.html'
+            templateUrl: 'public/js/views/admin/student_detail/Dashboard_Viewrooms_Std_EditGuardian.html',
+			controller: 'adminEditGuardianController'
         })
         .when("/admin/viewroom/student/grade", {
-            templateUrl: 'public/js/views/admin/Dashboard_Viewrooms_Std_Grade.html'
+            templateUrl: 'public/js/views/admin/Dashboard_Viewrooms_Std_Grade.html',
+			controller: 'adminViewStudentGradeController'
         })
         .when("/admin/viewroom/student/grade/print", {
             templateUrl: 'public/js/views/admin/Print_Grade.html',
@@ -58,27 +67,35 @@ myApp.config(function($routeProvider){
         })
         .when("/admin/viewroom/student/add", {
             templateUrl: 'public/js/views/admin/AddStudents.html',
+			controller: 'addStudentController'
         })
         .when("/admin/viewroom/student/add/file", {
             templateUrl: 'public/js/views/admin/AddStudentCSV.html',
+			controller: 'addStudentCSVController'
         })
         .when("/admin/viewroom/class_teacher", {
-            templateUrl: 'public/js/views/admin/Dashboard_Viewrooms_Std_Teacher.html',
+            templateUrl: 'public/js/views/admin/class_teacher/Dashboard_Viewrooms_Std_Teacher.html',
+			controller: 'classTeacherController'
         })
         .when("/admin/viewroom/class_teacher/change", {
-            templateUrl: 'public/js/views/admin/Dashboard_Viewrooms_Std_AddTeacher.html',
+            templateUrl: 'public/js/views/admin/class_teacher/Dashboard_Viewrooms_Std_AddTeacher.html',
+			controller: 'changeClassTeacherController'
         })
         .when("/admin/teacher", {
-            templateUrl: 'public/js/views/admin/Dashboard_Teacher.html',
+            templateUrl: 'public/js/views/admin/teacher/Dashboard_Teacher.html',
+			controller: 'adminTeacherController'
         })
 		.when("/admin/teacher/add", {
-            templateUrl: 'public/js/views/admin/Dashboard_AddTeacher.html',
+            templateUrl: 'public/js/views/admin/teacher/Dashboard_AddTeacher.html',
+            controller: 'addTeacherController'
         })
 		.when("/admin/teacher/change_password", {
-            templateUrl: 'public/js/views/admin/re_password_teacher.html',
+            templateUrl: 'public/js/views/admin/teacher/re_password_teacher.html',
+            controller: 'teacherPasswordController'
         })
 		.when("/admin/course", {
-            templateUrl: 'public/js/views/admin/Course_Dashboard.html',
+            templateUrl: 'public/js/views/admin/course/Course_Dashboard.html',
+            controller: 'courseController'
         })
 		.when("/admin/course/add_subject", {
             templateUrl: 'public/js/views/admin/SubjectAdd.html',
@@ -99,10 +116,7 @@ myApp.config(function($routeProvider){
             templateUrl: 'public/js/views/admin/RoomList.html',
         })
         .when("/admin/search_student", {
-            templateUrl: 'public/js/views/admin/SearchStudent.html',
-        })
-        .when("/admin/add_grade4_student", {
-            templateUrl: 'public/js/views/admin/room_index.html',
+            templateUrl: 'public/js/views/admin/search/Search_Student.html',
         })
         .when("/admin/add_grade4_student", {
             templateUrl: 'public/js/views/admin/room_index.html',
@@ -170,11 +184,10 @@ myApp.config(function($routeProvider){
         .when("/student/grade", {
             templateUrl: 'public/js/views/student/StudentGrade.html',
         })
-		.otherwise({
-			redirectTo: '/login',
-			templateUrl: 'public/js/views/login.html',
-			controller: 'loginController'
-		});
+		.otherwise({redirectTo: "/login",
+            templateUrl: 'public/js/views/login.html',
+            controller: 'loginController'
+        });
 });
 
 myApp.factory('pathApi', function() {
@@ -195,7 +208,7 @@ myApp.factory('pathApi', function() {
     };
 });
 
-myApp.factory('logout', function() {
+myApp.factory('static_function', function($location) {
     return {
         logout: function() {
         	var token = localStorage.getItem('token');
@@ -203,19 +216,46 @@ myApp.factory('logout', function() {
             $http.post(path, angular.toJson($scope.student), {
                 transformRequest: angular.identity,
                 headers: {'token' : token, 'Content-Type': "application/json"}
-
             })
                 .success(function(data, status, headers, config) {
-                    console.log(data);
-                    window.location.href = 'login.html';
-
+                    $location.path('login');
                 })
                 .error(function(data, status, headers, config) {
-                	console.log(data);
                 });
+        },
+        go: function (url) {
+			$location.path(url);
+        },
+		token_expired_check: function (error) {
+            if(error === 'token expired'){
+                $location.path("/login");
+            }
+            else{
+            	console.log(error);
+			}
         }
     };
 });
+
+myApp.directive("fileread", [function () {
+    return {
+        scope: {
+            fileread: "="
+        },
+        link: function (scope, element, attributes) {
+            element.bind("change", function (changeEvent) {
+                var reader = new FileReader();
+                reader.onload = function (loadEvent) {
+                    scope.$apply(function () {
+                        scope.fileread = loadEvent.target.result;
+                    });
+                }
+                reader.readAsDataURL(changeEvent.target.files[0]);
+            });
+        }
+    }
+}]);
+
 
 
 sessionStorage.setItem('address', address);
@@ -283,6 +323,70 @@ myApp.service('fileUpload', ['$http', function ($http,pathApi) {
 		
     }
 }]);
+
+myApp.directive('uploader', function($http, $location, static_function) {
+    return {
+        restrict: 'E',
+        template: '<input type="file"><br><br>' +
+        '<button class="btn btn-lg btn-primary btn-block" type="submit" ng-click="uploadFile()" value="Upload" style = "width: 40%">Submit</button>',
+        scope: {},
+        link: function(scope, el, attrs) {
+            var dataStudent = '';
+            var file = el.find('input');
+            scope.fileName = '?';
+            var button = el.find('button');
+            button.bind('click', function(ev) {
+                var student = [];
+                for(var i = 0; i < dataStudent.data.length; ++i){
+                    if(dataStudent.data[i].ชื่อ == "" || dataStudent.data[i].ลำดับที่ == ""){
+                        break;
+                    }
+                    student[i] = {
+                        "prefix" : dataStudent.data[i].คำนำหน้าชื่อ,
+                        "first_name" : dataStudent.data[i].ชื่อ,
+                        "last_name" : dataStudent.data[i].นามสกุล,
+                        "call" : dataStudent.data[i].เบอร์โทร,
+                        "code_number" : dataStudent.data[i].เลขประจำตัว,
+                        "address" : dataStudent.data[i].ที่อยู่,
+                    }
+                }
+                var studentJson = {
+                    "students" : student,
+                    "room_id" : sessionStorage.getItem('roomId'),
+                }
+                $http.post(address + "api/teacher/file_add_student", angular.toJson(studentJson), {
+                    transformRequest: angular.identity,
+                    headers: {'token' : token, 'Content-Type': "application/json"}
+                })
+                    .success(function(data, status, headers, config) {
+                        $location.path('admin/viewroom/student')
+                    })
+                    .error(function(data, status, headers, config) {
+                        static_function.token_expired_check(data.error);
+                    });
+            });
+            file.bind('change', function(ev) {
+                var files = event.target.files;
+                scope.fileName = files[0].name;
+                scope.$apply(function() {
+                    scope.fileName = files[0].name;
+                    Papa.parse(files[0], {
+                        header: true,
+                        dynamicTyping: true,
+                        complete: function(results) {
+                            data = results;
+                            dataStudent = data;
+                            //console.log(data);
+                        }
+                    });
+
+
+                });
+                //console.log(files, ev);
+            });
+        }
+    };
+});
 
 
 
