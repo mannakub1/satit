@@ -1,4 +1,3 @@
-
 module Satit::Prototype::TeacherAPI::StudentAPI
 
   class Post < Grape::API
@@ -45,7 +44,7 @@ module Satit::Prototype::TeacherAPI::StudentAPI
         end
 
         def student_room_delete
-          Teacher::StudentAction.new(student: current_student, room: current_room, student_room: current_student_room).student_room_delete
+          Teacher::StudentAction.new(student_room: current_student_room).student_room_delete
         end
 
         def delete_student
@@ -54,6 +53,10 @@ module Satit::Prototype::TeacherAPI::StudentAPI
 
         def student_last
           Student.last
+        end
+
+        def current_student_params_student_id
+          Student.find(params[:student_id])
         end
 
         def current_room
@@ -245,15 +248,14 @@ module Satit::Prototype::TeacherAPI::StudentAPI
       
       desc 'delete student room'
       params do 
-        requires :student_id, type: Integer, desc: 'id student'
-        requires :room_id, type: Integer, desc: 'id of room'
+        # requires :student_id, type: Integer, desc: 'id student'
+        # requires :room_id, type: Integer, desc: 'id of room'
         requires :student_room_id, type: Integer, desc: 'id of student room'
       end
-      post :delete_student_room do
+      post '/delete_student_room' do
         present :delete, student_room_delete
       end
+
     end
   end
-
-
 end

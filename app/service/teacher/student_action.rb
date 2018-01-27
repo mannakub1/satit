@@ -1,6 +1,5 @@
 class Teacher::StudentAction
   
-  
   attr_reader :student, :student_id, :room, :code_number, :first_name, :last_name, :params, :subject, :student_room, :id
 
   require 'rmagick'
@@ -12,7 +11,7 @@ class Teacher::StudentAction
     @student_id ||= option[:student_id]
     @student ||= option[:student]
     @subject ||= option[:subject]
-    @room ||= option[:room]
+    @room_id ||= option[:room_id]
     @student_room ||= option[:student_room]
   end
 
@@ -71,12 +70,11 @@ class Teacher::StudentAction
   end
 
   def student_room_delete
-
-    can_student_room_delete, message = can_student_room_delete?
-    fail message = unless can_student_room_delete
+    
+    # can_student_room_delete, message = can_student_room_delete?
+    # fail message unless can_student_room_delete
 
     process_student_room_delete
-  end  
-
-end
+  end
+  
 end
