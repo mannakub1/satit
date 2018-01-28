@@ -1,60 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="be14c865-6577-4d71-9a9c-a1b6a68d7424" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/ng-file-upload-all.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/ng-file-upload-shim.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/ng-file-upload.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/controller/admin/addStudentController.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/controller/admin/class_teacher/classTeacherController.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/controller/admin/course/courseController.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/controller/admin/studentGradeController.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/controller/admin/student_detail/addFatherController.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/controller/admin/student_detail/editFatherController.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/controller/admin/student_detail/editStudentController.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/controller/admin/student_detail/guardianController.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/controller/admin/student_detail/motherController.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/controller/admin/student_detail/studentDetailController.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/controller/admin/teacher/addTeacherController.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/controller/admin/teacher/teacherController.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/controller/admin/teacher/teacherPasswordController.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/admin/Dashboard_Viewrooms_Std_Grade.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/admin/class_teacher/Dashboard_Viewrooms_Std_AddTeacher.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/admin/class_teacher/Dashboard_Viewrooms_Std_Teacher.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/admin/course/Course_Dashboard.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/admin/search/Search_Student.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/admin/student_detail/Dashboard_Viewrooms_Std_AddFather.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/admin/student_detail/Dashboard_Viewrooms_Std_AddGuardian.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/admin/student_detail/Dashboard_Viewrooms_Std_AddMother.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/admin/student_detail/Dashboard_Viewrooms_Std_Data.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/admin/student_detail/Dashboard_Viewrooms_Std_EditFather.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/admin/student_detail/Dashboard_Viewrooms_Std_EditGuardian.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/admin/student_detail/Dashboard_Viewrooms_Std_EditMother.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/admin/student_detail/Dashboard_Viewrooms_Std_EditStudent.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/admin/teacher/Dashboard_AddTeacher.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/admin/teacher/Dashboard_Teacher.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/admin/teacher/re_password_teacher.html" />
+    <list default="true" id="be14c865-6577-4d71-9a9c-a1b6a68d7424" name="Default" comment="update project to route">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/controller/admin/course/room/roomDetailController.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/controller/admin/course/room/studentRoomController.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/controller/admin/course/subject/editSubjectController.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/controller/admin/course/subject/subjectAddTeacherController.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/controller/admin/course/subject/subjectDetailController.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/controller/admin/fourth_year/studentFourthYearController.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/controller/admin/search/studentSearchController.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/controller/admin/search/studentSearchDataController.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/controller/admin/search/studentSearchGradeController.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/controller/student/studentController.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/controller/student/studentGradeController.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/controller/teacher/course/teacherCourseController.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/controller/teacher/student/teacherStudentController.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/controller/teacher/teacherChangePasswordController.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/controller/teacher/teacherDashboardController.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/controller/teacher/teacherStudentListController.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/controller/teacher/teacherSubjectController.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/admin/course/room/RoomList.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/admin/course/room/StudentList.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/admin/course/subject/SubjectAddTeacher.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/admin/course/subject/SubjectEdit.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/admin/fourth_year/add_fourth_student.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/admin/fourth_year/room_index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/admin/search/SearchStudentData.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/admin/search/SearchStudentGrade.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/student/AddFather.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/student/AddGuardian.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/student/AddMother.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/student/DashboardStudent.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/student/EditFather.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/student/EditGuardian.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/student/EditMother.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/student/EditStudent.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/student/StudentGrade.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/student/StudentProfile.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/teacher/change_password.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/teacher/course/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/teacher/course/index_student.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/teacher/course/student.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/teacher/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/teacher/index_subject.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/teacher/student/add_father.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/teacher/student/add_guardian.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/teacher/student/add_mother.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/teacher/student/details.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/teacher/student/edit_father.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/teacher/student/edit_guardian.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/teacher/student/edit_mother.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/teacher/student/edit_student.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/teacher/student/grade.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/teacher/student/grade_no_credit.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/teacher/student/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/teacher/student_list.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/Dashboard_Viewrooms_Std_Data.html" afterPath="$PROJECT_DIR$/public/Dashboard_Viewrooms_Std_Data.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/Dashboard_Viewrooms_Std_EditStudent.html" afterPath="$PROJECT_DIR$/public/Dashboard_Viewrooms_Std_EditStudent.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/Dashboard_Viewrooms_Std_Grade.html" afterPath="$PROJECT_DIR$/public/Dashboard_Viewrooms_Std_Grade.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/style.css" afterPath="$PROJECT_DIR$/public/css/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app.js" afterPath="$PROJECT_DIR$/public/js/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/controller/admin/adminDashboardController.js" afterPath="$PROJECT_DIR$/public/js/controller/admin/adminDashboardController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/controller/admin/printGradeController.js" afterPath="$PROJECT_DIR$/public/js/controller/admin/printGradeController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/controller/admin/selectRoomController.js" afterPath="$PROJECT_DIR$/public/js/controller/admin/selectRoomController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/controller/admin/viewStudentController.js" afterPath="$PROJECT_DIR$/public/js/controller/admin/viewStudentController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/controller/admin/student_detail/editStudentController.js" afterPath="$PROJECT_DIR$/public/js/controller/admin/student_detail/editStudentController.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/controller/loginController.js" afterPath="$PROJECT_DIR$/public/js/controller/loginController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/course_controller.js" afterPath="$PROJECT_DIR$/public/js/course_controller.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/teacher/index_controller.js" afterPath="$PROJECT_DIR$/public/js/teacher/index_controller.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/views/admin/AddStudentCSV.html" afterPath="$PROJECT_DIR$/public/js/views/admin/AddStudentCSV.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/views/admin/AddStudents.html" afterPath="$PROJECT_DIR$/public/js/views/admin/AddStudents.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/views/admin/Dashboard.html" afterPath="$PROJECT_DIR$/public/js/views/admin/Dashboard.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/views/admin/Dashboard_Viewrooms.html" afterPath="$PROJECT_DIR$/public/js/views/admin/Dashboard_Viewrooms.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/views/admin/Dashboard_Viewrooms_Std.html" afterPath="$PROJECT_DIR$/public/js/views/admin/Dashboard_Viewrooms_Std.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/views/admin/Print_Grade.html" afterPath="$PROJECT_DIR$/public/js/views/admin/Print_Grade.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/views/login.html" afterPath="$PROJECT_DIR$/public/js/views/login.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/AddStudentCSV.html" afterPath="$PROJECT_DIR$/public/js/views/admin/AddStudentCSV.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/AddStudents.html" afterPath="$PROJECT_DIR$/public/js/views/admin/AddStudents.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/views/admin/Dashboard_Viewrooms_Std_Grade.html" afterPath="$PROJECT_DIR$/public/js/views/admin/Dashboard_Viewrooms_Std_Grade.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/views/admin/class_teacher/Dashboard_Viewrooms_Std_AddTeacher.html" afterPath="$PROJECT_DIR$/public/js/views/admin/class_teacher/Dashboard_Viewrooms_Std_AddTeacher.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/views/admin/class_teacher/Dashboard_Viewrooms_Std_Teacher.html" afterPath="$PROJECT_DIR$/public/js/views/admin/class_teacher/Dashboard_Viewrooms_Std_Teacher.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/views/admin/course/Course_Dashboard.html" afterPath="$PROJECT_DIR$/public/js/views/admin/course/Course_Dashboard.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/views/admin/course/SubjectAdd.html" afterPath="$PROJECT_DIR$/public/js/views/admin/course/SubjectAdd.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/views/admin/course/SubjectRoomAdd.html" afterPath="$PROJECT_DIR$/public/js/views/admin/course/SubjectRoomAdd.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/views/admin/search/Search_Student.html" afterPath="$PROJECT_DIR$/public/js/views/admin/search/Search_Student.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/views/admin/student_detail/Dashboard_Viewrooms_Std_AddFather.html" afterPath="$PROJECT_DIR$/public/js/views/admin/student_detail/Dashboard_Viewrooms_Std_AddFather.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/views/admin/student_detail/Dashboard_Viewrooms_Std_AddGuardian.html" afterPath="$PROJECT_DIR$/public/js/views/admin/student_detail/Dashboard_Viewrooms_Std_AddGuardian.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/views/admin/student_detail/Dashboard_Viewrooms_Std_AddMother.html" afterPath="$PROJECT_DIR$/public/js/views/admin/student_detail/Dashboard_Viewrooms_Std_AddMother.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/views/admin/student_detail/Dashboard_Viewrooms_Std_Data.html" afterPath="$PROJECT_DIR$/public/js/views/admin/student_detail/Dashboard_Viewrooms_Std_Data.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/views/admin/student_detail/Dashboard_Viewrooms_Std_EditFather.html" afterPath="$PROJECT_DIR$/public/js/views/admin/student_detail/Dashboard_Viewrooms_Std_EditFather.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/views/admin/student_detail/Dashboard_Viewrooms_Std_EditGuardian.html" afterPath="$PROJECT_DIR$/public/js/views/admin/student_detail/Dashboard_Viewrooms_Std_EditGuardian.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/views/admin/student_detail/Dashboard_Viewrooms_Std_EditMother.html" afterPath="$PROJECT_DIR$/public/js/views/admin/student_detail/Dashboard_Viewrooms_Std_EditMother.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/views/admin/student_detail/Dashboard_Viewrooms_Std_EditStudent.html" afterPath="$PROJECT_DIR$/public/js/views/admin/student_detail/Dashboard_Viewrooms_Std_EditStudent.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/views/admin/teacher/Dashboard_AddTeacher.html" afterPath="$PROJECT_DIR$/public/js/views/admin/teacher/Dashboard_AddTeacher.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/views/admin/teacher/Dashboard_Teacher.html" afterPath="$PROJECT_DIR$/public/js/views/admin/teacher/Dashboard_Teacher.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/views/admin/teacher/re_password_teacher.html" afterPath="$PROJECT_DIR$/public/js/views/admin/teacher/re_password_teacher.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/js/views/admin/course/SubjectList.html" afterPath="$PROJECT_DIR$/public/js/views/admin/course/subject/SubjectList.html" />
     </list>
     <ignored path="satit.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -80,56 +110,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/js/app.js">
+      <file leaf-file-name="studentController.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/js/controller/student/studentController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="191">
-              <caret line="97" column="42" lean-forward="false" selection-start-line="97" selection-start-column="42" selection-end-line="97" selection-end-column="42" />
+            <state relative-caret-position="17">
+              <caret line="1" column="23" lean-forward="false" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
               <folding>
-                <marker date="1517041186935" expanded="true" signature="12496:12506" ph="..." />
-                <marker date="1517041186935" expanded="true" signature="43743:43837" ph="{...}" />
-                <marker date="1517041186935" expanded="false" signature="50312:51564" ph="{...}" />
+                <element signature="e#3360#5345#0" expanded="false" />
+                <element signature="e#5386#6148#0" expanded="false" />
+                <element signature="e#6189#6905#0" expanded="false" />
+                <element signature="e#6948#7716#0" expanded="false" />
+                <element signature="e#7756#8884#0" expanded="false" />
+                <element signature="e#8924#10004#0" expanded="false" />
+                <element signature="e#10046#11196#0" expanded="false" />
+                <element signature="e#11233#11628#0" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Course_Dashboard.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/js/views/admin/course/Course_Dashboard.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="147">
-              <caret line="67" column="109" lean-forward="true" selection-start-line="67" selection-start-column="109" selection-end-line="67" selection-end-column="109" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="courseController.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/public/js/controller/admin/course/courseController.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="adminDashboardController.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/js/controller/admin/adminDashboardController.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="62" lean-forward="false" selection-start-line="8" selection-start-column="62" selection-end-line="8" selection-end-column="62" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="re_password_teacher.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/js/views/admin/teacher/re_password_teacher.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="21" column="44" lean-forward="false" selection-start-line="21" selection-start-column="44" selection-end-line="21" selection-end-column="44" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -137,8 +132,43 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="333">
-              <caret line="55" column="72" lean-forward="false" selection-start-line="55" selection-start-column="72" selection-end-line="55" selection-end-column="72" />
+            <state relative-caret-position="832">
+              <caret line="76" column="0" lean-forward="true" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StudentProfile.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/js/views/student/StudentProfile.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="77">
+              <caret line="53" column="58" lean-forward="true" selection-start-line="53" selection-start-column="58" selection-end-line="53" selection-end-column="58" />
+              <folding>
+                <element signature="n#form#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
+                <element signature="n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
+                <element signature="n#div#2;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
+                <element signature="n#div#3;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
+                <element signature="n#div#4;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
+                <element signature="n#div#5;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
+                <element signature="n#div#6;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
+                <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
+                <element signature="n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
+                <element signature="n#div#3;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
+                <element signature="n#div#4;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
+                <element signature="n#div#5;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
+                <element signature="n#div#6;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
+                <element signature="n#div#7;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EditStudent.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/js/views/student/EditStudent.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="16" lean-forward="false" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -149,23 +179,13 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>select</find>
-      <find>sendstu</find>
-      <find>getgrade</find>
-      <find>ครู</find>
-      <find>goadd</find>
-      <find>search</find>
-      <find>upload</find>
-      <find>แก้ไข</find>
-      <find>location</find>
-      <find>locat</find>
       <find>$scope.tok</find>
       <find>console.</find>
       <find>c</find>
@@ -186,6 +206,16 @@
       <find>add</find>
       <find>senddata</find>
       <find>เพิ่ม</find>
+      <find>navbar-mini</find>
+      <find>minimal</find>
+      <find>roomdetail</find>
+      <find>image</find>
+      <find>deta</find>
+      <find>adminedit</find>
+      <find>stdctrl</find>
+      <find>stdgradeCtr</find>
+      <find>stdgradeCt</find>
+      <find>stdGrade</find>
     </findStrings>
     <replaceStrings>
       <replace>guardian</replace>
@@ -197,57 +227,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/api/satit/api.rb" />
-        <option value="$PROJECT_DIR$/public/js/views/admin/Dashboard.html" />
-        <option value="$PROJECT_DIR$/public/css/style.css" />
-        <option value="$PROJECT_DIR$/public/js/views/admin/Dashboard_Viewrooms.html" />
-        <option value="$PROJECT_DIR$/public/js/controller/loginController.js" />
-        <option value="$PROJECT_DIR$/public/js/controller/admin/selectRoomController.js" />
-        <option value="$PROJECT_DIR$/public/js/controller/admin/edit_student.js" />
-        <option value="$PROJECT_DIR$/public/js/controller/admin/addFatherController.js" />
-        <option value="$PROJECT_DIR$/public/js/controller/admin/editStudentController.js" />
-        <option value="$PROJECT_DIR$/public/js/controller/admin/editFatherController.js" />
-        <option value="$PROJECT_DIR$/public/js/controller/admin/studentDetailController.js" />
-        <option value="$PROJECT_DIR$/public/js/views/admin/Dashboard_Viewrooms_Std_EditFather.html" />
-        <option value="$PROJECT_DIR$/public/js/views/admin/Dashboard_Viewrooms_Std_EditStudent.html" />
-        <option value="$PROJECT_DIR$/public/js/views/admin/Dashboard_Viewrooms_Std_AddFather.html" />
-        <option value="$PROJECT_DIR$/public/js/views/admin/Dashboard_Viewrooms_Std_Data.html" />
-        <option value="$PROJECT_DIR$/public/js/views/admin/Dashboard_Viewrooms_Std.html" />
-        <option value="$PROJECT_DIR$/public/js/controller/admin/addMotherController.js" />
-        <option value="$PROJECT_DIR$/public/js/views/admin/Dashboard_Viewrooms_Std_AddMother.html" />
-        <option value="$PROJECT_DIR$/public/js/views/admin/Dashboard_Viewrooms_Std_EditMother.html" />
-        <option value="$PROJECT_DIR$/public/js/controller/admin/motherController.js" />
-        <option value="$PROJECT_DIR$/public/js/views/admin/Dashboard_Viewrooms_Std_EditGuardian.html" />
-        <option value="$PROJECT_DIR$/public/js/views/admin/Dashboard_Viewrooms_Std_AddGuardian.html" />
-        <option value="$PROJECT_DIR$/public/js/controller/admin/guardianController.js" />
-        <option value="$PROJECT_DIR$/public/Dashboard_Viewrooms_Std_Grade.html" />
-        <option value="$PROJECT_DIR$/public/js/controller/admin/StudentGradeController.js" />
-        <option value="$PROJECT_DIR$/public/js/views/admin/Dashboard_Viewrooms_Std_Grade.html" />
-        <option value="$PROJECT_DIR$/public/js/controller/admin/studentGradeController.js" />
-        <option value="$PROJECT_DIR$/public/js/controller/admin/printGradeController.js" />
-        <option value="$PROJECT_DIR$/public/js/views/admin/Print_Grade.html" />
-        <option value="$PROJECT_DIR$/public/js/views/login.html" />
-        <option value="$PROJECT_DIR$/public/js/controller/admin/addStudentController.js" />
-        <option value="$PROJECT_DIR$/public/js/views/admin/AddStudents.html" />
-        <option value="$PROJECT_DIR$/public/js/views/admin/AddStudentCSV.html" />
-        <option value="$PROJECT_DIR$/public/js/controller/admin/class_teacher/teacher_room.js" />
-        <option value="$PROJECT_DIR$/public/js/views/admin/Dashboard_Viewrooms_Std_Teacher.html" />
-        <option value="$PROJECT_DIR$/public/js/controller/admin/class_teacher/classTeacherController.js" />
-        <option value="$PROJECT_DIR$/public/js/views/admin/class_teacher/Dashboard_Viewrooms_Std_AddTeacher.html" />
-        <option value="$PROJECT_DIR$/public/js/views/admin/teacher/Dashboard_Teacher.html" />
-        <option value="$PROJECT_DIR$/public/js/controller/admin/teacher/addTeacherController.js" />
-        <option value="$PROJECT_DIR$/public/js/controller/admin/viewStudentController.js" />
-        <option value="$PROJECT_DIR$/public/js/controller/admin/teacher/teacherPasswordController.js" />
-        <option value="$PROJECT_DIR$/public/js/views/admin/teacher/re_password_teacher.html" />
-        <option value="$PROJECT_DIR$/public/js/controller/admin/teacher/teacherController.js" />
-        <option value="$PROJECT_DIR$/public/js/views/admin/teacher/Dashboard_AddTeacher.html" />
-        <option value="$PROJECT_DIR$/public/js/course_controller.js" />
-        <option value="$PROJECT_DIR$/public/js/controller/course/courseController.js" />
-        <option value="$PROJECT_DIR$/public/js/app.js" />
-        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/public/js/views/admin/search/Search_Student.html" />
+        <option value="$PROJECT_DIR$/public/js/views/admin/fourth_year/room_index.html" />
+        <option value="$PROJECT_DIR$/public/js/views/admin/fourth_year/add_fourth_student.html" />
         <option value="$PROJECT_DIR$/public/js/views/admin/course/Course_Dashboard.html" />
-        <option value="$PROJECT_DIR$/public/js/controller/admin/adminDashboardController.js" />
-        <option value="$PROJECT_DIR$/public/js/controller/admin/course/courseController.js" />
+        <option value="$PROJECT_DIR$/public/js/views/admin/course/SubjectAdd.html" />
+        <option value="$PROJECT_DIR$/public/js/views/admin/course/SubjectRoomAdd.html" />
+        <option value="$PROJECT_DIR$/public/js/views/admin/course/subject/SubjectList.html" />
+        <option value="$PROJECT_DIR$/public/js/views/admin/course/subject/SubjectEdit.html" />
+        <option value="$PROJECT_DIR$/public/js/views/admin/course/subject/SubjectAddTeacher.html" />
+        <option value="$PROJECT_DIR$/public/js/views/admin/course/room/StudentList.html" />
+        <option value="$PROJECT_DIR$/public/js/views/admin/course/room/RoomList.html" />
+        <option value="$PROJECT_DIR$/public/js/views/admin/class_teacher/Dashboard_Viewrooms_Std_Teacher.html" />
+        <option value="$PROJECT_DIR$/public/js/views/admin/class_teacher/Dashboard_Viewrooms_Std_AddTeacher.html" />
+        <option value="$PROJECT_DIR$/public/js/views/teacher/index.html" />
+        <option value="$PROJECT_DIR$/public/js/controller/teacher/teacherDashboardController.js" />
+        <option value="$PROJECT_DIR$/public/js/controller/teacher/teacherStudentListController.js" />
+        <option value="$PROJECT_DIR$/public/js/views/teacher/student_list.html" />
+        <option value="$PROJECT_DIR$/public/js/views/teacher/student/index.html" />
+        <option value="$PROJECT_DIR$/public/js/views/teacher/student/grade_no_credit.html" />
+        <option value="$PROJECT_DIR$/public/js/views/teacher/student/grade.html" />
+        <option value="$PROJECT_DIR$/public/js/views/teacher/student/edit_guardian.html" />
+        <option value="$PROJECT_DIR$/public/js/views/teacher/student/edit_student.html" />
+        <option value="$PROJECT_DIR$/public/js/views/teacher/student/edit_mother.html" />
+        <option value="$PROJECT_DIR$/public/js/views/teacher/student/edit_father.html" />
+        <option value="$PROJECT_DIR$/public/js/views/teacher/student/add_mother.html" />
+        <option value="$PROJECT_DIR$/public/js/views/teacher/student/add_guardian.html" />
+        <option value="$PROJECT_DIR$/public/js/views/teacher/student/add_father.html" />
+        <option value="$PROJECT_DIR$/public/js/controller/teacher/student/teacherStudentController.js" />
+        <option value="$PROJECT_DIR$/public/js/views/teacher/student/details.html" />
+        <option value="$PROJECT_DIR$/public/js/controller/teacher/teacherSubjectController.js" />
+        <option value="$PROJECT_DIR$/public/js/views/teacher/index_subject.html" />
+        <option value="$PROJECT_DIR$/public/js/views/teacher/course/index.html" />
+        <option value="$PROJECT_DIR$/public/js/controller/teacher/course/teacherCourseController.js" />
+        <option value="$PROJECT_DIR$/public/js/views/teacher/course/index_student.html" />
+        <option value="$PROJECT_DIR$/public/js/controller/teacher/teacherChangePasswordController.js" />
+        <option value="$PROJECT_DIR$/public/js/views/teacher/change_password.html" />
+        <option value="$PROJECT_DIR$/public/js/views/student/DashboardStudent.html" />
+        <option value="$PROJECT_DIR$/public/js/controller/student/studentDetailController.js" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/public/js/controller/student/studentGradeController.js" />
+        <option value="$PROJECT_DIR$/public/js/views/student/StudentGrade.html" />
+        <option value="$PROJECT_DIR$/public/js/app.js" />
+        <option value="$PROJECT_DIR$/public/js/views/student/AddMother.html" />
+        <option value="$PROJECT_DIR$/public/js/views/student/EditFather.html" />
+        <option value="$PROJECT_DIR$/public/js/views/student/AddFather.html" />
+        <option value="$PROJECT_DIR$/public/js/views/student/EditMother.html" />
+        <option value="$PROJECT_DIR$/public/js/views/student/AddGuardian.html" />
+        <option value="$PROJECT_DIR$/public/js/views/student/EditGuardian.html" />
+        <option value="$PROJECT_DIR$/public/js/views/student/EditStudent.html" />
+        <option value="$PROJECT_DIR$/public/js/views/student/StudentProfile.html" />
+        <option value="$PROJECT_DIR$/public/js/controller/student/studentController.js" />
       </list>
     </option>
   </component>
@@ -284,6 +314,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -372,7 +404,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
+              <option name="myItemId" value="student" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -391,182 +423,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="teacher" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="satit2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="satit2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="search" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="satit2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="satit2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="course" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="satit2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="satit2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="class_teacher" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="satit2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="satit2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controller" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="satit2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="satit2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controller" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="satit2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="satit2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controller" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -595,12 +451,30 @@
               <option name="myItemId" value="controller" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
+              <option name="myItemId" value="satit2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="satit2" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="class_teacher" />
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controller" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="student" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -640,28 +514,12 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="satit2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="satit2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
+              <option name="myItemId" value="admin" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="RailsProjectView" />
     </panes>
   </component>
@@ -677,19 +535,19 @@
     <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\Satit2\satit2\public\js\controller\course" />
-      <recent name="E:\Satit2\satit2\public\js\controller\admin\teacher" />
-      <recent name="E:\Satit2\satit2\public\js\views\admin\teacher" />
-      <recent name="E:\Satit2\satit2\public\js\views\admin\class_teacher" />
-      <recent name="E:\Satit2\satit2\public\js\controller\admin\class_teacher" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Satit2\satit2\public\js\views\admin\course\subject" />
+      <recent name="E:\Satit2\satit2\public\js\controller\admin\course\subject" />
       <recent name="E:\Satit2\satit2\public\js\controller\admin" />
       <recent name="E:\Satit2\satit2\public\js\views\admin\course" />
       <recent name="E:\Satit2\satit2\public\js\views\admin\teacher" />
-      <recent name="E:\Satit2\satit2\public\js\views\admin\class_teacher" />
-      <recent name="E:\Satit2\satit2\public\js\views\admin\student_detail" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Satit2\satit2\public\js\views\student" />
+      <recent name="E:\Satit2\satit2\public\js\controller\teacher" />
+      <recent name="E:\Satit2\satit2\public\js\controller\teacher\course" />
+      <recent name="E:\Satit2\satit2\public\js\controller\teacher\student" />
+      <recent name="E:\Satit2\satit2\public\js\views\teacher" />
     </key>
   </component>
   <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
@@ -706,9 +564,12 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/api/satit/prototype/teacher_api/student_api/post.rb</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/service/teacher/student_action.rb</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/entities/satit/room_api/student_room_list_entity.rb</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/config/routes.rb</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/index.html</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/public/js/app.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/js/controller/admin/course/courseController.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/js/views/admin/course/Course_Dashboard.html</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Created" />
@@ -716,6 +577,12 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="CREATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/index.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/js/controller/admin/course/addRoomController.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/js/controller/admin/course/roomController.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/js/views/admin/course/SubjectAdd.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/js/views/admin/course/SubjectList.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/js/views/admin/course/SubjectRoomAdd.html</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Deleted" />
@@ -993,7 +860,8 @@
       <workItem from="1516693777645" duration="2139000" />
       <workItem from="1516784647527" duration="2842000" />
       <workItem from="1516856454643" duration="13227000" />
-      <workItem from="1517035899402" duration="6135000" />
+      <workItem from="1517035899402" duration="6640000" />
+      <workItem from="1517124628109" duration="24307000" />
     </task>
     <task id="LOCAL-00001" summary="Fix some error in StdTableGrade">
       <created>1475933218620</created>
@@ -1310,11 +1178,18 @@
       <option name="project" value="LOCAL" />
       <updated>1510205155679</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="update project to route">
+      <created>1517042543181</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1517042543181</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="421916000" />
+    <option name="totallyTimeSpent" value="446728000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1329,10 +1204,11 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17113096" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21949404" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32569557" sideWeight="0.5029762" order="10" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31096563" sideWeight="0.49702382" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31096563" sideWeight="0.49702382" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24925596" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.11456628" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -1344,7 +1220,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1410,7 +1285,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add some content" />
     <MESSAGE value="Fix some link&#10;" />
     <MESSAGE value="Add Father,Mother,Guardian  Page" />
     <MESSAGE value="Add Edit Father,Mother,Guardian  Page" />
@@ -1435,19 +1309,20 @@
     <MESSAGE value="update upload profile" />
     <MESSAGE value="update lib" />
     <MESSAGE value="add upload profile image" />
-    <option name="LAST_COMMIT_MESSAGE" value="add upload profile image" />
+    <MESSAGE value="update project to route" />
+    <option name="LAST_COMMIT_MESSAGE" value="update project to route" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/public/js/app.js</url>
-          <line>875</line>
+          <line>952</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/public/js/app.js</url>
-          <line>1467</line>
+          <line>1544</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -1457,13 +1332,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/public/js/app.js</url>
-          <line>1473</line>
+          <line>1550</line>
           <option name="timeStamp" value="13" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/public/js/teacher/index_controller.js</url>
-          <line>10</line>
-          <option name="timeStamp" value="17" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/public/js/admin/teacher_room.js</url>
@@ -1485,349 +1355,482 @@
           <line>85</line>
           <option name="timeStamp" value="21" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/public/js/controller/admin/course/roomController.js</url>
+          <line>102</line>
+          <properties />
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/public/js/controller/student/studentController.js</url>
+          <line>215</line>
+          <properties />
+          <option name="timeStamp" value="36" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="23" />
+      <option name="time" value="37" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/js/views/admin/Dashboard.html">
+    <entry file="file://$PROJECT_DIR$/public/js/views/admin/course/SubjectAdd.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="952">
-          <caret line="56" column="58" lean-forward="false" selection-start-line="56" selection-start-column="58" selection-end-line="56" selection-end-column="58" />
+        <state relative-caret-position="102">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/Dashboard_Viewrooms_Std_Data.html">
+    <entry file="file://$PROJECT_DIR$/public/js/views/admin/course/SubjectRoomAdd.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="1505" column="0" lean-forward="false" selection-start-line="1505" selection-start-column="0" selection-end-line="1507" selection-end-column="56" />
+        <state relative-caret-position="102">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/views/admin/Dashboard_Viewrooms.html">
+    <entry file="file://$PROJECT_DIR$/public/js/views/admin/course/subject/SubjectList.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-170">
-          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="102">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/Dashboard_Viewrooms_Std_EditStudent.html">
+    <entry file="file://$PROJECT_DIR$/public/js/views/admin/course/subject/SubjectEdit.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="102">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/admin/edit_student.js">
+    <entry file="file://$PROJECT_DIR$/public/js/views/admin/course/subject/SubjectAddTeacher.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="21" column="4" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+        <state relative-caret-position="102">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/controller/loginController.js">
+    <entry file="file://$PROJECT_DIR$/public/js/views/admin/course/room/StudentList.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="102">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/controller/admin/selectRoomController.js">
+    <entry file="file://$PROJECT_DIR$/public/js/views/admin/course/room/RoomList.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-174">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/controller/admin/addFatherController.js" />
-    <entry file="file://$PROJECT_DIR$/public/js/controller/admin/editFatherController.js" />
-    <entry file="file://$PROJECT_DIR$/public/js/controller/admin/editStudentController.js" />
-    <entry file="file://$PROJECT_DIR$/public/js/views/admin/student_detail/Dashboard_Viewrooms_Std_EditFather.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="26" lean-forward="true" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/controller/admin/studentDetailController.js" />
-    <entry file="file://$PROJECT_DIR$/public/js/views/admin/student_detail/Dashboard_Viewrooms_Std_EditStudent.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="29" lean-forward="true" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/views/admin/student_detail/Dashboard_Viewrooms_Std_AddFather.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="58" lean-forward="false" selection-start-line="20" selection-start-column="58" selection-end-line="20" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/views/admin/student_detail/Dashboard_Viewrooms_Std_AddMother.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="17" column="26" lean-forward="true" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/views/admin/student_detail/Dashboard_Viewrooms_Std_EditMother.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-71">
-          <caret line="31" column="80" lean-forward="false" selection-start-line="31" selection-start-column="80" selection-end-line="31" selection-end-column="80" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/controller/admin/motherController.js" />
-    <entry file="file://$PROJECT_DIR$/public/js/views/admin/student_detail/Dashboard_Viewrooms_Std_Data.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="21" column="54" lean-forward="false" selection-start-line="21" selection-start-column="54" selection-end-line="21" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/views/admin/student_detail/Dashboard_Viewrooms_Std_EditGuardian.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3825">
-          <caret line="225" column="10" lean-forward="false" selection-start-line="225" selection-start-column="10" selection-end-line="225" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/controller/admin/guardianController.js" />
-    <entry file="file://$PROJECT_DIR$/public/js/views/admin/student_detail/Dashboard_Viewrooms_Std_AddGuardian.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="214" column="0" lean-forward="false" selection-start-line="214" selection-start-column="0" selection-end-line="214" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/controller/admin/student_detail/guardianController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/Dashboard_Viewrooms_Std_Grade.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
-          <caret line="147" column="0" lean-forward="true" selection-start-line="147" selection-start-column="0" selection-end-line="147" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/StudentGrade.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2775">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/views/admin/Print_Grade.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="36" column="52" lean-forward="false" selection-start-line="36" selection-start-column="52" selection-end-line="36" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/controller/admin/studentGradeController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="59" column="49" lean-forward="false" selection-start-line="59" selection-start-column="49" selection-end-line="59" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/views/admin/Dashboard_Viewrooms_Std_Grade.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="73" column="197" lean-forward="false" selection-start-line="73" selection-start-column="197" selection-end-line="73" selection-end-column="197" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/controller/admin/printGradeController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="6" lean-forward="false" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/views/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="44" lean-forward="true" selection-start-line="3" selection-start-column="44" selection-end-line="3" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/views/admin/AddStudents.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="32" column="53" lean-forward="false" selection-start-line="32" selection-start-column="53" selection-end-line="32" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/views/admin/AddStudentCSV.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-612">
-          <caret line="19" column="21" lean-forward="true" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/controller/admin/addStudentController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="94" lean-forward="false" selection-start-line="0" selection-start-column="94" selection-end-line="0" selection-end-column="94" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/views/admin/Dashboard_Viewrooms_Std.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-531">
-          <caret line="47" column="56" lean-forward="true" selection-start-line="47" selection-start-column="56" selection-end-line="47" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/Dashboard_Viewrooms_Std_Teacher.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="48" column="0" lean-forward="false" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/controller/admin/class_teacher/classTeacherController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-901">
-          <caret line="7" column="24" lean-forward="false" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
+        <state relative-caret-position="102">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/views/admin/class_teacher/Dashboard_Viewrooms_Std_Teacher.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="69" column="60" lean-forward="true" selection-start-line="69" selection-start-column="60" selection-end-line="69" selection-end-column="60" />
+        <state relative-caret-position="102">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/views/admin/class_teacher/Dashboard_Viewrooms_Std_AddTeacher.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="15" column="26" lean-forward="true" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
+        <state relative-caret-position="102">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/teacher_controller.js">
+    <entry file="file://$PROJECT_DIR$/public/js/controller/admin/student_detail/studentDetailController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="5" lean-forward="true" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/controller/admin/student_detail/editStudentController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="31" column="34" lean-forward="true" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/members/login_controller.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/views/admin/teacher/Dashboard_Teacher.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="98">
-          <caret line="91" column="80" lean-forward="false" selection-start-line="91" selection-start-column="80" selection-end-line="91" selection-end-column="80" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/controller/admin/viewStudentController.js">
+    <entry file="file://$PROJECT_DIR$/public/js/controller/teacher/teacherDashboardController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="71">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="44" lean-forward="false" selection-start-line="0" selection-start-column="44" selection-end-line="0" selection-end-column="44" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/controller/admin/teacher/teacherPasswordController.js">
+    <entry file="file://$PROJECT_DIR$/public/js/views/teacher/student_list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="47" column="40" lean-forward="false" selection-start-line="47" selection-start-column="40" selection-end-line="47" selection-end-column="40" />
+        <state relative-caret-position="119">
+          <caret line="7" column="108" lean-forward="false" selection-start-line="7" selection-start-column="108" selection-end-line="7" selection-end-column="108" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/controller/admin/teacher/teacherController.js">
+    <entry file="file://$PROJECT_DIR$/public/js/controller/teacher/teacherStudentListController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="7" lean-forward="false" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
+        <state relative-caret-position="0">
+          <caret line="0" column="46" lean-forward="false" selection-start-line="0" selection-start-column="46" selection-end-line="0" selection-end-column="46" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/controller/admin/teacher/addTeacherController.js">
+    <entry file="file://$PROJECT_DIR$/public/js/views/teacher/student/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="82" lean-forward="false" selection-start-line="18" selection-start-column="82" selection-end-line="18" selection-end-column="82" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/views/teacher/student/grade_no_credit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="28" column="19" lean-forward="false" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/views/teacher/student/grade.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/views/teacher/student/edit_student.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
-          <caret line="8" column="42" lean-forward="false" selection-start-line="8" selection-start-column="42" selection-end-line="8" selection-end-column="42" />
+          <caret line="8" column="119" lean-forward="false" selection-start-line="8" selection-start-column="119" selection-end-line="8" selection-end-column="119" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/views/admin/teacher/Dashboard_AddTeacher.html">
+    <entry file="file://$PROJECT_DIR$/public/js/views/teacher/student/edit_mother.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="78" column="61" lean-forward="true" selection-start-line="78" selection-start-column="61" selection-end-line="78" selection-end-column="61" />
+        <state relative-caret-position="119">
+          <caret line="7" column="115" lean-forward="false" selection-start-line="7" selection-start-column="115" selection-end-line="7" selection-end-column="115" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/course_controller.js">
+    <entry file="file://$PROJECT_DIR$/public/js/views/teacher/student/edit_father.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="308" column="6" lean-forward="false" selection-start-line="308" selection-start-column="6" selection-end-line="308" selection-end-column="6" />
+        <state relative-caret-position="119">
+          <caret line="7" column="115" lean-forward="false" selection-start-line="7" selection-start-column="115" selection-end-line="7" selection-end-column="115" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/views/teacher/student/edit_guardian.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="115" lean-forward="false" selection-start-line="6" selection-start-column="115" selection-end-line="6" selection-end-column="115" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/views/teacher/student/add_mother.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="115" lean-forward="false" selection-start-line="7" selection-start-column="115" selection-end-line="7" selection-end-column="115" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/views/teacher/student/add_guardian.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3808">
+          <caret line="224" column="0" lean-forward="false" selection-start-line="224" selection-start-column="0" selection-end-line="224" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/views/teacher/student/add_father.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="237" column="0" lean-forward="false" selection-start-line="237" selection-start-column="0" selection-end-line="237" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/views/teacher/student/details.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="19" column="62" lean-forward="true" selection-start-line="19" selection-start-column="62" selection-end-line="19" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/controller/teacher/student/teacherStudentController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="82">
+          <caret line="98" column="50" lean-forward="false" selection-start-line="98" selection-start-column="50" selection-end-line="98" selection-end-column="50" />
           <folding>
-            <element signature="e#166#10326#0" expanded="false" />
+            <element signature="e#103#1476#0" expanded="false" />
+            <element signature="e#4759#7657#0" expanded="false" />
+            <element signature="e#7772#12500#0" expanded="false" />
+            <element signature="e#12611#14334#0" expanded="false" />
+            <element signature="e#14445#16182#0" expanded="false" />
+            <element signature="e#16293#18133#0" expanded="false" />
+            <element signature="e#21164#22531#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/public/js/views/teacher/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="55" column="72" lean-forward="false" selection-start-line="55" selection-start-column="72" selection-end-line="55" selection-end-column="72" />
+        <state relative-caret-position="109">
+          <caret line="31" column="38" lean-forward="false" selection-start-line="31" selection-start-column="37" selection-end-line="31" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/views/teacher/index_subject.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="29" column="24" lean-forward="false" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/views/teacher/course/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-646">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/views/teacher/course/student.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1073">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/controller/teacher/course/teacherCourseController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="29" column="43" lean-forward="false" selection-start-line="29" selection-start-column="43" selection-end-line="29" selection-end-column="43" />
+          <folding>
+            <element signature="e#104#1392#0" expanded="false" />
+            <element signature="e#1505#4490#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/controller/teacher/teacherSubjectController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#98#1039#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/teacher/index_controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="63" column="1" lean-forward="true" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="1" />
+          <folding>
+            <element signature="e#456#1290#0" expanded="false" />
+            <element signature="e#1346#2297#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/views/teacher/course/index_student.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="799">
+          <caret line="74" column="29" lean-forward="false" selection-start-line="74" selection-start-column="29" selection-end-line="74" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/controller/teacher/teacherChangePasswordController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="64" lean-forward="false" selection-start-line="25" selection-start-column="64" selection-end-line="25" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/views/teacher/change_password.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="87">
+          <caret line="34" column="19" lean-forward="false" selection-start-line="34" selection-start-column="19" selection-end-line="34" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/controller/student/studentGradeController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="6" lean-forward="false" selection-start-line="25" selection-start-column="6" selection-end-line="25" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="97" column="42" lean-forward="false" selection-start-line="97" selection-start-column="42" selection-end-line="97" selection-end-column="42" />
+        <state relative-caret-position="251">
+          <caret line="225" column="37" lean-forward="false" selection-start-line="225" selection-start-column="37" selection-end-line="225" selection-end-column="37" />
           <folding>
-            <marker date="1517041186935" expanded="true" signature="12496:12506" ph="..." />
-            <marker date="1517041186935" expanded="true" signature="43743:43837" ph="{...}" />
-            <marker date="1517041186935" expanded="false" signature="50312:51564" ph="{...}" />
+            <element signature="e#12191#12731#0" expanded="false" />
+            <element signature="e#14555#17247#0" expanded="false" />
+            <element signature="e#37899#39168#0" expanded="false" />
+            <element signature="e#39238#50886#0" expanded="false" />
+            <element signature="e#50945#53738#0" expanded="false" />
+            <element signature="e#53802#55054#0" expanded="false" />
+            <element signature="e#55118#57904#0" expanded="false" />
+            <element signature="e#57964#61899#0" expanded="false" />
+            <marker date="1517147296249" expanded="true" signature="14763:14773" ph="..." />
+            <marker date="1517147296249" expanded="true" signature="17532:17542" ph="..." />
+            <marker date="1517147296249" expanded="true" signature="18127:18143" ph="..." />
+            <marker date="1517147296249" expanded="true" signature="47233:47327" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/views/admin/teacher/re_password_teacher.html">
+    <entry file="file://$PROJECT_DIR$/public/js/views/student/DashboardStudent.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="21" column="44" lean-forward="false" selection-start-line="21" selection-start-column="44" selection-end-line="21" selection-end-column="44" />
+        <state relative-caret-position="-17">
+          <caret line="32" column="16" lean-forward="true" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/controller/admin/adminDashboardController.js">
+    <entry file="file://$PROJECT_DIR$/public/js/views/student/StudentGrade.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="62" lean-forward="false" selection-start-line="8" selection-start-column="62" selection-end-line="8" selection-end-column="62" />
+        <state relative-caret-position="-255">
+          <caret line="9" column="82" lean-forward="false" selection-start-line="9" selection-start-column="82" selection-end-line="9" selection-end-column="82" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/views/admin/course/Course_Dashboard.html">
+    <entry file="file://$PROJECT_DIR$/public/js/views/student/AddMother.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="67" column="109" lean-forward="true" selection-start-line="67" selection-start-column="109" selection-end-line="67" selection-end-column="109" />
+        <state relative-caret-position="68">
+          <caret line="4" column="16" lean-forward="false" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/controller/admin/course/courseController.js">
+    <entry file="file://$PROJECT_DIR$/public/js/views/student/EditFather.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        <state relative-caret-position="68">
+          <caret line="4" column="16" lean-forward="false" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="16" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/views/student/AddFather.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="16" lean-forward="false" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/views/student/EditMother.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="16" lean-forward="false" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/views/student/AddGuardian.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="16" lean-forward="false" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/views/student/EditGuardian.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="16" lean-forward="false" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/views/student/EditStudent.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="16" lean-forward="false" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="832">
+          <caret line="76" column="0" lean-forward="true" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/views/student/StudentProfile.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="77">
+          <caret line="53" column="58" lean-forward="true" selection-start-line="53" selection-start-column="58" selection-end-line="53" selection-end-column="58" />
+          <folding>
+            <element signature="n#form#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#div#3;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#div#4;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#div#5;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#div#6;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#div#3;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#div#4;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#div#5;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#div#6;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#div#7;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/controller/student/studentController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="23" lean-forward="false" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
+          <folding>
+            <element signature="e#3360#5345#0" expanded="false" />
+            <element signature="e#5386#6148#0" expanded="false" />
+            <element signature="e#6189#6905#0" expanded="false" />
+            <element signature="e#6948#7716#0" expanded="false" />
+            <element signature="e#7756#8884#0" expanded="false" />
+            <element signature="e#8924#10004#0" expanded="false" />
+            <element signature="e#10046#11196#0" expanded="false" />
+            <element signature="e#11233#11628#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

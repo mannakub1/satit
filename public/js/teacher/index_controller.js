@@ -80,7 +80,7 @@ myApp.controller('changPassword', function($scope, $http)  {
 			headers: {'token': $scope.token, 'Content-Type': "application/json"}
 			})
 			.success(function(data, status, header, config){
-				window.location.href = '../teacher/chang_password.html'
+				window.location.href = '../teacher/change_password.html'
 
 			})
 			.error(function(data, status, headers, config) {

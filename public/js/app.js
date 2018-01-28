@@ -5,13 +5,13 @@ var token = localStorage.getItem('token');
 //var address = "http://192.168.217.102:3000/";
 // var address = 'http://localhost:3000/'
 //var address = 'http://202.28.73.138:3000/'
-var address = 'http://172.20.40.109:3000/';
+var address = 'http://172.20.40.93:3000/';
 // var address = 'http://172.27.225.177:3000/'
 //var address = 'http://172.27.160.80:3000/'
 // var address = "http://172.27.160.166:3000/";
 // var address = "http://202.28.73.138:3000/";
 
-var myApp = angular.module('myApp', ['ngRoute']);
+var myApp = angular.module('myApp', ['ngRoute', 'ngFileUpload']);
 myApp.config(function($routeProvider){
 	$routeProvider.when("/admin", {
 		templateUrl: 'public/js/views/admin/Dashboard.html',
@@ -102,89 +102,128 @@ myApp.config(function($routeProvider){
             controller: 'courseController'
         })
 		.when("/admin/course/subject", {
-            templateUrl: 'public/js/views/admin/course/SubjectList.html',
+            templateUrl: 'public/js/views/admin/course/subject/SubjectList.html',
+            controller: 'subjectDetailController'
         })
 		.when("/admin/course/subject/edit", {
-            templateUrl: 'public/js/views/admin/SubjectEdit.html',
+            templateUrl: 'public/js/views/admin/course/subject/SubjectEdit.html',
+            controller: 'editSubjectController'
         })
 		.when("/admin/course/subject/add_teacher", {
-            templateUrl: 'public/js/views/admin/SubjectAddTeacher.html',
+            templateUrl: 'public/js/views/admin/course/subject/SubjectAddTeacher.html',
+            controller: 'subjectAddTeacherController'
         })
 		.when("/admin/course/add_room", {
             templateUrl: 'public/js/views/admin/course/SubjectRoomAdd.html',
             controller: 'addRoomController'
         })
         .when("/admin/course/room", {
-            templateUrl: 'public/js/views/admin/RoomList.html',
+            templateUrl: 'public/js/views/admin/course/room/RoomList.html',
+            controller: 'roomDetailController'
+        })
+        .when("/admin/course/room/student", {
+            templateUrl: 'public/js/views/admin/course/room/StudentList.html',
+            controller: 'studentRoomController'
         })
         .when("/admin/search_student", {
             templateUrl: 'public/js/views/admin/search/Search_Student.html',
+            controller: 'studentSearchController'
+        })
+        .when("/admin/search_student/data", {
+            templateUrl: 'public/js/views/admin/search/SearchStudentData.html',
+            controller: 'studentSearchDataController'
+        })
+        .when("/admin/search_student/grade", {
+            templateUrl: 'public/js/views/admin/search/SearchStudentGrade.html',
+            controller: 'studentSearchGradeController'
         })
         .when("/admin/add_grade4_student", {
-            templateUrl: 'public/js/views/admin/room_index.html',
+            templateUrl: 'public/js/views/admin/fourth_year/room_index.html',
+            controller: 'fourthYearRoomController'
+        })
+        .when("/admin/add_grade4_student/data", {
+            templateUrl: 'public/js/views/admin/fourth_year/add_fourth_student.html',
+            controller: 'fourthYearStudentController'
         })
         .when("/teacher", {
             templateUrl: 'public/js/views/teacher/index.html',
+            controller: 'teacherDashboardController'
         })
         .when("/teacher/room", {
             templateUrl: 'public/js/views/teacher/student_list.html',
+            controller: 'teacherStudentListController'
         })
         .when("/teacher/room/student", {
             templateUrl: 'public/js/views/teacher/student/index.html',
+            controller: 'teacherStudentIndexController'
         })
         .when("/teacher/room/elective_subject_score", {
             templateUrl: 'public/js/views/teacher/student/grade_no_credit.html',
+            controller: 'teacherStudentGradeNoCreditController'
         })
         .when("/teacher/room/student/data", {
             templateUrl: 'public/js/views/teacher/student/details.html',
+            controller: 'teacherStudentDetailController'
         })
         .when("/teacher/room/student/data/edit", {
             templateUrl: 'public/js/views/teacher/student/edit_student.html',
+            controller: 'teacherStudentDetailController'
         })
         .when("/teacher/room/student/data/father/add", {
             templateUrl: 'public/js/views/teacher/student/add_father.html',
+            controller: 'teacherStudentAddFatherController'
         })
         .when("/teacher/room/student/data/mother/add", {
             templateUrl: 'public/js/views/teacher/student/add_mother.html',
+            controller: 'teacherStudentAddMotherController'
         })
         .when("/teacher/room/student/data/guardian/add", {
             templateUrl: 'public/js/views/teacher/student/add_guardian.html',
+            controller: 'teacherStudentAddGuardianController'
         })
         .when("/teacher/room/student/data/father/edit", {
             templateUrl: 'public/js/views/teacher/student/edit_father.html',
+            controller: 'teacherStudentEditFatherController'
         })
         .when("/teacher/room/student/data/mother/edit", {
             templateUrl: 'public/js/views/teacher/student/edit_mother.html',
+            controller: 'teacherStudentEditMotherController'
         })
         .when("/teacher/room/student/data/guardian/edit", {
             templateUrl: 'public/js/views/teacher/student/edit_guardian.html',
+            controller: 'teacherStudentEditGuardianController'
         })
         .when("/teacher/room/student/grade", {
             templateUrl: 'public/js/views/teacher/student/grade.html',
+            controller: 'teacherStudentGradeController'
         })
         .when("/teacher/subject", {
             templateUrl: 'public/js/views/teacher/index_subject.html',
-        })
-        .when("/teacher/subject", {
-            templateUrl: 'public/js/views/teacher/index_subject.html',
+            controller: 'teacherSubjectController'
         })
         .when("/teacher/subject/room", {
             templateUrl: 'public/js/views/teacher/course/index.html',
+            controller: 'teacherCourseIndexController'
         })
         .when("/teacher/subject/room/student/score", {
             templateUrl: 'public/js/views/teacher/course/index_student.html',
+            controller: 'teacherCourseStudentScoreController'
         })
         .when("/teacher/change_password", {
             templateUrl: 'public/js/views/teacher/change_password.html',
+            controller: 'teacherChangPasswordController'
         })
         .when("/student", {
             templateUrl: 'public/js/views/student/DashboardStudent.html',
+            controller: 'studentDashboardController'
         })
         .when("/student/data", {
             templateUrl: 'public/js/views/student/StudentProfile.html',
+            controller: 'studentDashboardController'
         })
         .when("/student/grade", {
             templateUrl: 'public/js/views/student/StudentGrade.html',
+            controller: 'studentGradeController'
         })
 		.otherwise({redirectTo: "/login",
             templateUrl: 'public/js/views/login.html',
@@ -390,7 +429,43 @@ myApp.directive('uploader', function($http, $location, static_function) {
     };
 });
 
+myApp.directive('uploader2', function($http, $location, static_function) {
+    return {
+        restrict: 'E',
+        template: '<input type="file"><br><br>' +
+        '<button class="btn btn-lg btn-primary btn-block" type="submit" ng-click="uploadFile()" value="Upload" style = "width: 40%">Submit</button>',
+        scope: {},
+        link: function(scope, el, attrs) {
+            var dataStudent = '';
+            var file = el.find('input');
+            scope.fileName = '?';
+            var button = el.find('button');
+            button.bind('click', function(ev) {
+                var student = [];
+            });
+        }
+    };
+});
 
+myApp.directive('headerNav',function ($http, $location ) {
+    return {
+        restrict: 'E',
+        template: '<div class="row border-bottom">' +
+        '<nav class="navbar navbar-static-top white-bg" role="navigation" style="margin-bottom: 0">'+
+        '<div class="navbar-header">'+
+        '</div>'+
+        '<ul class="nav navbar-top-links navbar-right">'+
+        '<li>'+
+        '<a href="#/login">'+
+        '<i class="fa fa-sign-out"></i> Log out'+
+        '</a>'+
+        '</li>'+
+        '</ul>'+
+        '</nav>'+
+        '</div>',
+        scope: {},
+    };
+});
 
 
 myApp.controller('mainCtrl',  function($scope, $http, fileUpload) {

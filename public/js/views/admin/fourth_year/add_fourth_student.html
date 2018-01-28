@@ -1,0 +1,77 @@
+<div id="wrapper" >
+    <nav class="navbar-default navbar-static-side" role="navigation">
+        <div class="sidebar-collapse">
+            <ul class="nav" id="side-menu">
+                <li class="nav-header">
+                    <div class="dropdown profile-element">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">Admin</strong>
+                            </span> <span class="text-muted text-xs block">JAMZ Dev <b class="caret"></b></span> </span> </a>
+                        <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                            <li><a href="Profile.html">Profile</a></li>
+                            <li><a href="login.html">Logout</a></li>
+                        </ul>
+                    </div>
+                    <div class="logo-element">
+                        IN+
+                    </div>
+                </li>
+                <li>
+                                    <!-- <a href=""></i> <span class="nav-label">รายชื่อเด็กประจำชั้น</span></a>
+                                    <a href=""></i> <span class="nav-label">รายชื่อเด็กที่สอน</span></a>
+                                    <a href=""></i> <span class="nav-label">เปลี่ยนรหัสผ่าน</span></a> -->
+                </li>
+                <li>
+                    <a href="#/admin/add_grade4_student"></i> <span class="nav-label">กลับ</span></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+<div id="page-wrapper" class="gray-bg" >
+        <header-nav></header-nav>
+    <center>
+        <div class="wrapper wrapper-content ">
+            <!-- <div class="wrapper wrapper-content animated fadeInRight"> -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ibox float-e-margins">
+                        
+                        <div class="ibox-content" style="width: 75%" >
+                            <div class="row">
+                              <!-- body chang -->
+                                  <table class="table table-hover" >
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>รหัสประจำตัว</th>
+                                                <th>คำนำหน้าชื่อ</th>
+                                                <th>ชื่อจริง</th>
+                                                <th>นามสกุล</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr ng-repeat="y in students">
+                                                <td>{{$index + 1}}</td>
+                                                <td>{{y.code_number}}</td>
+                                                 <td>{{y.prefix}}</td>
+                                                <td>{{y.first_name}}</td>
+                                                <td>{{y.last_name}}</td>
+                                                <td>
+                                                <button ng-attr-id="{{'bt'+$index}}" ng-click="addStudentRoom(y.id, $index)" class="btn btn-info btn-sm" align = "right" >เลื่อนชั้น</button>
+                                                <td/>   
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+                    </div>
+    </center>
+                </div>
+            </div>
