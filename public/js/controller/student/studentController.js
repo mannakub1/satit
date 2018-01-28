@@ -146,7 +146,7 @@ myApp.controller('studentDashboardController',  function($scope, $http, static_f
                 sessionStorage.setItem('stdData', JSON.stringify($scope.student));
                 $scope.showEditStudent = false;
                 $scope.showStudentData = true;
-                //	$scope.showStudent = true;
+                location.reload();
 
             })
             .error(function(data, status, headers, config) {
@@ -166,7 +166,7 @@ myApp.controller('studentDashboardController',  function($scope, $http, static_f
                 sessionStorage.setItem('stdData', JSON.stringify($scope.student));
                 $scope.showEditFather = false;
                 $scope.showStudentData = true;
-                //	$scope.showStudent = true;
+                location.reload();
 
             })
             .error(function(data, status, headers, config) {
@@ -186,6 +186,7 @@ myApp.controller('studentDashboardController',  function($scope, $http, static_f
                 sessionStorage.setItem('stdData', JSON.stringify($scope.student));
                 $scope.showEditMother = false;
                 $scope.showStudentData = true;
+                location.reload();
 
             })
             .error(function(data, status, headers, config) {
@@ -206,6 +207,7 @@ myApp.controller('studentDashboardController',  function($scope, $http, static_f
                 $scope.showEditGuardian = false;
                 $scope.showStudentData = true;
                 //	$scope.showStudent = true;
+                location.reload();
 
             })
             .error(function(data, status, headers, config) {
@@ -233,6 +235,7 @@ myApp.controller('studentDashboardController',  function($scope, $http, static_f
                 $scope.showAddFather = false;
                 $scope.showStudentData = true;
                 //	$scope.showStudent = true;
+                location.reload();
 
             })
             .error(function(data, status, headers, config) {
@@ -260,6 +263,7 @@ myApp.controller('studentDashboardController',  function($scope, $http, static_f
                 $scope.hasMother = true;
                 $scope.showAddMother = false;
                 $scope.showStudentData = true;
+                location.reload();
 
             })
             .error(function(data, status, headers, config) {
@@ -287,6 +291,8 @@ myApp.controller('studentDashboardController',  function($scope, $http, static_f
                     $scope.showAddGuardian = false;
                     $scope.hasGuardian = true;
                     $scope.showStudentData = true;
+                    location.reload();
+
                 })
             .error(function(data, status, headers, config) {
                 static_function.token_expired_check(data.error);
