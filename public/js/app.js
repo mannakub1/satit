@@ -5,7 +5,7 @@ var token = localStorage.getItem('token');
 //var address = "http://192.168.217.102:3000/";
 // var address = 'http://localhost:3000/'
 //var address = 'http://202.28.73.138:3000/'
-var address = 'http://172.20.40.93:3000/';
+var address = 'http://172.20.40.18:3000/';
 // var address = 'http://172.27.225.177:3000/'
 //var address = 'http://172.27.160.80:3000/'
 // var address = "http://172.27.160.166:3000/";
@@ -14,219 +14,219 @@ var address = 'http://172.20.40.93:3000/';
 var myApp = angular.module('myApp', ['ngRoute', 'ngFileUpload']);
 myApp.config(function($routeProvider){
 	$routeProvider.when("/admin", {
-		templateUrl: 'public/js/views/admin/Dashboard.html',
+		templateUrl: 'js/views/admin/Dashboard.html',
 		controller: 'adminDashboardController'
 	})
 		.when("/admin/viewroom", {
-			templateUrl: 'public/js/views/admin/Dashboard_Viewrooms.html',
+			templateUrl: 'js/views/admin/Dashboard_Viewrooms.html',
 			controller: 'selectRoomController'
 		})
 		.when("/admin/viewroom/student", {
-			templateUrl: 'public/js/views/admin/Dashboard_Viewrooms_Std.html',
+			templateUrl: 'js/views/admin/Dashboard_Viewrooms_Std.html',
 			controller: 'viewStudentController'
 		})
 		.when("/admin/viewroom/student/data", {
-			templateUrl: 'public/js/views/admin/student_detail/Dashboard_Viewrooms_Std_Data.html',
+			templateUrl: 'js/views/admin/student_detail/Dashboard_Viewrooms_Std_Data.html',
 			controller: 'studentDetailController'
 		})
 		.when("/admin/viewroom/student/data/edit", {
-			templateUrl: 'public/js/views/admin/student_detail/Dashboard_Viewrooms_Std_EditStudent.html',
+			templateUrl: 'js/views/admin/student_detail/Dashboard_Viewrooms_Std_EditStudent.html',
 			controller: 'adminEditStudentController'
 		})
 		.when("/admin/viewroom/student/data/father/add", {
-			templateUrl: 'public/js/views/admin/student_detail/Dashboard_Viewrooms_Std_AddFather.html',
+			templateUrl: 'js/views/admin/student_detail/Dashboard_Viewrooms_Std_AddFather.html',
 			controller: 'adminAddFatherController'
 		})
 		.when("/admin/viewroom/student/data/mother/add", {
-            templateUrl: 'public/js/views/admin/student_detail/Dashboard_Viewrooms_Std_AddMother.html',
+            templateUrl: 'js/views/admin/student_detail/Dashboard_Viewrooms_Std_AddMother.html',
 			controller: 'adminAddMotherController'
 		})
         .when("/admin/viewroom/student/data/guardian/add", {
-            templateUrl: 'public/js/views/admin/student_detail/Dashboard_Viewrooms_Std_AddGuardian.html',
+            templateUrl: 'js/views/admin/student_detail/Dashboard_Viewrooms_Std_AddGuardian.html',
 			controller: 'adminAddGuardianController'
         })
         .when("/admin/viewroom/student/data/father/edit", {
-            templateUrl: 'public/js/views/admin/student_detail/Dashboard_Viewrooms_Std_EditFather.html',
+            templateUrl: 'js/views/admin/student_detail/Dashboard_Viewrooms_Std_EditFather.html',
 			controller: 'adminEditFatherController'
         })
         .when("/admin/viewroom/student/data/mother/edit", {
-            templateUrl: 'public/js/views/admin/student_detail/Dashboard_Viewrooms_Std_EditMother.html',
+            templateUrl: 'js/views/admin/student_detail/Dashboard_Viewrooms_Std_EditMother.html',
 			controller: 'adminEditMotherController'
         })
         .when("/admin/viewroom/student/data/guardian/edit", {
-            templateUrl: 'public/js/views/admin/student_detail/Dashboard_Viewrooms_Std_EditGuardian.html',
+            templateUrl: 'js/views/admin/student_detail/Dashboard_Viewrooms_Std_EditGuardian.html',
 			controller: 'adminEditGuardianController'
         })
         .when("/admin/viewroom/student/grade", {
-            templateUrl: 'public/js/views/admin/Dashboard_Viewrooms_Std_Grade.html',
+            templateUrl: 'js/views/admin/Dashboard_Viewrooms_Std_Grade.html',
 			controller: 'adminViewStudentGradeController'
         })
         .when("/admin/viewroom/student/grade/print", {
-            templateUrl: 'public/js/views/admin/Print_Grade.html',
+            templateUrl: 'js/views/admin/Print_Grade.html',
 			controller: 'printGradeController'
         })
         .when("/admin/viewroom/student/add", {
-            templateUrl: 'public/js/views/admin/AddStudents.html',
+            templateUrl: 'js/views/admin/AddStudents.html',
 			controller: 'addStudentController'
         })
         .when("/admin/viewroom/student/add/file", {
-            templateUrl: 'public/js/views/admin/AddStudentCSV.html',
+            templateUrl: 'js/views/admin/AddStudentCSV.html',
 			controller: 'addStudentCSVController'
         })
         .when("/admin/viewroom/class_teacher", {
-            templateUrl: 'public/js/views/admin/class_teacher/Dashboard_Viewrooms_Std_Teacher.html',
+            templateUrl: 'js/views/admin/class_teacher/Dashboard_Viewrooms_Std_Teacher.html',
 			controller: 'classTeacherController'
         })
         .when("/admin/viewroom/class_teacher/change", {
-            templateUrl: 'public/js/views/admin/class_teacher/Dashboard_Viewrooms_Std_AddTeacher.html',
+            templateUrl: 'js/views/admin/class_teacher/Dashboard_Viewrooms_Std_AddTeacher.html',
 			controller: 'changeClassTeacherController'
         })
         .when("/admin/teacher", {
-            templateUrl: 'public/js/views/admin/teacher/Dashboard_Teacher.html',
+            templateUrl: 'js/views/admin/teacher/Dashboard_Teacher.html',
 			controller: 'adminTeacherController'
         })
 		.when("/admin/teacher/add", {
-            templateUrl: 'public/js/views/admin/teacher/Dashboard_AddTeacher.html',
+            templateUrl: 'js/views/admin/teacher/Dashboard_AddTeacher.html',
             controller: 'addTeacherController'
         })
 		.when("/admin/teacher/change_password", {
-            templateUrl: 'public/js/views/admin/teacher/re_password_teacher.html',
+            templateUrl: 'js/views/admin/teacher/re_password_teacher.html',
             controller: 'teacherPasswordController'
         })
 		.when("/admin/course", {
-            templateUrl: 'public/js/views/admin/course/Course_Dashboard.html',
+            templateUrl: 'js/views/admin/course/Course_Dashboard.html',
             controller: 'courseController'
         })
 		.when("/admin/course/add_subject", {
-            templateUrl: 'public/js/views/admin/course/SubjectAdd.html',
+            templateUrl: 'js/views/admin/course/SubjectAdd.html',
             controller: 'courseController'
         })
 		.when("/admin/course/subject", {
-            templateUrl: 'public/js/views/admin/course/subject/SubjectList.html',
+            templateUrl: 'js/views/admin/course/subject/SubjectList.html',
             controller: 'subjectDetailController'
         })
 		.when("/admin/course/subject/edit", {
-            templateUrl: 'public/js/views/admin/course/subject/SubjectEdit.html',
+            templateUrl: 'js/views/admin/course/subject/SubjectEdit.html',
             controller: 'editSubjectController'
         })
 		.when("/admin/course/subject/add_teacher", {
-            templateUrl: 'public/js/views/admin/course/subject/SubjectAddTeacher.html',
+            templateUrl: 'js/views/admin/course/subject/SubjectAddTeacher.html',
             controller: 'subjectAddTeacherController'
         })
 		.when("/admin/course/add_room", {
-            templateUrl: 'public/js/views/admin/course/SubjectRoomAdd.html',
+            templateUrl: 'js/views/admin/course/SubjectRoomAdd.html',
             controller: 'addRoomController'
         })
         .when("/admin/course/room", {
-            templateUrl: 'public/js/views/admin/course/room/RoomList.html',
+            templateUrl: 'js/views/admin/course/room/RoomList.html',
             controller: 'roomDetailController'
         })
         .when("/admin/course/room/student", {
-            templateUrl: 'public/js/views/admin/course/room/StudentList.html',
+            templateUrl: 'js/views/admin/course/room/StudentList.html',
             controller: 'studentRoomController'
         })
         .when("/admin/search_student", {
-            templateUrl: 'public/js/views/admin/search/Search_Student.html',
+            templateUrl: 'js/views/admin/search/Search_Student.html',
             controller: 'studentSearchController'
         })
         .when("/admin/search_student/data", {
-            templateUrl: 'public/js/views/admin/search/SearchStudentData.html',
+            templateUrl: 'js/views/admin/search/SearchStudentData.html',
             controller: 'studentSearchDataController'
         })
         .when("/admin/search_student/grade", {
-            templateUrl: 'public/js/views/admin/search/SearchStudentGrade.html',
+            templateUrl: 'js/views/admin/search/SearchStudentGrade.html',
             controller: 'studentSearchGradeController'
         })
         .when("/admin/add_grade4_student", {
-            templateUrl: 'public/js/views/admin/fourth_year/room_index.html',
+            templateUrl: 'js/views/admin/fourth_year/room_index.html',
             controller: 'fourthYearRoomController'
         })
         .when("/admin/add_grade4_student/data", {
-            templateUrl: 'public/js/views/admin/fourth_year/add_fourth_student.html',
+            templateUrl: 'js/views/admin/fourth_year/add_fourth_student.html',
             controller: 'fourthYearStudentController'
         })
         .when("/teacher", {
-            templateUrl: 'public/js/views/teacher/index.html',
+            templateUrl: 'js/views/teacher/index.html',
             controller: 'teacherDashboardController'
         })
         .when("/teacher/room", {
-            templateUrl: 'public/js/views/teacher/student_list.html',
+            templateUrl: 'js/views/teacher/student_list.html',
             controller: 'teacherStudentListController'
         })
         .when("/teacher/room/student", {
-            templateUrl: 'public/js/views/teacher/student/index.html',
+            templateUrl: 'js/views/teacher/student/index.html',
             controller: 'teacherStudentIndexController'
         })
         .when("/teacher/room/elective_subject_score", {
-            templateUrl: 'public/js/views/teacher/student/grade_no_credit.html',
+            templateUrl: 'js/views/teacher/student/grade_no_credit.html',
             controller: 'teacherStudentGradeNoCreditController'
         })
         .when("/teacher/room/student/data", {
-            templateUrl: 'public/js/views/teacher/student/details.html',
+            templateUrl: 'js/views/teacher/student/details.html',
             controller: 'teacherStudentDetailController'
         })
         .when("/teacher/room/student/data/edit", {
-            templateUrl: 'public/js/views/teacher/student/edit_student.html',
+            templateUrl: 'js/views/teacher/student/edit_student.html',
             controller: 'teacherStudentDetailController'
         })
         .when("/teacher/room/student/data/father/add", {
-            templateUrl: 'public/js/views/teacher/student/add_father.html',
+            templateUrl: 'js/views/teacher/student/add_father.html',
             controller: 'teacherStudentAddFatherController'
         })
         .when("/teacher/room/student/data/mother/add", {
-            templateUrl: 'public/js/views/teacher/student/add_mother.html',
+            templateUrl: 'js/views/teacher/student/add_mother.html',
             controller: 'teacherStudentAddMotherController'
         })
         .when("/teacher/room/student/data/guardian/add", {
-            templateUrl: 'public/js/views/teacher/student/add_guardian.html',
+            templateUrl: 'js/views/teacher/student/add_guardian.html',
             controller: 'teacherStudentAddGuardianController'
         })
         .when("/teacher/room/student/data/father/edit", {
-            templateUrl: 'public/js/views/teacher/student/edit_father.html',
+            templateUrl: 'js/views/teacher/student/edit_father.html',
             controller: 'teacherStudentEditFatherController'
         })
         .when("/teacher/room/student/data/mother/edit", {
-            templateUrl: 'public/js/views/teacher/student/edit_mother.html',
+            templateUrl: 'js/views/teacher/student/edit_mother.html',
             controller: 'teacherStudentEditMotherController'
         })
         .when("/teacher/room/student/data/guardian/edit", {
-            templateUrl: 'public/js/views/teacher/student/edit_guardian.html',
+            templateUrl: 'js/views/teacher/student/edit_guardian.html',
             controller: 'teacherStudentEditGuardianController'
         })
         .when("/teacher/room/student/grade", {
-            templateUrl: 'public/js/views/teacher/student/grade.html',
+            templateUrl: 'js/views/teacher/student/grade.html',
             controller: 'teacherStudentGradeController'
         })
         .when("/teacher/subject", {
-            templateUrl: 'public/js/views/teacher/index_subject.html',
+            templateUrl: 'js/views/teacher/index_subject.html',
             controller: 'teacherSubjectController'
         })
         .when("/teacher/subject/room", {
-            templateUrl: 'public/js/views/teacher/course/index.html',
+            templateUrl: 'js/views/teacher/course/index.html',
             controller: 'teacherCourseIndexController'
         })
         .when("/teacher/subject/room/student/score", {
-            templateUrl: 'public/js/views/teacher/course/index_student.html',
+            templateUrl: 'js/views/teacher/course/index_student.html',
             controller: 'teacherCourseStudentScoreController'
         })
         .when("/teacher/change_password", {
-            templateUrl: 'public/js/views/teacher/change_password.html',
+            templateUrl: 'js/views/teacher/change_password.html',
             controller: 'teacherChangPasswordController'
         })
         .when("/student", {
-            templateUrl: 'public/js/views/student/DashboardStudent.html',
+            templateUrl: 'js/views/student/DashboardStudent.html',
             controller: 'studentDashboardController'
         })
         .when("/student/data", {
-            templateUrl: 'public/js/views/student/StudentProfile.html',
+            templateUrl: 'js/views/student/StudentProfile.html',
             controller: 'studentDashboardController'
         })
         .when("/student/grade", {
-            templateUrl: 'public/js/views/student/StudentGrade.html',
+            templateUrl: 'js/views/student/StudentGrade.html',
             controller: 'studentGradeController'
         })
 		.otherwise({redirectTo: "/login",
-            templateUrl: 'public/js/views/login.html',
+            templateUrl: 'js/views/login.html',
             controller: 'loginController'
         });
 });
@@ -235,17 +235,17 @@ myApp.factory('pathApi', function() {
     return {
 
         //all_api
-        api_login: "/CodeRoomService/public/index.php/login",
-        api_logout: "/CodeRoomService/public/index.php/logout",
+        api_login: "/CodeRoomService/index.php/login",
+        api_logout: "/CodeRoomService/index.php/logout",
 		api_add_room: address + "api_controller/student/add_room",
         //student
-        api_get_student_announcement: "/CodeRoomService/public/index.php/api/student/announcement/",
+        api_get_student_announcement: "/CodeRoomService/index.php/api/student/announcement/",
 
         //teacher
-        api_get_teacher_addStudent : "/CodeRoomService/public/index.php/api/teacher/student/all/",
+        api_get_teacher_addStudent : "/CodeRoomService/index.php/api/teacher/student/all/",
 
         //admin
-        api_get_admin_disableEnableCourse : "/CodeRoomService/public/index.php/api/admin/course/status/",
+        api_get_admin_disableEnableCourse : "/CodeRoomService/index.php/api/admin/course/status/",
     };
 });
 

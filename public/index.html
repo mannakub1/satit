@@ -5,37 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Satit</title>
 
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
-    <link href="../css/font-awesome.css" rel="stylesheet">
+    <link href="lib/css/bootstrap.min.css" rel="stylesheet">
+    <link href="lib/css/font-awesome.css" rel="stylesheet">
 
-    <link href="../css/animate.css" rel="stylesheet">
-    <link href="../css/style.css" rel="stylesheet">
-    <link href="../css/morris/morris-0.4.3.min.css" rel="stylesheet">
+    <link href="lib/css/animate.css" rel="stylesheet">
+    <link href="lib/css/style.css" rel="stylesheet">
+    <link href="lib/css/morris/morris-0.4.3.min.css" rel="stylesheet">
 
 
     <!--Jquery and Bootstrap script -->
-    <script src="../lib/jquery-2.1.1.js"></script>
-    <script src="../lib/bootstrap.min.js"></script>
-    <script src="../lib/bootstrap.min.js"></script>
+    <script src="lib/jquery-2.1.1.js"></script>
+    <script src="lib/bootstrap.min.js"></script>
+    <script src="js/plugins/jquery-ui/jquery-ui.min.js"></script>
+
 
     <!--AngularJS Javascript -->
-    <script src="../lib/angular.min.js"></script>
-    <script src="../lib/angular-route.js"></script>
-    <script src="../lib/angular-ui-router.js"></script>
-    <script src="../lib/ng-file-upload-shim.js"></script>
-    <script src="../lib/ng-file-upload.js"></script>
-    <script src="../lib/ng-file-upload-all.js"></script>
+    <script src="lib/angular.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="lib/angular-route.js"></script>
+    <script src="lib/angular-ui-router.js"></script>
+    <script src="lib/ng-file-upload-shim.js"></script>
+    <script src="lib/ng-file-upload.js"></script>
+    <script src="lib/ng-file-upload-all.js"></script>
 
     <!-- Plugin Script -->
-    <script src="../lib/js/metisMenu/jquery.metisMenu.js"></script>
-    <script src="../lib/js/slimscroll/jquery.slimscroll.min.js"></script>
-    <script src="../lib/inspinia.js"></script>
-    <script src="../lib/papaparse.js"></script>
-    <script src="../lib/papaparse.min.js"></script>
+    <script src="lib/js/metisMenu/jquery.metisMenu.js"></script>
+    <script src="lib/js/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="lib/inspinia.js"></script>
+    <script src="lib/papaparse.js"></script>
+    <script src="lib/papaparse.min.js"></script>
 
-    <script src="app.js"></script>
 
-    <!-- Main Controller -->
+
+    <!-- Admin Controller -->
     <script src="js/controller/loginController.js"></script>
     <script src="js/controller/admin/adminDashboardController.js"></script>
     <script src="js/controller/admin/selectRoomController.js"></script>
@@ -54,10 +56,31 @@
     <script src="js/controller/admin/teacher/addTeacherController.js"></script>
     <script src="js/controller/admin/teacher/teacherPasswordController.js"></script>
     <script src="js/controller/admin/course/courseController.js"></script>
+    <script src="js/controller/admin/course/addRoomController.js"></script>
+    <script src="js/controller/admin/course/subject/subjectDetailController.js"></script>
+    <script src="js/controller/admin/course/subject/editSubjectController.js"></script>
+    <script src="js/controller/admin/course/subject/subjectAddTeacherController.js"></script>
+    <script src="js/controller/admin/course/room/roomDetailController.js"></script>
+    <script src="js/controller/admin/course/room/studentRoomController.js"></script>
+    <script src="js/controller/admin/search/studentSearchController.js"></script>
+    <script src="js/controller/admin/search/studentSearchDataController.js"></script>
+    <script src="js/controller/admin/search/studentSearchGradeController.js"></script>
+    <script src="js/controller/admin/fourth_year/studentFourthYearController.js"></script>
+
+    <!-- Teacher Controller -->
+    <script src="js/controller/teacher/teacherDashboardController.js"></script>
+    <script src="js/controller/teacher/teacherStudentListController.js"></script>
+    <script src="js/controller/teacher/student/teacherStudentController.js"></script>
+    <script src="js/controller/teacher/teacherSubjectController.js"></script>
+    <script src="js/controller/teacher/course/teacherCourseController.js"></script>
+    <script src="js/controller/teacher/teacherChangePasswordController.js"></script>
+
+    <!-- Student Controller -->
+    <script src="js/controller/student/studentController.js"></script>
+    <script src="js/controller/student/studentGradeController.js"></script>
 
 </head>
 <body ng-app="myApp">
-
     <div ng-view></div>
 
 

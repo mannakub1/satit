@@ -1,90 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="be14c865-6577-4d71-9a9c-a1b6a68d7424" name="Default" comment="update project to route">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/controller/admin/course/room/roomDetailController.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/controller/admin/course/room/studentRoomController.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/controller/admin/course/subject/editSubjectController.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/controller/admin/course/subject/subjectAddTeacherController.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/controller/admin/course/subject/subjectDetailController.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/controller/admin/fourth_year/studentFourthYearController.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/controller/admin/search/studentSearchController.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/controller/admin/search/studentSearchDataController.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/controller/admin/search/studentSearchGradeController.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/controller/student/studentController.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/controller/student/studentGradeController.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/controller/teacher/course/teacherCourseController.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/controller/teacher/student/teacherStudentController.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/controller/teacher/teacherChangePasswordController.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/controller/teacher/teacherDashboardController.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/controller/teacher/teacherStudentListController.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/controller/teacher/teacherSubjectController.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/admin/course/room/RoomList.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/admin/course/room/StudentList.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/admin/course/subject/SubjectAddTeacher.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/admin/course/subject/SubjectEdit.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/admin/fourth_year/add_fourth_student.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/admin/fourth_year/room_index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/admin/search/SearchStudentData.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/admin/search/SearchStudentGrade.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/student/AddFather.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/student/AddGuardian.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/student/AddMother.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/student/DashboardStudent.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/student/EditFather.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/student/EditGuardian.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/student/EditMother.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/student/EditStudent.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/student/StudentGrade.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/student/StudentProfile.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/teacher/change_password.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/teacher/course/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/teacher/course/index_student.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/teacher/course/student.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/teacher/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/teacher/index_subject.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/teacher/student/add_father.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/teacher/student/add_guardian.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/teacher/student/add_mother.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/teacher/student/details.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/teacher/student/edit_father.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/teacher/student/edit_guardian.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/teacher/student/edit_mother.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/teacher/student/edit_student.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/teacher/student/grade.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/teacher/student/grade_no_credit.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/teacher/student/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/views/teacher/student_list.html" />
+    <list default="true" id="be14c865-6577-4d71-9a9c-a1b6a68d7424" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/assets/.keep" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/fonts/FontAwesome.otf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/fonts/fontawesome-webfont.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/fonts/fontawesome-webfont.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/fonts/fontawesome-webfont.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/fonts/fontawesome-webfont.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/tasks/.keep" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/angular-route.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/angular-ui-router.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/angular-ui-router.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/angular.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/bootstrap.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/bootstrap.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/css/animate.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/css/bootstrap-theme.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/css/bootstrap-theme.css.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/css/bootstrap-theme.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/css/bootstrap-theme.min.css.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/css/bootstrap.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/css/bootstrap.css.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/css/bootstrap.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/css/bootstrap.min.css.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/css/css/font-awesome.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/css/css/font-awesome.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/css/font-awesome.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/css/font-awesome.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/css/less/animated.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/css/less/bordered-pulled.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/css/less/core.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/css/less/fixed-width.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/css/less/font-awesome.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/css/less/icons.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/css/less/larger.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/css/less/list.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/css/less/mixins.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/css/less/path.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/css/less/rotated-flipped.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/css/less/stacked.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/css/less/variables.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/css/morris/morris-0.4.3.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/css/scss/_animated.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/css/scss/_bordered-pulled.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/css/scss/_core.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/css/scss/_fixed-width.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/css/scss/_icons.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/css/scss/_larger.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/css/scss/_list.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/css/scss/_mixins.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/css/scss/_path.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/css/scss/_rotated-flipped.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/css/scss/_stacked.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/css/scss/_variables.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/css/scss/font-awesome.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/css/style.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/css/style.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/directives.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/fonts/fontawesome-webfont.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/get.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/inspinia.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/jquery-2.1.1.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/jquery-3.1.0.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/jquery-ui-1.10.4.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/jquery-ui.custom.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/jquery.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/js/metisMenu/jquery.metisMenu.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/js/slimscroll/jquery.slimscroll.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/js/slimscroll/jquery.slimscroll.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/ng-csv.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/ng-csv.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/ng-file-upload-all.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/ng-file-upload-shim.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/ng-file-upload.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/npm.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/page.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/papaparse.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/papaparse.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/satellizer.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/show.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/tasks/api.rake" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/index.html" afterPath="$PROJECT_DIR$/public/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app.js" afterPath="$PROJECT_DIR$/public/js/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/controller/admin/student_detail/editStudentController.js" afterPath="$PROJECT_DIR$/public/js/controller/admin/student_detail/editStudentController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/controller/loginController.js" afterPath="$PROJECT_DIR$/public/js/controller/loginController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/teacher/index_controller.js" afterPath="$PROJECT_DIR$/public/js/teacher/index_controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/views/admin/AddStudentCSV.html" afterPath="$PROJECT_DIR$/public/js/views/admin/AddStudentCSV.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/views/admin/AddStudents.html" afterPath="$PROJECT_DIR$/public/js/views/admin/AddStudents.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/views/admin/Dashboard.html" afterPath="$PROJECT_DIR$/public/js/views/admin/Dashboard.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/views/admin/Dashboard_Viewrooms.html" afterPath="$PROJECT_DIR$/public/js/views/admin/Dashboard_Viewrooms.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/views/admin/Dashboard_Viewrooms_Std.html" afterPath="$PROJECT_DIR$/public/js/views/admin/Dashboard_Viewrooms_Std.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/views/admin/Dashboard_Viewrooms_Std_Grade.html" afterPath="$PROJECT_DIR$/public/js/views/admin/Dashboard_Viewrooms_Std_Grade.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/views/admin/class_teacher/Dashboard_Viewrooms_Std_AddTeacher.html" afterPath="$PROJECT_DIR$/public/js/views/admin/class_teacher/Dashboard_Viewrooms_Std_AddTeacher.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/views/admin/class_teacher/Dashboard_Viewrooms_Std_Teacher.html" afterPath="$PROJECT_DIR$/public/js/views/admin/class_teacher/Dashboard_Viewrooms_Std_Teacher.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/views/admin/course/Course_Dashboard.html" afterPath="$PROJECT_DIR$/public/js/views/admin/course/Course_Dashboard.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/views/admin/course/SubjectAdd.html" afterPath="$PROJECT_DIR$/public/js/views/admin/course/SubjectAdd.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/views/admin/course/SubjectRoomAdd.html" afterPath="$PROJECT_DIR$/public/js/views/admin/course/SubjectRoomAdd.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/views/admin/search/Search_Student.html" afterPath="$PROJECT_DIR$/public/js/views/admin/search/Search_Student.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/views/admin/student_detail/Dashboard_Viewrooms_Std_AddFather.html" afterPath="$PROJECT_DIR$/public/js/views/admin/student_detail/Dashboard_Viewrooms_Std_AddFather.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/views/admin/student_detail/Dashboard_Viewrooms_Std_AddGuardian.html" afterPath="$PROJECT_DIR$/public/js/views/admin/student_detail/Dashboard_Viewrooms_Std_AddGuardian.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/views/admin/student_detail/Dashboard_Viewrooms_Std_AddMother.html" afterPath="$PROJECT_DIR$/public/js/views/admin/student_detail/Dashboard_Viewrooms_Std_AddMother.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/views/admin/student_detail/Dashboard_Viewrooms_Std_Data.html" afterPath="$PROJECT_DIR$/public/js/views/admin/student_detail/Dashboard_Viewrooms_Std_Data.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/views/admin/student_detail/Dashboard_Viewrooms_Std_EditFather.html" afterPath="$PROJECT_DIR$/public/js/views/admin/student_detail/Dashboard_Viewrooms_Std_EditFather.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/views/admin/student_detail/Dashboard_Viewrooms_Std_EditGuardian.html" afterPath="$PROJECT_DIR$/public/js/views/admin/student_detail/Dashboard_Viewrooms_Std_EditGuardian.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/views/admin/student_detail/Dashboard_Viewrooms_Std_EditMother.html" afterPath="$PROJECT_DIR$/public/js/views/admin/student_detail/Dashboard_Viewrooms_Std_EditMother.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/views/admin/student_detail/Dashboard_Viewrooms_Std_EditStudent.html" afterPath="$PROJECT_DIR$/public/js/views/admin/student_detail/Dashboard_Viewrooms_Std_EditStudent.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/views/admin/teacher/Dashboard_AddTeacher.html" afterPath="$PROJECT_DIR$/public/js/views/admin/teacher/Dashboard_AddTeacher.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/views/admin/teacher/Dashboard_Teacher.html" afterPath="$PROJECT_DIR$/public/js/views/admin/teacher/Dashboard_Teacher.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/views/admin/teacher/re_password_teacher.html" afterPath="$PROJECT_DIR$/public/js/views/admin/teacher/re_password_teacher.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/js/views/admin/course/SubjectList.html" afterPath="$PROJECT_DIR$/public/js/views/admin/course/subject/SubjectList.html" />
     </list>
     <ignored path="satit.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -110,30 +109,44 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="studentController.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="studentController.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/js/controller/student/studentController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="23" lean-forward="false" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
+            <state relative-caret-position="5117">
+              <caret line="301" column="0" lean-forward="false" selection-start-line="301" selection-start-column="0" selection-end-line="301" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/js/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="236">
+              <caret line="19" column="34" lean-forward="true" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
               <folding>
-                <element signature="e#3360#5345#0" expanded="false" />
-                <element signature="e#5386#6148#0" expanded="false" />
-                <element signature="e#6189#6905#0" expanded="false" />
-                <element signature="e#6948#7716#0" expanded="false" />
-                <element signature="e#7756#8884#0" expanded="false" />
-                <element signature="e#8924#10004#0" expanded="false" />
-                <element signature="e#10046#11196#0" expanded="false" />
-                <element signature="e#11233#11628#0" expanded="false" />
+                <element signature="e#11778#12318#0" expanded="false" />
+                <element signature="e#14142#16834#0" expanded="false" />
+                <element signature="e#37486#38755#0" expanded="false" />
+                <element signature="e#38825#50473#0" expanded="false" />
+                <element signature="e#50532#53325#0" expanded="false" />
+                <element signature="e#53389#54641#0" expanded="false" />
+                <element signature="e#54705#57491#0" expanded="false" />
+                <element signature="e#57551#61486#0" expanded="false" />
+                <marker date="1517300872336" expanded="true" signature="14350:14360" ph="..." />
+                <marker date="1517300872336" expanded="true" signature="17119:17129" ph="..." />
+                <marker date="1517300872336" expanded="true" signature="17714:17730" ph="..." />
+                <marker date="1517300872336" expanded="true" signature="46820:46914" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.html">
+        <entry file="file://$PROJECT_DIR$/public/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="832">
-              <caret line="76" column="0" lean-forward="true" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
+            <state relative-caret-position="102">
+              <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -142,8 +155,8 @@
       <file leaf-file-name="StudentProfile.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/js/views/student/StudentProfile.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="77">
-              <caret line="53" column="58" lean-forward="true" selection-start-line="53" selection-start-column="58" selection-end-line="53" selection-end-column="58" />
+            <state relative-caret-position="901">
+              <caret line="53" column="58" lean-forward="false" selection-start-line="53" selection-start-column="58" selection-end-line="53" selection-end-column="58" />
               <folding>
                 <element signature="n#form#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
                 <element signature="n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
@@ -186,8 +199,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>$scope.tok</find>
-      <find>console.</find>
       <find>c</find>
       <find>viewstdGr</find>
       <find>viewstdgrade</find>
@@ -216,6 +227,8 @@
       <find>stdgradeCtr</find>
       <find>stdgradeCt</find>
       <find>stdGrade</find>
+      <find>public</find>
+      <find>js/view</find>
     </findStrings>
     <replaceStrings>
       <replace>guardian</replace>
@@ -227,7 +240,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/public/js/views/admin/search/Search_Student.html" />
         <option value="$PROJECT_DIR$/public/js/views/admin/fourth_year/room_index.html" />
         <option value="$PROJECT_DIR$/public/js/views/admin/fourth_year/add_fourth_student.html" />
         <option value="$PROJECT_DIR$/public/js/views/admin/course/Course_Dashboard.html" />
@@ -268,7 +280,6 @@
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/public/js/controller/student/studentGradeController.js" />
         <option value="$PROJECT_DIR$/public/js/views/student/StudentGrade.html" />
-        <option value="$PROJECT_DIR$/public/js/app.js" />
         <option value="$PROJECT_DIR$/public/js/views/student/AddMother.html" />
         <option value="$PROJECT_DIR$/public/js/views/student/EditFather.html" />
         <option value="$PROJECT_DIR$/public/js/views/student/AddFather.html" />
@@ -278,6 +289,8 @@
         <option value="$PROJECT_DIR$/public/js/views/student/EditStudent.html" />
         <option value="$PROJECT_DIR$/public/js/views/student/StudentProfile.html" />
         <option value="$PROJECT_DIR$/public/js/controller/student/studentController.js" />
+        <option value="$PROJECT_DIR$/public/index.html" />
+        <option value="$PROJECT_DIR$/public/js/app.js" />
       </list>
     </option>
   </component>
@@ -314,7 +327,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -342,184 +354,9 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="satit2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="satit2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="satit2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="satit2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="satit2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="satit2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="student" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="satit2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="satit2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="teacher" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="satit2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="satit2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controller" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="satit2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="satit2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controller" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="student" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="satit2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="satit2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="satit2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="satit2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="RailsProjectView" />
     </panes>
   </component>
@@ -535,6 +372,13 @@
     <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Satit2\satit2\public" />
+      <recent name="E:\Satit2\satit2\public\js\views\student" />
+      <recent name="E:\Satit2\satit2\public\js\controller\teacher" />
+      <recent name="E:\Satit2\satit2\public\js\controller\teacher\course" />
+      <recent name="E:\Satit2\satit2\public\js\controller\teacher\student" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\Satit2\satit2\public\js\views\admin\course\subject" />
       <recent name="E:\Satit2\satit2\public\js\controller\admin\course\subject" />
@@ -542,134 +386,6 @@
       <recent name="E:\Satit2\satit2\public\js\views\admin\course" />
       <recent name="E:\Satit2\satit2\public\js\views\admin\teacher" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\Satit2\satit2\public\js\views\student" />
-      <recent name="E:\Satit2\satit2\public\js\controller\teacher" />
-      <recent name="E:\Satit2\satit2\public\js\controller\teacher\course" />
-      <recent name="E:\Satit2\satit2\public\js\controller\teacher\student" />
-      <recent name="E:\Satit2\satit2\public\js\views\teacher" />
-    </key>
-  </component>
-  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
-    <UpdatedFiles>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Updated from server" />
-        <option name="myStatusName" value="Changed on server" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="CHANGED_ON_SERVER" />
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Updated" />
-          <option name="myStatusName" value="Changed" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/entities/satit/room_api/student_room_list_entity.rb</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/config/routes.rb</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/index.html</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/js/app.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/js/controller/admin/course/courseController.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/js/views/admin/course/Course_Dashboard.html</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Created" />
-          <option name="myStatusName" value="Created" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="CREATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/index.html</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/js/controller/admin/course/addRoomController.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/js/controller/admin/course/roomController.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/js/views/admin/course/SubjectAdd.html</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/js/views/admin/course/SubjectList.html</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/js/views/admin/course/SubjectRoomAdd.html</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Deleted" />
-          <option name="myStatusName" value="Deleted" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="true" />
-          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Restored" />
-          <option name="myStatusName" value="Will be restored" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="RESTORED" />
-        </FILE-GROUP>
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Modified" />
-        <option name="myStatusName" value="Modified" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MODIFIED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Skipped" />
-        <option name="myStatusName" value="Skipped" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SKIPPED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with conflicts" />
-        <option name="myStatusName" value="Will be merged with conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_CONFLICTS" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with tree conflicts" />
-        <option name="myStatusName" value="Merged with tree conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with property conflicts" />
-        <option name="myStatusName" value="Will be merged with property conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged" />
-        <option name="myStatusName" value="Will be merged" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Not in repository" />
-        <option name="myStatusName" value="Not in repository" />
-        <option name="mySupportsDeletion" value="true" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="UNKNOWN" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally added" />
-        <option name="myStatusName" value="Locally added" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_ADDED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally removed" />
-        <option name="myStatusName" value="Locally removed" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_REMOVED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Switched" />
-        <option name="myStatusName" value="Switched" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SWITCHED" />
-      </FILE-GROUP>
-    </UpdatedFiles>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -861,7 +577,9 @@
       <workItem from="1516784647527" duration="2842000" />
       <workItem from="1516856454643" duration="13227000" />
       <workItem from="1517035899402" duration="6640000" />
-      <workItem from="1517124628109" duration="24307000" />
+      <workItem from="1517124628109" duration="25047000" />
+      <workItem from="1517202627118" duration="861000" />
+      <workItem from="1517299468230" duration="1386000" />
     </task>
     <task id="LOCAL-00001" summary="Fix some error in StdTableGrade">
       <created>1475933218620</created>
@@ -1185,11 +903,25 @@
       <option name="project" value="LOCAL" />
       <updated>1517042543181</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="update project to route">
+      <created>1517149332204</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1517149332204</updated>
+    </task>
+    <task id="LOCAL-00048" summary="fix after send data">
+      <created>1517149846567</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1517149846567</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="446728000" />
+    <option name="totallyTimeSpent" value="449715000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1207,7 +939,7 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21949404" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32569557" sideWeight="0.5029762" order="10" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31096563" sideWeight="0.49702382" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24925596" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1285,7 +1017,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fix some link&#10;" />
     <MESSAGE value="Add Father,Mother,Guardian  Page" />
     <MESSAGE value="Add Edit Father,Mother,Guardian  Page" />
     <MESSAGE value="Add Score1,Score2,Grade to table" />
@@ -1310,7 +1041,8 @@
     <MESSAGE value="update lib" />
     <MESSAGE value="add upload profile image" />
     <MESSAGE value="update project to route" />
-    <option name="LAST_COMMIT_MESSAGE" value="update project to route" />
+    <MESSAGE value="fix after send data" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix after send data" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1358,42 +1090,28 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/public/js/controller/admin/course/roomController.js</url>
           <line>102</line>
-          <properties />
           <option name="timeStamp" value="23" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/public/js/controller/student/studentController.js</url>
-          <line>215</line>
-          <properties />
+          <line>217</line>
           <option name="timeStamp" value="36" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/public/js/controller/student/studentController.js</url>
+          <line>110</line>
+          <option name="timeStamp" value="37" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="37" />
+      <option name="time" value="38" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/js/views/admin/course/SubjectAdd.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/views/admin/course/SubjectRoomAdd.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/views/admin/course/subject/SubjectList.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1401,7 +1119,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1409,7 +1126,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1417,7 +1133,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1425,7 +1140,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1433,7 +1147,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1441,7 +1154,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1449,7 +1161,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" column="5" lean-forward="true" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1457,7 +1168,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
           <caret line="31" column="34" lean-forward="true" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1465,7 +1175,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1473,7 +1182,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="44" lean-forward="false" selection-start-line="0" selection-start-column="44" selection-end-line="0" selection-end-column="44" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1481,7 +1189,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="108" lean-forward="false" selection-start-line="7" selection-start-column="108" selection-end-line="7" selection-end-column="108" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1489,7 +1196,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="46" lean-forward="false" selection-start-line="0" selection-start-column="46" selection-end-line="0" selection-end-column="46" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1497,7 +1203,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="18" column="82" lean-forward="false" selection-start-line="18" selection-start-column="82" selection-end-line="18" selection-end-column="82" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1505,7 +1210,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
           <caret line="28" column="19" lean-forward="false" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1513,7 +1217,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1521,7 +1224,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="119" lean-forward="false" selection-start-line="8" selection-start-column="119" selection-end-line="8" selection-end-column="119" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1529,7 +1231,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="115" lean-forward="false" selection-start-line="7" selection-start-column="115" selection-end-line="7" selection-end-column="115" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1537,7 +1238,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="115" lean-forward="false" selection-start-line="7" selection-start-column="115" selection-end-line="7" selection-end-column="115" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1545,7 +1245,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="115" lean-forward="false" selection-start-line="6" selection-start-column="115" selection-end-line="6" selection-end-column="115" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1553,7 +1252,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="115" lean-forward="false" selection-start-line="7" selection-start-column="115" selection-end-line="7" selection-end-column="115" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1561,7 +1259,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3808">
           <caret line="224" column="0" lean-forward="false" selection-start-line="224" selection-start-column="0" selection-end-line="224" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1569,7 +1266,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="237" column="0" lean-forward="false" selection-start-line="237" selection-start-column="0" selection-end-line="237" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1577,7 +1273,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="266">
           <caret line="19" column="62" lean-forward="true" selection-start-line="19" selection-start-column="62" selection-end-line="19" selection-end-column="62" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1585,15 +1280,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="82">
           <caret line="98" column="50" lean-forward="false" selection-start-line="98" selection-start-column="50" selection-end-line="98" selection-end-column="50" />
-          <folding>
-            <element signature="e#103#1476#0" expanded="false" />
-            <element signature="e#4759#7657#0" expanded="false" />
-            <element signature="e#7772#12500#0" expanded="false" />
-            <element signature="e#12611#14334#0" expanded="false" />
-            <element signature="e#14445#16182#0" expanded="false" />
-            <element signature="e#16293#18133#0" expanded="false" />
-            <element signature="e#21164#22531#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1601,7 +1287,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="109">
           <caret line="31" column="38" lean-forward="false" selection-start-line="31" selection-start-column="37" selection-end-line="31" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1609,7 +1294,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
           <caret line="29" column="24" lean-forward="false" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1617,7 +1301,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-646">
           <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1625,7 +1308,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1073">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1633,10 +1315,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="29" column="43" lean-forward="false" selection-start-line="29" selection-start-column="43" selection-end-line="29" selection-end-column="43" />
-          <folding>
-            <element signature="e#104#1392#0" expanded="false" />
-            <element signature="e#1505#4490#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1644,9 +1322,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#98#1039#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1654,10 +1329,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="194">
           <caret line="63" column="1" lean-forward="true" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="1" />
-          <folding>
-            <element signature="e#456#1290#0" expanded="false" />
-            <element signature="e#1346#2297#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1665,7 +1336,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="799">
           <caret line="74" column="29" lean-forward="false" selection-start-line="74" selection-start-column="29" selection-end-line="74" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1673,7 +1343,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
           <caret line="25" column="64" lean-forward="false" selection-start-line="25" selection-start-column="64" selection-end-line="25" selection-end-column="64" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1681,7 +1350,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="87">
           <caret line="34" column="19" lean-forward="false" selection-start-line="34" selection-start-column="19" selection-end-line="34" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1689,28 +1357,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
           <caret line="25" column="6" lean-forward="false" selection-start-line="25" selection-start-column="6" selection-end-line="25" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="225" column="37" lean-forward="false" selection-start-line="225" selection-start-column="37" selection-end-line="225" selection-end-column="37" />
-          <folding>
-            <element signature="e#12191#12731#0" expanded="false" />
-            <element signature="e#14555#17247#0" expanded="false" />
-            <element signature="e#37899#39168#0" expanded="false" />
-            <element signature="e#39238#50886#0" expanded="false" />
-            <element signature="e#50945#53738#0" expanded="false" />
-            <element signature="e#53802#55054#0" expanded="false" />
-            <element signature="e#55118#57904#0" expanded="false" />
-            <element signature="e#57964#61899#0" expanded="false" />
-            <marker date="1517147296249" expanded="true" signature="14763:14773" ph="..." />
-            <marker date="1517147296249" expanded="true" signature="17532:17542" ph="..." />
-            <marker date="1517147296249" expanded="true" signature="18127:18143" ph="..." />
-            <marker date="1517147296249" expanded="true" signature="47233:47327" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1718,7 +1364,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-17">
           <caret line="32" column="16" lean-forward="true" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1726,7 +1371,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-255">
           <caret line="9" column="82" lean-forward="false" selection-start-line="9" selection-start-column="82" selection-end-line="9" selection-end-column="82" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1734,7 +1378,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="16" lean-forward="false" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1742,7 +1385,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="16" lean-forward="false" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1750,7 +1392,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="16" lean-forward="false" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1758,7 +1399,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="16" lean-forward="false" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1766,7 +1406,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="16" lean-forward="false" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1774,30 +1413,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="16" lean-forward="false" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/views/student/EditStudent.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="16" lean-forward="false" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="832">
-          <caret line="76" column="0" lean-forward="true" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/views/student/StudentProfile.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="77">
-          <caret line="53" column="58" lean-forward="true" selection-start-line="53" selection-start-column="58" selection-end-line="53" selection-end-column="58" />
+        <state relative-caret-position="901">
+          <caret line="53" column="58" lean-forward="false" selection-start-line="53" selection-start-column="58" selection-end-line="53" selection-end-column="58" />
           <folding>
             <element signature="n#form#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
             <element signature="n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
@@ -1817,19 +1439,63 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/views/student/EditStudent.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="16" lean-forward="false" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/controller/student/studentController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="23" lean-forward="false" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
+        <state relative-caret-position="5117">
+          <caret line="301" column="0" lean-forward="false" selection-start-line="301" selection-start-column="0" selection-end-line="301" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/lib/js/metisMenu/jquery.metisMenu.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-939">
+          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="236">
+          <caret line="19" column="34" lean-forward="true" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
           <folding>
-            <element signature="e#3360#5345#0" expanded="false" />
-            <element signature="e#5386#6148#0" expanded="false" />
-            <element signature="e#6189#6905#0" expanded="false" />
-            <element signature="e#6948#7716#0" expanded="false" />
-            <element signature="e#7756#8884#0" expanded="false" />
-            <element signature="e#8924#10004#0" expanded="false" />
-            <element signature="e#10046#11196#0" expanded="false" />
-            <element signature="e#11233#11628#0" expanded="false" />
+            <element signature="e#11778#12318#0" expanded="false" />
+            <element signature="e#14142#16834#0" expanded="false" />
+            <element signature="e#37486#38755#0" expanded="false" />
+            <element signature="e#38825#50473#0" expanded="false" />
+            <element signature="e#50532#53325#0" expanded="false" />
+            <element signature="e#53389#54641#0" expanded="false" />
+            <element signature="e#54705#57491#0" expanded="false" />
+            <element signature="e#57551#61486#0" expanded="false" />
+            <marker date="1517300872336" expanded="true" signature="14350:14360" ph="..." />
+            <marker date="1517300872336" expanded="true" signature="17119:17129" ph="..." />
+            <marker date="1517300872336" expanded="true" signature="17714:17730" ph="..." />
+            <marker date="1517300872336" expanded="true" signature="46820:46914" ph="{...}" />
           </folding>
         </state>
       </provider>
