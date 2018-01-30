@@ -16,10 +16,12 @@
     <!--Jquery and Bootstrap script -->
     <script src="lib/jquery-2.1.1.js"></script>
     <script src="lib/bootstrap.min.js"></script>
-    <script src="lib/bootstrap.min.js"></script>
+    <script src="public/js/plugins/jquery-ui/jquery-ui.min.js"></script>
+
 
     <!--AngularJS Javascript -->
     <script src="lib/angular.min.js"></script>
+    <script src="public/js/app.js"></script>
     <script src="lib/angular-route.js"></script>
     <script src="lib/angular-ui-router.js"></script>
     <script src="lib/ng-file-upload-shim.js"></script>
@@ -33,9 +35,9 @@
     <script src="lib/papaparse.js"></script>
     <script src="lib/papaparse.min.js"></script>
 
-    <script src="public/js/app.js"></script>
 
-    <!-- Main Controller -->
+
+    <!-- Admin Controller -->
     <script src="public/js/controller/loginController.js"></script>
     <script src="public/js/controller/admin/adminDashboardController.js"></script>
     <script src="public/js/controller/admin/selectRoomController.js"></script>
@@ -55,10 +57,30 @@
     <script src="public/js/controller/admin/teacher/teacherPasswordController.js"></script>
     <script src="public/js/controller/admin/course/courseController.js"></script>
     <script src="public/js/controller/admin/course/addRoomController.js"></script>
+    <script src="public/js/controller/admin/course/subject/subjectDetailController.js"></script>
+    <script src="public/js/controller/admin/course/subject/editSubjectController.js"></script>
+    <script src="public/js/controller/admin/course/subject/subjectAddTeacherController.js"></script>
+    <script src="public/js/controller/admin/course/room/roomDetailController.js"></script>
+    <script src="public/js/controller/admin/course/room/studentRoomController.js"></script>
+    <script src="public/js/controller/admin/search/studentSearchController.js"></script>
+    <script src="public/js/controller/admin/search/studentSearchDataController.js"></script>
+    <script src="public/js/controller/admin/search/studentSearchGradeController.js"></script>
+    <script src="public/js/controller/admin/fourth_year/studentFourthYearController.js"></script>
+
+    <!-- Teacher Controller -->
+    <script src="public/js/controller/teacher/teacherDashboardController.js"></script>
+    <script src="public/js/controller/teacher/teacherStudentListController.js"></script>
+    <script src="public/js/controller/teacher/student/teacherStudentController.js"></script>
+    <script src="public/js/controller/teacher/teacherSubjectController.js"></script>
+    <script src="public/js/controller/teacher/course/teacherCourseController.js"></script>
+    <script src="public/js/controller/teacher/teacherChangePasswordController.js"></script>
+
+    <!-- Student Controller -->
+    <script src="public/js/controller/student/studentController.js"></script>
+    <script src="public/js/controller/student/studentGradeController.js"></script>
 
 </head>
 <body ng-app="myApp">
-
     <div ng-view></div>
 
 

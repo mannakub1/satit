@@ -1,3 +1,4 @@
+
 myApp.controller('adminEditStudentController', function($scope, $http, Upload, static_function, $location)  {
     var address = sessionStorage.getItem('address');
     var token = localStorage.getItem('token');
@@ -25,8 +26,7 @@ myApp.controller('adminEditStudentController', function($scope, $http, Upload, s
             data: {image: file, id : $scope.student.id},
             headers: {'token' : $scope.token},
         }).then(function (resp) {
-            console.log('Success ' + resp.config.data.file.name + 'uploaded. Response: ' + resp.data);
-            console.log(resp);
+            alert("เพิ่มรูปภาพสำเร็จ");
             /*var newData = JSON.stringify(resp.data.student)
             sessionStorage.setItem('student', newData)
             setTimeout(function(){
@@ -34,10 +34,7 @@ myApp.controller('adminEditStudentController', function($scope, $http, Upload, s
             }, 300);*/
 
         }, function (resp) {
-            console.log('Error status: ' + resp.status);
-            if(resp.data.error === 'token expired'){
-                window.location.href = 'login.html';;
-            }
+            static_function.token_expired_check(resp.data.error);
         }, function (evt) {
         });
     }

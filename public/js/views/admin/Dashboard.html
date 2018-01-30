@@ -4,7 +4,6 @@
             <ul class="nav" id="side-menu">
                 <li class="nav-header">
                     <div class="dropdown profile-element">
-                            <span> <img alt="image" class="img-circle" src="img/profile_small.jpg" />
                             </span>
                             <a data-toggle="dropdown" class="dropdown-toggle" href>
                             <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">{{admin_prefix}} {{admin_first_name}} {{admin_last_name}}</strong>
@@ -32,24 +31,15 @@
 				<li>
 					<a ng-click="go('admin/search_student')"><i class="fa fa-th-list"></i> <span class="nav-label">ค้นหานักเรียน</span> </a>
 				</li>
+                <li>
+                    <a ng-click="go('admin/add_grade4_student')"><i class="fa fa-th-list"></i> <span class="nav-label">เพิ่มนักเรียน ป.4</span> </a>
+                </li>
             </ul>
         </div>
     </nav>
     <div id="page-wrapper" class="gray-bg" >
-        <div class="row border-bottom">
-            <nav class="navbar navbar-static-top white-bg" role="navigation" style="margin-bottom: 0">
-                <div class="navbar-header">
-                    <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href><i class="fa fa-bars"></i> </a>
-                </div>
-                <ul class="nav navbar-top-links navbar-right">
-                    <li>
-                        <a ng-click="logout()">
-                            <i class="fa fa-sign-out"></i> Log out
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
+        <header-nav></header-nav>
+
         <div class="wrapper wrapper-content ">
 		<!-- <div class="wrapper wrapper-content animated fadeInRight"> -->
             <div class="row">

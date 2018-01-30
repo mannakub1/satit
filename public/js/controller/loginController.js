@@ -16,10 +16,8 @@ myApp.controller('loginController',  function($scope, $http, $location) {
                 if(data.status){
                     $scope.token = data.token;
                     localStorage.setItem('token', data.token);
-                    path = address + "api/teacher/login";
-                    var authen = {username : $scope.user, password : $scope.pass};
-                    console.log(authen);
-                    console.log($scope.token);
+                    var path = address + "api/teacher/login";
+                    authen = {username : $scope.user, password : $scope.pass};
                     $http.post(path, angular.toJson(authen), {
                         transformRequest: angular.identity,
                         headers: {'token' : $scope.token, 'Content-Type': "application/json"}
@@ -31,7 +29,7 @@ myApp.controller('loginController',  function($scope, $http, $location) {
                                 sessionStorage.setItem('teacher_prefix', data.teacher.prefix);
                                 sessionStorage.setItem('teacher_first_name', data.teacher.first_name);
                                 sessionStorage.setItem('teacher_last_name',data.teacher.last_name);
-                                window.location.href = 'teacher/index.html'
+                                $location.path('teacher');
                             }
                             else {
                                 sessionStorage.setItem('admin_id', data.teacher.id);
@@ -52,11 +50,10 @@ myApp.controller('loginController',  function($scope, $http, $location) {
                                     .success(function(data, status, headers, config) {
                                         console.log(data);
                                         sessionStorage.setItem('stdData', JSON.stringify(data.student));
-                                        window.location.href = 'DashboardStudent.html';
+                                        $location.path('student');
                                     })
                                     .error(function(data, status, headers, config) {
-                                        console.log(data);
-                                        alert("Connection Error")
+                                        alert("Connection Error");
                                     });
                             }
                             else{
@@ -69,7 +66,7 @@ myApp.controller('loginController',  function($scope, $http, $location) {
                 }
             })
             .error(function(data, status, headers, config) {
-                alert("Connection Error")
+                alert("Connection Error");
             });
     }
 });
