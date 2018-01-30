@@ -18,7 +18,7 @@ module Teacher::Private::StudentAction
     student_image = "public/picture/#{year}/#{student_id}_image.png"
     student_thumb = "public/picture/#{year}/#{student_id}_image.png"
 
-    student_id.update_attributes(image: student_image, thumb: student_thumb)
+    current_student.update_attributes(image: student_image, thumb: student_thumb)
   end
 
   def create_image(image)
