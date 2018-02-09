@@ -2,7 +2,7 @@ Satit::Application.routes.draw do
 
   mount Satit::API => '/'
   
-  root :to => redirect(Rails.root.join('index2.html').to_s)
+  root :to => redirect('index.html')
 
   namespace :api_controller, defaults: { format: 'json' } do 
     
