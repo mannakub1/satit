@@ -1,6 +1,7 @@
 myApp.controller('loginController',  function($scope, $http, $location) {
     $scope.apiUser = 'canet';
     $scope.apiPass = 'CanetM2017';
+    //$scope.apiPass = '1234';
     $scope.user = '';
     $scope.pass = '';
 
@@ -18,6 +19,7 @@ myApp.controller('loginController',  function($scope, $http, $location) {
                     localStorage.setItem('token', data.token);
                     var path = address + "api/teacher/login";
                     authen = {username : $scope.user, password : $scope.pass};
+                    console.log(authen);
                     $http.post(path, angular.toJson(authen), {
                         transformRequest: angular.identity,
                         headers: {'token' : $scope.token, 'Content-Type': "application/json"}
