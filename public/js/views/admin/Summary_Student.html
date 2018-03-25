@@ -1,0 +1,97 @@
+<div>
+    <center><span style="font-size: 0.35cm">หนังสือแสดงผลการเรียนหลักสูตรการศึกษาขั้นพื้นฐาน ช่วงชั้นที่ <br>
+            ชั้นประถมศึกษาปีที่ {{stdRoom[0].room.level.charAt(2)}} ปีการศึกษา {{stdRoom[0].room.year}}</span>
+    </center>
+    <div class="row">
+        <div class="col-print-4">
+            aasdasd
+        </div>
+        <div class="col-print-4">
+            <img src="" alt="error" style="display:block; margin-left: auto; margin-right: auto">
+        </div>
+        <div class="col-print-4">
+            c
+        </div>
+    </div>
+    <table>
+        <tr>
+            <td style="height: 1cm; width: 5cm" rowspan="2"><center><span style="font-size: 0.2cm">รหัส/รายวิชา</span></center></td>
+            <td style="width: 1cm" rowspan="2" class="rotate"><center><div><span style="font-size: 0.2cm">หน่วยกิต</span></div></center></td>
+            <td style="width: 1cm" rowspan="2" class="rotate"><center><div><span style="font-size: 0.2cm">ผลการ<br>ประเมิน</span></div></center></td>
+            <td style="height: 1cm; width: 5cm" rowspan="2"><center><span style="font-size: 0.2cm">รหัส/รายวิชา</span></center></td>
+            <td style="width: 1cm" rowspan="2" class="rotate"><center><div><span style="font-size: 0.2cm">หน่วยกิต</span></div></center></td>
+            <td style="width: 1cm" rowspan="2" class="rotate"><center><div><span style="font-size: 0.2cm">ผลการ<br>ประเมิน</span></div></center></td>
+            <td style="height: 1cm; width: 5cm" rowspan="2"><center><span style="font-size: 0.2cm">รหัส/รายวิชา</span></center></td>
+            <td style="width: 1cm" rowspan="2" class="rotate"><center><div><span style="font-size: 0.2cm">หน่วยกิต</span></div></center></td>
+            <td style="width: 1cm" rowspan="2" class="rotate"><center><div><span style="font-size: 0.2cm">ผลการ<br>ประเมิน</span></div></center></td>
+        </tr>
+        <tr>
+
+        </tr>
+        <tr>
+            <td style="height: 15cm; vertical-align: top"><span style="display:block; font-size: 0.35cm">100<br>200</span></td>
+            <td style="height: 15cm"><span style="display:block; text-align: center; font-size: 0.35cm">100<br>200</span></td>
+        </tr>
+
+    </table>
+</div>
+<style>
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+    th, td {
+        padding: 5px;
+        text-align: left;
+    }
+    body {
+        background-color: white;
+    }
+    .rotate {
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        width: 1.5em;
+    }
+    .rotate div {
+        -moz-transform: rotate(-90.0deg);  /* FF3.5+ */
+        -o-transform: rotate(-90.0deg);  /* Opera 10.5 */
+        -webkit-transform: rotate(-90.0deg);  /* Saf3.1+, Chrome */
+        filter:  progid:DXImageTransform.Microsoft.BasicImage(rotation=0.083);  /* IE6,IE7 */
+        -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=0.083)"; /* IE8 */
+        margin-left: -10em;
+        margin-right: -10em;
+    }
+    @media print {
+        h1 {
+            color: rgba(55, 0, 0, 0);
+            text-shadow: 0 0 0 #ccc;
+        }
+        body {
+            background-color: white !important;
+            -webkit-print-color-adjust: exact;
+        }
+
+        @media print and (-webkit-min-device-pixel-ratio:0) {
+            h1 {
+                color: #ccc;
+                -webkit-print-color-adjust: exact;
+            }
+            body {
+                background-color: gold;
+            }
+        }
+    }
+    .col-print-1 {width:8%;  float:left;}
+    .col-print-2 {width:16%; float:left;}
+    .col-print-3 {width:25%; float:left;}
+    .col-print-4 {width:33%; float:left;}
+    .col-print-5 {width:42%; float:left;}
+    .col-print-6 {width:50%; float:left;}
+    .col-print-7 {width:58%; float:left;}
+    .col-print-8 {width:66%; float:left;}
+    .col-print-9 {width:75%; float:left;}
+    .col-print-10{width:83%; float:left;}
+    .col-print-11{width:92%; float:left;}
+    .col-print-12{width:100%; float:left;}
+</style>

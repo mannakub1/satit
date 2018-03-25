@@ -6,27 +6,27 @@ myApp.controller('changeClassTeacherController', function($scope, $http, static_
     var token = localStorage.getItem('token');
     $scope.room = JSON.parse(sessionStorage.getItem('room_data'));
     var room_id = sessionStorage.getItem('roomId');
-    teacher_list_path = address + 'api/teacher/present'
+    var teacher_list_path = address + 'api/teacher/present';
     var room_teacher = JSON.parse(sessionStorage.getItem('teacher_room'));
     setTimeout(function () {
         if(room_teacher === null){
             $scope.button = {
-                'name' : 'เพิ่ม',
+                'name' : 'เพิ่ม'
             };
         }
         else{
             $scope.button = {
-                'name' : 'เปลี่ยน',
+                'name' : 'เปลี่ยน'
             };
         }
-    }, 100)
+    }, 100);
     $http.get(teacher_list_path , {headers: {'token': token}})
         .success(function(data, status, header, config) {
             $scope.teacher_lists = data.teacher;
         });
 
     $scope.changeStatus = function(data) {
-        if ( data === 'super user'){
+        if ( data === 'admin'){
             return 'แอดมินระบบ'
         }else if( data === 'teacher') {
             return 'ครู'
@@ -53,8 +53,8 @@ myApp.controller('changeClassTeacherController', function($scope, $http, static_
     $scope.addTeacherRoom = function (id) {
         var data = {
             'teacher_id': id,
-            'room_id': room_id,
-        }
+            'room_id': room_id
+        };
         path = address + "api/teacher/add_teacher_room"
         $http.post(path, angular.toJson(data), {
             transformRequest: angular.identity,
@@ -95,7 +95,7 @@ myApp.controller('classTeacherController', function($scope, $http, static_functi
             });
 
     $scope.changeStatus = function(data) {
-        if ( data === 'super user'){
+        if ( data === 'admin'){
             return 'แอดมินระบบ'
         }else if( data === 'teacher') {
             return 'ครู'
@@ -124,7 +124,7 @@ myApp.controller('classTeacherController', function($scope, $http, static_functi
             'teacher_id': id,
             'room_id': room_id,
         }
-        path = address + "api/teacher/add_teacher_room"
+        var path = address + "api/teacher/add_teacher_room"
         $http.post(path, angular.toJson(data), {
             transformRequest: angular.identity,
             headers: {'token' : token, 'Content-Type': "application/json"}

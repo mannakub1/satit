@@ -221,7 +221,7 @@ myApp.controller('teacherStudentGradeNoCreditController', function ($scope, $htt
     $scope.teacher_prefix = sessionStorage.getItem('teacher_prefix');
     var address = sessionStorage.getItem('address');
     var token = localStorage.getItem('token');
-
+    $scope.showStudent = null;
     var room_id = sessionStorage.getItem('room_id');
 
     var get_student = address + 'api/teacher/students?room_id='+ room_id;
@@ -247,7 +247,6 @@ myApp.controller('teacherStudentGradeNoCreditController', function ($scope, $htt
             $http.get(address + "api/student/courses?student_id=" + $scope.student_id , {headers: {'token': token} })
                 .success(function(data, status, headers, config){
                     $scope.stdRoom = data.student_room;
-                    console.log($scope.stdRoom);
                     var subjects = $scope.stdRoom[0].student_subjects;
                     var j = 0;
                     $scope.subject_no_credit = [];
@@ -273,7 +272,7 @@ myApp.controller('teacherStudentGradeNoCreditController', function ($scope, $htt
         $http.get(get_students , {headers: {'token': token}})
             .success(function(data, status, header, config) {
                 $scope.students = data.student_list;
-
+                $scope.showStudent = true;
             }).error(function(data, status, headers, config) {
                 static_function.token_expired_check(data.error);
         });
@@ -302,7 +301,6 @@ myApp.controller('teacherStudentGradeNoCreditController', function ($scope, $htt
                 $scope.sentData.student_subject_id = $scope.students[j].id;
                 $scope.sentData.grade = $scope.students[j].grade;
                 $scope.sentData.teacher_id = sessionStorage.getItem('teacher_id');
-                console.log($scope.sentData);
                 $http.post(address + "api/teacher/edit_score", angular.toJson($scope.sentData), {
                     transformRequest: angular.identity,
                     headers: {'token': token, 'Content-Type': "application/json"}

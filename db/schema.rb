@@ -239,6 +239,16 @@ ActiveRecord::Schema.define(version: 20180117042017) do
   add_index "teacher_rooms", ["room_id"], name: "index_teacher_rooms_on_room_id", using: :btree
   add_index "teacher_rooms", ["teacher_id"], name: "index_teacher_rooms_on_teacher_id", using: :btree
 
+  create_table "teacher_subjects", force: :cascade do |t|
+    t.integer  "teacher_id"
+    t.integer  "subject_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "teacher_subjects", ["subject_id"], name: "index_teacher_subjects_on_subject_id", using: :btree
+  add_index "teacher_subjects", ["teacher_id"], name: "index_teacher_subjects_on_teacher_id", using: :btree
+
   create_table "teachers", force: :cascade do |t|
     t.string   "first_name"
     t.string   "last_name"

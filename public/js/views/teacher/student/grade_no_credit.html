@@ -40,7 +40,7 @@
                                     <option disabled="disabled" value="">---Please select---</option>
                                     <option ng-repeat="y in subject_no_credit" value="{{$index}}">{{y.subject.name}}</option>
                                 </select>
-                                <div class="row" align="center">
+                                <div class="row" align="center" ng-if="showStudent !== null">
                                     <h1>{{show_name_room}}</h1>
                                     <h1>{{show_year_room}}</h1>
                                     <table class="table table-hover" style="width:100%" >
