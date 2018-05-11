@@ -41,5 +41,18 @@ class Admin::YearRoomAction
     process_destroy
   end
 
+  def add2(params)
+    puts 'in fuction add'
+    @params = params
+    @name = params[:name]
 
+    can_add, message = can_add?
+    fail message unless can_add
+
+    puts 'in complete guard'
+    process_add_rooms_2
+
+    # process_add
+    # process_add_rooms
+  end
 end

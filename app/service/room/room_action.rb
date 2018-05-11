@@ -1,19 +1,18 @@
 class Room::RoomAction
 
-  attr_reader :name, :year, :level
+  attr_reader :name, :year, :level, :params
 
   include Room::Private::RoomAction
   include Room::Private::RoomActionGuard
 
   def initialize(option = {})
-    @name = option[:name] || nil
-    @year = option[:year] || nil
-    @level = option[:level] || nil
-
-    puts @name
+    @year_room_id = option[:year_room_id]
+    @room_id = option[:room_id]
   end
 
-  def add
+  def add(params = {})
+    @params = params
+    puts params
 
     can_add, message = can_add?
     fail message unless can_add
@@ -21,4 +20,27 @@ class Room::RoomAction
     process_add
   end
 
+  def edit(params = {})
+    @params = params
+
+    can_edit, message = can_edit?
+    fail message unless can_edit
+
+    process_edit
+  end
+
+  def destroy
+    can_destroy, message = can_destroy?
+    fail message unless can_destroy
+    
+    process_destroy
+  end
+
+  def current_room
+    Room.find_by(id: @room_id)
+  end
+
+  def current_year_room
+    YearRoom.find_by(id: @year_room_id)
+  end
 end

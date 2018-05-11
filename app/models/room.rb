@@ -26,5 +26,6 @@ class Room < ActiveRecord::Base
 
   belongs_to :year_room
 
+  default_scope { order('level').order('created_at') }
   scope :present, -> { where(year: DateTime.now.year) }
 end

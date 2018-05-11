@@ -3,29 +3,23 @@ module Room::Private::RoomActionGuard
   private 
 
   def can_add?
-    # return [false, 'do not have a name'] if name?
-    # return [false, 'do not have a level'] if level?
-    # return [false, 'do not have a year'] if year?
-    return [false, 'had aroom'] if room?
+     return [false, 'this year_room_id don\'t have exist '] unless current_year_room
 
     [true, nil]
   end
 
-  def room?
-    Room.find_by(name: name, level: level, year: year)
+  def can_edit?
+    return [false, 'this year_room_id don\'t have exist '] unless current_year_room
+    return [false, 'this room_id don\'t have exist '] unless current_room
+
+    [true, nil]
   end
 
-  # def name?
-  #   puts name
-  #   name
-  # end
+  def can_destroy?
+    return [false, 'this year_room_id don\'t have exist '] unless current_year_room
+    return [false, 'this room_id don\'t have exist '] unless current_room
 
-  # def level?
-  #   level
-  # end
-
-  # def year?
-  #   year
-  # end
+    [true, nil]
+  end
 
 end

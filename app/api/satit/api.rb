@@ -22,7 +22,7 @@ module Satit
         headers['Access-Control-Request-Method'] = '*'
         headers['Access-Control-Allow-Headers'] = '*'
         headers['Access-Control-Request-Headers'] = '*'
-        puts 'test origin'
+        
       end
 
       def token
