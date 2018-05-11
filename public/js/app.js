@@ -1,3 +1,4 @@
+
 var token = localStorage.getItem('token');
 // var address = "http://172.27.170.117:3000/";
 
@@ -5,7 +6,9 @@ var token = localStorage.getItem('token');
 //var address = "http://192.168.217.102:3000/";
 // var address = 'http://localhost:3000/'
 //var address = 'http://202.28.73.138:3000/'
-var address = 'http://172.27.228.123:3000/'
+var address = 'http://ited.su.ac.th/';
+//var address = 'https://satit.herokuapp.com/'
+
 // var address = 'http://172.27.225.177:3000/'
 //var address = 'http://172.27.160.80:3000/'
 // var address = "http://172.27.160.166:3000/";
@@ -64,6 +67,10 @@ myApp.config(function($routeProvider){
         .when("/admin/viewroom/student/grade/print", {
             templateUrl: 'js/views/admin/Print_Grade.html',
 			controller: 'printGradeController'
+        })
+        .when("/admin/viewroom/student/summary/p1_print", {
+            templateUrl: 'js/views/admin/Summary_Student.html',
+            controller: 'printGradeController'
         })
         .when("/admin/viewroom/student/add", {
             templateUrl: 'js/views/admin/AddStudents.html',

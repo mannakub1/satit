@@ -43,7 +43,7 @@
 									</select>
 									<div class="table-responsive"  ng-repeat="y in stdRoom">
 										<div ng-show="Grade[$index]">
-											<table class="table table-bordered" style="width:60%">
+											<table class="table table-bordered" style="width:60%; margin-bottom: -0.1%">
 
 												<thead>
 													<tr style="background-color: greenyellow;">
@@ -71,6 +71,33 @@
 												</tbody>
 											</table>
 
+											<table class="table table-bordered" style="width:60%; table-layout: fixed;">
+
+												<thead>
+												<tr style="background-color: greenyellow;">
+													<th style="background-color: #909070; color:black; width:50%;" colspan="5"><center>This Semester</center></th>
+													<th style="background-color:#909070; color:black; width:50%;" colspan="5"><center>All Semester</center></th>
+												</tr>
+
+												</thead>
+												<tbody>
+												<tr>
+													<!--This Semester-->
+													<td style="background-color: #ededed; color:black; width:8%"><center>CR<br>{{y.cr}}</center></td>
+													<td style="background-color: #ededed; color:black; width:77%"><center>CP<br>{{y.cp}}</center></td>
+													<td style="background-color: #ededed; color:black; max-width:5%"><center>CA<br>{{y.ca}}</center></td>
+													<td style="background-color: #ededed; color:black; width:5%"><center>GP<br>{{y.gp}}</center></td>
+													<td style="background-color: #ededed; color:black; width:5%"><center>GPA<br>{{y.gpa}}</center></td>
+													<!--CUMULATIVE TO THIS SEMESTER-->
+													<td style="background-color: #ededed; color:black; width:8%"><center>CR<br>{{y.crx}}</center></td>
+													<td style="background-color: #ededed; color:black; width:77%"><center>CP<br>{{y.cpx}}</center></td>
+													<td style="background-color: #ededed; color:black; max-width:5%"><center>CA<br>{{y.cax}}</center></td>
+													<td style="background-color: #ededed; color:black; width:5%"><center>GP<br>{{y.gpx}}</center></td>
+													<td style="background-color: #ededed; color:black; width:5%"><center>GPAX<br>{{y.gpax}}</center></td>
+												</tr>
+
+												</tbody>
+											</table>
 											<table class="table table-bordered" style="width:60%; table-layout: fixed;">
 
                                                  
