@@ -136,5 +136,10 @@ myApp.controller('classTeacherController', function($scope, $http, static_functi
             });
     }
 
+    $scope.editPasswordPage = function(data) {
+        sessionStorage.setItem('teacher_id', data);
+        $location.path('admin/teacher/change_password');
+    }
+
 
 });

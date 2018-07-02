@@ -1,5 +1,6 @@
 myApp.controller('studentDetailController',function($scope, $http, static_function, $location)  {
     var address = sessionStorage.getItem('address');
+    $scope.address = sessionStorage.getItem('address');
     var token = localStorage.getItem('token');
     $scope.admin_first_name = sessionStorage.getItem('admin_first_name');
     $scope.admin_last_name = sessionStorage.getItem('admin_last_name');

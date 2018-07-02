@@ -1,27 +1,57 @@
 <div>
-    <center><span style="font-size: 0.35cm">หนังสือแสดงผลการเรียนหลักสูตรการศึกษาขั้นพื้นฐาน ช่วงชั้นที่ <br>
+    <center><span style="font-size: 0.35cm">หนังสือแสดงผลการเรียนหลักสูตรการศึกษาขั้นพื้นฐาน <br>
             ชั้นประถมศึกษาปีที่ {{stdRoom[0].room.level.charAt(2)}} ปีการศึกษา {{stdRoom[0].room.year}}</span>
     </center>
     <div class="row">
-        <div class="col-print-4">
-            aasdasd
-        </div>
-        <div class="col-print-4">
-            <img src="" alt="error" style="display:block; margin-left: auto; margin-right: auto">
-        </div>
-        <div class="col-print-4">
-            c
+        <div class="col-print-12">
+            <span style="margin-left: 0.5cm">โรงเรียน                 สาธิตแห่งมหาวิทยาลัยศิลปากร</span>
         </div>
     </div>
+    <div class="row">
+        <div class="col-print-4">
+            <span style="margin-left: 0.5cm">สังกัด สำนักงานคณะกรรมการการอุดมศึกษา</span><br>
+            <span style="margin-left: 0.5cm">ตำบล/แขวง พระปฐมเจดีย์</span><br>
+            <span style="margin-left: 0.5cm">อำเภอ/เขต เมือง</span><br>
+            <span style="margin-left: 0.5cm">จังหวัด นครปฐม</span><br>
+            <span style="margin-left: 0.5cm">เขตพื้นที่การศึกษาที่ 2</span><br>
+        </div>
+        <div class="col-print-4">
+            <img ng-src="{{address + student.image}}" alt="error" style="display:block; margin-left: auto; margin-right: auto; height: 5cm">
+        </div>
+        <div class="col-print-4">
+            <span style="margin-left: 0.5cm">ชื่อ {{stdRoom[0].student_subjects[0].student_room.student.first_name}}</span><br>
+            <span style="margin-left: 0.5cm">ชื่อสกุล {{stdRoom[0].student_subjects[0].student_room.student.last_name}}</span><br>
+            <span style="margin-left: 0.5cm">เลขประจำตัวนักเรียน {{stdRoom[0].student_subjects[0].student_room.student.code_number}}</span><br>
+            <span style="margin-left: 0.5cm">เลขประจำตัวประชาชน {{stdRoom[0].student_subjects[0].student_room.student.iden_number}}</span><br>
+            <span style="margin-left: 0.5cm">เกิด {{stdRoom[0].student_subjects[0].student_room.student.birthdate}}</span><br>
+            <span style="margin-left: 0.5cm">เพศ {{stdRoom[0].student_subjects[0].student_room.student.prefix}} สัญชาติ
+                {{stdRoom[0].student_subjects[0].student_room.student.nationality}}ศาสนา
+            {{stdRoom[0].student_subjects[0].student_room.student.ethnicity}}
+            </span><br>
+            <span style="margin-left: 0.5cm">ชื่อบิดา {{stdRoom[0].student_subjects[0].student_room.student.father[0].first_name}}</span><br>
+            <span style="margin-left: 0.5cm">ชื่อสกุลบิดา {{stdRoom[0].student_subjects[0].student_room.student.father[0].last_name}}</span><br>
+            <span style="margin-left: 0.5cm">ชื่อมารดา {{stdRoom[0].student_subjects[0].student_room.student.mother[0].first_name}}</span><br>
+            <span style="margin-left: 0.5cm">ชื่อสกุลมารดา {{stdRoom[0].student_subjects[0].student_room.student.mother[0].last_name}}</span><br>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-print-4">
+            .
+        </div>
+        <div class="col-print-4">
+            <center>ผลการเรียนสาระการเรียนรู้</center>
+        </div>
+    </div>
+
     <table>
         <tr>
-            <td style="height: 1cm; width: 5cm" rowspan="2"><center><span style="font-size: 0.2cm">รหัส/รายวิชา</span></center></td>
+            <td style="height: 1cm; width: 5cm !important;" rowspan="2"><center><span style="font-size: 0.2cm">รหัส/รายวิชา</span></center></td>
             <td style="width: 1cm" rowspan="2" class="rotate"><center><div><span style="font-size: 0.2cm">หน่วยกิต</span></div></center></td>
             <td style="width: 1cm" rowspan="2" class="rotate"><center><div><span style="font-size: 0.2cm">ผลการ<br>ประเมิน</span></div></center></td>
-            <td style="height: 1cm; width: 5cm" rowspan="2"><center><span style="font-size: 0.2cm">รหัส/รายวิชา</span></center></td>
+            <td style="height: 1cm; width: 5cm !important;" rowspan="2"><center><span style="font-size: 0.2cm">รหัส/รายวิชา</span></center></td>
             <td style="width: 1cm" rowspan="2" class="rotate"><center><div><span style="font-size: 0.2cm">หน่วยกิต</span></div></center></td>
             <td style="width: 1cm" rowspan="2" class="rotate"><center><div><span style="font-size: 0.2cm">ผลการ<br>ประเมิน</span></div></center></td>
-            <td style="height: 1cm; width: 5cm" rowspan="2"><center><span style="font-size: 0.2cm">รหัส/รายวิชา</span></center></td>
+            <td style="height: 1cm; width: 5cm !important;" rowspan="2"><center><span style="font-size: 0.2cm">รหัส/รายวิชา</span></center></td>
             <td style="width: 1cm" rowspan="2" class="rotate"><center><div><span style="font-size: 0.2cm">หน่วยกิต</span></div></center></td>
             <td style="width: 1cm" rowspan="2" class="rotate"><center><div><span style="font-size: 0.2cm">ผลการ<br>ประเมิน</span></div></center></td>
         </tr>
@@ -29,11 +59,91 @@
 
         </tr>
         <tr>
-            <td style="height: 15cm; vertical-align: top"><span style="display:block; font-size: 0.35cm">100<br>200</span></td>
-            <td style="height: 15cm"><span style="display:block; text-align: center; font-size: 0.35cm">100<br>200</span></td>
+            <td style="height: 15cm; vertical-align: top">
+                <div ng-repeat="y in stdRoom  | limitTo: 2">
+                    <div ng-if="y.student_subjects.length!==0">
+                        <span>ปีที่ {{$index / 2 + 0.9 | number:0}} ปีการศึกษา {{y.room.year}} ภาคเรียน {{($index) % 2 + 1}}</span>
+                        <span ng-repeat="x in y.student_subjects" style="display:block; font-size: 0.35cm">{{x.subject.code}} {{x.subject.name}}<br></span>
+                    </div>
+                </div>
+            </td>
+            <td style="height: 15cm; vertical-align: top">
+                <div ng-repeat="y in stdRoom  | limitTo:2">
+                    <div ng-if="y.student_subjects.length!==0">
+                        <br><br>
+                        <span ng-repeat="x in y.student_subjects" style="display:block; font-size: 0.35cm; text-align: center">{{x.subject.credit}}<br></span>
+                    </div>
+                </div>
+            </td>
+
+            <!--<td style="height: 15cm; vertical-align: top"><span ng-repeat="x in stdRoom[0].student_subjects" style="display:block; font-size: 0.35cm; text-align: center">{{x.student_subjects.subject.credit}}<br></span></td>-->
+            <td style="height: 15cm; vertical-align: top">
+                <div ng-repeat="y in stdRoom | limitTo:2">
+                    <div ng-if="y.student_subjects.length!==0">
+                        <br><br>
+                        <span ng-repeat="x in y.student_subjects" style="display:block; font-size: 0.35cm; text-align: center">{{x.grade}}<br></span>
+                    </div>
+                </div>
+            </td>
+            <td style="height: 15cm; vertical-align: top">
+                <div ng-show="stdRoom > 2" ng-repeat="y in stdRoom  | limitTo: 2 | limitTo: -2">
+                    <div ng-if="y.student_subjects.length!==0">
+                        <span>ปีที่ {{$index / 2 + 0.9 | number:0}} ปีการศึกษา {{y.room.year}} ภาคเรียน {{($index) % 2 + 1}}</span>
+                        <span ng-repeat="x in y.student_subjects" style="display:block; font-size: 0.35cm">{{x.subject.code}} {{x.subject.name}}<br></span>
+                    </div>
+                </div>
+            </td>
+
+            <td style="height: 15cm; vertical-align: top">
+                <div ng-show="stdRoom > 2" ng-repeat="y in stdRoom  | limitTo:2 | limitTo: -2">
+                    <div ng-if="y.student_subjects.length!==0">
+                        <br><br>
+                        <span ng-repeat="x in y.student_subjects" style="display:block; font-size: 0.35cm; text-align: center">{{x.subject.credit}}<br></span>
+                    </div>
+                </div>
+            </td>
+
+            <td style="height: 15cm; vertical-align: top">
+                <div ng-show="stdRoom > 2" ng-repeat="y in stdRoom | limitTo:2 | limitTo: -2">
+                    <div ng-if="y.student_subjects.length!==0">
+                        <br><br>
+                        <span ng-repeat="x in y.student_subjects" style="display:block; font-size: 0.35cm; text-align: center">{{x.grade}}<br></span>
+                    </div>
+                </div>
+            </td>
+
+            <td style="height: 15cm; vertical-align: top">
+                <div ng-show="stdRoom > 4" ng-repeat="y in stdRoom  | limitTo: 2 | limitTo: -4">
+                    <div ng-if="y.student_subjects.length!==0">
+                        <span>ปีที่ {{$index / 2 + 0.9 | number:0}} ปีการศึกษา {{y.room.year}} ภาคเรียน {{($index) % 2 + 1}}</span>
+                        <span ng-repeat="x in y.student_subjects" style="display:block; font-size: 0.35cm">{{x.subject.code}} {{x.subject.name}}<br></span>
+                    </div>
+                </div>
+            </td>
+
+            <td style="height: 15cm; vertical-align: top">
+                <div ng-show="stdRoom > 4" ng-repeat="y in stdRoom  | limitTo:2 | limitTo: -4">
+                    <div ng-if="y.student_subjects.length!==0">
+                        <br><br>
+                        <span ng-repeat="x in y.student_subjects" style="display:block; font-size: 0.35cm; text-align: center">{{x.subject.credit}}<br></span>
+                    </div>
+                </div>
+            </td>
+
+            <td style="height: 15cm; vertical-align: top">
+                <div ng-show="stdRoom > 4" ng-repeat="y in stdRoom | limitTo:2 | limitTo: -4">
+                    <div ng-if="y.student_subjects.length!==0">
+                        <br><br>
+                        <span ng-repeat="x in y.student_subjects" style="display:block; font-size: 0.35cm; text-align: center">{{x.grade}}<br></span>
+                    </div>
+                </div>
+            </td>
         </tr>
+
+
 
     </table>
+
 </div>
 <style>
     table, th, td {

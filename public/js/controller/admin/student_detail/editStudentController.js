@@ -2,6 +2,7 @@
 myApp.controller('adminEditStudentController', function($scope, $http, Upload, static_function, $location)  {
     var address = sessionStorage.getItem('address');
     var token = localStorage.getItem('token');
+    $scope.address = sessionStorage.getItem('address');
     $scope.admin_first_name = sessionStorage.getItem('admin_first_name');
     $scope.admin_last_name = sessionStorage.getItem('admin_last_name');
     $scope.admin_prefix = sessionStorage.getItem('admin_prefix');

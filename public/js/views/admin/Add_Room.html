@@ -1,0 +1,106 @@
+<div id="wrapper">
+    <nav class="navbar-default navbar-static-side" role="navigation">
+        <div class="sidebar-collapse">
+            <ul class="nav" id="side-menu">
+                <li class="nav-header">
+                    <div class="dropdown profile-element">
+                        </span>
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">{{admin_prefix}} {{admin_first_name}} {{admin_last_name}}</strong>
+                             </span> <span class="text-muted text-xs block">ผู้ดูแลระบบ<b class="caret"></b></span> </span> </a>
+                        <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                            <li><a href="Profile.html">Profile</a></li>
+                            <li><a href="login.html">Logout</a></li>
+                        </ul>
+                    </div>
+                    <div class="logo-element">
+                        IN+
+                    </div>
+                </li>
+                <li>
+                    <a href="#/admin/viewroom"><i class="fa fa-backward"></i> <span class="nav-label">กลับ</span></a>
+
+                </li>
+
+
+
+            </ul>
+
+        </div>
+    </nav>
+
+    <div id="page-wrapper" class="gray-bg" >
+        <header-nav></header-nav>
+        <center>
+            <div class="wrapper wrapper-content ">
+                <!-- <div class="wrapper wrapper-content animated fadeInRight"> -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="ibox float-e-margins">
+
+                            <div class="ibox-content" style="width: 75%" >
+                                <div class="row">
+                                    <!-- body chang -->
+                                    <div class="col-lg-12">
+                                        <form>
+                                            <div class="row">
+                                                <div class="col-lg-2">
+                                                    ชั้นปี :
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <select id="selectCourse" ng-model="selectLevel"  ng-change="selectCourse()" style="margin-bottom: 3%">
+                                                        <option disabled value="">---Please select---</option>
+                                                        <option value="ป.1">ป.1</option>
+                                                        <option value="ป.2">ป.2</option>
+                                                        <option value="ป.3">ป.3</option>
+                                                        <option value="ป.4">ป.4</option>
+                                                        <option value="ป.5">ป.5</option>
+                                                        <option value="ป.6">ป.6</option>
+                                                    </select>
+                                                    <br>
+                                                </div>
+                                                <br>
+                                                <br>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-2">
+                                                    ชื่อห้อง :
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <input type="text"  ng-model="room_name"  required="">
+                                                    <br>
+                                                </div>
+                                                <br>
+                                                <br>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-2">
+
+                                                </div>
+                                                <div class="col-lg-1">
+                                                    <button class="btn btn-info m-r-sm" ng-click="sendRoom()">ยืนยัน</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </center>
+        <div class="footer">
+            <div class="pull-right">
+                ....... <strong>.......</strong> .......
+            </div>
+            <div>
+                <strong>.......</strong> ....................
+            </div>
+        </div>
+
+    </div>
+</div>
+</div>

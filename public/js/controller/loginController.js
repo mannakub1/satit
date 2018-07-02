@@ -68,7 +68,8 @@ myApp.controller('loginController',  function($scope, $http, $location) {
                 }
             })
             .error(function(data, status, headers, config) {
-                alert("Connection Error");
+                //alert("Connection time out");
+                alert(data);
             });
     }
 });

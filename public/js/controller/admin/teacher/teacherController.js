@@ -4,7 +4,7 @@ myApp.controller('adminTeacherController', function($scope, $http, static_functi
     $scope.admin_prefix = sessionStorage.getItem('admin_prefix');
     var address = sessionStorage.getItem('address');
     var token = localStorage.getItem('token');
-	teacher_list_path = address + 'api/teacher/present'
+	var teacher_list_path = address + 'api/teacher/present'
 
 	$http.get( teacher_list_path , {headers: {'token': token}})
 	.success(function(data, status, header, config) {

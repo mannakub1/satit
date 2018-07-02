@@ -1,6 +1,11 @@
  <div>
         <center><span style="font-size: 0.35cm">รายงานผลพัฒนาคุณภาพผู้เรียนตามกลุ่มสาระการเรียนรู้ และกิจกรรมพัฒนาผู้เรียน<br>
-            ชั้นประถมศึกษาปีที่ {{stdRoom[0].room.level.charAt(2)}} ปีการศึกษา {{stdRoom[0].room.year}}</span></center>
+            ชั้นประถมศึกษาปีที่ {{stdRoom[0].room.level.charAt(2)}} ปีการศึกษา {{stdRoom[0].room.year}}
+        {{stdRoom[0].student_subjects[0].student_room.student.prefix}}
+        {{stdRoom[0].student_subjects[0].student_room.student.first_name}}
+        {{stdRoom[0].student_subjects[0].student_room.student.last_name}}
+        รหัส {{stdRoom[0].student_subjects[0].student_room.student.code_number}}</span></center>
+
         <table>
             <tr>
                 <td rowspan="3"><center><span style="font-size: 0.35cm">รหัส</span></center></td>

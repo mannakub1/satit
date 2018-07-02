@@ -3,6 +3,7 @@ myApp.controller('studentDashboardController',  function($scope, $http, static_f
     $scope.showHome = true;
     $scope.student = JSON.parse(sessionStorage.getItem('stdData'));
     $scope.token = localStorage.getItem('token');
+    $scope.address = sessionStorage.getItem('address');
 
     if($scope.student.father.length !== 0){
         $scope.hasFather = true;

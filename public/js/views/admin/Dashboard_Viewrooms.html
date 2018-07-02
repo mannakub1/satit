@@ -40,7 +40,7 @@
                                     <br>
                                     <div align="left" ng-show="showButtonManageYearRoom" >
 
-                                        <button  class="btn btn-default btn-sm" ng-click="AddTextInput()" >เพิ่มห้องเรียน</button></a>
+                                        <button  class="btn btn-default btn-sm" ng-click="AddTextInput()" >เพิ่มปีการศึกษา</button></a>
                                     </div>
                                     <div class="row" align="left" ng-show="showInputTextAddYearRoom">
                                         <div class="col-lg-6">
@@ -53,6 +53,7 @@
                                         <br>
                                     </div>
                                     <div class="table-responsive" ng-show="showTable">
+                                        <a href="#/admin/viewroom/add_room"> <button style="float: right; margin-right: 3%" class="btn btn-default btn-sm">เพิ่มห้องเรียน</button></a>
                                         <table class="table table-hover" >
                                             <thead>
                                             <tr>
@@ -69,7 +70,13 @@
                                                 <td>{{y.level}}</td>
                                                 <td>{{y.year}}</td>
                                                 <td>
-                                                    <button ng-click="selectRoom(y.id, $index)" class="btn btn-info btn-sm" align = "right" >ดูรายละเอียด</button>
+                                                    <button ng-click="selectRoom(y.id, $index)" class="btn btn-info btn-sm" style="float: right">ดูรายละเอียด</button>
+                                                <td/>
+                                                <td>
+                                                    <button ng-click="editRoom($index)" class="btn btn-default btn-sm" style="float: right" >แก้ไข</button>
+                                                <td/>
+                                                <td>
+                                                    <button ng-click="deleteRoom($index)" class="btn btn-danger btn-sm" style="float: right" >ลบ</button>
                                                 <td/>
                                             </tr>
                                             </tbody>
